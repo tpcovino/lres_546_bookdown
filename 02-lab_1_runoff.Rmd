@@ -1,0 +1,20 @@
+# Lab 1 - Flow analysis and hydrograph separation (20 pts)
+
+## Intro
+
+In this lab we will analyze stream flow (Q) and precipitation (P) data from Tenderfoot Creek Experimental Forest (TCEF). TCEF is located in central Montana, north of White Sulphur Springs. [See here](https://www.fs.usda.gov/research/rmrs/forestsandranges/locations/tcef){target="_blank"} for information about TCEF. You will do some data analysis on flows, calculate annual runoff ratios, and perform a hydrograph separation. 
+
+## Reading for this lab
+
+Ladson, A. R., R. Brown, B. Neal and R. Nathan (2013) A standard approach to baseflow separation using the Lyne and Hollick filter. Australian Journal of Water Resources 17(1): 173-18
+
++ [Ladson et al., 2013](https://www.researchgate.net/publication/269755620_A_standard_approach_to_baseflow_separation_using_the_Lyne_and_Hollick_filter){target="_blank"}
+
+Lynne, V., Hollick, M. (1979) Stochastic time-variable rainfall-runoff modelling. In: pp. 89-93 Institute of Engineers Australia National Conference. Perth.
+
++ [Lyne and Hollick, 1979](https://www.dropbox.com/scl/fi/vzuy13znsou4m149e0xkx/Stochastic_Time-Variable_Rainfall-Runoff.pdf?rlkey=rztj4c1nd3xhy765eac7mav5j&dl=0){target="_blank"}
+
+## Repo
+
+Please find the GitHub repo for this lab [here](https://github.com/tpcovino/01_hydrograph_sep){target="_blank"}
+

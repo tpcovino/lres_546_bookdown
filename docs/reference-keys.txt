@@ -1,0 +1,11 @@
+introduction
+course-overview-and-objectives
+course-description
+structure
+philosophical-approach-and-resources
+tentative-schedule-subject-to-change
+lab-1---flow-analysis-and-hydrograph-separation-20-pts
+intro
+reading-for-this-lab
+repo
+a-caucus-race-and-a-long-tale

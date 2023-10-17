@@ -1,0 +1,63 @@
+--- 
+title: "Environmental Modeling: LRES 546"
+author: Tim Covino
+site: bookdown::bookdown_site
+---
+# Introduction
+
+This book provides the materials that we will use in Environmental Modeling (LRES 546). In this class we will be learning the fundamentals of environmental data analysis and simulation in R. 
+
+![](images/east_river.png)
+
+Instructor: Dr. Tim Covino\
+Class times: T 13:40 – 14:55; Th 13:40 – 14:55\
+Office hours: By appointment\
+Email: timothy.covino@montana.edu\
+TA: Lauren Kremer\
+Email: lauren.kremer@montana.edu\
+
+## Course overview and objectives: 
+
+(1) provide theoretical understanding and practical experience with common analysis and modeling techniques relevant to watershed hydrology/environmental science. 
+
+(2) provide training in analyzing, simulating, and presenting scientific data in written and oral formats.
+
+## Course Description: 
+
+This course will focus on development of quantitative analysis and modeling skills in watershed and environmental science. Students will develop skills necessary to describe and evaluate model structure and evaluate the merit of different models of varying type and complexity. Students will apply computer programming in R to analyze and simulate watershed and/or environmental process spanning simple to complex processes, analyses, and simulations. Technical skills and conceptual understanding will be built through lectures, readings, and hands-on quantitative projects. 
+
+## Structure:
+
+This class will be largely hands-on, and students will be conducting watershed analyses and modeling exercises. We will be doing our analysis and modeling in R and will do some R coding in each class session. Programming is best learned by doing it often. We will generally have "lecture" on Tuesday, where we will talk about and work through various types of hydrological analyses. On Thursday's you will then put the content from Tuesday to work in a lab where you will complete a variety of hydrological analyses in R. Students in the online version of the class will work through material on their schedule, but Dr. Covino and Lauren Kremer (TA) will be available during lab (Thursday 13:40 - 14:55) to help with technical coding problems or to answer other questions on weekly labs. 
+
+## Philosophical approach and resources:
+
+This course will use all online and open-source resources and will follow FAIR (findability, accessibility, interoperability, and reusability) data principles and promote sharing of hydrological education and research materials. Our computing will utilize open source [R](https://cran.rstudio.com/){target="_blank"} and [RStudio](https://posit.co/download/rstudio-desktop/){target="_blank"} software. 
+
+Books/resources, we may not use all of these, but they are good references:<br> 
+- [R for Data Science](https://r4ds.hadley.nz/){target="_blank"}\
+- [Statistical Methods in Water Resources](https://pubs.usgs.gov/tm/04/a03/tm4a3.pdf){target="_blank"}<br>
+- [Tidy modeling with R](https://www.tmwr.org/#hello-world){target="_blank"}\
+- [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/){target="_blank"}\
+- [Advanced R](https://adv-r.hadley.nz/){target="_blank"}\
+- [R Packages](https://r-pkgs.org/){target="_blank"}<br>
+- [Environmental Data Science](https://bookdown.org/igisc/EnvDataSci/){target="_blank"}
+
+**Additional readings will be made available on this bookdown page as needed.**
+ 
+## Tentative schedule, subject to change:
+
+**Week 1 (Unit 1)**: <br> 
+- *Lecture*: Introduction, overview, and technical skills.\
+- *Reading*: If you need a refresher for R please see [Chapters 1, 2, & 3](https://r4ds.had.co.nz/introduction.html){target="_blank"} 1-Welcome, 2-Introduction, & 3-Data visualization in R for Data Science (RDS).
+
+**Week 2 (Units 1 & 2)**: <br>
+- *Lecture*: Technical skills continued. Data visualization, data wrangling, and programming. Flow analysis. <br>
+- *Lab 1 - Part A*: Data visualization, data wrangling, and programming applied to Q and P analysis. <br>
+
+**Week 3 (Unit 2)**: <br>
+- *Lecture*: Runoff generation and hydrograph separation. <br>
+- *Lab 1 - Part B*: Hydrograph separation. <br>
+
+
+
