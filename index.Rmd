@@ -7,10 +7,12 @@ site: bookdown::bookdown_site
 
 This book provides the materials that we will use in Environmental Modeling (LRES 546). In this class we will be learning the fundamentals of environmental data analysis and simulation in R. 
 
+This class can be taken online or in-person. The online will be asynchronus. 
+
 ![](images/east_river.png)
 
 Instructor: Dr. Tim Covino\
-Class times: T 13:40 – 14:55; Th 13:40 – 14:55\
+Class times (depending on demand): T 13:40 – 14:55; Th 13:40 – 14:55\
 Office hours: By appointment\
 Email: timothy.covino@montana.edu\
 TA: Lauren Kremer\
@@ -28,7 +30,7 @@ This course will focus on development of quantitative analysis and modeling skil
 
 ## Structure:
 
-This class will be largely hands-on, and students will be conducting watershed analyses and modeling exercises. We will be doing our analysis and modeling in R and will do some R coding in each class session. Programming is best learned by doing it often. We will generally have "lecture" on Tuesday, where we will talk about and work through various types of hydrological analyses. On Thursday's you will then put the content from Tuesday to work in a lab where you will complete a variety of hydrological analyses in R. Students in the online version of the class will work through material on their schedule, but Dr. Covino and Lauren Kremer (TA) will be available during lab (Thursday 13:40 - 14:55) to help with technical coding problems or to answer other questions on weekly labs. 
+This class will be largely hands-on, and students will be conducting watershed analyses and modeling exercises. We will be doing our analysis and modeling in R and will do some R coding in each class/work session. Programming is best learned by doing it often. Each week there will be recorded videos, where we will talk about and work through various types of hydrological analyses. We will then put the content from the recorded lectures to work in a lab where you will complete a variety of hydrological analyses in R. Students in the online version of the class will work through material on their schedule, but Dr. Covino and Lauren Kremer (TA) will be available during lab (Thursday 13:40 - 14:55) to help with technical coding problems or to answer other questions on weekly labs. 
 
 ## Philosophical approach and resources:
 
@@ -47,17 +49,56 @@ Books/resources, we may not use all of these, but they are good references:<br>
  
 ## Tentative schedule, subject to change:
 
-**Week 1 (Unit 1)**: <br> 
+**Week 1 (Unit 0)**: <br> 
 - *Lecture*: Introduction, overview, and technical skills.\
 - *Reading*: If you need a refresher for R please see [Chapters 1, 2, & 3](https://r4ds.had.co.nz/introduction.html){target="_blank"} 1-Welcome, 2-Introduction, & 3-Data visualization in R for Data Science (RDS).
 
-**Week 2 (Units 1 & 2)**: <br>
-- *Lecture*: Technical skills continued. Data visualization, data wrangling, and programming. Flow analysis. <br>
-- *Lab 1 - Part A*: Data visualization, data wrangling, and programming applied to Q and P analysis. <br>
+**Week 2 (Unit 1)**: <br>
+- Data visualization, data wrangling, and programming applied to Q and P analysis. Hydrograph separation. <br>
 
 **Week 3 (Unit 2)**: <br>
-- *Lecture*: Runoff generation and hydrograph separation. <br>
-- *Lab 1 - Part B*: Hydrograph separation. <br>
+- Rational and curve number (CN) methods <br>
+  •	Empirical models <br>
+  •	Lumped models <br>
+
+**Week 4 (Unit 3)**: <br> 
+- Transfer function lumped hydrological model 
+
+**Week 5 (Unit 4)**: <br>
+- Monte Carlo and sensitivity analysis
+
+**Week 6 (Unit 5)**: <br>
+- HBV model – lumped to semi-distributed modeling <br>
+  •	Introduce semi-distributed and distributed models <br>
+  •	Introduce Physically based modeling <br>
+
+**Week 7 (Unit 6)**: 
+- DEM processing and analysis in Whitebox 
+  •	Introduce geospatial models and distributed modeling
+
+**Week 8 (Unit 7)**: <br>
+- Gridded and flow data retrieval 
+
+**Week 9: Spring Break** <br>
+
+**Week 10 (Unit 8)**: <br>
+- Precipitation interpolation <br>
+
+**Week 11 (Unit 9)**: <br>
+- Evapotranspiration (ET) models 
+
+**Week 12 (Unit 10)**: <br>
+- Snowmelt models
+
+**Week 13**: Term project updates 
+
+**Week 14**: <br>
+- Distributed model (WECOH or ATS) and/or term project work
+
+**Week 15**: Final presentations and/or work sessions
+
+**Week 16**: Final presentations
+
 
 
 

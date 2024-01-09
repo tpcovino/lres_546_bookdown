@@ -8,4 +8,4 @@ lab-1---flow-analysis-and-hydrograph-separation-20-pts
 intro
 reading-for-this-lab
 repo
-a-caucus-race-and-a-long-tale
+rational-and-curve-number-cn-methods
