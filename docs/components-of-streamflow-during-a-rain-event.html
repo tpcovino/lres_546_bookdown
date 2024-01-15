@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 1.1: Components of streamflow during a rain event | Environmental Modeling: LRES 546</title>
+  <meta name="description" content="Chapter 4 1.1: Components of streamflow during a rain event | Environmental Modeling: LRES 546" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 1.1: Components of streamflow during a rain event | Environmental Modeling: LRES 546" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 1.1: Components of streamflow during a rain event | Environmental Modeling: LRES 546" />
+  
+  
+  
+
+<meta name="author" content="Tim Covino" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lecture.html"/>
+<link rel="next" href="storm-flow-through-a-hillslope.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">lres_546</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#course-overview-and-objectives"><i class="fa fa-check"></i><b>1.1</b> Course overview and objectives:</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#course-description"><i class="fa fa-check"></i><b>1.2</b> Course Description:</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i><b>1.3</b> Structure:</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#philosophical-approach-and-resources"><i class="fa fa-check"></i><b>1.4</b> Philosophical approach and resources:</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#tentative-schedule-subject-to-change"><i class="fa fa-check"></i><b>1.5</b> Tentative schedule, subject to change:</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction-1.html"><a href="introduction-1.html#summary"><i class="fa fa-check"></i><b>2.1</b> Summary</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-1.html"><a href="introduction-1.html#overall-learning-objectives"><i class="fa fa-check"></i><b>2.2</b> Overall Learning Objectives:</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="lecture.html"><a href="lecture.html"><i class="fa fa-check"></i><b>3</b> Lecture</a></li>
+<li class="chapter" data-level="4" data-path="components-of-streamflow-during-a-rain-event.html"><a href="components-of-streamflow-during-a-rain-event.html"><i class="fa fa-check"></i><b>4</b> 1.1: Components of streamflow during a rain event</a></li>
+<li class="chapter" data-level="5" data-path="storm-flow-through-a-hillslope.html"><a href="storm-flow-through-a-hillslope.html"><i class="fa fa-check"></i><b>5</b> 1.2: Storm flow through a hillslope</a></li>
+<li class="chapter" data-level="6" data-path="how-we-quantify-baseflow.html"><a href="how-we-quantify-baseflow.html"><i class="fa fa-check"></i><b>6</b> 1.3: How we quantify baseflow</a></li>
+<li class="chapter" data-level="7" data-path="baseflow-separation-methods.html"><a href="baseflow-separation-methods.html"><i class="fa fa-check"></i><b>7</b> 1.4: Baseflow separation methods</a></li>
+<li class="chapter" data-level="8" data-path="watershed-controls-on-baseflow-and-stormflow.html"><a href="watershed-controls-on-baseflow-and-stormflow.html"><i class="fa fa-check"></i><b>8</b> 1.5: Watershed controls on baseflow and stormflow</a></li>
+<li class="chapter" data-level="9" data-path="assessment.html"><a href="assessment.html"><i class="fa fa-check"></i><b>9</b> Assessment</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="assessment.html"><a href="assessment.html#interactive-application-and-questions"><i class="fa fa-check"></i><b>9.1</b> Interactive application and questions:</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="assessment.html"><a href="assessment.html#initial-data-exploration"><i class="fa fa-check"></i><b>9.1.1</b> Initial data exploration</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html"><a href="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html"><i class="fa fa-check"></i><b>10</b> Lab 1 - Flow analysis and hydrograph separation (20 pts)</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html"><a href="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html#intro"><i class="fa fa-check"></i><b>10.1</b> Intro</a></li>
+<li class="chapter" data-level="10.2" data-path="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html"><a href="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html#reading-for-this-lab"><i class="fa fa-check"></i><b>10.2</b> Reading for this lab</a></li>
+<li class="chapter" data-level="10.3" data-path="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html"><a href="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html#repo"><i class="fa fa-check"></i><b>10.3</b> Repo</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="rational-and-curve-number-cn-methods.html"><a href="rational-and-curve-number-cn-methods.html"><i class="fa fa-check"></i><b>11</b> Rational and Curve Number (CN) methods</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Environmental Modeling: LRES 546</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="components-of-streamflow-during-a-rain-event" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> 1.1: Components of streamflow during a rain event<a href="components-of-streamflow-during-a-rain-event.html#components-of-streamflow-during-a-rain-event" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>During a rainstorm, precipitation is falling across the watershed: close to the stream, on a hillslope, and up at the watershed divide. This water that falls across the watershed flows downslope toward the stream via a number of flow pathways. Here we define and describe the basic flow pathways during a rain event.<br />
+The first component is <strong>channel interception</strong>. This is water that falls directly on the water surface of the stream. The amount of water that falls directly on the channel is a function of stream size, if we have a very small, narrow creek, this will be a very small quantity. However, you can imagine that in a very large, broad river such as the Amazon, this volume of water is much larger. Channel interception is the first component during a rain event that causes streamflow to increase because it is contributing directly to the stream and therefore has no travel time.</p>
+<p>The second is <strong>overland flow</strong>, which is water that flows on the land surface to the stream. Overland flow can occur via a number of mechanisms which we will not explore too deeply here, but encourage further study on your own (resources provided). Briefly, overland flow includes water that falls on an impermeable surface such as pavement, water that runs downslope due to rain falling faster than the rate at which it can infiltrate the ground surface, and water that flows over the land surface because the ground is completely saturated. Overland flow is typically faster than water that travels through soils and deeper flow pathways and therefore is the next major component that starts to contribute to the increase in streamflow during a rain event.</p>
+<p>The third component is <strong>subsurface flow</strong>. This is water that infiltrates the land surface and flows downslope through shallow groundwater flow pathways. This is the last component that increases streamflow during a storm event, is the slowest of the stormflow components, and can contribute to elevated streamflow for a while after precipitation ends.</p>
+<p>The final component is <strong>baseflow</strong>. Baseflow can also be described as groundwater. This component is what sustains streamflow between rain events, but also continues to contribute during a rain event. Of water that infiltrates the ground surface, some moves quickly to the stream as subsurface flow, but some moves deeper and becomes part of deeper groundwater and baseflow. Thus baseflow can increase in times of higher wetness in the watershed, particularly during and right after rainy seasons or spring snowmelt.</p>
+<p>We can simplify this partitioning into <strong>baseflow</strong> and <strong>stormflow</strong> (often called quickflow). Baseflow being groundwater that moves more slowly and sustains streamflow between rain events. Stormflow is water that contributes to streamflow as a result of a rain event. Under this definition we can lump <strong>channel interception, overland flow</strong>, and <strong>subsurface</strong> flow into <strong>stormflow</strong>.</p>
+<p><img src="images/baseflow_conceptual_diagram.jpg" /></p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lecture.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="storm-flow-through-a-hillslope.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/tpcovino/lres_546_bookdown/edit/main/02_hydrograph_separation_lecture.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/tpcovino/lres_546_bookdown/blob/main/02_hydrograph_separation_lecture.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

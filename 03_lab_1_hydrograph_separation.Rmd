@@ -1,0 +1,27 @@
+# Hydrograph separation: lab module (20 pts)
+
+## Intro
+
+In this lab we will analyze stream flow (Q) and precipitation (P) data from Tenderfoot Creek Experimental Forest (TCEF). TCEF is located in central Montana, north of White Sulphur Springs. [See here](https://www.fs.usda.gov/research/rmrs/forestsandranges/locations/tcef){target="_blank"} for information about TCEF. You will do some data analysis on flows, calculate annual runoff ratios, and perform a hydrograph separation. 
+
+## Reading for this lab
+
+Ladson, A. R., R. Brown, B. Neal and R. Nathan (2013) A standard approach to baseflow separation using the Lyne and Hollick filter. Australian Journal of Water Resources 17(1): 173-18
+
++ [Ladson et al., 2013](https://www.researchgate.net/publication/269755620_A_standard_approach_to_baseflow_separation_using_the_Lyne_and_Hollick_filter){target="_blank"}
+
+Lynne, V., Hollick, M. (1979) Stochastic time-variable rainfall-runoff modelling. In: pp. 89-93 Institute of Engineers Australia National Conference. Perth.
+
++ [Lyne and Hollick, 1979](https://www.dropbox.com/scl/fi/vzuy13znsou4m149e0xkx/Stochastic_Time-Variable_Rainfall-Runoff.pdf?rlkey=rztj4c1nd3xhy765eac7mav5j&dl=0){target="_blank"}
+
+## Repo
+
+Follow this [link](https://github.com/tpcovino/01_hydrograph_sep){target="_blank"} to download everything you need for this unit. When you get to GitHub click on "Code" (green button) and select "download zip". You will then save this to a local folder where you should do all of your work for this class. You will work through the "_blank.Rmd". Always be sure to read the README.md files in the GitHub repo. Sometimes they are useful, sometimes they aren't, but always have a look. 
+
+As I mentioned above you will work through the "_blank.Rmd". However, there is also a "_complete.Rmd" in the repo. This has all the code. So you can use it as a cheat sheet, but if you want to learn how to code in R, I encourage you to work through the blank version as much as possible. Also, if you don't have much R background this lab might seem kind of challenging. But don't worry. I'm challenging you right now, but I'm going to post videos explaining how I would code this and walk you through everything. So don't get frustrated if this seems tough right now. Soon you will be rattling off code with ease. Conversely, if you are an experienced coder and have ideas for how to do this in ways other than what I've shown here, please share code with your colleagues and help them develop their coding skills! 
+
+OK. Once you have this folder saved where you would like it, open RStudio and navigate to the folder. Next, open the project (".Rproj"). Doing so will set the folder as the working directory, make your life easier, and make everything generally work. The use of projects is highly recommended and is the practice we will follow in this class. See [here](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/) for an overview of projects and why you should use them from Jenny Bryan. 
+
+If you are new to R, or need a refresher, please read [Chapters 1, 2, & 3](https://r4ds.had.co.nz/introduction.html){target="_blank"} 1-Welcome, 2-Introduction, & 3-Data visualization in R for Data Science (RDS).
+
+In this unit we want to start familiarizing ourselves with R by visualizing some hydrological data.
