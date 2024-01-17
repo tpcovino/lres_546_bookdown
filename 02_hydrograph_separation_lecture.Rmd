@@ -80,10 +80,8 @@ The partitioning is a combination of all of these factors. A watershed may have 
 
 ## Assessment
 
-To assess and improve your understanding we've developed two interactive 
-applications. The first is an interactive web app that requires zero 
-programming, and the second is a web-page that walks through baseflow
-analyses in the R programming language. 
+To assess and improve your understanding we've developed an interactive 
+application to explore runoff generation and sources. 
 
 ## Interactive application and questions 
 
