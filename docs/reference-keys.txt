@@ -16,6 +16,7 @@ watershed-controls-on-baseflow-and-stormflow
 assessment
 interactive-application-and-questions
 initial-data-exploration
+synthesis-questions
 hydrograph-separation-lab-module-20-pts
 intro
 reading-for-this-lab
