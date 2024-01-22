@@ -54,7 +54,7 @@ Books/resources, we may not use all of these, but they are good references:<br>
 
 **Week 1 (Unit 0)**: <br> 
 - Introduction, overview, and technical skills.\
-- If you need a refresher for R please see [Chapters 1, 2, & 3](https://r4ds.had.co.nz/introduction.html){target="_blank"} 1-Welcome, 2-Introduction, & 3-Data visualization in R for Data Science (RDS).
+- If you need a refresher for R please see [Chapters 1, 2, & 3](https://r4ds.hadley.nz/data-visualize){target="_blank"} 1-Welcome, 2-Introduction, & 3-Data visualization in R for Data Science (RDS).
 
 **Week 2 (Unit 1)**: <br>
 - Hydrograph separation. <br>
