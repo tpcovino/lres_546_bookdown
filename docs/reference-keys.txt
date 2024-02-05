@@ -21,4 +21,14 @@ hydrograph-separation-lab-module-20-pts
 intro
 reading-for-this-lab
 repo
+learning-module-2---return-intervals-14-pts
+background-information
+intro-1
+packages
+precipitation-return-intervals
+q1.-2-pts-what-is-the-probability-that-the-annual-precipitation-in-a-given-year-is-less-than-400-mm-this-is-the-fa-in-the-cdf-in-the-probability-lecture-slides.
+q2.-2-pts-what-is-the-probability-that-the-maximum-annual-precipitation-in-a-given-year-is-greater-than-500-mm
+q3.-2-pts-what-is-the-probability-that-the-annual-p-is-between-400-and-500-mm
+q4.-2-pts-what-is-the-return-period-for-a-year-with-at-least-550-mm-of-precip-the-return-period-tr-is-calculated-as-tr-1p-with-p-being-the-probability-for-an-event-to-occur.
+q5.-6-pts-explain-why-probability-analysis-of-climate-data-assumes-the-data-are-normally-distributed-and-stationary-below-provide-a-histogram-and-a-density-plot-of-the-total-annual-p-data-and-comment-on-the-visual-appearance-in-terms-of-normality.-next-use-google-and-the-links-below-to-test-for-normality-and-stationarity.-be-quantitative-in-commenting-on-the-normality-and-stationarity-of-the-total-p-data.
 rational-and-curve-number-cn-methods
