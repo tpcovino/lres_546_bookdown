@@ -9,7 +9,7 @@ output:
 
 # Rational method and NRCS curve number (14 pts)
 
-The repo for this module can be found [here](https://github.com/tpcovino/03_rational_curve_number.git){target="_blank"}
+The repo for this module can be found [here](https://github.com/tpcovino/03_rational_and_CN_methods.git){target="_blank"}
 
 ## Rational Method
 
