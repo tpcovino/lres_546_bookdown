@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Rational method and NRCS curve number (14 pts) | Quantitative Environmental Methods: LRES 546</title>
+  <meta name="description" content="Chapter 5 Rational method and NRCS curve number (14 pts) | Quantitative Environmental Methods: LRES 546" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Rational method and NRCS curve number (14 pts) | Quantitative Environmental Methods: LRES 546" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Rational method and NRCS curve number (14 pts) | Quantitative Environmental Methods: LRES 546" />
+  
+  
+  
+
+<meta name="author" content="YOUR NAME HERE" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="learning-module-2---return-intervals-14-pts.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">lres_546</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#course-overview-and-objectives"><i class="fa fa-check"></i><b>1.1</b> Course overview and objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#course-description"><i class="fa fa-check"></i><b>1.2</b> Course Description</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i><b>1.3</b> Structure</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#philosophical-approach-and-resources"><i class="fa fa-check"></i><b>1.4</b> Philosophical approach and resources</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#tentative-schedule-subject-to-change"><i class="fa fa-check"></i><b>1.5</b> Tentative schedule, subject to change</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html"><i class="fa fa-check"></i><b>2</b> Hydrograph separation: learning module</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#summary"><i class="fa fa-check"></i><b>2.1</b> Summary</a></li>
+<li class="chapter" data-level="2.2" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#overall-learning-objectives"><i class="fa fa-check"></i><b>2.2</b> Overall Learning Objectives</a></li>
+<li class="chapter" data-level="2.3" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#lecture"><i class="fa fa-check"></i><b>2.3</b> Lecture</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#components-of-streamflow-during-a-rain-event"><i class="fa fa-check"></i><b>2.3.1</b> Components of streamflow during a rain event</a></li>
+<li class="chapter" data-level="2.3.2" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#storm-flow-through-a-hillslope"><i class="fa fa-check"></i><b>2.3.2</b> Storm flow through a hillslope</a></li>
+<li class="chapter" data-level="2.3.3" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#how-we-quantify-baseflow"><i class="fa fa-check"></i><b>2.3.3</b> How we quantify baseflow</a></li>
+<li class="chapter" data-level="2.3.4" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#baseflow-separation-methods"><i class="fa fa-check"></i><b>2.3.4</b> Baseflow separation methods</a></li>
+<li class="chapter" data-level="2.3.5" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#watershed-controls-on-baseflow-and-stormflow"><i class="fa fa-check"></i><b>2.3.5</b> Watershed controls on baseflow and stormflow</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#assessment"><i class="fa fa-check"></i><b>2.4</b> Assessment</a></li>
+<li class="chapter" data-level="2.5" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#interactive-application-and-questions"><i class="fa fa-check"></i><b>2.5</b> Interactive application and questions</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#initial-data-exploration"><i class="fa fa-check"></i><b>2.5.1</b> Initial data exploration</a></li>
+<li class="chapter" data-level="2.5.2" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#synthesis-questions"><i class="fa fa-check"></i><b>2.5.2</b> Synthesis Questions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="hydrograph-separation-lab-module-20-pts.html"><a href="hydrograph-separation-lab-module-20-pts.html"><i class="fa fa-check"></i><b>3</b> Hydrograph separation: lab module (20 pts)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="hydrograph-separation-lab-module-20-pts.html"><a href="hydrograph-separation-lab-module-20-pts.html#intro"><i class="fa fa-check"></i><b>3.1</b> Intro</a></li>
+<li class="chapter" data-level="3.2" data-path="hydrograph-separation-lab-module-20-pts.html"><a href="hydrograph-separation-lab-module-20-pts.html#reading-for-this-lab"><i class="fa fa-check"></i><b>3.2</b> Reading for this lab</a></li>
+<li class="chapter" data-level="3.3" data-path="hydrograph-separation-lab-module-20-pts.html"><a href="hydrograph-separation-lab-module-20-pts.html#repo"><i class="fa fa-check"></i><b>3.3</b> Repo</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html"><i class="fa fa-check"></i><b>4</b> Learning module 2 - Return intervals (14 pts)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#background-information"><i class="fa fa-check"></i><b>4.1</b> Background information</a></li>
+<li class="chapter" data-level="4.2" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#intro-1"><i class="fa fa-check"></i><b>4.2</b> Intro</a></li>
+<li class="chapter" data-level="4.3" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#packages"><i class="fa fa-check"></i><b>4.3</b> Packages</a></li>
+<li class="chapter" data-level="4.4" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#precipitation-return-intervals"><i class="fa fa-check"></i><b>4.4</b> Precipitation return intervals</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q1.-2-pts-what-is-the-probability-that-the-annual-precipitation-in-a-given-year-is-less-than-400-mm-this-is-the-fa-in-the-cdf-in-the-probability-lecture-slides."><i class="fa fa-check"></i><b>4.4.1</b> <strong>Q1. (2 pts) What is the probability that the annual precipitation in a given year is less than 400 mm? This is the F(A) in the CDF in the probability lecture slides.</strong></a></li>
+<li class="chapter" data-level="4.4.2" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q2.-2-pts-what-is-the-probability-that-the-maximum-annual-precipitation-in-a-given-year-is-greater-than-500-mm"><i class="fa fa-check"></i><b>4.4.2</b> <strong>Q2. (2 pts) What is the probability that the maximum annual precipitation in a given year is GREATER than 500 mm?</strong></a></li>
+<li class="chapter" data-level="4.4.3" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q3.-2-pts-what-is-the-probability-that-the-annual-p-is-between-400-and-500-mm"><i class="fa fa-check"></i><b>4.4.3</b> <strong>Q3. (2 pts) What is the probability that the annual P is between 400 and 500 mm?</strong></a></li>
+<li class="chapter" data-level="4.4.4" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q4.-2-pts-what-is-the-return-period-for-a-year-with-at-least-550-mm-of-precip-the-return-period-tr-is-calculated-as-tr-1p-with-p-being-the-probability-for-an-event-to-occur."><i class="fa fa-check"></i><b>4.4.4</b> <strong>Q4. (2 pts) What is the return period for a year with AT LEAST 550 mm of precip? The return period, Tr, is calculated as Tr = 1/p, with p being the probability for an event to occur.</strong></a></li>
+<li class="chapter" data-level="4.4.5" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q5.-6-pts-explain-why-probability-analysis-of-climate-data-assumes-the-data-are-normally-distributed-and-stationary-below-provide-a-histogram-and-a-density-plot-of-the-total-annual-p-data-and-comment-on-the-visual-appearance-in-terms-of-normality.-next-use-google-and-the-links-below-to-test-for-normality-and-stationarity.-be-quantitative-in-commenting-on-the-normality-and-stationarity-of-the-total-p-data."><i class="fa fa-check"></i><b>4.4.5</b> <strong>Q5. (6 pts) Explain why probability analysis of climate data assumes the data are normally distributed and stationary? Below provide a histogram and a density plot of the total annual P data and comment on the visual appearance in terms of normality. Next use google and the links below to test for normality and stationarity. Be quantitative in commenting on the normality and stationarity of the total P data.</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html"><i class="fa fa-check"></i><b>5</b> Rational method and NRCS curve number (14 pts)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#rational-method"><i class="fa fa-check"></i><b>5.1</b> Rational Method</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#background-information-1"><i class="fa fa-check"></i><b>5.1.1</b> Background information</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#curve-number"><i class="fa fa-check"></i><b>5.2</b> Curve Number</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#background-information-2"><i class="fa fa-check"></i><b>5.2.1</b> Background information</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#codework"><i class="fa fa-check"></i><b>5.3</b> Codework</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#packages-1"><i class="fa fa-check"></i><b>5.3.1</b> Packages</a></li>
+<li class="chapter" data-level="5.3.2" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#part-i---rational-method"><i class="fa fa-check"></i><b>5.3.2</b> Part I - Rational Method</a></li>
+<li class="chapter" data-level="5.3.3" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#part-ii---nrcs-cn"><i class="fa fa-check"></i><b>5.3.3</b> Part II - NRCS CN</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Environmental Methods: LRES 546</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="rational-method-and-nrcs-curve-number-14-pts" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Rational method and NRCS curve number (14 pts)<a href="rational-method-and-nrcs-curve-number-14-pts.html#rational-method-and-nrcs-curve-number-14-pts" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The repo for this module can be found <a href="https://github.com/tpcovino/03_rational_curve_number.git" target="_blank">here</a></p>
+<div id="rational-method" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Rational Method<a href="rational-method-and-nrcs-curve-number-14-pts.html#rational-method" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="background-information-1" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Background information<a href="rational-method-and-nrcs-curve-number-14-pts.html#background-information-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>Rational Method</strong> is a type of simple hydrological analysis used to estimate the <em>peak runoff rate</em> from a small watershed during a rainfall event. It is particularly useful for estimating the amount of water that will flow through a particular area during a storm, like a drainage system or culvert.</p>
+<p>Some helpful terminology:</p>
+<p><u>runoff coefficient</u> - represents how much rainfall actually becomes runoff<br>
+<u>time of concentration</u> - the time it takes for some mass of precipitation to travel from the most remote point in a watershed to the outlet or point of interest. e.g., how long it takes a drop of rain to reach a culvert after it falls to the ground.</p>
+<p>Here is a 5-minute video that describes the equation:</p>
+<iframe src="https://www.youtube.com/embed/brNpLh21UCg" width="672" height="400px" data-external="1">
+</iframe>
+<div id="reading---rational-method." class="section level4 hasAnchor" number="5.1.1.1">
+<h4><span class="header-section-number">5.1.1.1</span> Reading - Rational Method.<br><a href="rational-method-and-nrcs-curve-number-14-pts.html#reading---rational-method." class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Read at least sections 2 and 3<br></p>
+<ul>
+<li><a href="https://www.waternz.org.nz/Attachment?Action=Download&amp;Attachment_id=846" target="_blank">Link</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="curve-number" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Curve Number<a href="rational-method-and-nrcs-curve-number-14-pts.html#curve-number" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="background-information-2" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Background information<a href="rational-method-and-nrcs-curve-number-14-pts.html#background-information-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The NRCS (Natural Resources Conservation Science) <strong>curve number</strong> (CN) is a tool used to estimate the <em>total runoff volume</em> of water that will run off an ungaged watershed during a storm event. The curve number is based on soil type, land use and antecedent moisture conditions. You may also see SCS CN in texts. NRCS was previously known as Soil Conservation Service, they are the same.
+It was designed as a simple tool to describe typical watershed response from infrequent rainfall anywhere in the US for watersheds with the same soil type, land use, and surface runoff conditions. The CN method is a single event model to estimate of runoff volume from rainfall events (not peak discharge or a hydrograph).</p>
+<p>To understand the function and derivation of the CN number, let’s start with the NRCS runoff equation:</p>
+<p><span class="math display">\[
+Q = \frac{{(P - I_{a})^2}}{{P - I_{a} + S}}
+\]</span>
+Where Q = runoff(in) <br>
+P = rainfall (in) <br>
+S = potential maximum retention after runoff begins
+I<sub>a</sub> = initial abstraction (initial amount of rainfall that is intercepted by the watershed surface and does not immediately contribute to runoff)</p>
+<p>I<sub>a</sub> is assumed to reduce to 0.2S based on empirical observations by NRCS. If:
+<span class="math display">\[
+S = \frac{{1000}}{{CN}} - 10
+\]</span>
+the runoff equation therefore reduces to:
+<span class="math display">\[
+Q = \frac{{[P - 0.02\left(\frac{{1000}}{{CN}} - 10\right)]^2}}{{P + 0.8\left(\frac{{1000}}{{CN}} - 10\right)}}
+\]</span></p>
+<div id="reading---curve-numbers" class="section level4 hasAnchor" number="5.2.1.1">
+<h4><span class="header-section-number">5.2.1.1</span> Reading - Curve numbers<br><a href="rational-method-and-nrcs-curve-number-14-pts.html#reading---curve-numbers" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Curve Number selection tables are available from the
+<a href="https://directives.sc.egov.usda.gov/17758.wba" target="_blank">USDA.</a></p>
+<p>Slides on selecting curve number start around slide 8. <br>
+- <a href="https://cdn.serc.carleton.edu/files/geoinformatics/steps/presentation_selecting_cn_vari.pdf" target="_blank">Link</a></p>
+</div>
+<div id="reading---supporting-material" class="section level4 hasAnchor" number="5.2.1.2">
+<h4><span class="header-section-number">5.2.1.2</span> Reading - Supporting material<a href="rational-method-and-nrcs-curve-number-14-pts.html#reading---supporting-material" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Time of concentration. Up to “other considerations”, pages 15-1 to 15-9. <br>
+- <a href="https://directives.sc.egov.usda.gov/27002.wba" target="_blank">Link</a></p>
+<p>We will use the Kirpich method to calculate the time of concentration. Here is the citation for your reference.</p>
+<p>Kirpich, Z.P. (1940). “Time of concentration of small agricultural watersheds”. Civil Engineering. 10 (6): 362.</p>
+</div>
+</div>
+</div>
+<div id="codework" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Codework<a href="rational-method-and-nrcs-curve-number-14-pts.html#codework" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this module, you will apply the Rational Method and the SCS curve number (CN) method to estimate peak flows and effective rainfall/runoff volumes. This lab also includes two new coding techniques, namely writing ‘for loops’ and writing functions. We will start with the Rational Method and functions.</p>
+<p>This is knitr settings. Knitr is a package that will turn this Rmd to an html.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb18-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="at">warning =</span> <span class="cn">FALSE</span>, <span class="at">message =</span> <span class="cn">FALSE</span>, <span class="at">results =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div id="packages-1" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Packages<a href="rational-method-and-nrcs-curve-number-14-pts.html#packages-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="part-i---rational-method" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Part I - Rational Method<a href="rational-method-and-nrcs-curve-number-14-pts.html#part-i---rational-method" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The goal is to calculate peak runoff (cfs) for a small 280-acre rangeland watershed near Bozeman for multiple events with different return periods. You will first have to calculate the time of concentration and then look up the the rainfall values for the different return intervals. The longest flowpath in the watershed is 6300 ft long, average watershed slope is 1.95%. Look at this <a href="https://www.dropbox.com/scl/fi/tkofgmpnroug8wwe8x16z/Rational.Method.C.png?rlkey=qgcyayk10j94is3hwjfxuzwz5&amp;dl=0">table</a> to select C.</p>
+<div id="time-of-concentration" class="section level4 hasAnchor" number="5.3.2.1">
+<h4><span class="header-section-number">5.3.2.1</span> Time of Concentration<a href="rational-method-and-nrcs-curve-number-14-pts.html#time-of-concentration" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Time of concentration is the time it takes water to travel along the longest flowpath in the watershed and exit the watershed.</li>
+</ul>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb19-1" tabindex="-1"></a><span class="co"># A &lt;- BLANK # Area in acres</span></span>
+<span id="cb19-2"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb19-2" tabindex="-1"></a><span class="co"># L &lt;- BLANK # Longest flowpatch length (ft)</span></span>
+<span id="cb19-3"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb19-3" tabindex="-1"></a><span class="co"># S &lt;- 0.0195 # Slope (ft/ft)</span></span>
+<span id="cb19-4"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb19-4" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb19-5"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb19-5" tabindex="-1"></a><span class="co"># tc &lt;- 0.0078 * L^0.77 * S^-0.385 # Kirpich concentration time</span></span>
+<span id="cb19-6"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb19-6" tabindex="-1"></a><span class="co"># tc</span></span></code></pre></div>
+</div>
+<div id="storm-depths" class="section level4 hasAnchor" number="5.3.2.2">
+<h4><span class="header-section-number">5.3.2.2</span> Storm Depths<a href="rational-method-and-nrcs-curve-number-14-pts.html#storm-depths" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Now that you have the time of concentration, you need to find the corresponding 1, 2, 5, 10, 25, 50, and 100 year storm depths for a duration that works for the Rational Method in that particular watershed (that is, the duration that is closest to tc). Create a df called “storms” that has a column for the return period, Tr, the storm depth, Pin, and the average storm intensity over ONE HOUR, Pin_hr. Typically hourly depths may be determined from a rainfall analysis. For the sake of the assignment, approximate daily depths corresponding to appropriate frequencies are provided here for Bozeman, MT.
+To obtain 1 hour depths by dividing daily depth by 24.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb20-1" tabindex="-1"></a><span class="co"># storms &lt;- tibble(</span></span>
+<span id="cb20-2"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb20-2" tabindex="-1"></a><span class="co">#   Tr = c(BLANK), # column for return intervals</span></span>
+<span id="cb20-3"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb20-3" tabindex="-1"></a><span class="co">#   Pday = c(1.0, 1.18, 1.75, 2.10, 2.50, 2.81), # column for storm depth</span></span>
+<span id="cb20-4"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb20-4" tabindex="-1"></a><span class="co">#   Pin_hr = Pday / 24) # storm depth converted to an intensity of inches per hour </span></span></code></pre></div>
+</div>
+<div id="example-for-loop" class="section level4 hasAnchor" number="5.3.2.3">
+<h4><span class="header-section-number">5.3.2.3</span> Example for-loop<a href="rational-method-and-nrcs-curve-number-14-pts.html#example-for-loop" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Now that we have the rainfall intensities, we need to set up a way that calculates Qp for each of those intensities, without us having to go back and manually enter them each time. We do this with a for-loop. Let’s first look at how for loops work in R. There is one thing we need to take care of first, though. We have to preallocate the vector y, that is, we are creating an empty vector of the desired length.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb21-1" tabindex="-1"></a><span class="co"># x &lt;- seq(0, 10, 2) # create vector from 0 to 10 in increments of 2</span></span>
+<span id="cb21-2"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb21-2" tabindex="-1"></a><span class="co"># y &lt;- vector(mode = &quot;double&quot;, length(x)) # preallocate y vector with length of x</span></span>
+<span id="cb21-3"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb21-3" tabindex="-1"></a><span class="co"># for (i in 1:length(x)) { # loop through i </span></span>
+<span id="cb21-4"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb21-4" tabindex="-1"></a><span class="co">#   y[i] &lt;- x[i]^2 # calculation</span></span>
+<span id="cb21-5"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb21-5" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb21-6"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb21-6" tabindex="-1"></a><span class="co"># y</span></span></code></pre></div>
+<p>Please note that we wouldn’t need a for-loop for this operation, this is just for demonstration. We have created a vector x from 0 to 10 in increments of 2. The for-loop takes each element of that vector and squares it. The “i” is called an index and runs from 1 through 6 (the length of x). During the first iteration i is 1, during the second iteration i is 2, and so on. We are then writing the results from the calculation into a new vector, y. When i is 1, we are squaring the first value in vector x, which is 0. The first value in y will be zero as well. When i is 2, the second value in x gets squared, which is 2^2. The second value in y is going to be 4.</p>
+</div>
+<div id="calculate-qp-with-for-loop" class="section level4 hasAnchor" number="5.3.2.4">
+<h4><span class="header-section-number">5.3.2.4</span> Calculate Qp with for-loop<a href="rational-method-and-nrcs-curve-number-14-pts.html#calculate-qp-with-for-loop" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Let’s set up the for-loop for the Rational Method. We need to set up a for-loop that does the same calculation 7 times, the number of precip values in “storms” (remember that ‘length()’ for a dataframe returns the number of columns, so you want to use ‘nrow()’. The calculated peak discharges should go into a new column of our “storms” df. However, indexing is slow for dataframes, that is why we will write the new values into a new vector, Qp, and then after the loop insert it into the dataframe.<br>
+<strong>If you are using the complete version of the assignment, do not assume that this C value is correct</strong></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-1" tabindex="-1"></a><span class="co"># # DEFINE C if you haven&#39;t already done so further up (uncomment the line below)</span></span>
+<span id="cb22-2"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-2" tabindex="-1"></a><span class="co"># C &lt;- BLANK # runoff coefficient</span></span>
+<span id="cb22-3"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-3" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb22-4"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-4" tabindex="-1"></a><span class="co"># # preallocate vector (think about what the length needs to be and how to get it without just typing in the number)</span></span>
+<span id="cb22-5"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-5" tabindex="-1"></a><span class="co"># Qp &lt;- vector(mode = &quot;double&quot;, nrow(storms))</span></span>
+<span id="cb22-6"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-6" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb22-7"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-7" tabindex="-1"></a><span class="co"># for (i in 1:nrow(storms)) {</span></span>
+<span id="cb22-8"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-8" tabindex="-1"></a><span class="co">#   # the actual Rational Method calculation goes here. For the precip, you need to use the column in the storms df that has the one hour precip intensities (make sure to not forget the correct index symbol!)</span></span>
+<span id="cb22-9"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-9" tabindex="-1"></a><span class="co">#   Qp[i] &lt;- C * A * storms$Pin_hr[i]</span></span>
+<span id="cb22-10"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-10" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb22-11"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-11" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb22-12"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-12" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb22-13"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-13" tabindex="-1"></a><span class="co"># # this adds the new peakflows to the existing &quot;storms&quot; df</span></span>
+<span id="cb22-14"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-14" tabindex="-1"></a><span class="co"># storms &lt;- storms %&gt;%</span></span>
+<span id="cb22-15"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-15" tabindex="-1"></a><span class="co">#   mutate(Qp = Qp)</span></span>
+<span id="cb22-16"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-16" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb22-17"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-17" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb22-18"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-18" tabindex="-1"></a><span class="co"># # FULL DISCLAIMER</span></span>
+<span id="cb22-19"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-19" tabindex="-1"></a><span class="co"># # We could have accomplished the same with vectorization </span></span>
+<span id="cb22-20"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-20" tabindex="-1"></a><span class="co"># # As a matter of fact, you should try to avoid for loops whenever possible.</span></span>
+<span id="cb22-21"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb22-21" tabindex="-1"></a><span class="co"># Qp_vectorized &lt;- C*A*storms$Pin_hr</span></span></code></pre></div>
+</div>
+<div id="plot-tr-and-qp" class="section level4 hasAnchor" number="5.3.2.5">
+<h4><span class="header-section-number">5.3.2.5</span> Plot Tr and Qp<a href="rational-method-and-nrcs-curve-number-14-pts.html#plot-tr-and-qp" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Now plot the return interval against the storm peakflow. You only need three to four lines for this: 1st sets up the data, 2nd defines the theme that removes the gray background and sets the axes labels to a proper size, 3rd plots the data with geom_points, 4th makes the axes labels with labs.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb23-1" tabindex="-1"></a><span class="co"># ggplot(storms, aes(x = Tr, y = Qp)) +</span></span>
+<span id="cb23-2"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb23-2" tabindex="-1"></a><span class="co">#   theme_bw(base_size = BLANK) +</span></span>
+<span id="cb23-3"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb23-3" tabindex="-1"></a><span class="co">#   geom_point(size = 4, color = BLANK) +</span></span>
+<span id="cb23-4"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb23-4" tabindex="-1"></a><span class="co">#   labs(x = &quot;Return Period (Years)&quot;, y = &quot;Peakflow (cfs)&quot;)</span></span></code></pre></div>
+<p><strong>1. (1 pt) What does the C in the Rational Method do?</strong><br />
+ANSWER:</p>
+<p><strong>2. (2 pt) What is the the time of concentration and why does it need to be taken into account for the Rational Method? What is a common issue among many tc methods?</strong><br />
+ANSWER:</p>
+</div>
+</div>
+<div id="part-ii---nrcs-cn" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Part II - NRCS CN<a href="rational-method-and-nrcs-curve-number-14-pts.html#part-ii---nrcs-cn" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In this exercise we will write a function that takes the necessary inputs for the NRCS CN method and returns a value based on the parameters. This is not fully automated, you will still have to look up the CN yourself for a given land use. The goal is to write a function that requires P, CN, and AMC (antecedent moisture condition) as an input in order to calculate Q.</p>
+<div id="amc-table" class="section level4 hasAnchor" number="5.3.3.1">
+<h4><span class="header-section-number">5.3.3.1</span> AMC Table<a href="rational-method-and-nrcs-curve-number-14-pts.html#amc-table" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="function-example" class="section level4 hasAnchor" number="5.3.3.2">
+<h4><span class="header-section-number">5.3.3.2</span> Function example<a href="rational-method-and-nrcs-curve-number-14-pts.html#function-example" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Let’s look at a simple example for a function. Assume we want a number with an exponent and we want to be able to choose both the base and the exponent. The function ‘function()’ defines the inputs in (), the actual calculation then follows in {}.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb24-1" tabindex="-1"></a><span class="co">#multiply &lt;- function(base, exponent) {</span></span>
+<span id="cb24-2"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb24-2" tabindex="-1"></a><span class="co">#  new_number &lt;- base^exponent</span></span>
+<span id="cb24-3"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb24-3" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb24-4" tabindex="-1"></a><span class="co">#  return(new_number)</span></span>
+<span id="cb24-5"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb24-5" tabindex="-1"></a><span class="co">#}</span></span></code></pre></div>
+<p>Run the above function. You will notice that a function was added to the Global Environment all the way at the bottom. Now let’s test the function with a base of 2 and an exponent of 3. This should perform the calculation 2x2x2 = 8</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb25-1" tabindex="-1"></a><span class="co">#multiply(2, 3)</span></span></code></pre></div>
+</div>
+<div id="nrcs-cn-test" class="section level4 hasAnchor" number="5.3.3.3">
+<h4><span class="header-section-number">5.3.3.3</span> NRCS CN test<a href="rational-method-and-nrcs-curve-number-14-pts.html#nrcs-cn-test" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Before we write a function, let’s make sure we can set up the correct steps WITHOUT the function. Let’s try it for P = 2.5 inches, CN = 90, and AMC = 3.
+The biggest problem here is going to be creating a lookup table for the AMC. I will provide the basic structure of the code for this.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-1" tabindex="-1"></a><span class="co"># P &lt;- 2.5 # 50-year, 24-hour rainfall (in.), from TP40</span></span>
+<span id="cb26-2"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-2" tabindex="-1"></a><span class="co"># CN &lt;- 90</span></span>
+<span id="cb26-3"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-3" tabindex="-1"></a><span class="co"># AMC &lt;- 3</span></span>
+<span id="cb26-4"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-4" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb26-5"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-5" tabindex="-1"></a><span class="co"># </span><span class="al">###</span><span class="co"> Adjust for AMC</span></span>
+<span id="cb26-6"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-6" tabindex="-1"></a><span class="co"># # use the equations from the lecture to adjust the CN to dry or wet conditions if necessary</span></span>
+<span id="cb26-7"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-7" tabindex="-1"></a><span class="co"># # AMC I</span></span>
+<span id="cb26-8"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-8" tabindex="-1"></a><span class="co"># if (AMC == 1) {</span></span>
+<span id="cb26-9"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-9" tabindex="-1"></a><span class="co">#   CN_adj &lt;- (4.2 * CN) / (10 + 0.13 * CN)</span></span>
+<span id="cb26-10"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-10" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb26-11"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-11" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb26-12"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-12" tabindex="-1"></a><span class="co"># # AMC II The curve number remains whatever the input is.</span></span>
+<span id="cb26-13"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-13" tabindex="-1"></a><span class="co"># if (AMC == 2) {</span></span>
+<span id="cb26-14"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-14" tabindex="-1"></a><span class="co">#   CN_adj &lt;- CN</span></span>
+<span id="cb26-15"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-15" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb26-16"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-16" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb26-17"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-17" tabindex="-1"></a><span class="co"># # AMC III</span></span>
+<span id="cb26-18"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-18" tabindex="-1"></a><span class="co"># if (AMC == 3) {</span></span>
+<span id="cb26-19"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-19" tabindex="-1"></a><span class="co">#   CN_adj &lt;- (23 * CN) / (10 + 0.13 * CN)</span></span>
+<span id="cb26-20"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-20" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb26-21"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-21" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb26-22"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-22" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb26-23"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-23" tabindex="-1"></a><span class="co"># # calculate Si</span></span>
+<span id="cb26-24"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-24" tabindex="-1"></a><span class="co"># Si &lt;- 1000 / CN_adj - 10 # Storage part</span></span>
+<span id="cb26-25"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-25" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb26-26"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-26" tabindex="-1"></a><span class="co"># # estimate initial abstraction</span></span>
+<span id="cb26-27"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-27" tabindex="-1"></a><span class="co"># Ia &lt;- 0.2 * Si</span></span>
+<span id="cb26-28"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-28" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb26-29"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-29" tabindex="-1"></a><span class="co"># # Check equation from lecture</span></span>
+<span id="cb26-30"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-30" tabindex="-1"></a><span class="co"># # calculate Q</span></span>
+<span id="cb26-31"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-31" tabindex="-1"></a><span class="co"># Q &lt;- (P - 0.2 * Si)^2 / (P + BLANK * Si) # SCS CN runoff (inches)</span></span>
+<span id="cb26-32"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb26-32" tabindex="-1"></a><span class="co"># Q</span></span></code></pre></div>
+<p><strong>3. (2 pt) What is one of the critical assumptions for the SCS CN method? </strong><br />
+ANSWER:</p>
+<p>Now write a function called “scs_cn” that takes the inputs P, CN, and AMC (all numeric) and returns Q, Ia, Si, and the RR as a df called “scs_out”.
+Test the function for P = 2.5 in, CN = 90, AMC = 3.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-1" tabindex="-1"></a><span class="co"># scs_cn &lt;- function(P, CN, AMC) {</span></span>
+<span id="cb27-2"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-2" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb27-3"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-3" tabindex="-1"></a><span class="co">#   </span><span class="al">###</span><span class="co"> Adjust for AMC</span></span>
+<span id="cb27-4"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-4" tabindex="-1"></a><span class="co">#   # AMC I</span></span>
+<span id="cb27-5"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-5" tabindex="-1"></a><span class="co">#   if (AMC == 1) {</span></span>
+<span id="cb27-6"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-6" tabindex="-1"></a><span class="co">#     CN_adj &lt;- BLANK</span></span>
+<span id="cb27-7"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-7" tabindex="-1"></a><span class="co">#   }</span></span>
+<span id="cb27-8"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-8" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb27-9"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-9" tabindex="-1"></a><span class="co">#   # AMC II</span></span>
+<span id="cb27-10"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-10" tabindex="-1"></a><span class="co">#   if (AMC == 2) {</span></span>
+<span id="cb27-11"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-11" tabindex="-1"></a><span class="co">#     CN_adj &lt;- CN</span></span>
+<span id="cb27-12"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-12" tabindex="-1"></a><span class="co">#   }</span></span>
+<span id="cb27-13"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-13" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb27-14"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-14" tabindex="-1"></a><span class="co">#   # AMC III</span></span>
+<span id="cb27-15"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-15" tabindex="-1"></a><span class="co">#   if (AMC == 3) {</span></span>
+<span id="cb27-16"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-16" tabindex="-1"></a><span class="co">#     CN_adj &lt;- (23 * CN) / (10 + 0.13 * CN)</span></span>
+<span id="cb27-17"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-17" tabindex="-1"></a><span class="co">#   }</span></span>
+<span id="cb27-18"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-18" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb27-19"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-19" tabindex="-1"></a><span class="co"># # Check equation from lecture</span></span>
+<span id="cb27-20"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-20" tabindex="-1"></a><span class="co">#   # calculate S</span></span>
+<span id="cb27-21"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-21" tabindex="-1"></a><span class="co">#   S &lt;- BLANK / CN_adj - 10 # Storage part</span></span>
+<span id="cb27-22"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-22" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb27-23"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-23" tabindex="-1"></a><span class="co">#   # estimate initial abstraction</span></span>
+<span id="cb27-24"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-24" tabindex="-1"></a><span class="co">#   Ia &lt;- 0.2 * S</span></span>
+<span id="cb27-25"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-25" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb27-26"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-26" tabindex="-1"></a><span class="co">#   Q &lt;- (P - 0.2 * S)^2 / (P + 0.8 * S) # SCS CN runoff (inches)</span></span>
+<span id="cb27-27"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-27" tabindex="-1"></a><span class="co">#   </span></span>
+<span id="cb27-28"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-28" tabindex="-1"></a><span class="co">#   # statement that spits out a warning if the initial abstraction is greater than the precipitation amount</span></span>
+<span id="cb27-29"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-29" tabindex="-1"></a><span class="co">#   if (Ia &gt; P) {</span></span>
+<span id="cb27-30"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-30" tabindex="-1"></a><span class="co">#     warning(&quot;Ia is greater than P. Resulting Q is 0.&quot;)</span></span>
+<span id="cb27-31"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-31" tabindex="-1"></a><span class="co">#   }</span></span>
+<span id="cb27-32"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-32" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb27-33"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-33" tabindex="-1"></a><span class="co">#   scs_out &lt;- tibble(Si, Ia, Q, P, RR = Q / P)</span></span>
+<span id="cb27-34"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-34" tabindex="-1"></a><span class="co">#   return(scs_out)</span></span>
+<span id="cb27-35"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-35" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb27-36"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-36" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb27-37"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-37" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb27-38"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-38" tabindex="-1"></a><span class="co"># # </span><span class="al">TEST</span><span class="co"> THE FUNCTION with P = 2.5, CN = 90, and AMC = 3</span></span>
+<span id="cb27-39"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-39" tabindex="-1"></a><span class="co"># SCS_example &lt;- scs_cn(0.01, 90, 3)</span></span>
+<span id="cb27-40"><a href="rational-method-and-nrcs-curve-number-14-pts.html#cb27-40" tabindex="-1"></a><span class="co"># SCS_example</span></span></code></pre></div>
+<p><strong>4.(3 pts) Describe what factors into the curve number (and most notably what is missing). What does it mean when the CN is 100 or 0?</strong><br />
+ANSWER:</p>
+<p>General question:<br />
+<strong>5. (2 pts) What is the difference between a deterministic and a stochastic model? Describe one example each.</strong> ANSWER:</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="learning-module-2---return-intervals-14-pts.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/tpcovino/lres_546_bookdown/edit/main/05_rational_curve_number.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/tpcovino/lres_546_bookdown/blob/main/05_rational_curve_number.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

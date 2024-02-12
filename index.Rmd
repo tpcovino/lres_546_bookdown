@@ -60,42 +60,53 @@ Books/resources, we may not use all of these, but they are good references:<br>
 - Hydrograph separation. <br>
 
 **Week 3 (Unit 2)**: <br>
-- Frequency analysis <br>
+
   
 **Week 4 (Unit 2)**: <br>
-- Rational and curve number (CN) methods <br>
+- Frequency analysis <br>
+
 
 **Week 5 (Unit 3)**: <br> 
-- Transfer function lumped hydrological model 
+- Rational and curve number (CN) methods <br>
+ 
 
 **Week 6 (Unit 4)**: <br>
-- Monte Carlo and sensitivity analysis
+- Transfer function lumped hydrological model
+
 
 **Week 7 (Unit 5)**: <br>
-- HBV model – lumped to semi-distributed modeling <br>
+- Monte Carlo and sensitivity analysis
+
 
 **Week 8 (Unit 6)**: <br>
-- DEM processing and analysis in Whitebox 
+- HBV model – lumped to semi-distributed modeling <br>
+
 
 **Week 9: Spring Break** <br>
 
 **Week 10 (Unit 7)**: <br>
-- Gridded and flow data retrieval 
+- DEM processing and analysis in Whitebox 
+
 
 **Week 11 (Unit 8)**: <br>
-- Precipitation interpolation <br>
+- Gridded and flow data retrieval 
+
 
 **Week 12 (Unit 9)**: <br>
-- Evapotranspiration (ET) models 
+- Precipitation interpolation <br>
+
 
 **Week 13 (Unit 10)**: <br>
-- Snowmelt models
+- Evapotranspiration (ET) models 
+
 
 **Week 14**: <br>
-- Distributed model (WECOH or ATS) and/or term project work
+- Snowmelt models
+
 
 **Week 15**: <br>
-- Final presentations and/or work sessions
+- Distributed model (WECOH or ATS) and/or term project work
+
 
 **Week 16**: <br>
 - Final presentations

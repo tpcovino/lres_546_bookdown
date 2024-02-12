@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="hydrograph-separation-lab-module-20-pts.html"/>
-<link rel="next" href="rational-and-curve-number-cn-methods.html"/>
+<link rel="next" href="rational-method-and-nrcs-curve-number-14-pts.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -186,7 +186,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.4.5" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q5.-6-pts-explain-why-probability-analysis-of-climate-data-assumes-the-data-are-normally-distributed-and-stationary-below-provide-a-histogram-and-a-density-plot-of-the-total-annual-p-data-and-comment-on-the-visual-appearance-in-terms-of-normality.-next-use-google-and-the-links-below-to-test-for-normality-and-stationarity.-be-quantitative-in-commenting-on-the-normality-and-stationarity-of-the-total-p-data."><i class="fa fa-check"></i><b>4.4.5</b> <strong>Q5. (6 pts) Explain why probability analysis of climate data assumes the data are normally distributed and stationary? Below provide a histogram and a density plot of the total annual P data and comment on the visual appearance in terms of normality. Next use google and the links below to test for normality and stationarity. Be quantitative in commenting on the normality and stationarity of the total P data.</strong></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="rational-and-curve-number-cn-methods.html"><a href="rational-and-curve-number-cn-methods.html"><i class="fa fa-check"></i><b>5</b> Rational and Curve Number (CN) methods</a></li>
+<li class="chapter" data-level="5" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html"><i class="fa fa-check"></i><b>5</b> Rational method and NRCS curve number (14 pts)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#rational-method"><i class="fa fa-check"></i><b>5.1</b> Rational Method</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#background-information-1"><i class="fa fa-check"></i><b>5.1.1</b> Background information</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#curve-number"><i class="fa fa-check"></i><b>5.2</b> Curve Number</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#background-information-2"><i class="fa fa-check"></i><b>5.2.1</b> Background information</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#codework"><i class="fa fa-check"></i><b>5.3</b> Codework</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#packages-1"><i class="fa fa-check"></i><b>5.3.1</b> Packages</a></li>
+<li class="chapter" data-level="5.3.2" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#part-i---rational-method"><i class="fa fa-check"></i><b>5.3.2</b> Part I - Rational Method</a></li>
+<li class="chapter" data-level="5.3.3" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#part-ii---nrcs-cn"><i class="fa fa-check"></i><b>5.3.3</b> Part II - NRCS CN</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -239,44 +255,123 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="learning-module-2---return-intervals-14-pts.html#cb2-1" tabindex="-1"></a><span class="co"># library(tidyverse)</span></span>
 <span id="cb2-2"><a href="learning-module-2---return-intervals-14-pts.html#cb2-2" tabindex="-1"></a><span class="co"># library(rnoaa) #this package is being deprecated, unfortunately. But should work for now. </span></span>
 <span id="cb2-3"><a href="learning-module-2---return-intervals-14-pts.html#cb2-3" tabindex="-1"></a><span class="co"># library(plotly)</span></span>
-<span id="cb2-4"><a href="learning-module-2---return-intervals-14-pts.html#cb2-4" tabindex="-1"></a><span class="co"># library(leaflet)</span></span></code></pre></div>
+<span id="cb2-4"><a href="learning-module-2---return-intervals-14-pts.html#cb2-4" tabindex="-1"></a><span class="co"># library(leaflet)</span></span>
+<span id="cb2-5"><a href="learning-module-2---return-intervals-14-pts.html#cb2-5" tabindex="-1"></a><span class="co"># library(lubridate)</span></span></code></pre></div>
 </div>
 <div id="precipitation-return-intervals" class="section level2 hasAnchor" number="4.4">
 <h2><span class="header-section-number">4.4</span> Precipitation return intervals<a href="learning-module-2---return-intervals-14-pts.html#precipitation-return-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>First, let’s start by getting some precipitation (P) data. rnoaa has a function called ghcnd_stations(). This function will download the site information for all stations in the GHCND network.</p>
 <p>GHCND network
 - <a href="https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily" target="_blank">Link</a></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="learning-module-2---return-intervals-14-pts.html#cb3-1" tabindex="-1"></a><span class="co"># download all available station metadata</span></span>
-<span id="cb3-2"><a href="learning-module-2---return-intervals-14-pts.html#cb3-2" tabindex="-1"></a><span class="co"># THIS CAN TAKE A WHILE! I&#39;d suggest to run it only once and then comment it out with #.</span></span>
-<span id="cb3-3"><a href="learning-module-2---return-intervals-14-pts.html#cb3-3" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="learning-module-2---return-intervals-14-pts.html#cb3-4" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="learning-module-2---return-intervals-14-pts.html#cb3-5" tabindex="-1"></a><span class="co"># Now, let&#39;s create a zoomable map with the stations around Gallatin County/Bozeman. Click around and find the station id for the precip gauge with the LONGEST timeseries. If you click on a station symbol, the first and last data year will appear. Obviously you can get this information from the station_data_gal data frame, but I wanted to show you the mapping capabilities. </span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="learning-module-2---return-intervals-14-pts.html#cb3-1" tabindex="-1"></a><span class="co"># # download all available station metadata</span></span>
+<span id="cb3-2"><a href="learning-module-2---return-intervals-14-pts.html#cb3-2" tabindex="-1"></a><span class="co"># # THIS CAN TAKE A WHILE! I&#39;d suggest to run it only once and then comment it out with #.</span></span>
+<span id="cb3-3"><a href="learning-module-2---return-intervals-14-pts.html#cb3-3" tabindex="-1"></a><span class="co"># station_data_download &lt;- ghcnd_stations()  </span></span>
+<span id="cb3-4"><a href="learning-module-2---return-intervals-14-pts.html#cb3-4" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb3-5"><a href="learning-module-2---return-intervals-14-pts.html#cb3-5" tabindex="-1"></a><span class="co"># # filter to only keep MT stations</span></span>
+<span id="cb3-6"><a href="learning-module-2---return-intervals-14-pts.html#cb3-6" tabindex="-1"></a><span class="co"># station_data &lt;- station_data_download %&gt;% </span></span>
+<span id="cb3-7"><a href="learning-module-2---return-intervals-14-pts.html#cb3-7" tabindex="-1"></a><span class="co">#   filter(state == &quot;BLANK&quot;)</span></span>
+<span id="cb3-8"><a href="learning-module-2---return-intervals-14-pts.html#cb3-8" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb3-9"><a href="learning-module-2---return-intervals-14-pts.html#cb3-9" tabindex="-1"></a><span class="co"># # that&#39;s still a lot of stations. Let thin for &quot;BOZEMAN&quot;</span></span>
+<span id="cb3-10"><a href="learning-module-2---return-intervals-14-pts.html#cb3-10" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb3-11"><a href="learning-module-2---return-intervals-14-pts.html#cb3-11" tabindex="-1"></a><span class="co"># station_data_bzn &lt;- station_data %&gt;% </span></span>
+<span id="cb3-12"><a href="learning-module-2---return-intervals-14-pts.html#cb3-12" tabindex="-1"></a><span class="co">#   filter(str_detect(name, &quot;BLANK&quot;)) %&gt;% </span></span>
+<span id="cb3-13"><a href="learning-module-2---return-intervals-14-pts.html#cb3-13" tabindex="-1"></a><span class="co">#   # get rid of duplicate ids to make plotting easier</span></span>
+<span id="cb3-14"><a href="learning-module-2---return-intervals-14-pts.html#cb3-14" tabindex="-1"></a><span class="co">#   dplyr::distinct(id, .keep_all = TRUE)</span></span>
+<span id="cb3-15"><a href="learning-module-2---return-intervals-14-pts.html#cb3-15" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb3-16"><a href="learning-module-2---return-intervals-14-pts.html#cb3-16" tabindex="-1"></a><span class="co"># # Now, let&#39;s create a zoomable map with the stations around Gallatin County/Bozeman. Click around and find the station id for the precip gauge with the LONGEST timeseries. If you click on a station symbol, the first and last data year will appear. Obviously you can get this information from the station_data_gal data frame, but I wanted to show you the mapping capabilities. </span></span>
+<span id="cb3-17"><a href="learning-module-2---return-intervals-14-pts.html#cb3-17" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb3-18"><a href="learning-module-2---return-intervals-14-pts.html#cb3-18" tabindex="-1"></a><span class="co"># gauge_map &lt;- leaflet() %&gt;% </span></span>
+<span id="cb3-19"><a href="learning-module-2---return-intervals-14-pts.html#cb3-19" tabindex="-1"></a><span class="co">#     # add a basemap</span></span>
+<span id="cb3-20"><a href="learning-module-2---return-intervals-14-pts.html#cb3-20" tabindex="-1"></a><span class="co">#   addTiles() %&gt;%</span></span>
+<span id="cb3-21"><a href="learning-module-2---return-intervals-14-pts.html#cb3-21" tabindex="-1"></a><span class="co">#     # add markers for your station. The parameters are pretty self-explanatory</span></span>
+<span id="cb3-22"><a href="learning-module-2---return-intervals-14-pts.html#cb3-22" tabindex="-1"></a><span class="co">#   addAwesomeMarkers(data = station_data_bzn, lat = ~latitude, lng = ~longitude, label = ~id, popup = ~paste(&quot;Start date:&quot;, first_year, &quot;&lt;br&gt;End date:&quot;, last_year))</span></span>
+<span id="cb3-23"><a href="learning-module-2---return-intervals-14-pts.html#cb3-23" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb3-24"><a href="learning-module-2---return-intervals-14-pts.html#cb3-24" tabindex="-1"></a><span class="co"># gauge_map</span></span></code></pre></div>
 <p>Ok, so we want station USC00241044, which runs from 1892 to now. We use the meteo_pull_monitors() function to do that.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="learning-module-2---return-intervals-14-pts.html#cb4-1" tabindex="-1"></a><span class="co"># climate_data &lt;-   meteo_pull_monitors(c(&quot;BLANK&quot;),</span></span>
+<span id="cb4-2"><a href="learning-module-2---return-intervals-14-pts.html#cb4-2" tabindex="-1"></a><span class="co"># # precip, snow, min air temp, max air temp (we really won&#39;t use the temp and snow data, though, this is only to show you what else would be available)</span></span>
+<span id="cb4-3"><a href="learning-module-2---return-intervals-14-pts.html#cb4-3" tabindex="-1"></a><span class="co">#                       var = c(&quot;PRCP&quot;, &quot;SNOW&quot;, &quot;TMIN&quot;, &quot;TMAX&quot;),</span></span>
+<span id="cb4-4"><a href="learning-module-2---return-intervals-14-pts.html#cb4-4" tabindex="-1"></a><span class="co">#                       date_min = &quot;1893-10-01&quot;,</span></span>
+<span id="cb4-5"><a href="learning-module-2---return-intervals-14-pts.html#cb4-5" tabindex="-1"></a><span class="co">#                       # set end date to September 30, 2022</span></span>
+<span id="cb4-6"><a href="learning-module-2---return-intervals-14-pts.html#cb4-6" tabindex="-1"></a><span class="co">#                       date_max = &quot;2022-09-30&quot;)</span></span></code></pre></div>
 <p>Now we have some climate data. Take a minute to look at the climate_data df. First, just looking at the df we see that the data don’t actually start until 1894. It is also always a good idea to just plot some data. Below plot prcp, snow, tmax and tmin. You can just make 4 different plots. This is just for visual inspection. This part of the process is called exploratory data analysis (EDA). This should always be the first step when downloading data whether you download the data from the internet or from a sensor in the field.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="learning-module-2---return-intervals-14-pts.html#cb5-1" tabindex="-1"></a><span class="co"># climate_data %&gt;% </span></span>
+<span id="cb5-2"><a href="learning-module-2---return-intervals-14-pts.html#cb5-2" tabindex="-1"></a><span class="co">#   ggplot(aes(x = date, y = prcp)) +</span></span>
+<span id="cb5-3"><a href="learning-module-2---return-intervals-14-pts.html#cb5-3" tabindex="-1"></a><span class="co">#   geom_point()</span></span></code></pre></div>
 <p>You might have noticed that the values seem to be much too large! Did you notice that? This is a great skill to develop. Have a look at the data and ask “are these numbers reasonable?”. In this case, the answer would be no!</p>
 <p>One thing to note is that NOAA data comes in tenths of degrees for temp and tenths of millimeters for precip. Type ?meteo_pull_monitors into the console and the help screen will tell you that. So, we need to clean up the df a bit. Let’s do that here.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="learning-module-2---return-intervals-14-pts.html#cb6-1" tabindex="-1"></a><span class="co"># climate_data_corr &lt;- climate_data %&gt;% </span></span>
+<span id="cb6-2"><a href="learning-module-2---return-intervals-14-pts.html#cb6-2" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb6-3"><a href="learning-module-2---return-intervals-14-pts.html#cb6-3" tabindex="-1"></a><span class="co">#     # change names</span></span>
+<span id="cb6-4"><a href="learning-module-2---return-intervals-14-pts.html#cb6-4" tabindex="-1"></a><span class="co">#     name = recode(id, USC00241044</span></span>
+<span id="cb6-5"><a href="learning-module-2---return-intervals-14-pts.html#cb6-5" tabindex="-1"></a><span class="co">#                   = &quot;msu_campus&quot;),</span></span>
+<span id="cb6-6"><a href="learning-module-2---return-intervals-14-pts.html#cb6-6" tabindex="-1"></a><span class="co">#     # division by 10 turns it into a normal decimal, 15.6 instead of 156</span></span>
+<span id="cb6-7"><a href="learning-module-2---return-intervals-14-pts.html#cb6-7" tabindex="-1"></a><span class="co">#     tmin = tmin / 10,</span></span>
+<span id="cb6-8"><a href="learning-module-2---return-intervals-14-pts.html#cb6-8" tabindex="-1"></a><span class="co">#     tmax = tmax / 10,</span></span>
+<span id="cb6-9"><a href="learning-module-2---return-intervals-14-pts.html#cb6-9" tabindex="-1"></a><span class="co">#     prcp = prcp / 10,</span></span>
+<span id="cb6-10"><a href="learning-module-2---return-intervals-14-pts.html#cb6-10" tabindex="-1"></a><span class="co">#     snow = snow / 10) %&gt;%</span></span>
+<span id="cb6-11"><a href="learning-module-2---return-intervals-14-pts.html#cb6-11" tabindex="-1"></a><span class="co">#   # only take important stuff</span></span>
+<span id="cb6-12"><a href="learning-module-2---return-intervals-14-pts.html#cb6-12" tabindex="-1"></a><span class="co">#   select(name, id, everything())</span></span></code></pre></div>
 <p>Now that we’ve converted units, it is a good idea to plot your data again for some EDA. Make plots of each of the variables (prcp, snow, tmax, and tmin) over time to inspect.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="learning-module-2---return-intervals-14-pts.html#cb7-1" tabindex="-1"></a><span class="co"># ggplotly(</span></span>
+<span id="cb7-2"><a href="learning-module-2---return-intervals-14-pts.html#cb7-2" tabindex="-1"></a><span class="co">#   climate_data_corr %&gt;% </span></span>
+<span id="cb7-3"><a href="learning-module-2---return-intervals-14-pts.html#cb7-3" tabindex="-1"></a><span class="co">#   ggplot(aes(x = date, y = prcp)) +</span></span>
+<span id="cb7-4"><a href="learning-module-2---return-intervals-14-pts.html#cb7-4" tabindex="-1"></a><span class="co">#     geom_point() +</span></span>
+<span id="cb7-5"><a href="learning-module-2---return-intervals-14-pts.html#cb7-5" tabindex="-1"></a><span class="co">#   geom_line(linetype = &quot;dashed&quot;)</span></span>
+<span id="cb7-6"><a href="learning-module-2---return-intervals-14-pts.html#cb7-6" tabindex="-1"></a><span class="co"># ) # I commented this out just because plotly is slow. </span></span>
+<span id="cb7-7"><a href="learning-module-2---return-intervals-14-pts.html#cb7-7" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="learning-module-2---return-intervals-14-pts.html#cb7-8" tabindex="-1"></a><span class="co"># climate_data_corr %&gt;% </span></span>
+<span id="cb7-9"><a href="learning-module-2---return-intervals-14-pts.html#cb7-9" tabindex="-1"></a><span class="co">#   ggplot(aes(x = date, y = snow)) +</span></span>
+<span id="cb7-10"><a href="learning-module-2---return-intervals-14-pts.html#cb7-10" tabindex="-1"></a><span class="co">#   geom_point()</span></span></code></pre></div>
 <p>How do the data look? Do they make sense? Do you see any strange values?</p>
 <p>There is a large snow event in 1951. We can assume that is “real”, so let’s keep it in the analysis. But you should think through how you could exclude it from the analysis. How could you use the filter function to do that?</p>
 <p>Next, we want to use some skills from the hydrograph sep lab to add a water year (WY) column. Try that here.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="learning-module-2---return-intervals-14-pts.html#cb8-1" tabindex="-1"></a><span class="co"># climate_data_corr &lt;- climate_data_corr %&gt;% </span></span>
+<span id="cb8-2"><a href="learning-module-2---return-intervals-14-pts.html#cb8-2" tabindex="-1"></a><span class="co">#   mutate(month = month(date),</span></span>
+<span id="cb8-3"><a href="learning-module-2---return-intervals-14-pts.html#cb8-3" tabindex="-1"></a><span class="co">#          year = year(date),</span></span>
+<span id="cb8-4"><a href="learning-module-2---return-intervals-14-pts.html#cb8-4" tabindex="-1"></a><span class="co">#          wy = BLANK(month &gt; 9, year + 1, year))</span></span></code></pre></div>
 <p>I like to rearrange the order of columns. Using:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="learning-module-2---return-intervals-14-pts.html#cb9-1" tabindex="-1"></a><span class="co"># climate_data_corr &lt;- climate_data_corr %&gt;% </span></span>
+<span id="cb9-2"><a href="learning-module-2---return-intervals-14-pts.html#cb9-2" tabindex="-1"></a><span class="co">#   select(name, id, date, wy, everything())</span></span></code></pre></div>
 <p>Now, create a new df called climate_an where you calculate the total P (i.e., the sum) for each water year. Use group_by and summarize (or better yet, reframe). Also keep in mind that you will need to deal with NA values in the df. How do you do that in summarize? As a note, reframe can be used instead of summarize and is a more general purpose function. You can try each.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="learning-module-2---return-intervals-14-pts.html#cb10-1" tabindex="-1"></a><span class="co"># climate_an &lt;- climate_data_corr %&gt;% </span></span>
+<span id="cb10-2"><a href="learning-module-2---return-intervals-14-pts.html#cb10-2" tabindex="-1"></a><span class="co">#   group_by(wy) %&gt;% </span></span>
+<span id="cb10-3"><a href="learning-module-2---return-intervals-14-pts.html#cb10-3" tabindex="-1"></a><span class="co">#   BLANK(tot_p = sum(prcp,  BLANK), </span></span>
+<span id="cb10-4"><a href="learning-module-2---return-intervals-14-pts.html#cb10-4" tabindex="-1"></a><span class="co">#             mean_max = mean(tmax, BLANK), </span></span>
+<span id="cb10-5"><a href="learning-module-2---return-intervals-14-pts.html#cb10-5" tabindex="-1"></a><span class="co">#             mean_min = min(tmin, BLANK)) # I also calculate some temp stats here. Just out of curiosity. We don&#39;t use them in this lab. </span></span></code></pre></div>
 <p>What happens if you don’t deal with NA values by using something like na.rm = TRUE?</p>
 <p>Now, plot total anual P on the Y and water year on the x. What do you see?</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="learning-module-2---return-intervals-14-pts.html#cb11-1" tabindex="-1"></a><span class="co"># climate_an %&gt;% </span></span>
+<span id="cb11-2"><a href="learning-module-2---return-intervals-14-pts.html#cb11-2" tabindex="-1"></a><span class="co">#   ggplot(aes(x = wy, y = tot_p)) +</span></span>
+<span id="cb11-3"><a href="learning-module-2---return-intervals-14-pts.html#cb11-3" tabindex="-1"></a><span class="co">#   geom_point() +</span></span>
+<span id="cb11-4"><a href="learning-module-2---return-intervals-14-pts.html#cb11-4" tabindex="-1"></a><span class="co">#   geom_line(linetype = &quot;dashed&quot;, color = &quot;blue&quot;)</span></span></code></pre></div>
 <p>Now let’s calculate some probabilities. Look up the <code>pnorm()</code> function for this (either type it into the Help window, or type ?pnorm in the console. You only need x, the mean, and standard deviation (sd) for the calculations.</p>
 <div id="q1.-2-pts-what-is-the-probability-that-the-annual-precipitation-in-a-given-year-is-less-than-400-mm-this-is-the-fa-in-the-cdf-in-the-probability-lecture-slides." class="section level3 hasAnchor" number="4.4.1">
 <h3><span class="header-section-number">4.4.1</span> <strong>Q1. (2 pts) What is the probability that the annual precipitation in a given year is less than 400 mm? This is the F(A) in the CDF in the probability lecture slides.</strong><a href="learning-module-2---return-intervals-14-pts.html#q1.-2-pts-what-is-the-probability-that-the-annual-precipitation-in-a-given-year-is-less-than-400-mm-this-is-the-fa-in-the-cdf-in-the-probability-lecture-slides." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="learning-module-2---return-intervals-14-pts.html#cb12-1" tabindex="-1"></a><span class="co"># p_400 &lt;- pnorm(400, mean(climate_an$tot_p), sd(climate_an$tot_p))</span></span>
+<span id="cb12-2"><a href="learning-module-2---return-intervals-14-pts.html#cb12-2" tabindex="-1"></a><span class="co"># p_400</span></span></code></pre></div>
 <p>Q1 ANSWER:</p>
 </div>
 <div id="q2.-2-pts-what-is-the-probability-that-the-maximum-annual-precipitation-in-a-given-year-is-greater-than-500-mm" class="section level3 hasAnchor" number="4.4.2">
 <h3><span class="header-section-number">4.4.2</span> <strong>Q2. (2 pts) What is the probability that the maximum annual precipitation in a given year is GREATER than 500 mm?</strong><a href="learning-module-2---return-intervals-14-pts.html#q2.-2-pts-what-is-the-probability-that-the-maximum-annual-precipitation-in-a-given-year-is-greater-than-500-mm" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="learning-module-2---return-intervals-14-pts.html#cb13-1" tabindex="-1"></a><span class="co"># p_500 &lt;- pnorm(500, mean(climate_an$tot_p), sd(climate_an$tot_p))</span></span>
+<span id="cb13-2"><a href="learning-module-2---return-intervals-14-pts.html#cb13-2" tabindex="-1"></a><span class="co"># ex_500 &lt;- 1 - p_500</span></span>
+<span id="cb13-3"><a href="learning-module-2---return-intervals-14-pts.html#cb13-3" tabindex="-1"></a><span class="co"># ex_500</span></span></code></pre></div>
 <p>Q2 ANSWER:</p>
 </div>
 <div id="q3.-2-pts-what-is-the-probability-that-the-annual-p-is-between-400-and-500-mm" class="section level3 hasAnchor" number="4.4.3">
 <h3><span class="header-section-number">4.4.3</span> <strong>Q3. (2 pts) What is the probability that the annual P is between 400 and 500 mm?</strong><a href="learning-module-2---return-intervals-14-pts.html#q3.-2-pts-what-is-the-probability-that-the-annual-p-is-between-400-and-500-mm" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="learning-module-2---return-intervals-14-pts.html#cb14-1" tabindex="-1"></a><span class="co"># p_500_400 &lt;- p_500 - p_400</span></span>
+<span id="cb14-2"><a href="learning-module-2---return-intervals-14-pts.html#cb14-2" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb14-3"><a href="learning-module-2---return-intervals-14-pts.html#cb14-3" tabindex="-1"></a><span class="co"># p_500_400</span></span></code></pre></div>
 </div>
 <div id="q4.-2-pts-what-is-the-return-period-for-a-year-with-at-least-550-mm-of-precip-the-return-period-tr-is-calculated-as-tr-1p-with-p-being-the-probability-for-an-event-to-occur." class="section level3 hasAnchor" number="4.4.4">
 <h3><span class="header-section-number">4.4.4</span> <strong>Q4. (2 pts) What is the return period for a year with AT LEAST 550 mm of precip? The return period, Tr, is calculated as Tr = 1/p, with p being the probability for an event to occur.</strong><a href="learning-module-2---return-intervals-14-pts.html#q4.-2-pts-what-is-the-return-period-for-a-year-with-at-least-550-mm-of-precip-the-return-period-tr-is-calculated-as-tr-1p-with-p-being-the-probability-for-an-event-to-occur." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="learning-module-2---return-intervals-14-pts.html#cb15-1" tabindex="-1"></a><span class="co"># p_550 &lt;- pnorm(550, mean(climate_an$tot_p), sd(climate_an$tot_p))</span></span>
+<span id="cb15-2"><a href="learning-module-2---return-intervals-14-pts.html#cb15-2" tabindex="-1"></a><span class="co"># ex_550 &lt;- 1 - p_550</span></span>
+<span id="cb15-3"><a href="learning-module-2---return-intervals-14-pts.html#cb15-3" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb15-4"><a href="learning-module-2---return-intervals-14-pts.html#cb15-4" tabindex="-1"></a><span class="co"># ri &lt;- 1/ex_550</span></span>
+<span id="cb15-5"><a href="learning-module-2---return-intervals-14-pts.html#cb15-5" tabindex="-1"></a><span class="co"># ri</span></span></code></pre></div>
 </div>
 <div id="q5.-6-pts-explain-why-probability-analysis-of-climate-data-assumes-the-data-are-normally-distributed-and-stationary-below-provide-a-histogram-and-a-density-plot-of-the-total-annual-p-data-and-comment-on-the-visual-appearance-in-terms-of-normality.-next-use-google-and-the-links-below-to-test-for-normality-and-stationarity.-be-quantitative-in-commenting-on-the-normality-and-stationarity-of-the-total-p-data." class="section level3 hasAnchor" number="4.4.5">
 <h3><span class="header-section-number">4.4.5</span> <strong>Q5. (6 pts) Explain why probability analysis of climate data assumes the data are normally distributed and stationary? Below provide a histogram and a density plot of the total annual P data and comment on the visual appearance in terms of normality. Next use google and the links below to test for normality and stationarity. Be quantitative in commenting on the normality and stationarity of the total P data.</strong><a href="learning-module-2---return-intervals-14-pts.html#q5.-6-pts-explain-why-probability-analysis-of-climate-data-assumes-the-data-are-normally-distributed-and-stationary-below-provide-a-histogram-and-a-density-plot-of-the-total-annual-p-data-and-comment-on-the-visual-appearance-in-terms-of-normality.-next-use-google-and-the-links-below-to-test-for-normality-and-stationarity.-be-quantitative-in-commenting-on-the-normality-and-stationarity-of-the-total-p-data." class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -285,6 +380,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><a href="https://www.statology.org/kpss-test-in-r/" target="_blank">here</a></p></li>
 <li><p><a href="http://www.sthda.com/english/wiki/normality-test-in-r" target="_blank">here</a></p></li>
 </ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="learning-module-2---return-intervals-14-pts.html#cb16-1" tabindex="-1"></a><span class="co">#shapiro.test(climate_an$tot_p)</span></span>
+<span id="cb16-2"><a href="learning-module-2---return-intervals-14-pts.html#cb16-2" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="learning-module-2---return-intervals-14-pts.html#cb16-3" tabindex="-1"></a><span class="co">#lag.length = 25</span></span>
+<span id="cb16-4"><a href="learning-module-2---return-intervals-14-pts.html#cb16-4" tabindex="-1"></a><span class="co">#Box.test(climate_an$tot_p, lag = lag.length, type = &quot;Ljung-Box&quot;) # test stationary signal</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="learning-module-2---return-intervals-14-pts.html#cb17-1" tabindex="-1"></a><span class="co"># climate_an %&gt;% </span></span>
+<span id="cb17-2"><a href="learning-module-2---return-intervals-14-pts.html#cb17-2" tabindex="-1"></a><span class="co">#   ggplot(aes(x = tot_p)) +</span></span>
+<span id="cb17-3"><a href="learning-module-2---return-intervals-14-pts.html#cb17-3" tabindex="-1"></a><span class="co">#   theme_bw() +</span></span>
+<span id="cb17-4"><a href="learning-module-2---return-intervals-14-pts.html#cb17-4" tabindex="-1"></a><span class="co">#   geom_histogram(binwidth = 20, aes(y = after_stat(density)), colour = &quot;black&quot;, fill = &quot;gray&quot;) + # histogram</span></span>
+<span id="cb17-5"><a href="learning-module-2---return-intervals-14-pts.html#cb17-5" tabindex="-1"></a><span class="co">#   geom_density(alpha = 0.2, fill = &quot;red&quot;) # density plot</span></span></code></pre></div>
 
 </div>
 </div>
@@ -295,7 +399,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="hydrograph-separation-lab-module-20-pts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="rational-and-curve-number-cn-methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="rational-method-and-nrcs-curve-number-14-pts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -349,6 +453,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
