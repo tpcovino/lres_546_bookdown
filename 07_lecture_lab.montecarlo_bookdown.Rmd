@@ -34,7 +34,7 @@ Monte Carlo Simulation is not only useful for estimating probabilities, but for 
 
 Let's consider all of this in an example model called [WECOH - Watershed ECOHydrology](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2014WR016719). In this study, researchers (Nippgen et al.) were interested in the change in subsurface water storage through time and space on a daily and seasonal basis.
 
-![Evolution of watershed connectivity ](./wrcr21497-fig-0009-m.jpg){width=50%}
+![Evolution of watershed connectivity](./images/wrcr21497-fig-0009-m.jpg){width=50%}
 
 <br/><br/>
 The authors directly measured runoff/discharge, collected precipitation data at several points within the watershed, used remote sensing to estimate how much water was lost to evapotranspiration, and used digital elevation models to characterize the watershed topography. As we learned in the hydrograph separation module, topographic characteristics can have a significant impact on storage. <br>
