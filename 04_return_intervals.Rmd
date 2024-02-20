@@ -1,12 +1,3 @@
----
-author: "YOUR NAME HERE"
-output: 
-  html_document:
-    toc: true
-    toc_depth: 3
-    toc_float: true
----
-
 # Learning module 2 - Return intervals (14 pts)
 
 - In this learning module we will focus on return intervals. We first need to understand return intervals before we can move onto the rational method and curve numbers.

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Introduction | Environmental Modeling: LRES 546</title>
-  <meta name="description" content="Chapter 2 Introduction | Environmental Modeling: LRES 546" />
+  <title>Chapter 6 Introduction | Transfer function rainfall-runoff models</title>
+  <meta name="description" content="Chapter 6 Introduction | Transfer function rainfall-runoff models" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Introduction | Environmental Modeling: LRES 546" />
+  <meta property="og:title" content="Chapter 6 Introduction | Transfer function rainfall-runoff models" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Introduction | Environmental Modeling: LRES 546" />
+  <meta name="twitter:title" content="Chapter 6 Introduction | Transfer function rainfall-runoff models" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html"/>
+<link rel="prev" href="rational-method-and-nrcs-curve-number-14-pts.html"/>
+<link rel="next" href="codework---transfer-function-rainfall-runoff-model.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -53,6 +53,70 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -77,37 +141,79 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#course-overview-and-objectives"><i class="fa fa-check"></i><b>1.1</b> Course overview and objectives:</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#course-description"><i class="fa fa-check"></i><b>1.2</b> Course Description:</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i><b>1.3</b> Structure:</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#philosophical-approach-and-resources"><i class="fa fa-check"></i><b>1.4</b> Philosophical approach and resources:</a></li>
-<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#tentative-schedule-subject-to-change"><i class="fa fa-check"></i><b>1.5</b> Tentative schedule, subject to change:</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#course-overview-and-objectives"><i class="fa fa-check"></i><b>1.1</b> Course overview and objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#course-description"><i class="fa fa-check"></i><b>1.2</b> Course Description</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i><b>1.3</b> Structure</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#philosophical-approach-and-resources"><i class="fa fa-check"></i><b>1.4</b> Philosophical approach and resources</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#tentative-schedule-subject-to-change"><i class="fa fa-check"></i><b>1.5</b> Tentative schedule, subject to change</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<li class="chapter" data-level="2" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html"><i class="fa fa-check"></i><b>2</b> Hydrograph separation: learning module</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introduction-1.html"><a href="introduction-1.html#summary"><i class="fa fa-check"></i><b>2.1</b> Summary</a></li>
-<li class="chapter" data-level="2.2" data-path="introduction-1.html"><a href="introduction-1.html#overall-learning-objectives"><i class="fa fa-check"></i><b>2.2</b> Overall Learning Objectives</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction-1.html"><a href="introduction-1.html#lecture"><i class="fa fa-check"></i><b>2.3</b> Lecture</a>
+<li class="chapter" data-level="2.1" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#summary"><i class="fa fa-check"></i><b>2.1</b> Summary</a></li>
+<li class="chapter" data-level="2.2" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#overall-learning-objectives"><i class="fa fa-check"></i><b>2.2</b> Overall Learning Objectives</a></li>
+<li class="chapter" data-level="2.3" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#lecture"><i class="fa fa-check"></i><b>2.3</b> Lecture</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="introduction-1.html"><a href="introduction-1.html#components-of-streamflow-during-a-rain-event"><i class="fa fa-check"></i><b>2.3.1</b> Components of streamflow during a rain event</a></li>
-<li class="chapter" data-level="2.3.2" data-path="introduction-1.html"><a href="introduction-1.html#storm-flow-through-a-hillslope"><i class="fa fa-check"></i><b>2.3.2</b> Storm flow through a hillslope</a></li>
-<li class="chapter" data-level="2.3.3" data-path="introduction-1.html"><a href="introduction-1.html#how-we-quantify-baseflow"><i class="fa fa-check"></i><b>2.3.3</b> How we quantify baseflow</a></li>
-<li class="chapter" data-level="2.3.4" data-path="introduction-1.html"><a href="introduction-1.html#baseflow-separation-methods"><i class="fa fa-check"></i><b>2.3.4</b> Baseflow separation methods</a></li>
-<li class="chapter" data-level="2.3.5" data-path="introduction-1.html"><a href="introduction-1.html#watershed-controls-on-baseflow-and-stormflow"><i class="fa fa-check"></i><b>2.3.5</b> Watershed controls on baseflow and stormflow</a></li>
+<li class="chapter" data-level="2.3.1" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#components-of-streamflow-during-a-rain-event"><i class="fa fa-check"></i><b>2.3.1</b> Components of streamflow during a rain event</a></li>
+<li class="chapter" data-level="2.3.2" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#storm-flow-through-a-hillslope"><i class="fa fa-check"></i><b>2.3.2</b> Storm flow through a hillslope</a></li>
+<li class="chapter" data-level="2.3.3" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#how-we-quantify-baseflow"><i class="fa fa-check"></i><b>2.3.3</b> How we quantify baseflow</a></li>
+<li class="chapter" data-level="2.3.4" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#baseflow-separation-methods"><i class="fa fa-check"></i><b>2.3.4</b> Baseflow separation methods</a></li>
+<li class="chapter" data-level="2.3.5" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#watershed-controls-on-baseflow-and-stormflow"><i class="fa fa-check"></i><b>2.3.5</b> Watershed controls on baseflow and stormflow</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="introduction-1.html"><a href="introduction-1.html#assessment"><i class="fa fa-check"></i><b>2.4</b> Assessment</a></li>
-<li class="chapter" data-level="2.5" data-path="introduction-1.html"><a href="introduction-1.html#interactive-application-and-questions"><i class="fa fa-check"></i><b>2.5</b> Interactive application and questions</a>
+<li class="chapter" data-level="2.4" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#assessment"><i class="fa fa-check"></i><b>2.4</b> Assessment</a></li>
+<li class="chapter" data-level="2.5" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#interactive-application-and-questions"><i class="fa fa-check"></i><b>2.5</b> Interactive application and questions</a>
 <ul>
-<li class="chapter" data-level="2.5.1" data-path="introduction-1.html"><a href="introduction-1.html#initial-data-exploration"><i class="fa fa-check"></i><b>2.5.1</b> Initial data exploration</a></li>
+<li class="chapter" data-level="2.5.1" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#initial-data-exploration"><i class="fa fa-check"></i><b>2.5.1</b> Initial data exploration</a></li>
+<li class="chapter" data-level="2.5.2" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#synthesis-questions"><i class="fa fa-check"></i><b>2.5.2</b> Synthesis Questions</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html"><a href="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html"><i class="fa fa-check"></i><b>3</b> Lab 1 - Flow analysis and hydrograph separation (20 pts)</a>
+<li class="chapter" data-level="3" data-path="hydrograph-separation-lab-module-20-pts.html"><a href="hydrograph-separation-lab-module-20-pts.html"><i class="fa fa-check"></i><b>3</b> Hydrograph separation: lab module (20 pts)</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html"><a href="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html#intro"><i class="fa fa-check"></i><b>3.1</b> Intro</a></li>
-<li class="chapter" data-level="3.2" data-path="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html"><a href="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html#reading-for-this-lab"><i class="fa fa-check"></i><b>3.2</b> Reading for this lab</a></li>
-<li class="chapter" data-level="3.3" data-path="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html"><a href="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html#repo"><i class="fa fa-check"></i><b>3.3</b> Repo</a></li>
+<li class="chapter" data-level="3.1" data-path="hydrograph-separation-lab-module-20-pts.html"><a href="hydrograph-separation-lab-module-20-pts.html#intro"><i class="fa fa-check"></i><b>3.1</b> Intro</a></li>
+<li class="chapter" data-level="3.2" data-path="hydrograph-separation-lab-module-20-pts.html"><a href="hydrograph-separation-lab-module-20-pts.html#reading-for-this-lab"><i class="fa fa-check"></i><b>3.2</b> Reading for this lab</a></li>
+<li class="chapter" data-level="3.3" data-path="hydrograph-separation-lab-module-20-pts.html"><a href="hydrograph-separation-lab-module-20-pts.html#repo"><i class="fa fa-check"></i><b>3.3</b> Repo</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="rational-and-curve-number-cn-methods.html"><a href="rational-and-curve-number-cn-methods.html"><i class="fa fa-check"></i><b>4</b> Rational and Curve Number (CN) methods</a></li>
+<li class="chapter" data-level="4" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html"><i class="fa fa-check"></i><b>4</b> Learning module 2 - Return intervals (14 pts)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#background-information"><i class="fa fa-check"></i><b>4.1</b> Background information</a></li>
+<li class="chapter" data-level="4.2" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#intro-1"><i class="fa fa-check"></i><b>4.2</b> Intro</a></li>
+<li class="chapter" data-level="4.3" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#packages"><i class="fa fa-check"></i><b>4.3</b> Packages</a></li>
+<li class="chapter" data-level="4.4" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#precipitation-return-intervals"><i class="fa fa-check"></i><b>4.4</b> Precipitation return intervals</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q1.-2-pts-what-is-the-probability-that-the-annual-precipitation-in-a-given-year-is-less-than-400-mm-this-is-the-fa-in-the-cdf-in-the-probability-lecture-slides."><i class="fa fa-check"></i><b>4.4.1</b> <strong>Q1. (2 pts) What is the probability that the annual precipitation in a given year is less than 400 mm? This is the F(A) in the CDF in the probability lecture slides.</strong></a></li>
+<li class="chapter" data-level="4.4.2" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q2.-2-pts-what-is-the-probability-that-the-maximum-annual-precipitation-in-a-given-year-is-greater-than-500-mm"><i class="fa fa-check"></i><b>4.4.2</b> <strong>Q2. (2 pts) What is the probability that the maximum annual precipitation in a given year is GREATER than 500 mm?</strong></a></li>
+<li class="chapter" data-level="4.4.3" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q3.-2-pts-what-is-the-probability-that-the-annual-p-is-between-400-and-500-mm"><i class="fa fa-check"></i><b>4.4.3</b> <strong>Q3. (2 pts) What is the probability that the annual P is between 400 and 500 mm?</strong></a></li>
+<li class="chapter" data-level="4.4.4" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q4.-2-pts-what-is-the-return-period-for-a-year-with-at-least-550-mm-of-precip-the-return-period-tr-is-calculated-as-tr-1p-with-p-being-the-probability-for-an-event-to-occur."><i class="fa fa-check"></i><b>4.4.4</b> <strong>Q4. (2 pts) What is the return period for a year with AT LEAST 550 mm of precip? The return period, Tr, is calculated as Tr = 1/p, with p being the probability for an event to occur.</strong></a></li>
+<li class="chapter" data-level="4.4.5" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q5.-6-pts-explain-why-probability-analysis-of-climate-data-assumes-the-data-are-normally-distributed-and-stationary-below-provide-a-histogram-and-a-density-plot-of-the-total-annual-p-data-and-comment-on-the-visual-appearance-in-terms-of-normality.-next-use-google-and-the-links-below-to-test-for-normality-and-stationarity.-be-quantitative-in-commenting-on-the-normality-and-stationarity-of-the-total-p-data."><i class="fa fa-check"></i><b>4.4.5</b> <strong>Q5. (6 pts) Explain why probability analysis of climate data assumes the data are normally distributed and stationary? Below provide a histogram and a density plot of the total annual P data and comment on the visual appearance in terms of normality. Next use google and the links below to test for normality and stationarity. Be quantitative in commenting on the normality and stationarity of the total P data.</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html"><i class="fa fa-check"></i><b>5</b> Rational method and NRCS curve number (14 pts)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#rational-method"><i class="fa fa-check"></i><b>5.1</b> Rational Method</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#background-information-1"><i class="fa fa-check"></i><b>5.1.1</b> Background information</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#curve-number"><i class="fa fa-check"></i><b>5.2</b> Curve Number</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#background-information-2"><i class="fa fa-check"></i><b>5.2.1</b> Background information</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#codework"><i class="fa fa-check"></i><b>5.3</b> Codework</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#packages-1"><i class="fa fa-check"></i><b>5.3.1</b> Packages</a></li>
+<li class="chapter" data-level="5.3.2" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#part-i---rational-method"><i class="fa fa-check"></i><b>5.3.2</b> Part I - Rational Method</a></li>
+<li class="chapter" data-level="5.3.3" data-path="rational-method-and-nrcs-curve-number-14-pts.html"><a href="rational-method-and-nrcs-curve-number-14-pts.html#part-ii---nrcs-cn"><i class="fa fa-check"></i><b>5.3.3</b> Part II - NRCS CN</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i><b>6</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="introduction-1.html"><a href="introduction-1.html#summary-1"><i class="fa fa-check"></i><b>6.1</b> 6.1 Summary</a></li>
+<li class="chapter" data-level="6.2" data-path="introduction-1.html"><a href="introduction-1.html#overall-learning-objectives-1"><i class="fa fa-check"></i><b>6.2</b> 6.2 Overall Learning Objectives</a></li>
+<li class="chapter" data-level="6.3" data-path="introduction-1.html"><a href="introduction-1.html#terminology"><i class="fa fa-check"></i><b>6.3</b> 6.3 Terminology</a></li>
+<li class="chapter" data-level="6.4" data-path="introduction-1.html"><a href="introduction-1.html#the-linear-time-invariant-tf"><i class="fa fa-check"></i><b>6.4</b> 6.4 The Linear Time-Invariant TF</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="codework---transfer-function-rainfall-runoff-model.html"><a href="codework---transfer-function-rainfall-runoff-model.html"><i class="fa fa-check"></i><b>7</b> Codework - Transfer function rainfall-runoff model</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="codework---transfer-function-rainfall-runoff-model.html"><a href="codework---transfer-function-rainfall-runoff-model.html#load-packages-with-a-function-that-checks-and-installs-packages-if-needed"><i class="fa fa-check"></i><b>7.0.1</b> Load packages with a function that checks and installs packages if needed:</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -119,7 +225,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Environmental Modeling: LRES 546</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Transfer function rainfall-runoff models</a>
           </h1>
         </div>
 
@@ -127,97 +233,101 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction-1" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Introduction<a href="introduction-1.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<ul>
-<li>This module was developed by Ana Bergrstrom and Matt Ross.</li>
-</ul>
-<div id="summary" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Summary<a href="introduction-1.html#summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Streamflow can come from a range of water sources. When it is not raining, streams are fed by the slow drainage of groundwater. When a rainstorm occurs, streamflow increases and water enters the stream more quickly. The rate at which water reaches the stream and the partitioning between groundwater and faster flow pathways is variable across watersheds. It is important to understand how water is partitioned between fast and slow pathways (baseflow and stormflow) and what controls this partitioning in order to better predict susceptibility to flooding and if and how groundwater can sustain streamflow in long periods of drought.</p>
-<p>In this module we will introduce the components of streamflow during a rain event, and how event water moves through a hillslope to reach a stream. We will discuss methods for partitioning a hydrograph between baseflow (groundwater) and storm flow (event water). Finally, we will explore how characteristics of a watershed might lead to more or less water being partitioned into baseflow vs. stormflow. We will test understanding through evaluating data collected from watersheds in West Virginia to determine how mountaintop mining, which fundamentally changed the watershed structure, affects baseflow.</p>
-<p>Note: While this assessment is written for watersheds in West Virginia, we have designed the course so it is adaptable. Instructors should be able to easily substitute in their own data for the assessment.</p>
+<div id="introduction-1" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Introduction<a href="introduction-1.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="summary-1" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> 6.1 Summary<a href="introduction-1.html#summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In previous modules, we explored how watershed characteristics influence the flow of input water through or over hillslopes to quickly contribute to stormflow or to be stored for later contribution to baseflow. Therefore, the partitioning of flow into baseflow or stormflow can be determined by the time it spends in the watershed. Furthermore, the residence time of water in various pathways may affect weathering and solute transport within watersheds. To improve our understanding of water movement within a watershed, it can be crucial to incorporate water transit time into hydrological models. This consideration allows for a more realistic representation of how water moves through various storage compartments, such as soil, groundwater, and surface water, accounting for the time it takes for water to traverse these pathways.</p>
+<p>In this module, we will model the temporal aspects of runoff response to input using a transfer function. First, please read: <br/></p>
+<p><a href="docs/Weiler_etal_WRR2003.pdf">TRANSEP - a combined tracer and runoff transfer function hydrograph separation model</a>
+<br/></p>
+<p>Then this chapter will step through key concepts in the paper to facilitate hands-on exploration of the rainfall-runoff portion of the TRANSEP model in the assessment. Then, we will introduce examples of other transfer functions to demonstrate alternative ways of representing time-induced patterns in hydrological modeling, prompting you to consider response patterns in your study systems.</p>
 </div>
-<div id="overall-learning-objectives" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Overall Learning Objectives<a href="introduction-1.html#overall-learning-objectives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>At the end of this module, students should be able to describe the components of streamflow, the basics of how water moves through a hillslope, and the watershed characteristics that affect partitioning between baseflow and stormflow.</p>
+<div id="overall-learning-objectives-1" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> 6.2 Overall Learning Objectives<a href="introduction-1.html#overall-learning-objectives-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>At the end of this module, students should be able to describe several ways to model and identify transit time within hydrological models. They should have a general understanding of how water transit time may influence the timing and composition of runoff.</p>
 </div>
-<div id="lecture" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Lecture<a href="introduction-1.html#lecture" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0gQZ1rOQeGo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+<div id="terminology" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> 6.3 Terminology<a href="introduction-1.html#terminology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In modeling a flow system, note that consideration of time may vary depending on the questions being asked. <strong>Transit time</strong> is the average time required for water to travel through the entire flow system, from input (e.g., rainfall on soil surface) to output (e.g., discharge). <strong>Residence time</strong> is a portion of transit time, describing the amount of time water spends within a specific component of the flow system, like storage (e.g., in soil, groundwater, or a lake).</p>
+<div class="float">
+<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0022169406002150-gr1.jpg" alt="Figure 6.3. Conceptual diagram of the lumped parameter transit time modeling approach (McGuire &amp; McDonnell, 2006)" />
+<div class="figcaption">Figure 6.3. Conceptual diagram of the lumped parameter transit time modeling approach (McGuire &amp; McDonnell, 2006)</div>
+</div>
+<p><br/><br/></p>
+<p>A <strong>transfer function</strong> (TF) is a mathematical representation of how a system responds to input signals. In a hydrological context, it describes the transformation of inputs (e.g. precipitation) to outputs (e.g. runoff). These models can be valuable tools for understanding the time-varying dynamics of a hydrological system.</p>
+</div>
+<div id="the-linear-time-invariant-tf" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> 6.4 The Linear Time-Invariant TF<a href="introduction-1.html#the-linear-time-invariant-tf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We’ll begin the discussion in the context of a <strong>linear reservoir</strong>. Linear reservoirs are simple models designed to simulate the storage and discharge of water in a catchment. These models assume that the catchment can be represented as single storage compartments or as a series of interconnected storage compartments and that the change the amount of water stored in the reservoir (or reservoirs) is directly proportional to the inflows and outflows. In other words, the linear relationship between inflows and outflows means that the rate of water release is proportional to the amount of water stored in the reservoir.</p>
+<p><img src="images/linear_storage_04.png" /></p>
+<p><br/><br/></p>
+<div id="the-instantaneous-unit-hydrograph" class="section level4 hasAnchor" number="6.4.0.1">
+<h4><span class="header-section-number">6.4.0.1</span> 6.4.1 The Instantaneous Unit Hydrograph:<a href="introduction-1.html#the-instantaneous-unit-hydrograph" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The Instantaneous Unit Hydrograph (IUH) represents the linear rainfall-runoff model used in the TRANSEP model. It is an approach to hydrograph separation that is useful for analyzing the temporal distribution of runoff in response to a ‘unit’ pulse of rainfall (e.g. uniform one-inch depth over a unit area represented by a unit hydrograph). In other words, it is a hydrograph that results from one unit (e.g. 1 mm) of effective rainfall uniformly distributed over the watershed and occurring in a short duration. Therefore, the following assumptions are made when the IUH is used as a transfer function: <br/>
+1. the IUH reflects the ensemble of watershed characteristics <br/>
+2. the shape characteristics of the unit hydrograph are independent of time <br/>
+3. the output response is linearly proportional to the input</p>
+<p><br/><br/></p>
+<div class="float">
+<img src="https://echo2.epfl.ch/VICAIRE/mod_1b/chapt_4/pictures/fi1.gif" alt="Figure 6.4.1.a Conceptual diagram of the linear unit hydrograph" />
+<div class="figcaption">Figure 6.4.1.a Conceptual diagram of the linear unit hydrograph</div>
+</div>
+<p><br/><br/></p>
+<p>Peak discharge of the unit hydrograph, <span class="math inline">\(u_p\)</span>; <br/>
+Base time <span class="math inline">\(t_b\)</span>is the total duration of the unit hydrograph; <br/>
+Increase time or time to peak <span class="math inline">\(t_p\)</span> is the time between the start point of the hydrograph and the peak; <br/>
+Concentration time <span class="math inline">\(t_c\)</span> is the time between the end of rainfall and the end of the hydrograph; <br/>
+Lag time <span class="math inline">\(t_lag\)</span> is the time between half rainfall depth and the peak of the hydrograph. <br/></p>
+<p>IUH as a transfer function allows the calculation of the direct runoff hydrograph for any given rainfall input. IUH is particularly valuable for understanding how the direct runoff is distributed over time in response to a rainfall event. It helps quantify the time distribution of runoff in relation to the rainfall input.</p>
+<p><br/><br/></p>
+<div class="float">
+<img src="https://echo2.epfl.ch/VICAIRE/mod_1b/chapt_4/pictures/fi2.gif" alt="Figure 6.4.1.b The discharge of the unit hydrograph(u) from a catchment at time (t) is expressed as h \cdot u(t) where h is the amount of effective rainfall." />
+<div class="figcaption">Figure 6.4.1.b The discharge of the unit hydrograph(u) from a catchment at time (t) is expressed as <span class="math inline">\(h \cdot u(t)\)</span> where h is the amount of effective rainfall.</div>
+</div>
+<p><br/><br/></p>
+<p>In the TRANSEP model, this transfer function is represented as <span class="math inline">\(g(\tau)\)</span> and thus the rainfall-induced response to runoff.</p>
+<p><span class="math display">\[
+g(\tau) = \frac{\tau^{\alpha-1}}{\mathrm{B}^{\alpha}\Gamma(\alpha)}exp(-\frac{\tau}{\alpha})
+\]</span>
+<br/><br/></p>
+<p>The linear portion of the TRANSEP model describes a convolution of the effective precipitation and a runoff transfer function.</p>
+<p><span class="math display">\[
+Q(t)= \int_{0}^{t} g(\tau)p_{\text{eff}}(t-\tau)d\tau
+\]</span>
+<br/><br/></p>
+<p>Whoa, wait…what? Tau, integrals, and convolution? Don’t worry about the details of the equations. Check out this video to have convolution described using dollars and cookies, then imagine each dollar as a rainfall unit and each cookie as a runoff unit. Review the equations again after the video.</p>
+<p><br/><br/></p>
+<iframe src="https://www.youtube.com/embed/aEGboJxmq-w" width="672" height="400px" data-external="1">
 </iframe>
-<div id="components-of-streamflow-during-a-rain-event" class="section level3 hasAnchor" number="2.3.1">
-<h3><span class="header-section-number">2.3.1</span> Components of streamflow during a rain event<a href="introduction-1.html#components-of-streamflow-during-a-rain-event" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>During a rainstorm, precipitation is falling across the watershed: close to the stream, on a hillslope, and up at the watershed divide. This water that falls across the watershed flows downslope toward the stream via a number of flow pathways. Here we define and describe the basic flow pathways during a rain event.<br />
-The first component is <strong>channel interception</strong>. This is water that falls directly on the water surface of the stream. The amount of water that falls directly on the channel is a function of stream size, if we have a very small, narrow creek, this will be a very small quantity. However, you can imagine that in a very large, broad river such as the Amazon, this volume of water is much larger. Channel interception is the first component during a rain event that causes streamflow to increase because it is contributing directly to the stream and therefore has no travel time.</p>
-<p>The second is <strong>overland flow</strong>, which is water that flows on the land surface to the stream. Overland flow can occur via a number of mechanisms which we will not explore too deeply here, but encourage further study on your own (resources provided). Briefly, overland flow includes water that falls on an impermeable surface such as pavement, water that runs downslope due to rain falling faster than the rate at which it can infiltrate the ground surface, and water that flows over the land surface because the ground is completely saturated. Overland flow is typically faster than water that travels through soils and deeper flow pathways and therefore is the next major component that starts to contribute to the increase in streamflow during a rain event.</p>
-<p>The third component is <strong>subsurface flow</strong>. This is water that infiltrates the land surface and flows downslope through shallow groundwater flow pathways. This is the last component that increases streamflow during a storm event, is the slowest of the stormflow components, and can contribute to elevated streamflow for a while after precipitation ends.</p>
-<p>The final component is <strong>baseflow</strong>. Baseflow can also be described as groundwater. This component is what sustains streamflow between rain events, but also continues to contribute during a rain event. Of water that infiltrates the ground surface, some moves quickly to the stream as subsurface flow, but some moves deeper and becomes part of deeper groundwater and baseflow. Thus baseflow can increase in times of higher wetness in the watershed, particularly during and right after rainy seasons or spring snowmelt.</p>
-<p>We can simplify this partitioning into <strong>baseflow</strong> and <strong>stormflow</strong> (often called quickflow). Baseflow being groundwater that moves more slowly and sustains streamflow between rain events. Stormflow is water that contributes to streamflow as a result of a rain event. Under this definition we can lump <strong>channel interception, overland flow</strong>, and <strong>subsurface</strong> flow into <strong>stormflow</strong>.</p>
-<p><img src="images/baseflow_conceptual_diagram.jpg" /></p>
 </div>
-<div id="storm-flow-through-a-hillslope" class="section level3 hasAnchor" number="2.3.2">
-<h3><span class="header-section-number">2.3.2</span> Storm flow through a hillslope<a href="introduction-1.html#storm-flow-through-a-hillslope" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>When rain falls on the land surface, much of it infiltrates into the soil. Water moves through the soil column until it meets a layer of lower permeability and runs down the hillslope as subsurface flow. This layer of lower permeability allows some water to move through it, contributing to groundwater. Frequently the layer of lower permeability is the interface between soil and rock. Therefore the depth of soil has a large effect on how much water moves through soil vs. how much moves deeper into groundwater, becoming baseflow.</p>
+<div id="the-loss-function" class="section level4 hasAnchor" number="6.4.0.2">
+<h4><span class="header-section-number">6.4.0.2</span> 6.4.2 The Loss Function:<a href="introduction-1.html#the-loss-function" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The loss function represents the linear rainfall-runoff model used in the TRANSEP model.</p>
+<p><span class="math display">\[
+s(t) = b_{1} p(t + 1 - b_{2}^{-1}) s(t - \triangle t)
+\]</span>
+<span class="math display">\[
+s(t = 0) = b_{3}
+\]</span>
+<span class="math display">\[
+p_{\text{eff}}(t) = p(t) s(t)
+\]</span>
+where <span class="math inline">\(p_{\text{eff}}(t)\)</span> is the effective precipitation.<br/>
+<span class="math inline">\(s(t)\)</span> is the antecedent precipitation index which is determined by giving more importance to recent precipitation and gradually reducing that importance as we go back in time. <br/>
+The rate at which this importance decreases is controlled by the parameter <span class="math inline">\(b_{2}\)</span>. <br/>
+The parameter <span class="math inline">\(b_{3}\)</span> sets the initial antecedent precipitation index at the beginning of the simulated time series.</p>
+<p>In other words, these equations are used to simulate the flow of water in a hydrological system over time. The first equation represents the change in stored water at each time step, taking into account precipitation, loss to runoff, and the system’s past state. The second equation sets the initial condition for the storage at the beginning of the simulation. The third equation calculates the effective precipitation, considering both precipitation and the current storage state.</p>
 </div>
-<div id="how-we-quantify-baseflow" class="section level3 hasAnchor" number="2.3.3">
-<h3><span class="header-section-number">2.3.3</span> How we quantify baseflow<a href="introduction-1.html#how-we-quantify-baseflow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>It is impossible to know the amount of water moving as overland, subsurface, and base flow in all parts of a watershed. So in order to quantify how much water in a stream at any given time is storm flow vs. baseflow, we need to use some simplified methods. These frequently involve using the hydrograph (plot of streamflow over time) drawing lines, and calculating the volume of water above and below the line. This can be somewhat arbitrary and there are a variety of methods for delineating the cutoff between baseflow and stormflow. Despite what method you use and how simplified it is, this technique still provides valuable information and allows us to make comparisons across watersheds in order to understand how they function and what their structural properties are.</p>
-<p><img src="images/simple_baseflow_separation.jpg" /></p>
+<div id="how-do-we-code-this" class="section level4 hasAnchor" number="6.4.0.3">
+<h4><span class="header-section-number">6.4.0.3</span> 6.4.3 How do we code this?<a href="introduction-1.html#how-do-we-code-this" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We will use a skeletal version of TRANSEP, focusing only on the rainfall-runoff piece which includes the loss-function and the gamma transfer function.</p>
+<p>We will use rainfall and runoff data from TCEF to model annual streamflow at a daily time step. Then we can use this model as a jump-off point to start talking about model calibration and validation in future modules.</p>
 </div>
-<div id="baseflow-separation-methods" class="section level3 hasAnchor" number="2.3.4">
-<h3><span class="header-section-number">2.3.4</span> Baseflow separation methods<a href="introduction-1.html#baseflow-separation-methods" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>One of the most basic methods for calculating base flow vs. storm flow is the straight line method. First, find the value of discharge at the point that streamflow begins to rise due to a storm. A straight line is drawn at that value until it intersects with the hydrograph (i.e. streamflow recedes back to the discharge it was at before the rainfall event started. Anything below this line is base flow and anything above it is storm flow.</p>
-<p><img src="images/straight_line_baseflow_separation.jpg" /></p>
-<p>We learned above that some rainfall can move deep into the soil profile and contribute to baseflow. We might expect baseflow to increase over time and thus would want to use a method that can account for this.</p>
-<p>An addition to the straight line method was posed by Hewlett and Hibbert, 1967. This method, which we’ll call the Hewlett and Hibbert method finds the discharge at the starting point of a storm. Then, rather than a straight line of 0 slope and in the straight line method, we assume a slope of 0.05 cubic feet per second per square mile. The line with this calculated slope is drawn until it intersects with the hydrograph receding at the end of the storm.</p>
-<p><img src="images/HH_baseflow_separation.jpg" /></p>
-<p>There are myriad other methods for baseflow separation of a wide range of complexity. We will give an example of one more method: a recursive filter method established by Lyne and Hollick (1976). This method smooths the hydrograph and partitions part of that smoothed signal into baseflow. The equation for this method is:</p>
-<p><img src="images/Screen%20Shot%202020-08-12%20at%202.12.08%20PM.png" /></p>
-<p>You can see from this equation that a filter parameter, a, must be chosen. This parameter can be decided by the user, takes a value between 0 and 1, and is typically close to 1. Additionally this filtering method must be constrained so that baseflow is not negative or greater than the total streamflow. Output from this method for the Harvey River in Australia is originally published in Lyne and Hollick (1976) below (notice in the caption that the a parameter was set to 0.8):</p>
-<p><img src="images/Screen%20Shot%202020-08-12%20at%202.19.41%20PM.png" /></p>
-</div>
-<div id="watershed-controls-on-baseflow-and-stormflow" class="section level3 hasAnchor" number="2.3.5">
-<h3><span class="header-section-number">2.3.5</span> Watershed controls on baseflow and stormflow<a href="introduction-1.html#watershed-controls-on-baseflow-and-stormflow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The way a watershed is structured has a strong control on how water is partitioned into baseflow and stormflow. Below is a list of key structural properties:
-Land Use and Land Cover: If a watershed is developed or natural can dictate how much water infiltrates the land surface and how quickly. For example, a watershed with lots of pavement means that much more water will be overland flow with fewer opportunities to recharge baseflow. Furthermore, how a watershed is developed will affect partitioning. For example a residential area with houses on large, grassy lots will allow for more infiltration than a shopping center with large parking lots. Land cover in natural areas will also affect partitioning. Consider a dense forest vs. a recently harvested hillside.
-Soil type: clayey soils vs. sandy soils
-Depth to impeding layer: could be the bedrock interface, but could also be a low permeability clay layer in the soil
-Permeability of the underlying rock: Highly fractured sandstone vs. solid granite
-Slope: steeper slopes vs. flatter areas</p>
-<p>The partitioning is a combination of all of these factors. A watershed may have a very low slope, suggesting that it might have less stormflow. But if the soils in this watershed have an impermeable clay layer near the soil surface, a lot more water may end up as stormflow than one would expect.</p>
-</div>
-</div>
-<div id="assessment" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Assessment<a href="introduction-1.html#assessment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To assess and improve your understanding we’ve developed two interactive
-applications. The first is an interactive web app that requires zero
-programming, and the second is a web-page that walks through baseflow
-analyses in the R programming language.</p>
-</div>
-<div id="interactive-application-and-questions" class="section level2 hasAnchor" number="2.5">
-<h2><span class="header-section-number">2.5</span> Interactive application and questions<a href="introduction-1.html#interactive-application-and-questions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This interactive web application
-highlighting how a major disturbance (mountaintop-mining) can change
-how water moves through a system. The web app is here:
-<a href="https://cuahsi.shinyapps.io/mtm_baseflow/">https://cuahsi.shinyapps.io/mtm_baseflow/</a></p>
-<div id="initial-data-exploration" class="section level3 hasAnchor" number="2.5.1">
-<h3><span class="header-section-number">2.5.1</span> Initial data exploration<a href="introduction-1.html#initial-data-exploration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ol style="list-style-type: decimal">
-<li><p>In the geomorphology tab, click on each of the four watersheds in the map on the left to view a 3-D rendering of its topography and read about its characteristics.Compare and contrast the watershed structure of the paired watersheds (both large and small). Describe the topography and the slope and soil characteristics.</p></li>
-<li><p>Click on the baseflow tab and make sure you have “Flow separation at each site” selected in the choose baseflow data display drop-down menu.
-Describe which line is baseflow and how you would estimate total storm flow for an event.</p></li>
-<li><p>Zoom into the storms that occurred between 3 Apr and 19 Apr.<br />
-Compare the overall shape of the hydrographs. Which watersheds have higher peaks? How do the peaks change over successive storms?</p></li>
-<li><p>Move your cursor over the hydrographs and look at the values displayed in the top right corner of each graph.
-Determine if the reference or mined watersheds have higher baseflow. Describe how the baseflow changes over time in successive storms.</p></li>
-<li><p>Synthesis Questions</p></li>
-<li><p>What do you think is happening in the hillslopes to cause the baseflow to change over time in successive storms?</p></li>
-<li><p>Describe how differences in watershed structure might contribute to the differences in baseflow between the mined and unmined watersheds. (Use the findings of Hewlett &amp; Hibbert, section 5 to guide your answer).</p></li>
-<li><p>Look at the specific conductance tab and look at the mined vs. unmined. Describe the differences between the two. How do these data support some of your conclusions above?</p></li>
-<li><p>What would you expect a hydrograph for a watershed in hawaii (Steep slopes, shallow soils) to look like? Would it have relatively high or low baseflow? What about a watershed in Southern Michigan (low slopes, deep soils)?</p></li>
-</ol>
-
+<div id="final-thoughts" class="section level4 hasAnchor" number="6.4.0.4">
+<h4><span class="header-section-number">6.4.0.4</span> 6…Final thoughts:<a href="introduction-1.html#final-thoughts" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>If during your modeling experience, you find yourself wading through a bog of complex physics and multiple layers of transfer functions to account for every drop of input into a system, it is time to revisit your objectives. Remember that a model is always ‘wrong’. Like a map, it provides a simplified representation of reality. It may not be entirely accurate, but it serves a valuable purpose. Models help us understand complex systems, make predictions, and gain insights even if they are not an exact replica of the real world. Check out this paper for more:</p>
+<p><a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/93WR00877" class="uri">https://agupubs.onlinelibrary.wiley.com/doi/10.1029/93WR00877</a></p>
 </div>
 </div>
 </div>
@@ -226,8 +336,8 @@ Determine if the reference or mined watersheds have higher baseflow. Describe ho
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lab-1---flow-analysis-and-hydrograph-separation-20-pts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="rational-method-and-nrcs-curve-number-14-pts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="codework---transfer-function-rainfall-runoff-model.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -258,7 +368,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/tpcovino/lres_546_bookdown/edit/main/02_hydrograph_separation_lecture.Rmd",
+"link": "https://github.com/tpcovino/lres_546_bookdown/edit/main/06_transfer_function_lecture_and_lab.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -266,7 +376,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/tpcovino/lres_546_bookdown/blob/main/02_hydrograph_separation_lecture.Rmd",
+"link": "https://github.com/tpcovino/lres_546_bookdown/blob/main/06_transfer_function_lecture_and_lab.Rmd",
 "text": null
 },
 "download": null,
@@ -281,6 +391,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

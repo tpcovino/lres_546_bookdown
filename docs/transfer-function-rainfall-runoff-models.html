@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | Quantitative Environmental Methods: LRES 546</title>
-  <meta name="description" content="Page not found | Quantitative Environmental Methods: LRES 546" />
+  <title>Chapter 6 Transfer function rainfall-runoff models | Quantitative Environmental Methods: LRES 546</title>
+  <meta name="description" content="Chapter 6 Transfer function rainfall-runoff models | Quantitative Environmental Methods: LRES 546" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | Quantitative Environmental Methods: LRES 546" />
+  <meta property="og:title" content="Chapter 6 Transfer function rainfall-runoff models | Quantitative Environmental Methods: LRES 546" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | Quantitative Environmental Methods: LRES 546" />
+  <meta name="twitter:title" content="Chapter 6 Transfer function rainfall-runoff models | Quantitative Environmental Methods: LRES 546" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="rational-method-and-nrcs-curve-number-14-pts.html"/>
+<link rel="next" href="codework---transfer-function-rainfall-runoff-model.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -253,19 +253,112 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="transfer-function-rainfall-runoff-models" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Transfer function rainfall-runoff models<a href="transfer-function-rainfall-runoff-models.html#transfer-function-rainfall-runoff-models" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="summary-1" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> 6.1 Summary<a href="transfer-function-rainfall-runoff-models.html#summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In previous modules, we explored how watershed characteristics influence the flow of input water through or over hillslopes to quickly contribute to stormflow or to be stored for later contribution to baseflow. Therefore, the partitioning of flow into baseflow or stormflow can be determined by the time it spends in the watershed. Furthermore, the residence time of water in various pathways may affect weathering and solute transport within watersheds. To improve our understanding of water movement within a watershed, it can be crucial to incorporate water transit time into hydrological models. This consideration allows for a more realistic representation of how water moves through various storage compartments, such as soil, groundwater, and surface water, accounting for the time it takes for water to traverse these pathways.</p>
+<p>In this module, we will model the temporal aspects of runoff response to input using a transfer function. First, please read: <br/></p>
+<p><a href="docs/Weiler_etal_WRR2003.pdf">TRANSEP - a combined tracer and runoff transfer function hydrograph separation model</a>
+<br/></p>
+<p>Then this chapter will step through key concepts in the paper to facilitate hands-on exploration of the rainfall-runoff portion of the TRANSEP model in the assessment. Then, we will introduce examples of other transfer functions to demonstrate alternative ways of representing time-induced patterns in hydrological modeling, prompting you to consider response patterns in your study systems.</p>
+</div>
+<div id="overall-learning-objectives-1" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> 6.2 Overall Learning Objectives<a href="transfer-function-rainfall-runoff-models.html#overall-learning-objectives-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>At the end of this module, students should be able to describe several ways to model and identify transit time within hydrological models. They should have a general understanding of how water transit time may influence the timing and composition of runoff.</p>
+</div>
+<div id="terminology" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> 6.3 Terminology<a href="transfer-function-rainfall-runoff-models.html#terminology" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In modeling a flow system, note that consideration of time may vary depending on the questions being asked. <strong>Transit time</strong> is the average time required for water to travel through the entire flow system, from input (e.g., rainfall on soil surface) to output (e.g., discharge). <strong>Residence time</strong> is a portion of transit time, describing the amount of time water spends within a specific component of the flow system, like storage (e.g., in soil, groundwater, or a lake).</p>
+<div class="float">
+<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0022169406002150-gr1.jpg" alt="Figure 6.3. Conceptual diagram of the lumped parameter transit time modeling approach (McGuire &amp; McDonnell, 2006)" />
+<div class="figcaption">Figure 6.3. Conceptual diagram of the lumped parameter transit time modeling approach (McGuire &amp; McDonnell, 2006)</div>
+</div>
+<p><br/><br/></p>
+<p>A <strong>transfer function</strong> (TF) is a mathematical representation of how a system responds to input signals. In a hydrological context, it describes the transformation of inputs (e.g. precipitation) to outputs (e.g. runoff). These models can be valuable tools for understanding the time-varying dynamics of a hydrological system.</p>
+</div>
+<div id="the-linear-time-invariant-tf" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> 6.4 The Linear Time-Invariant TF<a href="transfer-function-rainfall-runoff-models.html#the-linear-time-invariant-tf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We’ll begin the discussion in the context of a <strong>linear reservoir</strong>. Linear reservoirs are simple models designed to simulate the storage and discharge of water in a catchment. These models assume that the catchment can be represented as single storage compartments or as a series of interconnected storage compartments and that the change the amount of water stored in the reservoir (or reservoirs) is directly proportional to the inflows and outflows. In other words, the linear relationship between inflows and outflows means that the rate of water release is proportional to the amount of water stored in the reservoir.</p>
+<p><img src="images/linear_storage_04.png" /></p>
+<p><br/><br/></p>
+<div id="the-instantaneous-unit-hydrograph" class="section level4 hasAnchor" number="6.4.0.1">
+<h4><span class="header-section-number">6.4.0.1</span> 6.4.1 The Instantaneous Unit Hydrograph:<a href="transfer-function-rainfall-runoff-models.html#the-instantaneous-unit-hydrograph" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The Instantaneous Unit Hydrograph (IUH) represents the linear rainfall-runoff model used in the TRANSEP model. It is an approach to hydrograph separation that is useful for analyzing the temporal distribution of runoff in response to a ‘unit’ pulse of rainfall (e.g. uniform one-inch depth over a unit area represented by a unit hydrograph). In other words, it is a hydrograph that results from one unit (e.g. 1 mm) of effective rainfall uniformly distributed over the watershed and occurring in a short duration. Therefore, the following assumptions are made when the IUH is used as a transfer function: <br/>
+1. the IUH reflects the ensemble of watershed characteristics <br/>
+2. the shape characteristics of the unit hydrograph are independent of time <br/>
+3. the output response is linearly proportional to the input</p>
+<p><br/><br/></p>
+<div class="float">
+<img src="https://echo2.epfl.ch/VICAIRE/mod_1b/chapt_4/pictures/fi1.gif" alt="Figure 6.4.1.a Conceptual diagram of the linear unit hydrograph" />
+<div class="figcaption">Figure 6.4.1.a Conceptual diagram of the linear unit hydrograph</div>
+</div>
+<p><br/><br/></p>
+<p>Peak discharge of the unit hydrograph, <span class="math inline">\(u_p\)</span>; <br/>
+Base time <span class="math inline">\(t_b\)</span>is the total duration of the unit hydrograph; <br/>
+Increase time or time to peak <span class="math inline">\(t_p\)</span> is the time between the start point of the hydrograph and the peak; <br/>
+Concentration time <span class="math inline">\(t_c\)</span> is the time between the end of rainfall and the end of the hydrograph; <br/>
+Lag time <span class="math inline">\(t_lag\)</span> is the time between half rainfall depth and the peak of the hydrograph. <br/></p>
+<p>IUH as a transfer function allows the calculation of the direct runoff hydrograph for any given rainfall input. IUH is particularly valuable for understanding how the direct runoff is distributed over time in response to a rainfall event. It helps quantify the time distribution of runoff in relation to the rainfall input.</p>
+<p><br/><br/></p>
+<div class="float">
+<img src="https://echo2.epfl.ch/VICAIRE/mod_1b/chapt_4/pictures/fi2.gif" alt="Figure 6.4.1.b The discharge of the unit hydrograph(u) from a catchment at time (t) is expressed as h \cdot u(t) where h is the amount of effective rainfall." />
+<div class="figcaption">Figure 6.4.1.b The discharge of the unit hydrograph(u) from a catchment at time (t) is expressed as <span class="math inline">\(h \cdot u(t)\)</span> where h is the amount of effective rainfall.</div>
+</div>
+<p><br/><br/></p>
+<p>In the TRANSEP model, this transfer function is represented as <span class="math inline">\(g(\tau)\)</span> and thus the rainfall-induced response to runoff.</p>
+<p><span class="math display">\[
+g(\tau) = \frac{\tau^{\alpha-1}}{\mathrm{B}^{\alpha}\Gamma(\alpha)}exp(-\frac{\tau}{\alpha})
+\]</span>
+<br/><br/></p>
+<p>The linear portion of the TRANSEP model describes a convolution of the effective precipitation and a runoff transfer function.</p>
+<p><span class="math display">\[
+Q(t)= \int_{0}^{t} g(\tau)p_{\text{eff}}(t-\tau)d\tau
+\]</span>
+<br/><br/></p>
+<p>Whoa, wait…what? Tau, integrals, and convolution? Don’t worry about the details of the equations. Check out this video to have convolution described using dollars and cookies, then imagine each dollar as a rainfall unit and each cookie as a runoff unit. Review the equations again after the video.</p>
+<p><br/><br/></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="transfer-function-rainfall-runoff-models.html#cb28-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_url</span>(<span class="st">&quot;https://www.youtube.com/embed/aEGboJxmq-w&quot;</span>)</span></code></pre></div>
+<iframe src="https://www.youtube.com/embed/aEGboJxmq-w" width="672" height="400px" data-external="1">
+</iframe>
+</div>
+<div id="the-loss-function" class="section level4 hasAnchor" number="6.4.0.2">
+<h4><span class="header-section-number">6.4.0.2</span> 6.4.2 The Loss Function:<a href="transfer-function-rainfall-runoff-models.html#the-loss-function" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The loss function represents the linear rainfall-runoff model used in the TRANSEP model.</p>
+<p><span class="math display">\[
+s(t) = b_{1} p(t + 1 - b_{2}^{-1}) s(t - \triangle t)
+\]</span>
+<span class="math display">\[
+s(t = 0) = b_{3}
+\]</span>
+<span class="math display">\[
+p_{\text{eff}}(t) = p(t) s(t)
+\]</span>
+where <span class="math inline">\(p_{\text{eff}}(t)\)</span> is the effective precipitation.<br/>
+<span class="math inline">\(s(t)\)</span> is the antecedent precipitation index which is determined by giving more importance to recent precipitation and gradually reducing that importance as we go back in time. <br/>
+The rate at which this importance decreases is controlled by the parameter <span class="math inline">\(b_{2}\)</span>. <br/>
+The parameter <span class="math inline">\(b_{3}\)</span> sets the initial antecedent precipitation index at the beginning of the simulated time series.</p>
+<p>In other words, these equations are used to simulate the flow of water in a hydrological system over time. The first equation represents the change in stored water at each time step, taking into account precipitation, loss to runoff, and the system’s past state. The second equation sets the initial condition for the storage at the beginning of the simulation. The third equation calculates the effective precipitation, considering both precipitation and the current storage state.</p>
+</div>
+<div id="how-do-we-code-this" class="section level4 hasAnchor" number="6.4.0.3">
+<h4><span class="header-section-number">6.4.0.3</span> 6.4.3 How do we code this?<a href="transfer-function-rainfall-runoff-models.html#how-do-we-code-this" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We will use a skeletal version of TRANSEP, focusing only on the rainfall-runoff piece which includes the loss-function and the gamma transfer function.</p>
+<p>We will use rainfall and runoff data from TCEF to model annual streamflow at a daily time step. Then we can use this model as a jump-off point to start talking about model calibration and validation in future modules.</p>
+</div>
+<div id="final-thoughts" class="section level4 hasAnchor" number="6.4.0.4">
+<h4><span class="header-section-number">6.4.0.4</span> 6…Final thoughts:<a href="transfer-function-rainfall-runoff-models.html#final-thoughts" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>If during your modeling experience, you find yourself wading through a bog of complex physics and multiple layers of transfer functions to account for every drop of input into a system, it is time to revisit your objectives. Remember that a model is always ‘wrong’. Like a map, it provides a simplified representation of reality. It may not be entirely accurate, but it serves a valuable purpose. Models help us understand complex systems, make predictions, and gain insights even if they are not an exact replica of the real world. Check out this paper for more:</p>
+<p><a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/93WR00877" class="uri">https://agupubs.onlinelibrary.wiley.com/doi/10.1029/93WR00877</a></p>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="rational-method-and-nrcs-curve-number-14-pts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="codework---transfer-function-rainfall-runoff-model.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -296,7 +389,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/tpcovino/lres_546_bookdown/edit/main/%s",
+"link": "https://github.com/tpcovino/lres_546_bookdown/edit/main/06_transfer_function_lecture_and_lab.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -304,7 +397,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/tpcovino/lres_546_bookdown/blob/main/%s",
+"link": "https://github.com/tpcovino/lres_546_bookdown/blob/main/06_transfer_function_lecture_and_lab.Rmd",
 "text": null
 },
 "download": null,
