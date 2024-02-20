@@ -61,14 +61,6 @@ the-loss-function
 how-do-we-code-this
 final-thoughts
 codework---transfer-function-rainfall-runoff-model
-load-packages-with-a-function-that-checks-and-installs-packages-if-needed
-define-input-year
-define-the-initial-inputs
-parameterization
-loss-function
-runoff-transfer-function
-convolution
-plot
 monte-carlo-simulation
 background
 reading
