@@ -117,7 +117,9 @@ https://agupubs.onlinelibrary.wiley.com/doi/10.1029/93WR00877
 
 
 
-## 6.6 Codework - Transfer function rainfall-runoff model  
+## 6.6 Codework - Transfer function rainfall-runoff model 
+
+## [Download the repo for this lab HERE](https://github.com/tpcovino/04_transfer_functions.git){target="_blank"}
 
 In this homework/lab, you will write a simple, lumped rainfall-runoff model. The foundation for this model is the TRANSEP model from Weiler et al., 2003. Since TRANSEP (tracer transfer function hydrograph separation model) contains a tracer module that we don't need, we will only use the loss function (Jakeman and Hornberger) and the gamma transfer function for the water routing.  
 The data for the model is from the Tenderfoot Creek Experimental Forest in central Montana.  
