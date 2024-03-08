@@ -1,6 +1,6 @@
 --- 
 title: "Quantitative Environmental Methods: LRES 546"
-author: Tim Covino
+author: Tim Covino & Lauren Kremer
 site: bookdown::bookdown_site
 ---
 # Introduction
@@ -52,60 +52,64 @@ Books/resources, we may not use all of these, but they are good references:<br>
  
 ## Tentative schedule, subject to change
 
-**Week 1 (Unit 0)**: <br> 
+**Week 1**: <br> 
 - Introduction, overview, and technical skills.\
 - If you need a refresher for R please see [Chapters 1, 2, & 3](https://r4ds.hadley.nz/data-visualize){target="_blank"} 1-Welcome, 2-Introduction, & 3-Data visualization in R for Data Science (RDS).
 
-**Week 2 (Unit 1)**: <br>
+**Week 2**: <br>
 - Hydrograph separation. <br>
 
-**Week 3 (Unit 2)**: <br>
+**Week 3**: <br>
 
   
-**Week 4 (Unit 2)**: <br>
+**Week 4**: <br>
 - Frequency analysis <br>
 
 
-**Week 5 (Unit 3)**: <br> 
+**Week 5**: <br> 
 - Rational and curve number (CN) methods <br>
  
 
-**Week 6 (Unit 4)**: <br>
+**Week 6**: <br>
 - Transfer function lumped hydrological model
 
 
-**Week 7 (Unit 5)**: <br>
+**Week 7**: <br>
 - Monte Carlo and sensitivity analysis
 
 
-**Week 8 (Unit 6)**: <br>
-- HBV model – lumped to semi-distributed modeling <br>
+**Week 8**: <br>
+- Term project proposal 
 
 
 **Week 9: Spring Break** <br>
 
-**Week 10 (Unit 7)**: <br>
-- DEM processing and analysis in Whitebox 
+**Week 10**: <br>
+- Snowmelt models <br>
 
 
-**Week 11 (Unit 8)**: <br>
+**Week 11**: <br>
 - Gridded and flow data retrieval 
 
 
-**Week 12 (Unit 9)**: <br>
-- Precipitation interpolation <br>
+**Week 12**: <br>
+- DEM processing and analysis in Whitebox 
 
 
-**Week 13 (Unit 10)**: <br>
+**Week 13**: <br>
 - Evapotranspiration (ET) models 
 
 
 **Week 14**: <br>
-- Snowmelt models
+- HBV model – lumped to semi-distributed modeling <br>
+
+OR
+
+- Precipitation interpolation <br>
 
 
 **Week 15**: <br>
-- Distributed model (WECOH or ATS) and/or term project work
+- Term project work
 
 
 **Week 16**: <br>
