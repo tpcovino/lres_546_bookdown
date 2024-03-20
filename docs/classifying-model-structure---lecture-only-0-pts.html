@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Classifying model structure - Lecture only (0 pts) | Quantitative Environmental Methods: LRES 546</title>
+  <meta name="description" content="Chapter 8 Classifying model structure - Lecture only (0 pts) | Quantitative Environmental Methods: LRES 546" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Classifying model structure - Lecture only (0 pts) | Quantitative Environmental Methods: LRES 546" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Classifying model structure - Lecture only (0 pts) | Quantitative Environmental Methods: LRES 546" />
+  
+  
+  
+
+<meta name="author" content="Tim Covino &amp; Lauren Kremer" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="monte-carlo-simulation-20-pnts.html"/>
+<link rel="next" href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">lres_546</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#course-overview-and-objectives"><i class="fa fa-check"></i><b>1.1</b> Course overview and objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#course-description"><i class="fa fa-check"></i><b>1.2</b> Course Description</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i><b>1.3</b> Structure</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#philosophical-approach-and-resources"><i class="fa fa-check"></i><b>1.4</b> Philosophical approach and resources</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#tentative-schedule-subject-to-change"><i class="fa fa-check"></i><b>1.5</b> Tentative schedule, subject to change</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html"><i class="fa fa-check"></i><b>2</b> Hydrograph separation: learning module</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#summary"><i class="fa fa-check"></i><b>2.1</b> Summary</a></li>
+<li class="chapter" data-level="2.2" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#overall-learning-objectives"><i class="fa fa-check"></i><b>2.2</b> Overall Learning Objectives</a></li>
+<li class="chapter" data-level="2.3" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#lecture"><i class="fa fa-check"></i><b>2.3</b> Lecture</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#components-of-streamflow-during-a-rain-event"><i class="fa fa-check"></i><b>2.3.1</b> Components of streamflow during a rain event</a></li>
+<li class="chapter" data-level="2.3.2" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#storm-flow-through-a-hillslope"><i class="fa fa-check"></i><b>2.3.2</b> Storm flow through a hillslope</a></li>
+<li class="chapter" data-level="2.3.3" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#how-we-quantify-baseflow"><i class="fa fa-check"></i><b>2.3.3</b> How we quantify baseflow</a></li>
+<li class="chapter" data-level="2.3.4" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#baseflow-separation-methods"><i class="fa fa-check"></i><b>2.3.4</b> Baseflow separation methods</a></li>
+<li class="chapter" data-level="2.3.5" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#watershed-controls-on-baseflow-and-stormflow"><i class="fa fa-check"></i><b>2.3.5</b> Watershed controls on baseflow and stormflow</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#assessment"><i class="fa fa-check"></i><b>2.4</b> Assessment</a></li>
+<li class="chapter" data-level="2.5" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#interactive-application-and-questions"><i class="fa fa-check"></i><b>2.5</b> Interactive application and questions</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#initial-data-exploration"><i class="fa fa-check"></i><b>2.5.1</b> Initial data exploration</a></li>
+<li class="chapter" data-level="2.5.2" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#synthesis-questions"><i class="fa fa-check"></i><b>2.5.2</b> Synthesis Questions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="hydrograph-separation-lab-module-20-pts.html"><a href="hydrograph-separation-lab-module-20-pts.html"><i class="fa fa-check"></i><b>3</b> Hydrograph separation: lab module (20 pts)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="hydrograph-separation-lab-module-20-pts.html"><a href="hydrograph-separation-lab-module-20-pts.html#intro"><i class="fa fa-check"></i><b>3.1</b> Intro</a></li>
+<li class="chapter" data-level="3.2" data-path="hydrograph-separation-lab-module-20-pts.html"><a href="hydrograph-separation-lab-module-20-pts.html#reading-for-this-lab"><i class="fa fa-check"></i><b>3.2</b> Reading for this lab</a></li>
+<li class="chapter" data-level="3.3" data-path="hydrograph-separation-lab-module-20-pts.html"><a href="hydrograph-separation-lab-module-20-pts.html#repo"><i class="fa fa-check"></i><b>3.3</b> Repo</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html"><i class="fa fa-check"></i><b>4</b> Learning module 2 - Return intervals (14 pts)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#background-information"><i class="fa fa-check"></i><b>4.1</b> Background information</a></li>
+<li class="chapter" data-level="4.2" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#intro-1"><i class="fa fa-check"></i><b>4.2</b> Intro</a></li>
+<li class="chapter" data-level="4.3" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#packages"><i class="fa fa-check"></i><b>4.3</b> Packages</a></li>
+<li class="chapter" data-level="4.4" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#precipitation-return-intervals"><i class="fa fa-check"></i><b>4.4</b> Precipitation return intervals</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q1.-2-pts-what-is-the-probability-that-the-annual-precipitation-in-a-given-year-is-less-than-400-mm-this-is-the-fa-in-the-cdf-in-the-probability-lecture-slides."><i class="fa fa-check"></i><b>4.4.1</b> <strong>Q1. (2 pts) What is the probability that the annual precipitation in a given year is less than 400 mm? This is the F(A) in the CDF in the probability lecture slides.</strong></a></li>
+<li class="chapter" data-level="4.4.2" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q2.-2-pts-what-is-the-probability-that-the-maximum-annual-precipitation-in-a-given-year-is-greater-than-500-mm"><i class="fa fa-check"></i><b>4.4.2</b> <strong>Q2. (2 pts) What is the probability that the maximum annual precipitation in a given year is GREATER than 500 mm?</strong></a></li>
+<li class="chapter" data-level="4.4.3" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q3.-2-pts-what-is-the-probability-that-the-annual-p-is-between-400-and-500-mm"><i class="fa fa-check"></i><b>4.4.3</b> <strong>Q3. (2 pts) What is the probability that the annual P is between 400 and 500 mm?</strong></a></li>
+<li class="chapter" data-level="4.4.4" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q4.-2-pts-what-is-the-return-period-for-a-year-with-at-least-550-mm-of-precip-the-return-period-tr-is-calculated-as-tr-1p-with-p-being-the-probability-for-an-event-to-occur."><i class="fa fa-check"></i><b>4.4.4</b> <strong>Q4. (2 pts) What is the return period for a year with AT LEAST 550 mm of precip? The return period, Tr, is calculated as Tr = 1/p, with p being the probability for an event to occur.</strong></a></li>
+<li class="chapter" data-level="4.4.5" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q5.-6-pts-explain-why-probability-analysis-of-climate-data-assumes-the-data-are-normally-distributed-and-stationary-below-provide-a-histogram-and-a-density-plot-of-the-total-annual-p-data-and-comment-on-the-visual-appearance-in-terms-of-normality.-next-use-google-and-the-links-below-to-test-for-normality-and-stationarity.-be-quantitative-in-commenting-on-the-normality-and-stationarity-of-the-total-p-data."><i class="fa fa-check"></i><b>4.4.5</b> <strong>Q5. (6 pts) Explain why probability analysis of climate data assumes the data are normally distributed and stationary? Below provide a histogram and a density plot of the total annual P data and comment on the visual appearance in terms of normality. Next use google and the links below to test for normality and stationarity. Be quantitative in commenting on the normality and stationarity of the total P data.</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html"><i class="fa fa-check"></i><b>5</b> Rational method and NRCS curve number (20 pts)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#rational-method"><i class="fa fa-check"></i><b>5.1</b> Rational Method</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#background-information-1"><i class="fa fa-check"></i><b>5.1.1</b> Background information</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#curve-number"><i class="fa fa-check"></i><b>5.2</b> Curve Number</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#background-information-2"><i class="fa fa-check"></i><b>5.2.1</b> Background information</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#codework"><i class="fa fa-check"></i><b>5.3</b> Codework</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#packages-1"><i class="fa fa-check"></i><b>5.3.1</b> Packages</a></li>
+<li class="chapter" data-level="5.3.2" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#part-i---rational-method"><i class="fa fa-check"></i><b>5.3.2</b> Part I - Rational Method</a></li>
+<li class="chapter" data-level="5.3.3" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#part-ii---nrcs-cn"><i class="fa fa-check"></i><b>5.3.3</b> Part II - NRCS CN</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="transfer-function-rainfall-runoff-models.html"><a href="transfer-function-rainfall-runoff-models.html"><i class="fa fa-check"></i><b>6</b> Transfer function rainfall-runoff models</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="transfer-function-rainfall-runoff-models.html"><a href="transfer-function-rainfall-runoff-models.html#summary-1"><i class="fa fa-check"></i><b>6.1</b> Summary</a></li>
+<li class="chapter" data-level="6.2" data-path="transfer-function-rainfall-runoff-models.html"><a href="transfer-function-rainfall-runoff-models.html#overall-learning-objectives-1"><i class="fa fa-check"></i><b>6.2</b> Overall Learning Objectives</a></li>
+<li class="chapter" data-level="6.3" data-path="transfer-function-rainfall-runoff-models.html"><a href="transfer-function-rainfall-runoff-models.html#terminology"><i class="fa fa-check"></i><b>6.3</b> Terminology</a></li>
+<li class="chapter" data-level="6.4" data-path="transfer-function-rainfall-runoff-models.html"><a href="transfer-function-rainfall-runoff-models.html#the-linear-time-invariant-tf"><i class="fa fa-check"></i><b>6.4</b> The Linear Time-Invariant TF</a></li>
+<li class="chapter" data-level="6.5" data-path="transfer-function-rainfall-runoff-models.html"><a href="transfer-function-rainfall-runoff-models.html#codework---transfer-function-rainfall-runoff-model"><i class="fa fa-check"></i><b>6.5</b> Codework - Transfer function rainfall-runoff model</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="transfer-function-rainfall-runoff-models.html"><a href="transfer-function-rainfall-runoff-models.html#download-the-repo-for-this-lab-here"><i class="fa fa-check"></i><b>6.5.1</b> Download the repo for this lab HERE</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html"><i class="fa fa-check"></i><b>7</b> Monte Carlo Simulation (20 pnts)</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#background"><i class="fa fa-check"></i><b>7.1</b> Background:</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#reading"><i class="fa fa-check"></i><b>7.1.1</b> Reading</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#how-does-this-apply-to-hydrological-modeling"><i class="fa fa-check"></i><b>7.2</b> How does this apply to hydrological modeling?</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#example"><i class="fa fa-check"></i><b>7.2.1</b> Example</a></li>
+<li class="chapter" data-level="7.2.2" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#reading-1"><i class="fa fa-check"></i><b>7.2.2</b> Reading</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#how-do-we-generate-a-simulation-with-code"><i class="fa fa-check"></i><b>7.3</b> How do we generate a simulation with code?</a></li>
+<li class="chapter" data-level="7.4" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#codework-1"><i class="fa fa-check"></i><b>7.4</b> Codework</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#download-the-repo-for-this-lab-here-1"><i class="fa fa-check"></i><b>7.4.1</b> Download the repo for this lab HERE</a></li>
+<li class="chapter" data-level="7.4.2" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#setup"><i class="fa fa-check"></i><b>7.4.2</b> Setup</a></li>
+<li class="chapter" data-level="7.4.3" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#parameter-initialization"><i class="fa fa-check"></i><b>7.4.3</b> Parameter initialization</a></li>
+<li class="chapter" data-level="7.4.4" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#mc-model-run"><i class="fa fa-check"></i><b>7.4.4</b> MC Model run</a></li>
+<li class="chapter" data-level="7.4.5" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#sensitivity-analysis"><i class="fa fa-check"></i><b>7.4.5</b> Sensitivity analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="classifying-model-structure---lecture-only-0-pts.html"><a href="classifying-model-structure---lecture-only-0-pts.html"><i class="fa fa-check"></i><b>8</b> Classifying model structure - Lecture only (0 pts)</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="classifying-model-structure---lecture-only-0-pts.html"><a href="classifying-model-structure---lecture-only-0-pts.html#spatial-complexity"><i class="fa fa-check"></i><b>8.1</b> Spatial Complexity</a></li>
+<li class="chapter" data-level="8.2" data-path="classifying-model-structure---lecture-only-0-pts.html"><a href="classifying-model-structure---lecture-only-0-pts.html#modeling-approaches"><i class="fa fa-check"></i><b>8.2</b> Modeling Approaches</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><i class="fa fa-check"></i><b>9</b> Snowmelt Models for runoff timing - Lecture &amp; Lab (20 pts)</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#module-repo"><i class="fa fa-check"></i><b>9.1</b> Module repo</a></li>
+<li class="chapter" data-level="9.2" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#background-1"><i class="fa fa-check"></i><b>9.2</b> Background:</a></li>
+<li class="chapter" data-level="9.3" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#model-approaches"><i class="fa fa-check"></i><b>9.3</b> Model Approaches</a></li>
+<li class="chapter" data-level="9.4" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#spatial-complexity-1"><i class="fa fa-check"></i><b>9.4</b> Spatial complexity</a></li>
+<li class="chapter" data-level="9.5" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#model-choices-my-snow-is-different-from-your-snow"><i class="fa fa-check"></i><b>9.5</b> Model choices: My snow is different from your snow</a></li>
+<li class="chapter" data-level="9.6" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#codework-2"><i class="fa fa-check"></i><b>9.6</b> Codework</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#download-the-repo-for-this-lab-here-2"><i class="fa fa-check"></i><b>9.6.1</b> Download the repo for this lab HERE</a></li>
+<li class="chapter" data-level="9.6.2" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#import-data"><i class="fa fa-check"></i><b>9.6.2</b> Import data:</a></li>
+<li class="chapter" data-level="9.6.3" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#calculate-liquid-input"><i class="fa fa-check"></i><b>9.6.3</b> Calculate liquid input</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#modeling-swe"><i class="fa fa-check"></i><b>9.7</b> Modeling SWE</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Environmental Methods: LRES 546</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="classifying-model-structure---lecture-only-0-pts" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Classifying model structure - Lecture only (0 pts)<a href="classifying-model-structure---lecture-only-0-pts.html#classifying-model-structure---lecture-only-0-pts" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Throughout the rest of the course, we will gather data and create models to explore how environmental factors, such as snowmelt, land cover, evapotranspiration (ET), and topography, impact runoff. To discuss these methods, we should review some modeling terminology describing model complexity and type.</p>
+<p>Environmental models, including hydrological models, are built around simplifying assumptions of natural systems. The complexity of the model may depend on its application. Effective hydrological models share key traits: they are simple, parsimonious, and robust across various watersheds. In other words, they are easy to understand and streamlined and consistently perform well across different basins or even geographical areas. Therefore, more complex is only sometimes better.</p>
+<div id="spatial-complexity" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Spatial Complexity<a href="classifying-model-structure---lecture-only-0-pts.html#spatial-complexity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are general terms that classify the spatial complexity of hydrological models:</p>
+<p>A <strong>lumped</strong> system is one in which the dependent variables of interest are a function of time alone, and the study basin is spatially ‘lumped’ or assumed to be spatially homogeneous across the basin. So far in this course, we have focused mainly on lumped models. You may remember the figure below from the transfer functions module. It represents the lumped watershed as a bucket with a single input, outlet output, and storage volume for each timestep.</p>
+<p>A <strong>distributed</strong> system is one in which all dependent variables are functions of time and one or more spatial variables. Modeling a distributed system means partitioning our basins into raster cells (grids) and assigning inputs, outputs, and the spatial variables that affect inputs and outputs across these cells. We then calculate the processes at the cell level and route them downstream. These models allow us to represent the spatial complexity of physically based processes. They can simulate or forecast parameters other than streamflow, such as soil moisture, evapotranspiration, and groundwater recharge.</p>
+<p>A <strong>semi-distributed</strong> system is an intermediate approach that combines elements of both lumped and distributed systems. Certain variables may be spatially distributed, while others are treated as lumped. Alternatively, we can divide the watershed into sub-basins and treat each sub-basin as a lumped basin. Outputs from each sub-basin are then linked together and routed downstream. Semi-distribution allows for a more nuanced representation of the basin’s characteristics, acknowledging spatial variability where needed while maintaining some simplifications for computation efficiency.</p>
+<p>In small-scale studies, we can design a model structure that fits the specific situation well. However, when we are dealing with larger areas, model design may be challenging. Our data might differ across regions with variable climate and landscape features. Sometimes, it is best to use a complex model to capture all the different processes happening over a big area. However, it could be better to stick with a simpler model because we might have limited data or the number of calculations is very computationally expensive. It is up to the modeler to determine the simplest model that meets the desired application.</p>
+</div>
+<div id="modeling-approaches" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Modeling Approaches<a href="classifying-model-structure---lecture-only-0-pts.html#modeling-approaches" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Empirical Models</strong> are based on empirical analysis of observed inputs (e.g., rainfall) or outputs (ET, discharge). These simple models may not be transferable to other watersheds. Also, they may not reveal much about the physical processes influencing runoff. Therefore, these types of models may not be valid if the study area experiences land use or climate change.</p>
+<p><strong>Conceptual Models</strong> describe processes with simple mathematical equations. For example, we might use a simple linear equation to interpolate precipitation inputs over a watershed with a high elevation gradient using precipitation measurements from two points (high and low). This represents the basic relationship between precipitation and elevation, but does not capture all features that affect precipitation patterns (e.g. aspect, prevailing winds). The combined impact of these factors is probably negligible compared to the substantial amount of data required to accurately model them.</p>
+<p><strong>Physically Based Models </strong> These models offer deep insights into the processes governing runoff generation by relying on fundamental physical equations like mass conservation. However, they come with drawbacks. Their implementation often demands complex numerical solving methods and a significant volume of input data. Without empirical data to validate these techniques, there is a risk of introducing substantial uncertainty into our models, reducing their reliability and effectiveness</p>
+<p>When modeling watersheds, we often use a mix of empirical, conceptual, and physically based models. The choice of model type depends on factors like the data we have, the time or computing resources we can allocate, and how we plan to use the model.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="monte-carlo-simulation-20-pnts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/tpcovino/lres_546_bookdown/edit/main/08_model_classifications.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/tpcovino/lres_546_bookdown/blob/main/08_model_classifications.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
