@@ -1,6 +1,7 @@
 # DEM processing
 
-## THE [LINK TO THE REPO IS HERE](https://github.com/tpcovino/08_dem_preprocessing)
+## THE [LINK TO THE REPO IS HERE](https://github.com/tpcovino/08_dem_processing.git){target="blank"}
+
 15pnts
 
 ## Objective:
