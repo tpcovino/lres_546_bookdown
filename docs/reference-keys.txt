@@ -109,3 +109,16 @@ earth-surface-changes-over-time
 landtrendr
 google-earth-engine
 gee-access
+dem-processing
+the-link-to-the-repo-is-here
+objective
+background-3
+codework-4
+installing-libraries
+generate-functions
+establish-new-directoriesfolders
+resample-dems
+filling-and-breaching
+flow-direction-and-accumulation-rasters
+streams
+final-thoughts-1
