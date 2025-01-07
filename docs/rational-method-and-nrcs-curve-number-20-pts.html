@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Rational method and NRCS curve number (20 pts) | Quantitative Environmental Methods: LRES 546</title>
   <meta name="description" content="Chapter 5 Rational method and NRCS curve number (20 pts) | Quantitative Environmental Methods: LRES 546" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Rational method and NRCS curve number (20 pts) | Quantitative Environmental Methods: LRES 546" />
   <meta property="og:type" content="book" />
@@ -20,7 +20,7 @@
   
   
 
-<meta name="author" content="Tim Covino &amp; Lauren Kremer" />
+<meta name="author" content="YOUR NAME HERE" />
 
 
 
@@ -55,7 +55,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -65,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -198,9 +198,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#codework"><i class="fa fa-check"></i><b>5.3</b> Codework</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#packages-1"><i class="fa fa-check"></i><b>5.3.1</b> Packages</a></li>
-<li class="chapter" data-level="5.3.2" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#part-i---rational-method"><i class="fa fa-check"></i><b>5.3.2</b> Part I - Rational Method</a></li>
-<li class="chapter" data-level="5.3.3" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#part-ii---nrcs-cn"><i class="fa fa-check"></i><b>5.3.3</b> Part II - NRCS CN</a></li>
+<li class="chapter" data-level="5.3.1" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#part-i---rational-method"><i class="fa fa-check"></i><b>5.3.1</b> Part I - Rational Method</a></li>
+<li class="chapter" data-level="5.3.2" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#part-ii---nrcs-cn"><i class="fa fa-check"></i><b>5.3.2</b> Part II - NRCS CN</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="transfer-function-rainfall-runoff-models.html"><a href="transfer-function-rainfall-runoff-models.html"><i class="fa fa-check"></i><b>6</b> Transfer function rainfall-runoff models</a>
@@ -331,19 +330,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.1</span> Rational Method<a href="rational-method-and-nrcs-curve-number-20-pts.html#rational-method" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="background-information-1" class="section level3 hasAnchor" number="5.1.1">
 <h3><span class="header-section-number">5.1.1</span> Background information<a href="rational-method-and-nrcs-curve-number-20-pts.html#background-information-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The <strong>Rational Method</strong> is a type of simple hydrological analysis used to estimate the <em>peak runoff rate</em> from a small watershed during a rainfall event. It is particularly useful for estimating the amount of water that will flow through a particular area during a storm, like a drainage system or culvert.</p>
-<p>Some helpful terminology:</p>
-<p><u>runoff coefficient</u> - represents how much rainfall actually becomes runoff<br>
-<u>time of concentration</u> - the time it takes for some mass of precipitation to travel from the most remote point in a watershed to the outlet or point of interest. e.g., how long it takes a drop of rain to reach a culvert after it falls to the ground.</p>
-<p>Here is a 5-minute video that describes the equation:</p>
+<p>The <strong>Rational Method</strong> is a type of simple hydrological analysis used to estimate the <em>peak runoff rate</em> from a small watershed during a rainfall event. It is particularly useful for estimating the amount of water that will flow through a particular area during a storm, like a drainage system or culvert. Despite the existence of more advanced methods, this approach remains widely used in practice for its simplicity and ability to provide quick approximations, making it invaluable for preliminary assessments and as a foundation for understanding more complex hydrological and environmental modeling techniques.</p>
+<p>Here is a 5-minute video to get started:</p>
 <iframe src="https://www.youtube.com/embed/brNpLh21UCg" width="672" height="400px" data-external="1">
 </iframe>
 <div id="reading---rational-method." class="section level4 hasAnchor" number="5.1.1.1">
 <h4><span class="header-section-number">5.1.1.1</span> Reading - Rational Method.<br><a href="rational-method-and-nrcs-curve-number-20-pts.html#reading---rational-method." class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Read at least sections 2 and 3<br></p>
+<p>Read at least sections 2 and 3 to for the formula and an example <br></p>
 <ul>
-<li><a href="https://www.waternz.org.nz/Attachment?Action=Download&amp;Attachment_id=846" target="_blank">Link</a></li>
+<li><a href="https://www.waternz.org.nz/Attachment?Action=Download&amp;Attachment_id=846" target="_blank">The Rational Method</a></li>
 </ul>
+<p>Some helpful terminology:</p>
+<p><u>runoff coefficient</u> - represents how much rainfall actually becomes runoff<br>
+<u>time of concentration</u> - the time it takes for some mass of precipitation to travel from the most remote point in a watershed to the outlet or point of interest. e.g., how long it takes a drop of rain to reach a culvert after it falls to the ground.</p>
 </div>
 </div>
 </div>
@@ -351,9 +350,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.2</span> Curve Number<a href="rational-method-and-nrcs-curve-number-20-pts.html#curve-number" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="background-information-2" class="section level3 hasAnchor" number="5.2.1">
 <h3><span class="header-section-number">5.2.1</span> Background information<a href="rational-method-and-nrcs-curve-number-20-pts.html#background-information-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The NRCS (Natural Resources Conservation Science) <strong>curve number</strong> (CN) is a tool used to estimate the <em>total runoff volume</em> of water that will run off an ungaged watershed during a storm event. The curve number is based on soil type, land use and antecedent moisture conditions. You may also see SCS CN in texts. NRCS was previously known as Soil Conservation Service, they are the same.
+<p>The NRCS (Natural Resources Conservation Science) <strong>curve number</strong> (CN) is a tool used to estimate the <em>total runoff volume</em> of water that will run off an ungaged watershed during a storm event. The curve number is based on soil type, land use and antecedent moisture conditions. You may also see SCS CN in texts. NRCS was previously known as Soil Conservation Science, they are the same.
 It was designed as a simple tool to describe typical watershed response from infrequent rainfall anywhere in the US for watersheds with the same soil type, land use, and surface runoff conditions. The CN method is a single event model to estimate of runoff volume from rainfall events (not peak discharge or a hydrograph).</p>
-<p>To understand the function and derivation of the CN number, let’s start with the NRCS runoff equation:</p>
+<p>To understand the function and derivation of the CN number, let’s start with the <br>
+the NRCS runoff equation:</p>
 <p><span class="math display">\[
 Q = \frac{{(P - I_{a})^2}}{{P - I_{a} + S}}
 \]</span>
@@ -387,106 +387,112 @@ Q = \frac{{[P - 0.02\left(\frac{{1000}}{{CN}} - 10\right)]^2}}{{P + 0.8\left(\fr
 </div>
 <div id="codework" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">5.3</span> Codework<a href="rational-method-and-nrcs-curve-number-20-pts.html#codework" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this module, you will apply the Rational Method and the SCS curve number (CN) method to estimate peak flows and effective rainfall/runoff volumes. This lab also includes two new coding techniques, namely writing ‘for loops’ and writing functions. We will start with the Rational Method and functions.</p>
+<p>In this module, you will apply the Rational Method and the SCS curve number (CN) method to estimate peak flows and effective rainfall/runoff volumes. This lab also introduces two coding techniques; for-loops and functions.</p>
 <p>This is knitr settings. Knitr is a package that will turn this Rmd to an html.</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb18-1" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="at">warning =</span> <span class="cn">FALSE</span>, <span class="at">message =</span> <span class="cn">FALSE</span>, <span class="at">results =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<div id="packages-1" class="section level3 hasAnchor" number="5.3.1">
-<h3><span class="header-section-number">5.3.1</span> Packages<a href="rational-method-and-nrcs-curve-number-20-pts.html#packages-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
-<div id="part-i---rational-method" class="section level3 hasAnchor" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> Part I - Rational Method<a href="rational-method-and-nrcs-curve-number-20-pts.html#part-i---rational-method" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Packages</p>
+<div id="part-i---rational-method" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Part I - Rational Method<a href="rational-method-and-nrcs-curve-number-20-pts.html#part-i---rational-method" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The goal is to calculate peak runoff (cfs) for a small 280-acre rangeland watershed near Bozeman for multiple events with different return periods. You will first have to calculate the time of concentration and then look up the the rainfall values for the different return intervals. The longest flowpath in the watershed is 6300 ft long, average watershed slope is 1.95%. Look at this <a href="https://www.dropbox.com/scl/fi/tkofgmpnroug8wwe8x16z/Rational.Method.C.png?rlkey=qgcyayk10j94is3hwjfxuzwz5&amp;dl=0">table</a> to select C.</p>
-<div id="time-of-concentration" class="section level4 hasAnchor" number="5.3.2.1">
-<h4><span class="header-section-number">5.3.2.1</span> Time of Concentration<a href="rational-method-and-nrcs-curve-number-20-pts.html#time-of-concentration" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="time-of-concentration" class="section level4 hasAnchor" number="5.3.1.1">
+<h4><span class="header-section-number">5.3.1.1</span> Time of Concentration<a href="rational-method-and-nrcs-curve-number-20-pts.html#time-of-concentration" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Time of concentration is the time it takes water to travel along the longest flowpath in the watershed and exit the watershed.</li>
 </ul>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb19-1" tabindex="-1"></a><span class="co"># A &lt;- BLANK # Area in acres</span></span>
 <span id="cb19-2"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb19-2" tabindex="-1"></a><span class="co"># L &lt;- BLANK # Longest flowpatch length (ft)</span></span>
-<span id="cb19-3"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb19-3" tabindex="-1"></a><span class="co"># S &lt;- 0.0195 # Slope (ft/ft)</span></span>
+<span id="cb19-3"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb19-3" tabindex="-1"></a><span class="co"># S &lt;- BLANK# Slope (ft/ft)</span></span>
 <span id="cb19-4"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb19-4" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb19-5"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb19-5" tabindex="-1"></a><span class="co"># tc &lt;- 0.0078 * L^0.77 * S^-0.385 # Kirpich concentration time</span></span>
 <span id="cb19-6"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb19-6" tabindex="-1"></a><span class="co"># tc</span></span></code></pre></div>
+<p>tc in this example should be ~ 29.91. If your calculated value is very different, start by checking slope value (S). For the sake of simplicity in next steps, do not change the name of variables.</p>
 </div>
-<div id="storm-depths" class="section level4 hasAnchor" number="5.3.2.2">
-<h4><span class="header-section-number">5.3.2.2</span> Storm Depths<a href="rational-method-and-nrcs-curve-number-20-pts.html#storm-depths" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Now that you have the time of concentration, you need to find the corresponding 1, 2, 5, 10, 25, 50, and 100 year storm depths for a duration that works for the Rational Method in that particular watershed (that is, the duration that is closest to tc). Create a df called “storms” that has a column for the return period, Tr, the storm depth, Pin, and the average storm intensity over ONE HOUR, Pin_hr. Typically hourly depths may be determined from a rainfall analysis. For the sake of the assignment, approximate daily depths corresponding to appropriate frequencies are provided here for Bozeman, MT.
+<div id="storm-depths" class="section level4 hasAnchor" number="5.3.1.2">
+<h4><span class="header-section-number">5.3.1.2</span> Storm Depths<a href="rational-method-and-nrcs-curve-number-20-pts.html#storm-depths" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Now that you have the time of concentration, you need to find the corresponding 1, 2, 5, 10, 25, 50, and 100 year storm depths for a duration that works for the Rational Method in that particular watershed (that is, the duration that is closest to tc). Create a dataframe (or ‘tibble’ which is the tidyverse data frame) called “storms” that has a column for the return period, Tr, the storm depth, Pin, and the average storm intensity over ONE HOUR, Pin_hr. Typically hourly depths may be determined from a rainfall analysis. For the sake of the assignment, approximate daily depths corresponding to appropriate frequencies are provided here for Bozeman, MT.
 To obtain 1 hour depths by dividing daily depth by 24.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb20-1" tabindex="-1"></a><span class="co"># storms &lt;- tibble(</span></span>
-<span id="cb20-2"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb20-2" tabindex="-1"></a><span class="co">#   Tr = c(BLANK), # column for return intervals</span></span>
+<span id="cb20-2"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb20-2" tabindex="-1"></a><span class="co">#   Tr = c(BLANK), # vector of return intervals in years </span></span>
 <span id="cb20-3"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb20-3" tabindex="-1"></a><span class="co">#   Pday = c(1.0, 1.18, 1.75, 2.10, 2.50, 2.81), # column for storm depth</span></span>
 <span id="cb20-4"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb20-4" tabindex="-1"></a><span class="co">#   Pin_hr = Pday / 24) # storm depth converted to an intensity of inches per hour </span></span></code></pre></div>
 </div>
-<div id="example-for-loop" class="section level4 hasAnchor" number="5.3.2.3">
-<h4><span class="header-section-number">5.3.2.3</span> Example for-loop<a href="rational-method-and-nrcs-curve-number-20-pts.html#example-for-loop" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Now that we have the rainfall intensities, we need to set up a way that calculates Qp for each of those intensities, without us having to go back and manually enter them each time. We do this with a for-loop. Let’s first look at how for loops work in R. There is one thing we need to take care of first, though. We have to preallocate the vector y, that is, we are creating an empty vector of the desired length.</p>
+<div id="example-for-loop" class="section level4 hasAnchor" number="5.3.1.3">
+<h4><span class="header-section-number">5.3.1.3</span> Example for-loop<a href="rational-method-and-nrcs-curve-number-20-pts.html#example-for-loop" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Now that we have the rainfall intensities, we need to set up a way that calculates Qp for each of those intensities, without us having to go back and manually enter them each time. We do this with a for-loop. Let’s first look at how for loops work in R.</p>
+<p>A for-loop will execute the code inside it for a specified number of iterations. The structure looks like:
+for(i in some number of iterations) {
+output &lt;- some code/function that needs to be executed
+}
+In the chunk below, we create the vector x, which contains 6 values (0, 2, 4, 6, 8, 10). Each loop then executes a calculation using each value in ‘x’ in sequence.
+In a for-loop, ‘i’ is called the loop index or iterator. It has a new value in each iteration of the loop. You can think of i as a ‘counter’ that helps the loop keep track of its progress. In the example below, we want to run the code in the loop for every value in the vector ‘x’. Since there are 6 values in vector ‘x’, then we will tell the loop to run 6 times. However, rather than for (i in 1:6), using 1:length(x) ensures the loop adapts to the size of x, no matter how many values it contains. This improves the flexibility of our code.
+We also need to store the output of loop during each iteration. If we don’t store the results of each iteration or loop, the loop will overwrite the output each time, leaving us with only the result from the final iteration. To store the output of each loop iteration, we have to preallocate a vector (like y) to store all of the outputs. In other words, we are creating an empty vector with the same length as ‘x’ for the for-loop to add values to.</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb21-1" tabindex="-1"></a><span class="co"># x &lt;- seq(0, 10, 2) # create vector from 0 to 10 in increments of 2</span></span>
 <span id="cb21-2"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb21-2" tabindex="-1"></a><span class="co"># y &lt;- vector(mode = &quot;double&quot;, length(x)) # preallocate y vector with length of x</span></span>
 <span id="cb21-3"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb21-3" tabindex="-1"></a><span class="co"># for (i in 1:length(x)) { # loop through i </span></span>
 <span id="cb21-4"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb21-4" tabindex="-1"></a><span class="co">#   y[i] &lt;- x[i]^2 # calculation</span></span>
 <span id="cb21-5"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb21-5" tabindex="-1"></a><span class="co"># }</span></span>
 <span id="cb21-6"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb21-6" tabindex="-1"></a><span class="co"># y</span></span></code></pre></div>
-<p>Please note that we wouldn’t need a for-loop for this operation, this is just for demonstration. We have created a vector x from 0 to 10 in increments of 2. The for-loop takes each element of that vector and squares it. The “i” is called an index and runs from 1 through 6 (the length of x). During the first iteration i is 1, during the second iteration i is 2, and so on. We are then writing the results from the calculation into a new vector, y. When i is 1, we are squaring the first value in vector x, which is 0. The first value in y will be zero as well. When i is 2, the second value in x gets squared, which is 2^2. The second value in y is going to be 4.</p>
+<p>We have created a vector x from 0 to 10 in increments of 2. The for-loop takes each element of that vector and squares it. The “i” is called an index and runs from 1 through 6 (the length of x). During the first iteration i is 1, during the second iteration i is 2, and so on. We are then writing the results from the calculation into a new vector, y. When i is 1, we are squaring the first value in vector x, which is 0. The first value in y will be zero as well. When i is 2, the second value in x gets squared, which is 2^2. The second value in y is going to be 4.</p>
 </div>
-<div id="calculate-qp-with-for-loop" class="section level4 hasAnchor" number="5.3.2.4">
-<h4><span class="header-section-number">5.3.2.4</span> Calculate Qp with for-loop<a href="rational-method-and-nrcs-curve-number-20-pts.html#calculate-qp-with-for-loop" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Let’s set up the for-loop for the Rational Method. We need to set up a for-loop that does the same calculation 7 times, the number of precip values in “storms” (remember that ‘length()’ for a dataframe returns the number of columns, so you want to use ‘nrow()’. The calculated peak discharges should go into a new column of our “storms” df. However, indexing is slow for dataframes, that is why we will write the new values into a new vector, Qp, and then after the loop insert it into the dataframe.<br>
+<div id="calculate-qp-with-for-loop" class="section level4 hasAnchor" number="5.3.1.4">
+<h4><span class="header-section-number">5.3.1.4</span> Calculate Qp with for-loop<a href="rational-method-and-nrcs-curve-number-20-pts.html#calculate-qp-with-for-loop" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Now let’s set up the for-loop for the Rational Method. We need to set up a for-loop that does the same calculation 7 times, the number of precip values in “storms”. However, ‘length()’ for a dataframe returns the number of columns, so you want to use ‘nrow()’ when referencing a dataframe. (As apposed to using length() for a vector as above). The calculated peak discharges should go into a new column of our “storms” df. However, indexing is slow for dataframes, so we will write the new values into a new vector, Qp, and then after the loop insert the vector as a column into the dataframe.<br>
 <strong>If you are using the complete version of the assignment, do not assume that this C value is correct</strong></p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-1" tabindex="-1"></a><span class="co"># # DEFINE C if you haven&#39;t already done so further up (uncomment the line below)</span></span>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-1" tabindex="-1"></a><span class="co"># # DEFINE C</span></span>
 <span id="cb22-2"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-2" tabindex="-1"></a><span class="co"># C &lt;- BLANK # runoff coefficient</span></span>
 <span id="cb22-3"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-3" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb22-4"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-4" tabindex="-1"></a><span class="co"># # preallocate vector (think about what the length needs to be and how to get it without just typing in the number)</span></span>
 <span id="cb22-5"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-5" tabindex="-1"></a><span class="co"># Qp &lt;- vector(mode = &quot;double&quot;, nrow(storms))</span></span>
 <span id="cb22-6"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-6" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb22-7"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-7" tabindex="-1"></a><span class="co"># for (i in 1:nrow(storms)) {</span></span>
-<span id="cb22-8"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-8" tabindex="-1"></a><span class="co">#   # the actual Rational Method calculation goes here. For the precip, you need to use the column in the storms df that has the one hour precip intensities (make sure to not forget the correct index symbol!)</span></span>
+<span id="cb22-7"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-7" tabindex="-1"></a><span class="co"># for (i in 1:nrow BLANK</span></span>
+<span id="cb22-8"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-8" tabindex="-1"></a><span class="co">#   # the actual Rational Method calculation. For the precip, you need to use the column in the storms df that has the one hour precip intensities (make sure to not forget the correct index symbol!)</span></span>
 <span id="cb22-9"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-9" tabindex="-1"></a><span class="co">#   Qp[i] &lt;- C * A * storms$Pin_hr[i]</span></span>
 <span id="cb22-10"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-10" tabindex="-1"></a><span class="co"># }</span></span>
 <span id="cb22-11"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-11" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb22-12"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-12" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb22-13"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-13" tabindex="-1"></a><span class="co"># # this adds the new peakflows to the existing &quot;storms&quot; df</span></span>
-<span id="cb22-14"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-14" tabindex="-1"></a><span class="co"># storms &lt;- storms %&gt;%</span></span>
-<span id="cb22-15"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-15" tabindex="-1"></a><span class="co">#   mutate(Qp = Qp)</span></span>
-<span id="cb22-16"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-16" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb22-17"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-17" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb22-18"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-18" tabindex="-1"></a><span class="co"># # FULL DISCLAIMER</span></span>
-<span id="cb22-19"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-19" tabindex="-1"></a><span class="co"># # We could have accomplished the same with vectorization </span></span>
-<span id="cb22-20"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-20" tabindex="-1"></a><span class="co"># # As a matter of fact, you should try to avoid for loops whenever possible.</span></span>
-<span id="cb22-21"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-21" tabindex="-1"></a><span class="co"># Qp_vectorized &lt;- C*A*storms$Pin_hr</span></span></code></pre></div>
+<span id="cb22-12"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-12" tabindex="-1"></a><span class="co"># # this adds the new peakflows to the existing &quot;storms&quot; df as a column</span></span>
+<span id="cb22-13"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-13" tabindex="-1"></a><span class="co"># storms &lt;- storms %&gt;%</span></span>
+<span id="cb22-14"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-14" tabindex="-1"></a><span class="co">#   mutate(Qp = Qp)</span></span>
+<span id="cb22-15"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-15" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb22-16"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-16" tabindex="-1"></a><span class="co"># # FULL DISCLAIMER</span></span>
+<span id="cb22-17"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-17" tabindex="-1"></a><span class="co"># # We could have accomplished the same with vectorization. </span></span>
+<span id="cb22-18"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-18" tabindex="-1"></a><span class="co"># # As a rule of thumb, you should try to avoid for-loops with working with a lot of iterations or complex calculations, but we&#39;ll discuss this more in later lessons. However, for-loops are valuable for their versatility, making them an excellent tool for iterating over data and building fundamental programming skills.</span></span>
+<span id="cb22-19"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-19" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb22-20"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-20" tabindex="-1"></a><span class="co"># Qp_vectorized &lt;- C*A*storms$Pin_hr</span></span>
+<span id="cb22-21"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb22-21" tabindex="-1"></a><span class="co"># Qp_vectorized</span></span></code></pre></div>
 </div>
-<div id="plot-tr-and-qp" class="section level4 hasAnchor" number="5.3.2.5">
-<h4><span class="header-section-number">5.3.2.5</span> Plot Tr and Qp<a href="rational-method-and-nrcs-curve-number-20-pts.html#plot-tr-and-qp" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Now plot the return interval against the storm peakflow. You only need three to four lines for this: 1st sets up the data, 2nd defines the theme that removes the gray background and sets the axes labels to a proper size, 3rd plots the data with geom_points, 4th makes the axes labels with labs.</p>
+<div id="plot-tr-and-qp" class="section level4 hasAnchor" number="5.3.1.5">
+<h4><span class="header-section-number">5.3.1.5</span> Plot Tr and Qp<a href="rational-method-and-nrcs-curve-number-20-pts.html#plot-tr-and-qp" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Now plot the return interval against the storm peakflow. You only need three to four lines for this: 1st sets up the data, 2nd defines the theme that removes the gray background and sets the axes labels to a proper size, 3rd plots the data with geom_points, 4th makes the axes labels with labs. Note that axis labels have units. This is an important feature when communicating your findings.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb23-1" tabindex="-1"></a><span class="co"># ggplot(storms, aes(x = Tr, y = Qp)) +</span></span>
 <span id="cb23-2"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb23-2" tabindex="-1"></a><span class="co">#   theme_bw(base_size = BLANK) +</span></span>
-<span id="cb23-3"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb23-3" tabindex="-1"></a><span class="co">#   geom_point(size = 4, color = BLANK) +</span></span>
-<span id="cb23-4"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb23-4" tabindex="-1"></a><span class="co">#   labs(x = &quot;Return Period (Years)&quot;, y = &quot;Peakflow (cfs)&quot;)</span></span></code></pre></div>
-<p><strong>1. (2 pt) What does the C in the Rational Method do?</strong><br />
+<span id="cb23-3"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb23-3" tabindex="-1"></a><span class="co">#   BLANK</span></span>
+<span id="cb23-4"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb23-4" tabindex="-1"></a><span class="co">#   BLANK(x = &quot;Return Period (Years)&quot;, y = &quot;Peakflow (cfs)&quot;)</span></span></code></pre></div>
+<p><strong>1. (1 pt) What does the C in the Rational Method do?</strong><br />
 ANSWER:</p>
-<p><strong>2. (4 pt) What is the the time of concentration and why does it need to be taken into account for the Rational Method? What is a common issue among many tc methods?</strong><br />
+<p><strong>2. (3 pt) What is the the time of concentration and why does it need to be taken into account for the Rational Method? What is a common issue among many tc methods?</strong><br />
 ANSWER:</p>
 </div>
 </div>
-<div id="part-ii---nrcs-cn" class="section level3 hasAnchor" number="5.3.3">
-<h3><span class="header-section-number">5.3.3</span> Part II - NRCS CN<a href="rational-method-and-nrcs-curve-number-20-pts.html#part-ii---nrcs-cn" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="part-ii---nrcs-cn" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Part II - NRCS CN<a href="rational-method-and-nrcs-curve-number-20-pts.html#part-ii---nrcs-cn" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In this exercise we will write a function that takes the necessary inputs for the NRCS CN method and returns a value based on the parameters. This is not fully automated, you will still have to look up the CN yourself for a given land use. The goal is to write a function that requires P, CN, and AMC (antecedent moisture condition) as an input in order to calculate Q.</p>
-<div id="amc-table" class="section level4 hasAnchor" number="5.3.3.1">
-<h4><span class="header-section-number">5.3.3.1</span> AMC Table<a href="rational-method-and-nrcs-curve-number-20-pts.html#amc-table" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="amc-table" class="section level4 hasAnchor" number="5.3.2.1">
+<h4><span class="header-section-number">5.3.2.1</span> AMC Table<a href="rational-method-and-nrcs-curve-number-20-pts.html#amc-table" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
-<div id="function-example" class="section level4 hasAnchor" number="5.3.3.2">
-<h4><span class="header-section-number">5.3.3.2</span> Function example<a href="rational-method-and-nrcs-curve-number-20-pts.html#function-example" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="function-example" class="section level4 hasAnchor" number="5.3.2.2">
+<h4><span class="header-section-number">5.3.2.2</span> Function example<a href="rational-method-and-nrcs-curve-number-20-pts.html#function-example" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Let’s look at a simple example for a function. Assume we want a number with an exponent and we want to be able to choose both the base and the exponent. The function ‘function()’ defines the inputs in (), the actual calculation then follows in {}.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb24-1" tabindex="-1"></a><span class="co">#multiply &lt;- function(base, exponent) {</span></span>
-<span id="cb24-2"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb24-2" tabindex="-1"></a><span class="co">#  new_number &lt;- base^exponent</span></span>
-<span id="cb24-3"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb24-3" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb24-4" tabindex="-1"></a><span class="co">#  return(new_number)</span></span>
-<span id="cb24-5"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb24-5" tabindex="-1"></a><span class="co">#}</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb24-1" tabindex="-1"></a><span class="co"># multiply &lt;- function(base, exponent) {</span></span>
+<span id="cb24-2"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb24-2" tabindex="-1"></a><span class="co">#   new_number &lt;- base^exponent</span></span>
+<span id="cb24-3"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb24-3" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb24-4"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb24-4" tabindex="-1"></a><span class="co">#   return(new_number)</span></span>
+<span id="cb24-5"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb24-5" tabindex="-1"></a><span class="co"># }</span></span></code></pre></div>
 <p>Run the above function. You will notice that a function was added to the Global Environment all the way at the bottom. Now let’s test the function with a base of 2 and an exponent of 3. This should perform the calculation 2x2x2 = 8</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb25-1" tabindex="-1"></a><span class="co">#multiply(2, 3)</span></span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb25-1" tabindex="-1"></a><span class="co"># multiply(2, 3)</span></span></code></pre></div>
 </div>
-<div id="nrcs-cn-test" class="section level4 hasAnchor" number="5.3.3.3">
-<h4><span class="header-section-number">5.3.3.3</span> NRCS CN test<a href="rational-method-and-nrcs-curve-number-20-pts.html#nrcs-cn-test" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Before we write a function, let’s make sure we can set up the correct steps WITHOUT the function. Let’s try it for P = 2.5 inches, CN = 90, and AMC = 3.
+<div id="nrcs-cn-test" class="section level4 hasAnchor" number="5.3.2.3">
+<h4><span class="header-section-number">5.3.2.3</span> NRCS CN test<a href="rational-method-and-nrcs-curve-number-20-pts.html#nrcs-cn-test" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Before we write a function to estimate Q using CN, let’s make sure we can set up the correct steps WITHOUT the function. This is almost always a helpful step in developing functions. It can save hours of headaches later. Let’s try P = 2.5 inches, CN = 90, and AMC = 3.
 The biggest problem here is going to be creating a lookup table for the AMC. I will provide the basic structure of the code for this.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-1" tabindex="-1"></a><span class="co"># P &lt;- 2.5 # 50-year, 24-hour rainfall (in.), from TP40</span></span>
 <span id="cb26-2"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-2" tabindex="-1"></a><span class="co"># CN &lt;- 90</span></span>
@@ -509,22 +515,22 @@ The biggest problem here is going to be creating a lookup table for the AMC. I w
 <span id="cb26-19"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-19" tabindex="-1"></a><span class="co">#   CN_adj &lt;- (23 * CN) / (10 + 0.13 * CN)</span></span>
 <span id="cb26-20"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-20" tabindex="-1"></a><span class="co"># }</span></span>
 <span id="cb26-21"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-21" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb26-22"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-22" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb26-23"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-23" tabindex="-1"></a><span class="co"># # calculate Si</span></span>
-<span id="cb26-24"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-24" tabindex="-1"></a><span class="co"># Si &lt;- 1000 / CN_adj - 10 # Storage part</span></span>
-<span id="cb26-25"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-25" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb26-26"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-26" tabindex="-1"></a><span class="co"># # estimate initial abstraction</span></span>
-<span id="cb26-27"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-27" tabindex="-1"></a><span class="co"># Ia &lt;- 0.2 * Si</span></span>
-<span id="cb26-28"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-28" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb26-29"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-29" tabindex="-1"></a><span class="co"># # Check equation from lecture</span></span>
-<span id="cb26-30"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-30" tabindex="-1"></a><span class="co"># # calculate Q</span></span>
-<span id="cb26-31"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-31" tabindex="-1"></a><span class="co"># Q &lt;- (P - 0.2 * Si)^2 / (P + BLANK * Si) # SCS CN runoff (inches)</span></span>
-<span id="cb26-32"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-32" tabindex="-1"></a><span class="co"># Q</span></span></code></pre></div>
-<p><strong>3. (4 pt) What is one of the critical assumptions for the SCS CN method? </strong><br />
+<span id="cb26-22"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-22" tabindex="-1"></a><span class="co"># # calculate Si</span></span>
+<span id="cb26-23"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-23" tabindex="-1"></a><span class="co"># Si &lt;- 1000 / CN_adj - 10 # Storage part</span></span>
+<span id="cb26-24"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-24" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb26-25"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-25" tabindex="-1"></a><span class="co"># # estimate initial abstraction</span></span>
+<span id="cb26-26"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-26" tabindex="-1"></a><span class="co"># Ia &lt;- 0.2 * Si</span></span>
+<span id="cb26-27"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-27" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb26-28"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-28" tabindex="-1"></a><span class="co"># # Check equation from lecture</span></span>
+<span id="cb26-29"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-29" tabindex="-1"></a><span class="co"># # calculate Q</span></span>
+<span id="cb26-30"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-30" tabindex="-1"></a><span class="co"># Q &lt;- (P - 0.2 * Si)^2 / (P + BLANK * Si) # SCS CN runoff (inches)</span></span>
+<span id="cb26-31"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb26-31" tabindex="-1"></a><span class="co"># Q</span></span></code></pre></div>
+<p>Sanity check: Q should ~ 2.0 for the specified parameters.</p>
+<p><strong>3. (4 pt) What is one of the critical assumptions for the SCS CN method? (1-2 sentences). Why is it important to understand assumptions of models like this one?</strong><br />
 ANSWER:</p>
 <p>Now write a function called “scs_cn” that takes the inputs P, CN, and AMC (all numeric) and returns Q, Ia, Si, and the RR as a df called “scs_out”.
 Test the function for P = 2.5 in, CN = 90, AMC = 3.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-1" tabindex="-1"></a><span class="co"># scs_cn &lt;- function(P, CN, AMC) {</span></span>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-1" tabindex="-1"></a><span class="co"># scs_cn &lt;- function(BLANK) { # note in our first function example, we put variable names here, not numerical values</span></span>
 <span id="cb27-2"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-2" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb27-3"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-3" tabindex="-1"></a><span class="co">#   </span><span class="al">###</span><span class="co"> Adjust for AMC</span></span>
 <span id="cb27-4"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-4" tabindex="-1"></a><span class="co">#   # AMC I</span></span>
@@ -544,10 +550,10 @@ Test the function for P = 2.5 in, CN = 90, AMC = 3.</p>
 <span id="cb27-18"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-18" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb27-19"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-19" tabindex="-1"></a><span class="co"># # Check equation from lecture</span></span>
 <span id="cb27-20"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-20" tabindex="-1"></a><span class="co">#   # calculate S</span></span>
-<span id="cb27-21"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-21" tabindex="-1"></a><span class="co">#   S &lt;- BLANK / CN_adj - 10 # Storage part</span></span>
+<span id="cb27-21"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-21" tabindex="-1"></a><span class="co">#   S &lt;- BLANK # Storage part</span></span>
 <span id="cb27-22"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-22" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb27-23"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-23" tabindex="-1"></a><span class="co">#   # estimate initial abstraction</span></span>
-<span id="cb27-24"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-24" tabindex="-1"></a><span class="co">#   Ia &lt;- 0.2 * S</span></span>
+<span id="cb27-24"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-24" tabindex="-1"></a><span class="co">#   Ia &lt;- BLANK</span></span>
 <span id="cb27-25"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-25" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb27-26"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-26" tabindex="-1"></a><span class="co">#   Q &lt;- (P - 0.2 * S)^2 / (P + 0.8 * S) # SCS CN runoff (inches)</span></span>
 <span id="cb27-27"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-27" tabindex="-1"></a><span class="co">#   </span></span>
@@ -560,14 +566,15 @@ Test the function for P = 2.5 in, CN = 90, AMC = 3.</p>
 <span id="cb27-34"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-34" tabindex="-1"></a><span class="co">#   return(scs_out)</span></span>
 <span id="cb27-35"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-35" tabindex="-1"></a><span class="co"># }</span></span>
 <span id="cb27-36"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-36" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb27-37"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-37" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb27-38"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-38" tabindex="-1"></a><span class="co"># # </span><span class="al">TEST</span><span class="co"> THE FUNCTION with P = 2.5, CN = 90, and AMC = 3</span></span>
-<span id="cb27-39"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-39" tabindex="-1"></a><span class="co"># SCS_example &lt;- scs_cn(0.01, 90, 3)</span></span>
-<span id="cb27-40"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-40" tabindex="-1"></a><span class="co"># SCS_example</span></span></code></pre></div>
-<p><strong>4.(6 pts) Describe what factors into the curve number (and most notably what is missing). What does it mean when the CN is 100 or 0?</strong><br />
+<span id="cb27-37"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-37" tabindex="-1"></a><span class="co"># # </span><span class="al">TEST</span><span class="co"> THE FUNCTION with P = 2.5, CN = 90, and AMC = 3</span></span>
+<span id="cb27-38"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-38" tabindex="-1"></a><span class="co"># SCS_example &lt;- scs_cn(2.5, 90, 3)</span></span>
+<span id="cb27-39"><a href="rational-method-and-nrcs-curve-number-20-pts.html#cb27-39" tabindex="-1"></a><span class="co"># SCS_example</span></span></code></pre></div>
+<p><strong>4.(4 pts) Describe what factors into the curve number (and most notably what is missing). What does it mean when the CN is 100 or 0?</strong><br />
 ANSWER:</p>
-<p>General question:<br />
-<strong>5. (4 pts) What is the difference between a deterministic and a stochastic model? Describe one example each.</strong> ANSWER:</p>
+<p><strong>5. (3 pts) What is the difference between a deterministic and a stochastic model? Describe one example each.</strong><br />
+ANSWER:</p>
+<p><strong>6. (6 pts)(4-6 sentences) Let’s consider the cross-disciplinary relevance of hydrological modeling. You may not be studying hydrology directly, but environmental resource managers often need to estimate peak flows. Why? (1-2 sentences). In a sentence, what is your specific area of interest, or the topic of your professional paper, if known. Consider broader implications of the hydrologic cycle, like water quality, nutrient or pollution transport, or erosion. Does rainfall/runoff management affect your niche? If so, how? (2-4 sentences)</strong>
+ANSWER:</p>
 
 </div>
 </div>

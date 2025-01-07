@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Hydrograph separation: learning module | Quantitative Environmental Methods: LRES 546</title>
   <meta name="description" content="Chapter 2 Hydrograph separation: learning module | Quantitative Environmental Methods: LRES 546" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Hydrograph separation: learning module | Quantitative Environmental Methods: LRES 546" />
   <meta property="og:type" content="book" />
@@ -20,7 +20,7 @@
   
   
 
-<meta name="author" content="Tim Covino &amp; Lauren Kremer" />
+<meta name="author" content="YOUR NAME HERE" />
 
 
 
@@ -55,7 +55,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -65,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -198,9 +198,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#codework"><i class="fa fa-check"></i><b>5.3</b> Codework</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#packages-1"><i class="fa fa-check"></i><b>5.3.1</b> Packages</a></li>
-<li class="chapter" data-level="5.3.2" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#part-i---rational-method"><i class="fa fa-check"></i><b>5.3.2</b> Part I - Rational Method</a></li>
-<li class="chapter" data-level="5.3.3" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#part-ii---nrcs-cn"><i class="fa fa-check"></i><b>5.3.3</b> Part II - NRCS CN</a></li>
+<li class="chapter" data-level="5.3.1" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#part-i---rational-method"><i class="fa fa-check"></i><b>5.3.1</b> Part I - Rational Method</a></li>
+<li class="chapter" data-level="5.3.2" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#part-ii---nrcs-cn"><i class="fa fa-check"></i><b>5.3.2</b> Part II - NRCS CN</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="transfer-function-rainfall-runoff-models.html"><a href="transfer-function-rainfall-runoff-models.html"><i class="fa fa-check"></i><b>6</b> Transfer function rainfall-runoff models</a>
@@ -359,7 +358,7 @@ The first component is <strong>channel interception</strong>. This is water that
 </div>
 <div id="how-we-quantify-baseflow" class="section level3 hasAnchor" number="2.3.3">
 <h3><span class="header-section-number">2.3.3</span> How we quantify baseflow<a href="hydrograph-separation-learning-module.html#how-we-quantify-baseflow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>It is impossible to know the amount of water moving as overland, subsurface, and base flow in all parts of a watershed. So in order to quantify how much water in a stream at any given time is storm flow vs. baseflow, we need to use some simplified methods. These frequently involve using the hydrograph (plot of streamflow over time) drawing lines, and calculating the volume of water above and below the line. This can be somewhat arbitrary and there are a variety of methods for delineating the cutoff between baseflow and stormflow. Despite what method you use and how simplified it is, this technique still provides valuable information and allows us to make comparisons across watersheds in order to understand how they function and what their structural properties are.</p>
+<p>It is impossible to know the amount of water moving as overland, subsurface, and base flow in all parts of a watershed. So in order to quantify how much water in a stream at any given time is storm flow vs. baseflow, we need to use some simplified methods (i.e., modeling). These frequently involve using the hydrograph (plot of streamflow over time) drawing lines, and calculating the volume of water above and below the line. This can be somewhat arbitrary and there are a variety of methods for delineating the cutoff between baseflow and stormflow. Despite what method you use and how simplified it is, this technique still provides valuable information and allows us to make comparisons across watersheds in order to understand how they function and what their structural properties are.</p>
 <p><img src="images/simple_baseflow_separation.jpg" /></p>
 </div>
 <div id="baseflow-separation-methods" class="section level3 hasAnchor" number="2.3.4">
