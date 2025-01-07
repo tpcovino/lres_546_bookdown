@@ -40,7 +40,7 @@ We can simplify this partitioning into **baseflow** and **stormflow** (often cal
 
 ###  How we quantify baseflow 
 
-It is impossible to know the amount of water moving as overland, subsurface, and base flow in all parts of a watershed. So in order to quantify how much water in a stream at any given time is storm flow vs. baseflow, we need to use some simplified methods. These frequently involve using the hydrograph (plot of streamflow over time) drawing lines, and calculating the volume of water above and below the line. This can be somewhat arbitrary and there are a variety of methods for delineating the cutoff between baseflow and stormflow. Despite what method you use and how simplified it is, this technique still provides valuable information and allows us to make comparisons across watersheds in order to understand how they function and what their structural properties are.
+It is impossible to know the amount of water moving as overland, subsurface, and base flow in all parts of a watershed. So in order to quantify how much water in a stream at any given time is storm flow vs. baseflow, we need to use some simplified methods (i.e., modeling). These frequently involve using the hydrograph (plot of streamflow over time) drawing lines, and calculating the volume of water above and below the line. This can be somewhat arbitrary and there are a variety of methods for delineating the cutoff between baseflow and stormflow. Despite what method you use and how simplified it is, this technique still provides valuable information and allows us to make comparisons across watersheds in order to understand how they function and what their structural properties are.
 
 ![](images/simple_baseflow_separation.jpg)
 
