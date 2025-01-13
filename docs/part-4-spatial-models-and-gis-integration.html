@@ -427,7 +427,7 @@ Essentially, we will be using input rasters via filepath and output filepaths as
 <div id="generate-functions" class="section level5 hasAnchor" number="5.2.3.1.1">
 <h5><span class="header-section-number">5.2.3.1.1</span> Generate functions<a href="part-4-spatial-models-and-gis-integration.html#generate-functions" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Since we have imported the required libraries, let’s generate some functions.</p>
-<p><strong>Q1.</strong>(2 pnt) What does date: “10 January, 2025” in the header do?</p>
+<p><strong>Q1.</strong>(2 pnt) What does date: “13 January, 2025” in the header do?</p>
 <p>ANSWER:</p>
 <p><strong>Q2.</strong>(3 pnt) What does ‘recursive = TRUE’ do? What would the ‘recursive = FALSE’ return?
 ANSWER:</p>
@@ -520,10 +520,8 @@ When using these tools, the order of operations is similar to our work above: fi
 2. the shape characteristics of the unit hydrograph are independent of time <br/>
 3. the output response is linearly proportional to the input</p>
 <p><br/><br/></p>
-<div class="float">
-<img src="images/linear_vs_IUH.png" alt="Chow, V.T., Maidment, D.R. and Mays, L.W. (1988) Applied Hydrology. International Edition, McGraw-Hill Book Company, New York." />
-<div class="figcaption">Chow, V.T., Maidment, D.R. and Mays, L.W. (1988) Applied Hydrology. International Edition, McGraw-Hill Book Company, New York.</div>
-</div>
+<p><img src="images/linear_vs_IUH.png" alt="Chow, V.T., Maidment, D.R. and Mays, L.W. (1988) Applied Hydrology. International Edition, McGraw-Hill Book Company, New York." />
+<br/><br/></p>
 <p>By interpreting the IUH as a transfer function, we can model how the watershed translates rainfall into runoff. In the TRANSEP model, this transfer function is represented as <span class="math inline">\(g(\tau)\)</span> and thus the rainfall-induced response to runoff.</p>
 <p><span class="math display">\[
 g(\tau) = \frac{\tau^{\alpha-1}}{\mathrm{B}^{\alpha}\Gamma(\alpha)}exp(-\frac{\tau}{\alpha})
@@ -533,8 +531,8 @@ g(\tau) = \frac{\tau^{\alpha-1}}{\mathrm{B}^{\alpha}\Gamma(\alpha)}exp(-\frac{\t
 <p><span class="math display">\[
 Q(t)= \int_{0}^{t} g(\tau)p_{\text{eff}}(t-\tau)d\tau
 \]</span>
-<br/><br/></p>
-<p>Whoa, wait…what? Tau, integrals, and convolution? Don’t worry about the details of the equations. Check out this video to have convolution described using dollars and cookies, then imagine each dollar as a rainfall unit and each cookie as a runoff unit. Review the equations again after the video.</p>
+<br/><br/>
+Whoa, wait…what? Tau, integrals, and convolution? Don’t worry about the details of the equations. Check out this video to have convolution described using dollars and cookies, then imagine each dollar as a rainfall unit and each cookie as a runoff unit. Review the equations again after the video.</p>
 <p><br/><br/></p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="part-4-spatial-models-and-gis-integration.html#cb8-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_url</span>(<span class="st">&quot;https://www.youtube.com/embed/aEGboJxmq-w&quot;</span>)</span></code></pre></div>
 <iframe src="https://www.youtube.com/embed/aEGboJxmq-w" width="672" height="400px" data-external="1">
