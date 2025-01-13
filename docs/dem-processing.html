@@ -4,23 +4,23 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 11 DEM processing | Quantitative Environmental Methods: LRES 546</title>
-  <meta name="description" content="Chapter 11 DEM processing | Quantitative Environmental Methods: LRES 546" />
+  <title>Chapter 5 DEM processing | Quantitative Environmental Methods: LRES 546</title>
+  <meta name="description" content="Chapter 5 DEM processing | Quantitative Environmental Methods: LRES 546" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 11 DEM processing | Quantitative Environmental Methods: LRES 546" />
+  <meta property="og:title" content="Chapter 5 DEM processing | Quantitative Environmental Methods: LRES 546" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 11 DEM processing | Quantitative Environmental Methods: LRES 546" />
+  <meta name="twitter:title" content="Chapter 5 DEM processing | Quantitative Environmental Methods: LRES 546" />
   
   
   
 
-<meta name="author" content="YOUR NAME HERE" />
+<meta name="author" content="Tim Covino &amp; Lauren Kremer" />
 
 
 
@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="learning-module-10---gridded-and-tabular-data-retrieval.html"/>
-<link rel="next" href="evapotranspiration.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -139,169 +139,100 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">lres_546</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Part 1: Foundations of Environmental Modeling</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#course-overview-and-objectives"><i class="fa fa-check"></i><b>1.1</b> Course overview and objectives</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#course-description"><i class="fa fa-check"></i><b>1.2</b> Course Description</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i><b>1.3</b> Structure</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#philosophical-approach-and-resources"><i class="fa fa-check"></i><b>1.4</b> Philosophical approach and resources</a></li>
-<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#tentative-schedule-subject-to-change"><i class="fa fa-check"></i><b>1.5</b> Tentative schedule, subject to change</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#course-overview-and-objectives"><i class="fa fa-check"></i><b>1.2</b> Course overview and objectives</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#course-description"><i class="fa fa-check"></i><b>1.3</b> Course Description</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i><b>1.4</b> Structure</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#philosophical-approach-and-resources"><i class="fa fa-check"></i><b>1.5</b> Philosophical approach and resources</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#tentative-schedule-subject-to-change"><i class="fa fa-check"></i><b>1.6</b> Tentative schedule, subject to change</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html"><i class="fa fa-check"></i><b>2</b> Hydrograph separation: learning module</a>
+<li class="chapter" data-level="2" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html"><i class="fa fa-check"></i><b>2</b> Part 2: Tabular Models and Time-Series</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#summary"><i class="fa fa-check"></i><b>2.1</b> Summary</a></li>
-<li class="chapter" data-level="2.2" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#overall-learning-objectives"><i class="fa fa-check"></i><b>2.2</b> Overall Learning Objectives</a></li>
-<li class="chapter" data-level="2.3" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#lecture"><i class="fa fa-check"></i><b>2.3</b> Lecture</a>
+<li class="chapter" data-level="2.1" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#hydrograph-separation"><i class="fa fa-check"></i><b>2.1</b> Hydrograph separation</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#components-of-streamflow-during-a-rain-event"><i class="fa fa-check"></i><b>2.3.1</b> Components of streamflow during a rain event</a></li>
-<li class="chapter" data-level="2.3.2" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#storm-flow-through-a-hillslope"><i class="fa fa-check"></i><b>2.3.2</b> Storm flow through a hillslope</a></li>
-<li class="chapter" data-level="2.3.3" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#how-we-quantify-baseflow"><i class="fa fa-check"></i><b>2.3.3</b> How we quantify baseflow</a></li>
-<li class="chapter" data-level="2.3.4" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#baseflow-separation-methods"><i class="fa fa-check"></i><b>2.3.4</b> Baseflow separation methods</a></li>
-<li class="chapter" data-level="2.3.5" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#watershed-controls-on-baseflow-and-stormflow"><i class="fa fa-check"></i><b>2.3.5</b> Watershed controls on baseflow and stormflow</a></li>
+<li class="chapter" data-level="2.1.1" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#learning-module"><i class="fa fa-check"></i><b>2.1.1</b> Learning Module</a></li>
+<li class="chapter" data-level="2.1.2" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#lecture"><i class="fa fa-check"></i><b>2.1.2</b> Lecture</a></li>
+<li class="chapter" data-level="2.1.3" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#assessment-20-pts"><i class="fa fa-check"></i><b>2.1.3</b> Assessment (20 pts)</a></li>
+<li class="chapter" data-level="2.1.4" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#hydrograph-separation-lab-module-20-pts"><i class="fa fa-check"></i><b>2.1.4</b> Hydrograph separation: lab module (20 pts)</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#assessment"><i class="fa fa-check"></i><b>2.4</b> Assessment</a></li>
-<li class="chapter" data-level="2.5" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#interactive-application-and-questions"><i class="fa fa-check"></i><b>2.5</b> Interactive application and questions</a>
+<li class="chapter" data-level="2.2" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#return-intervals"><i class="fa fa-check"></i><b>2.2</b> Return Intervals</a>
 <ul>
-<li class="chapter" data-level="2.5.1" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#initial-data-exploration"><i class="fa fa-check"></i><b>2.5.1</b> Initial data exploration</a></li>
-<li class="chapter" data-level="2.5.2" data-path="hydrograph-separation-learning-module.html"><a href="hydrograph-separation-learning-module.html#synthesis-questions"><i class="fa fa-check"></i><b>2.5.2</b> Synthesis Questions</a></li>
+<li class="chapter" data-level="2.2.1" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#learning-module-1"><i class="fa fa-check"></i><b>2.2.1</b> Learning Module</a></li>
+<li class="chapter" data-level="2.2.2" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#labwork-20-pts"><i class="fa fa-check"></i><b>2.2.2</b> Labwork (20 pts)</a></li>
 </ul></li>
+<li class="chapter" data-level="2.3" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#rational-method-and-nrcs-curve-number-20-pts"><i class="fa fa-check"></i><b>2.3</b> Rational method and NRCS curve number (20 pts)</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#learning-module-2"><i class="fa fa-check"></i><b>2.3.1</b> Learning Module</a></li>
+<li class="chapter" data-level="2.3.2" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#labwork-20-pts-1"><i class="fa fa-check"></i><b>2.3.2</b> Labwork (20 pts)</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="hydrograph-separation-lab-module-20-pts.html"><a href="hydrograph-separation-lab-module-20-pts.html"><i class="fa fa-check"></i><b>3</b> Hydrograph separation: lab module (20 pts)</a>
+<li class="chapter" data-level="2.4" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#monte-carlo-simulation"><i class="fa fa-check"></i><b>2.4</b> Monte Carlo Simulation</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="hydrograph-separation-lab-module-20-pts.html"><a href="hydrograph-separation-lab-module-20-pts.html#intro"><i class="fa fa-check"></i><b>3.1</b> Intro</a></li>
-<li class="chapter" data-level="3.2" data-path="hydrograph-separation-lab-module-20-pts.html"><a href="hydrograph-separation-lab-module-20-pts.html#reading-for-this-lab"><i class="fa fa-check"></i><b>3.2</b> Reading for this lab</a></li>
-<li class="chapter" data-level="3.3" data-path="hydrograph-separation-lab-module-20-pts.html"><a href="hydrograph-separation-lab-module-20-pts.html#repo"><i class="fa fa-check"></i><b>3.3</b> Repo</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html"><i class="fa fa-check"></i><b>4</b> Learning module 2 - Return intervals (14 pts)</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#background-information"><i class="fa fa-check"></i><b>4.1</b> Background information</a></li>
-<li class="chapter" data-level="4.2" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#intro-1"><i class="fa fa-check"></i><b>4.2</b> Intro</a></li>
-<li class="chapter" data-level="4.3" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#packages"><i class="fa fa-check"></i><b>4.3</b> Packages</a></li>
-<li class="chapter" data-level="4.4" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#precipitation-return-intervals"><i class="fa fa-check"></i><b>4.4</b> Precipitation return intervals</a>
-<ul>
-<li class="chapter" data-level="4.4.1" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q1.-2-pts-what-is-the-probability-that-the-annual-precipitation-in-a-given-year-is-less-than-400-mm-this-is-the-fa-in-the-cdf-in-the-probability-lecture-slides."><i class="fa fa-check"></i><b>4.4.1</b> <strong>Q1. (2 pts) What is the probability that the annual precipitation in a given year is less than 400 mm? This is the F(A) in the CDF in the probability lecture slides.</strong></a></li>
-<li class="chapter" data-level="4.4.2" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q2.-2-pts-what-is-the-probability-that-the-maximum-annual-precipitation-in-a-given-year-is-greater-than-500-mm"><i class="fa fa-check"></i><b>4.4.2</b> <strong>Q2. (2 pts) What is the probability that the maximum annual precipitation in a given year is GREATER than 500 mm?</strong></a></li>
-<li class="chapter" data-level="4.4.3" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q3.-2-pts-what-is-the-probability-that-the-annual-p-is-between-400-and-500-mm"><i class="fa fa-check"></i><b>4.4.3</b> <strong>Q3. (2 pts) What is the probability that the annual P is between 400 and 500 mm?</strong></a></li>
-<li class="chapter" data-level="4.4.4" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q4.-2-pts-what-is-the-return-period-for-a-year-with-at-least-550-mm-of-precip-the-return-period-tr-is-calculated-as-tr-1p-with-p-being-the-probability-for-an-event-to-occur."><i class="fa fa-check"></i><b>4.4.4</b> <strong>Q4. (2 pts) What is the return period for a year with AT LEAST 550 mm of precip? The return period, Tr, is calculated as Tr = 1/p, with p being the probability for an event to occur.</strong></a></li>
-<li class="chapter" data-level="4.4.5" data-path="learning-module-2---return-intervals-14-pts.html"><a href="learning-module-2---return-intervals-14-pts.html#q5.-6-pts-explain-why-probability-analysis-of-climate-data-assumes-the-data-are-normally-distributed-and-stationary-below-provide-a-histogram-and-a-density-plot-of-the-total-annual-p-data-and-comment-on-the-visual-appearance-in-terms-of-normality.-next-use-google-and-the-links-below-to-test-for-normality-and-stationarity.-be-quantitative-in-commenting-on-the-normality-and-stationarity-of-the-total-p-data."><i class="fa fa-check"></i><b>4.4.5</b> <strong>Q5. (6 pts) Explain why probability analysis of climate data assumes the data are normally distributed and stationary? Below provide a histogram and a density plot of the total annual P data and comment on the visual appearance in terms of normality. Next use google and the links below to test for normality and stationarity. Be quantitative in commenting on the normality and stationarity of the total P data.</strong></a></li>
+<li class="chapter" data-level="2.4.1" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#learning-module-3"><i class="fa fa-check"></i><b>2.4.1</b> Learning Module</a></li>
+<li class="chapter" data-level="2.4.2" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#labwork-20-pnts"><i class="fa fa-check"></i><b>2.4.2</b> Labwork (20 pnts)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html"><i class="fa fa-check"></i><b>5</b> Rational method and NRCS curve number (20 pts)</a>
+<li class="chapter" data-level="3" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html"><i class="fa fa-check"></i><b>3</b> Part 3: Bucket and Process-Based Models</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#rational-method"><i class="fa fa-check"></i><b>5.1</b> Rational Method</a>
+<li class="chapter" data-level="3.1" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#classifying-model-structure"><i class="fa fa-check"></i><b>3.1</b> Classifying model structure</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#background-information-1"><i class="fa fa-check"></i><b>5.1.1</b> Background information</a></li>
+<li class="chapter" data-level="3.1.1" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#learning-module-4"><i class="fa fa-check"></i><b>3.1.1</b> Learning Module</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#curve-number"><i class="fa fa-check"></i><b>5.2</b> Curve Number</a>
+<li class="chapter" data-level="3.2" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#snowmelt-models"><i class="fa fa-check"></i><b>3.2</b> Snowmelt Models</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#background-information-2"><i class="fa fa-check"></i><b>5.2.1</b> Background information</a></li>
+<li class="chapter" data-level="3.2.1" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#learning-module-5"><i class="fa fa-check"></i><b>3.2.1</b> Learning Module</a></li>
+<li class="chapter" data-level="3.2.2" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#labwork-20-pnts-1"><i class="fa fa-check"></i><b>3.2.2</b> Labwork (20 pnts)</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#codework"><i class="fa fa-check"></i><b>5.3</b> Codework</a>
+<li class="chapter" data-level="3.3" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#evapotranspiration"><i class="fa fa-check"></i><b>3.3</b> Evapotranspiration</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#part-i---rational-method"><i class="fa fa-check"></i><b>5.3.1</b> Part I - Rational Method</a></li>
-<li class="chapter" data-level="5.3.2" data-path="rational-method-and-nrcs-curve-number-20-pts.html"><a href="rational-method-and-nrcs-curve-number-20-pts.html#part-ii---nrcs-cn"><i class="fa fa-check"></i><b>5.3.2</b> Part II - NRCS CN</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="transfer-function-rainfall-runoff-models.html"><a href="transfer-function-rainfall-runoff-models.html"><i class="fa fa-check"></i><b>6</b> Transfer function rainfall-runoff models</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="transfer-function-rainfall-runoff-models.html"><a href="transfer-function-rainfall-runoff-models.html#summary-1"><i class="fa fa-check"></i><b>6.1</b> Summary</a></li>
-<li class="chapter" data-level="6.2" data-path="transfer-function-rainfall-runoff-models.html"><a href="transfer-function-rainfall-runoff-models.html#overall-learning-objectives-1"><i class="fa fa-check"></i><b>6.2</b> Overall Learning Objectives</a></li>
-<li class="chapter" data-level="6.3" data-path="transfer-function-rainfall-runoff-models.html"><a href="transfer-function-rainfall-runoff-models.html#terminology"><i class="fa fa-check"></i><b>6.3</b> Terminology</a></li>
-<li class="chapter" data-level="6.4" data-path="transfer-function-rainfall-runoff-models.html"><a href="transfer-function-rainfall-runoff-models.html#the-linear-time-invariant-tf"><i class="fa fa-check"></i><b>6.4</b> The Linear Time-Invariant TF</a></li>
-<li class="chapter" data-level="6.5" data-path="transfer-function-rainfall-runoff-models.html"><a href="transfer-function-rainfall-runoff-models.html#codework---transfer-function-rainfall-runoff-model"><i class="fa fa-check"></i><b>6.5</b> Codework - Transfer function rainfall-runoff model</a>
-<ul>
-<li class="chapter" data-level="6.5.1" data-path="transfer-function-rainfall-runoff-models.html"><a href="transfer-function-rainfall-runoff-models.html#download-the-repo-for-this-lab-here"><i class="fa fa-check"></i><b>6.5.1</b> Download the repo for this lab HERE</a></li>
+<li class="chapter" data-level="3.3.1" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#repo-here"><i class="fa fa-check"></i><b>3.3.1</b> Repo here</a></li>
+<li class="chapter" data-level="3.3.2" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#learning-module-6"><i class="fa fa-check"></i><b>3.3.2</b> Learning Module</a></li>
+<li class="chapter" data-level="3.3.3" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#labwork-20-pts-2"><i class="fa fa-check"></i><b>3.3.3</b> Labwork (20 pts):</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html"><i class="fa fa-check"></i><b>7</b> Monte Carlo Simulation (20 pnts)</a>
+<li class="chapter" data-level="4" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html"><i class="fa fa-check"></i><b>4</b> Learning Module 10 - Gridded and tabular data retrieval</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#background"><i class="fa fa-check"></i><b>7.1</b> Background:</a>
+<li class="chapter" data-level="4.1" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#objectives"><i class="fa fa-check"></i><b>4.1</b> Objectives</a></li>
+<li class="chapter" data-level="4.2" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#background-3"><i class="fa fa-check"></i><b>4.2</b> Background</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#reading"><i class="fa fa-check"></i><b>7.1.1</b> Reading</a></li>
+<li class="chapter" data-level="4.2.1" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#a-refresher-in-gis-concepts"><i class="fa fa-check"></i><b>4.2.1</b> A refresher in GIS concepts:</a></li>
+<li class="chapter" data-level="4.2.2" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#a-refresher-in-remote-sensing"><i class="fa fa-check"></i><b>4.2.2</b> A refresher in remote sensing:</a></li>
+<li class="chapter" data-level="4.2.3" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#ethical-conduct"><i class="fa fa-check"></i><b>4.2.3</b> Ethical conduct</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#how-does-this-apply-to-hydrological-modeling"><i class="fa fa-check"></i><b>7.2</b> How does this apply to hydrological modeling?</a>
+<li class="chapter" data-level="4.3" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#codework"><i class="fa fa-check"></i><b>4.3</b> Codework</a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#example"><i class="fa fa-check"></i><b>7.2.1</b> Example</a></li>
-<li class="chapter" data-level="7.2.2" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#reading-1"><i class="fa fa-check"></i><b>7.2.2</b> Reading</a></li>
-</ul></li>
-<li class="chapter" data-level="7.3" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#how-do-we-generate-a-simulation-with-code"><i class="fa fa-check"></i><b>7.3</b> How do we generate a simulation with code?</a></li>
-<li class="chapter" data-level="7.4" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#codework-1"><i class="fa fa-check"></i><b>7.4</b> Codework</a>
-<ul>
-<li class="chapter" data-level="7.4.1" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#download-the-repo-for-this-lab-here-1"><i class="fa fa-check"></i><b>7.4.1</b> Download the repo for this lab HERE</a></li>
-<li class="chapter" data-level="7.4.2" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#setup"><i class="fa fa-check"></i><b>7.4.2</b> Setup</a></li>
-<li class="chapter" data-level="7.4.3" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#parameter-initialization"><i class="fa fa-check"></i><b>7.4.3</b> Parameter initialization</a></li>
-<li class="chapter" data-level="7.4.4" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#mc-model-run"><i class="fa fa-check"></i><b>7.4.4</b> MC Model run</a></li>
-<li class="chapter" data-level="7.4.5" data-path="monte-carlo-simulation-20-pnts.html"><a href="monte-carlo-simulation-20-pnts.html#sensitivity-analysis"><i class="fa fa-check"></i><b>7.4.5</b> Sensitivity analysis</a></li>
+<li class="chapter" data-level="4.3.1" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#setup-1"><i class="fa fa-check"></i><b>4.3.1</b> Setup:<br></a></li>
+<li class="chapter" data-level="4.3.2" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#selecting-a-watershed"><i class="fa fa-check"></i><b>4.3.2</b> Selecting a watershed:</a></li>
+<li class="chapter" data-level="4.3.3" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#flow-data-retrieval"><i class="fa fa-check"></i><b>4.3.3</b> Flow data retrieval:</a></li>
+<li class="chapter" data-level="4.3.4" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#watershed-boundary-vector-data"><i class="fa fa-check"></i><b>4.3.4</b> Watershed boundary vector data:</a></li>
+<li class="chapter" data-level="4.3.5" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#digital-elevation-models-dem"><i class="fa fa-check"></i><b>4.3.5</b> Digital Elevation Models (DEM)</a></li>
+<li class="chapter" data-level="4.3.6" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#other-remotely-sensed-data"><i class="fa fa-check"></i><b>4.3.6</b> Other remotely sensed data:</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="classifying-model-structure---lecture-only-0-pts.html"><a href="classifying-model-structure---lecture-only-0-pts.html"><i class="fa fa-check"></i><b>8</b> Classifying model structure - Lecture only (0 pts)</a>
+<li class="chapter" data-level="5" data-path="dem-processing.html"><a href="dem-processing.html"><i class="fa fa-check"></i><b>5</b> DEM processing</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="classifying-model-structure---lecture-only-0-pts.html"><a href="classifying-model-structure---lecture-only-0-pts.html#spatial-complexity"><i class="fa fa-check"></i><b>8.1</b> Spatial Complexity</a></li>
-<li class="chapter" data-level="8.2" data-path="classifying-model-structure---lecture-only-0-pts.html"><a href="classifying-model-structure---lecture-only-0-pts.html#modeling-approaches"><i class="fa fa-check"></i><b>8.2</b> Modeling Approaches</a></li>
+<li class="chapter" data-level="5.1" data-path="dem-processing.html"><a href="dem-processing.html#the-link-to-the-repo-is-here"><i class="fa fa-check"></i><b>5.1</b> THE LINK TO THE REPO IS HERE</a></li>
+<li class="chapter" data-level="5.2" data-path="dem-processing.html"><a href="dem-processing.html#objective"><i class="fa fa-check"></i><b>5.2</b> Objective:</a></li>
+<li class="chapter" data-level="5.3" data-path="dem-processing.html"><a href="dem-processing.html#background-4"><i class="fa fa-check"></i><b>5.3</b> Background:</a></li>
+<li class="chapter" data-level="5.4" data-path="dem-processing.html"><a href="dem-processing.html#codework-1"><i class="fa fa-check"></i><b>5.4</b> Codework</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="dem-processing.html"><a href="dem-processing.html#installing-libraries"><i class="fa fa-check"></i><b>5.4.1</b> Installing libraries</a></li>
+<li class="chapter" data-level="5.4.2" data-path="dem-processing.html"><a href="dem-processing.html#generate-functions"><i class="fa fa-check"></i><b>5.4.2</b> Generate functions</a></li>
+<li class="chapter" data-level="5.4.3" data-path="dem-processing.html"><a href="dem-processing.html#establish-new-directoriesfolders"><i class="fa fa-check"></i><b>5.4.3</b> Establish new directories(folders)</a></li>
+<li class="chapter" data-level="5.4.4" data-path="dem-processing.html"><a href="dem-processing.html#resample-dems"><i class="fa fa-check"></i><b>5.4.4</b> Resample DEMs</a></li>
+<li class="chapter" data-level="5.4.5" data-path="dem-processing.html"><a href="dem-processing.html#filling-and-breaching"><i class="fa fa-check"></i><b>5.4.5</b> Filling and breaching</a></li>
+<li class="chapter" data-level="5.4.6" data-path="dem-processing.html"><a href="dem-processing.html#flow-direction-and-accumulation-rasters"><i class="fa fa-check"></i><b>5.4.6</b> Flow direction and accumulation rasters</a></li>
+<li class="chapter" data-level="5.4.7" data-path="dem-processing.html"><a href="dem-processing.html#streams"><i class="fa fa-check"></i><b>5.4.7</b> Streams</a></li>
+<li class="chapter" data-level="5.4.8" data-path="dem-processing.html"><a href="dem-processing.html#final-thoughts"><i class="fa fa-check"></i><b>5.4.8</b> Final thoughts:</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><i class="fa fa-check"></i><b>9</b> Snowmelt Models for runoff timing - Lecture &amp; Lab (20 pts)</a>
+<li class="chapter" data-level="5.5" data-path="dem-processing.html"><a href="dem-processing.html#transfer-function-rainfall-runoff-models"><i class="fa fa-check"></i><b>5.5</b> Transfer function rainfall-runoff models</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#module-repo"><i class="fa fa-check"></i><b>9.1</b> Module repo</a></li>
-<li class="chapter" data-level="9.2" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#background-1"><i class="fa fa-check"></i><b>9.2</b> Background:</a></li>
-<li class="chapter" data-level="9.3" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#model-approaches"><i class="fa fa-check"></i><b>9.3</b> Model Approaches</a></li>
-<li class="chapter" data-level="9.4" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#spatial-complexity-1"><i class="fa fa-check"></i><b>9.4</b> Spatial complexity</a></li>
-<li class="chapter" data-level="9.5" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#model-choices-my-snow-is-different-from-your-snow"><i class="fa fa-check"></i><b>9.5</b> Model choices: My snow is different from your snow</a></li>
-<li class="chapter" data-level="9.6" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#codework-2"><i class="fa fa-check"></i><b>9.6</b> Codework</a>
-<ul>
-<li class="chapter" data-level="9.6.1" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#download-the-repo-for-this-lab-here-2"><i class="fa fa-check"></i><b>9.6.1</b> Download the repo for this lab HERE</a></li>
-<li class="chapter" data-level="9.6.2" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#import-data"><i class="fa fa-check"></i><b>9.6.2</b> Import data:</a></li>
-<li class="chapter" data-level="9.6.3" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#calculate-liquid-input"><i class="fa fa-check"></i><b>9.6.3</b> Calculate liquid input</a></li>
-</ul></li>
-<li class="chapter" data-level="9.7" data-path="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html"><a href="snowmelt-models-for-runoff-timing---lecture-lab-20-pts.html#modeling-swe"><i class="fa fa-check"></i><b>9.7</b> Modeling SWE</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html"><i class="fa fa-check"></i><b>10</b> Learning Module 10 - Gridded and tabular data retrieval</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#objectives"><i class="fa fa-check"></i><b>10.1</b> Objectives</a></li>
-<li class="chapter" data-level="10.2" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#background-2"><i class="fa fa-check"></i><b>10.2</b> Background</a>
-<ul>
-<li class="chapter" data-level="10.2.1" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#a-refresher-in-gis-concepts"><i class="fa fa-check"></i><b>10.2.1</b> A refresher in GIS concepts:</a></li>
-<li class="chapter" data-level="10.2.2" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#a-refresher-in-remote-sensing"><i class="fa fa-check"></i><b>10.2.2</b> A refresher in remote sensing:</a></li>
-<li class="chapter" data-level="10.2.3" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#ethical-conduct"><i class="fa fa-check"></i><b>10.2.3</b> Ethical conduct</a></li>
-</ul></li>
-<li class="chapter" data-level="10.3" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#codework-3"><i class="fa fa-check"></i><b>10.3</b> Codework</a>
-<ul>
-<li class="chapter" data-level="10.3.1" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#setup-1"><i class="fa fa-check"></i><b>10.3.1</b> Setup:<br></a></li>
-<li class="chapter" data-level="10.3.2" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#selecting-a-watershed"><i class="fa fa-check"></i><b>10.3.2</b> Selecting a watershed:</a></li>
-<li class="chapter" data-level="10.3.3" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#flow-data-retrieval"><i class="fa fa-check"></i><b>10.3.3</b> Flow data retrieval:</a></li>
-<li class="chapter" data-level="10.3.4" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#watershed-boundary-vector-data"><i class="fa fa-check"></i><b>10.3.4</b> Watershed boundary vector data:</a></li>
-<li class="chapter" data-level="10.3.5" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#digital-elevation-models-dem"><i class="fa fa-check"></i><b>10.3.5</b> Digital Elevation Models (DEM)</a></li>
-<li class="chapter" data-level="10.3.6" data-path="learning-module-10---gridded-and-tabular-data-retrieval.html"><a href="learning-module-10---gridded-and-tabular-data-retrieval.html#other-remotely-sensed-data"><i class="fa fa-check"></i><b>10.3.6</b> Other remotely sensed data:</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="dem-processing.html"><a href="dem-processing.html"><i class="fa fa-check"></i><b>11</b> DEM processing</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="dem-processing.html"><a href="dem-processing.html#the-link-to-the-repo-is-here"><i class="fa fa-check"></i><b>11.1</b> THE LINK TO THE REPO IS HERE</a></li>
-<li class="chapter" data-level="11.2" data-path="dem-processing.html"><a href="dem-processing.html#objective"><i class="fa fa-check"></i><b>11.2</b> Objective:</a></li>
-<li class="chapter" data-level="11.3" data-path="dem-processing.html"><a href="dem-processing.html#background-3"><i class="fa fa-check"></i><b>11.3</b> Background:</a></li>
-<li class="chapter" data-level="11.4" data-path="dem-processing.html"><a href="dem-processing.html#codework-4"><i class="fa fa-check"></i><b>11.4</b> Codework</a>
-<ul>
-<li class="chapter" data-level="11.4.1" data-path="dem-processing.html"><a href="dem-processing.html#installing-libraries"><i class="fa fa-check"></i><b>11.4.1</b> Installing libraries</a></li>
-<li class="chapter" data-level="11.4.2" data-path="dem-processing.html"><a href="dem-processing.html#generate-functions"><i class="fa fa-check"></i><b>11.4.2</b> Generate functions</a></li>
-<li class="chapter" data-level="11.4.3" data-path="dem-processing.html"><a href="dem-processing.html#establish-new-directoriesfolders"><i class="fa fa-check"></i><b>11.4.3</b> Establish new directories(folders)</a></li>
-<li class="chapter" data-level="11.4.4" data-path="dem-processing.html"><a href="dem-processing.html#resample-dems"><i class="fa fa-check"></i><b>11.4.4</b> Resample DEMs</a></li>
-<li class="chapter" data-level="11.4.5" data-path="dem-processing.html"><a href="dem-processing.html#filling-and-breaching"><i class="fa fa-check"></i><b>11.4.5</b> Filling and breaching</a></li>
-<li class="chapter" data-level="11.4.6" data-path="dem-processing.html"><a href="dem-processing.html#flow-direction-and-accumulation-rasters"><i class="fa fa-check"></i><b>11.4.6</b> Flow direction and accumulation rasters</a></li>
-<li class="chapter" data-level="11.4.7" data-path="dem-processing.html"><a href="dem-processing.html#streams"><i class="fa fa-check"></i><b>11.4.7</b> Streams</a></li>
-<li class="chapter" data-level="11.4.8" data-path="dem-processing.html"><a href="dem-processing.html#final-thoughts-1"><i class="fa fa-check"></i><b>11.4.8</b> Final thoughts:</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="evapotranspiration.html"><a href="evapotranspiration.html"><i class="fa fa-check"></i><b>12</b> Evapotranspiration</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="evapotranspiration.html"><a href="evapotranspiration.html#the-repo-can-be-found-here"><i class="fa fa-check"></i><b>12.1</b> The repo can be found here</a></li>
-<li class="chapter" data-level="12.2" data-path="evapotranspiration.html"><a href="evapotranspiration.html#background-4"><i class="fa fa-check"></i><b>12.2</b> Background</a>
-<ul>
-<li class="chapter" data-level="12.2.1" data-path="evapotranspiration.html"><a href="evapotranspiration.html#transpiration"><i class="fa fa-check"></i><b>12.2.1</b> Transpiration</a></li>
-<li class="chapter" data-level="12.2.2" data-path="evapotranspiration.html"><a href="evapotranspiration.html#measurements"><i class="fa fa-check"></i><b>12.2.2</b> Measurements</a></li>
-</ul></li>
-<li class="chapter" data-level="12.3" data-path="evapotranspiration.html"><a href="evapotranspiration.html#codework-5"><i class="fa fa-check"></i><b>12.3</b> Codework:</a>
-<ul>
-<li class="chapter" data-level="12.3.1" data-path="evapotranspiration.html"><a href="evapotranspiration.html#the-evapotranspiration-package"><i class="fa fa-check"></i><b>12.3.1</b> The Evapotranspiration package</a></li>
-<li class="chapter" data-level="12.3.2" data-path="evapotranspiration.html"><a href="evapotranspiration.html#the-priestly-taylor-method-actual-evapotranspiration"><i class="fa fa-check"></i><b>12.3.2</b> The Priestly Taylor method (actual evapotranspiration)</a></li>
+<li class="chapter" data-level="5.5.1" data-path="dem-processing.html"><a href="dem-processing.html#summary-1"><i class="fa fa-check"></i><b>5.5.1</b> Summary</a></li>
+<li class="chapter" data-level="5.5.2" data-path="dem-processing.html"><a href="dem-processing.html#overall-learning-objectives-1"><i class="fa fa-check"></i><b>5.5.2</b> Overall Learning Objectives</a></li>
+<li class="chapter" data-level="5.5.3" data-path="dem-processing.html"><a href="dem-processing.html#terminology"><i class="fa fa-check"></i><b>5.5.3</b> Terminology</a></li>
+<li class="chapter" data-level="5.5.4" data-path="dem-processing.html"><a href="dem-processing.html#the-linear-time-invariant-tf"><i class="fa fa-check"></i><b>5.5.4</b> The Linear Time-Invariant TF</a></li>
+<li class="chapter" data-level="5.5.5" data-path="dem-processing.html"><a href="dem-processing.html#labwork-20-pts-3"><i class="fa fa-check"></i><b>5.5.5</b> Labwork (20 pts)</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -323,25 +254,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="dem-processing" class="section level1 hasAnchor" number="11">
-<h1><span class="header-section-number">Chapter 11</span> DEM processing<a href="dem-processing.html#dem-processing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="the-link-to-the-repo-is-here" class="section level2 hasAnchor" number="11.1">
-<h2><span class="header-section-number">11.1</span> THE <a href="https://github.com/tpcovino/08_dem_processing.git" target="_blank">LINK TO THE REPO IS HERE</a><a href="dem-processing.html#the-link-to-the-repo-is-here" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="dem-processing" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> DEM processing<a href="dem-processing.html#dem-processing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="the-link-to-the-repo-is-here" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> THE <a href="https://github.com/tpcovino/08_dem_processing.git" target="_blank">LINK TO THE REPO IS HERE</a><a href="dem-processing.html#the-link-to-the-repo-is-here" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>15pnts</p>
 </div>
-<div id="objective" class="section level2 hasAnchor" number="11.2">
-<h2><span class="header-section-number">11.2</span> Objective:<a href="dem-processing.html#objective" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="objective" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Objective:<a href="dem-processing.html#objective" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Users will explore basic hydrological tools through the process of DEM preprocessing and defining stream networks for a watershed in the Fraser Experimental Forest in Colorado using Whitebox Tools for R. This exercise will also demonstrate methods for writing functions and efficiently handling multiple files simultaneously, including importing, processing, and exporting data within the context of Whitebox Tools for R.</p>
 </div>
-<div id="background-3" class="section level2 hasAnchor" number="11.3">
-<h2><span class="header-section-number">11.3</span> Background:<a href="dem-processing.html#background-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="background-4" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Background:<a href="dem-processing.html#background-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Hydrological analysis preprocessing involves the use of digital elevation model (DEM) raster data to establish a watershed model and a simulation of surface hydrological processes. These steps enable us to quantify key parameters such as flow accumulation, stream network characteristics, and hydrological connectivity, which are essential for studying the dynamics of water movement within a landscape. Overall, preprocessing is the set of foundational steps in hydrological modeling and analysis.</p>
 <p><strong>Whitebox Tools</strong> is an advanced geospatial data analysis platform that can be used to perform common geographical information systems (GIS) analysis operations. This platform was developed with the Center for Hydrogeomatics in Guelph University so it is focused on hydrological analysis. With just a DEM, it allows us to produce a multitude of outputs that can be used for future analysis (Lindsay, 2016) <a href="doi:10.1016/j.cageo.2016.07.003" class="uri">doi:10.1016/j.cageo.2016.07.003</a>). While we are demonstrating its use in R, these tools are also available in QGIS and Python platforms.</p>
 </div>
-<div id="codework-4" class="section level2 hasAnchor" number="11.4">
-<h2><span class="header-section-number">11.4</span> Codework<a href="dem-processing.html#codework-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="installing-libraries" class="section level3 hasAnchor" number="11.4.1">
-<h3><span class="header-section-number">11.4.1</span> Installing libraries<a href="dem-processing.html#installing-libraries" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="codework-1" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Codework<a href="dem-processing.html#codework-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="installing-libraries" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Installing libraries<a href="dem-processing.html#installing-libraries" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We are going to try installing the whitebox R package from CRAN as it should be the simplest method.</p>
 <p>However, if this does not work for you, you can install the development version from GitHub by putting this inside a code chunk:</p>
 <p>if (!require(“remotes”)) install.packages(‘remotes’)
@@ -361,8 +292,8 @@ Essentially, we will be using input rasters via filepath and output filepaths as
 9. Visualize and report - plots, maps and tables can be effective ways to communicate findings. <br><br></p>
 <p>While you might find slight variations among collaborators, following this general workflow ensures that our scripts are structured in a way that facilitates easy sharing and reproducibility of results. <br></p>
 </div>
-<div id="generate-functions" class="section level3 hasAnchor" number="11.4.2">
-<h3><span class="header-section-number">11.4.2</span> Generate functions<a href="dem-processing.html#generate-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="generate-functions" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Generate functions<a href="dem-processing.html#generate-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Since we have imported the required libraries, let’s generate some functions.</p>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="dem-processing.html#cb83-1" tabindex="-1"></a><span class="co"># # extractsitename will extract a site name from the filepaths we provide. You will likely need to change the indexing in this function based on the filepaths to your DEMs. </span></span>
 <span id="cb83-2"><a href="dem-processing.html#cb83-2" tabindex="-1"></a><span class="co"># extractsitename &lt;- function(x) {</span></span>
@@ -376,7 +307,7 @@ Essentially, we will be using input rasters via filepath and output filepaths as
 <span id="cb83-10"><a href="dem-processing.html#cb83-10" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb83-11"><a href="dem-processing.html#cb83-11" tabindex="-1"></a><span class="co"># # List all files recursively in the current working directory</span></span>
 <span id="cb83-12"><a href="dem-processing.html#cb83-12" tabindex="-1"></a><span class="co"># all_files &lt;- list.files(recursive = TRUE)</span></span></code></pre></div>
-<p><strong>Q1.</strong>(2 pnt) What does date: “07 January, 2025” in the header do?</p>
+<p><strong>Q1.</strong>(2 pnt) What does date: “08 January, 2025” in the header do?</p>
 <p>ANSWER:</p>
 <p><strong>Q2.</strong>(2 pnt) What does ‘recursive = TRUE’ do? What would the ‘recursive = FALSE’ return?
 ANSWER:</p>
@@ -421,8 +352,8 @@ ANSWER:</p>
 <p><strong>Q3.</strong> (2pnt) What is the point of writing a function and why do you think it is advantageous to write functions early in your script?
 ANSWER:</p>
 </div>
-<div id="establish-new-directoriesfolders" class="section level3 hasAnchor" number="11.4.3">
-<h3><span class="header-section-number">11.4.3</span> Establish new directories(folders)<a href="dem-processing.html#establish-new-directoriesfolders" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="establish-new-directoriesfolders" class="section level3 hasAnchor" number="5.4.3">
+<h3><span class="header-section-number">5.4.3</span> Establish new directories(folders)<a href="dem-processing.html#establish-new-directoriesfolders" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>in our working directory. We will use these to store the outputs of the Whitebox functions.</p>
 <div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="dem-processing.html#cb89-1" tabindex="-1"></a><span class="co"># # Define the directory names</span></span>
 <span id="cb89-2"><a href="dem-processing.html#cb89-2" tabindex="-1"></a><span class="co"># directory_names &lt;- c(&#39;breachsinglecellpits&#39;, &#39;breachdep&#39;, &#39;resampleddems&#39;, &#39;d8pointer&#39;, &#39;logd8flowaccum&#39;, &#39;d8flowaccum&#39;, &#39;streams_wws&#39;,&#39;streams&#39;)</span></span>
@@ -436,8 +367,8 @@ ANSWER:</p>
 <span id="cb89-10"><a href="dem-processing.html#cb89-10" tabindex="-1"></a><span class="co"># }</span></span></code></pre></div>
 <p>Check your working directory, you should see the new folders there.</p>
 </div>
-<div id="resample-dems" class="section level3 hasAnchor" number="11.4.4">
-<h3><span class="header-section-number">11.4.4</span> Resample DEMs<a href="dem-processing.html#resample-dems" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="resample-dems" class="section level3 hasAnchor" number="5.4.4">
+<h3><span class="header-section-number">5.4.4</span> Resample DEMs<a href="dem-processing.html#resample-dems" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here we will start with LiDAR data with 0.5m resolution. While this resolution has useful applications, a high resolution DEM can make hydrological models very computationally expensive with little or no improvement to the output. If you have the option of high resolution data in your work, you can test model outputs at different resolutions to determine what is the most efficient and effective resolution for your work. Here, we will resample our LiDAR data to a 10m resolution.</p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="dem-processing.html#cb90-1" tabindex="-1"></a><span class="co"># # Resample dem to 10m</span></span>
 <span id="cb90-2"><a href="dem-processing.html#cb90-2" tabindex="-1"></a><span class="co"># </span></span>
@@ -466,8 +397,8 @@ ANSWER:</p>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="dem-processing.html#cb92-1" tabindex="-1"></a><span class="co"># #List all of the resampled dem files within the resampleddems directory</span></span>
 <span id="cb92-2"><a href="dem-processing.html#cb92-2" tabindex="-1"></a><span class="co"># files &lt;- list.files(path = paste(&#39;resampleddems&#39;, sep = &quot;/&quot;), pattern=&quot;*.tif&quot;, full.names=TRUE, recursive=FALSE)</span></span></code></pre></div>
 </div>
-<div id="filling-and-breaching" class="section level3 hasAnchor" number="11.4.5">
-<h3><span class="header-section-number">11.4.5</span> Filling and breaching<a href="dem-processing.html#filling-and-breaching" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="filling-and-breaching" class="section level3 hasAnchor" number="5.4.5">
+<h3><span class="header-section-number">5.4.5</span> Filling and breaching<a href="dem-processing.html#filling-and-breaching" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When performing hydrological analysis on a DEM, the DEM usually needs to be pre-processed by <a href="https://www.researchgate.net/figure/Main-principles-of-depression-preprocessing-methods-Depressions-are-caused-by_fig2_260064729">‘filling’ or ‘breaching’</a> any depressions or sinks to create a hydraulically connected and filled DEM. There are several depression or pit filling options available in whitebox. Breach depressions can be a better option that just pit filling according to whitebox documentation, however, some users argue that this can smooth too much, resulting in an altered watershed delineation. It is prudent to investigate different DEM pre-processing methods and their resulting DEM. You can fill depressions directly, breach depressions and then fill them, applying breach or fill single cell pit before breach/fill depressions, and use the one that generates the most reasonable watershed delineation results.
 Here we are going to make extra sure our flowpaths are uninhibited by first filling in single cell pits, and then breaching any larger depressions.</p>
 <div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="dem-processing.html#cb93-1" tabindex="-1"></a><span class="co"># #Fill single cell pits for all rasters the folder &#39;resampleddems&#39; (for hydrologic correctness)</span></span>
@@ -486,8 +417,8 @@ Here we are going to make extra sure our flowpaths are uninhibited by first fill
 <span id="cb93-14"><a href="dem-processing.html#cb93-14" tabindex="-1"></a><span class="co">#     wbt_breach_depressions(x, output = paste0(getwd(),&#39;/breachdep/&#39;, sitename, &quot;_breachdep&quot;), flat_increment=.01) #first wb function input</span></span>
 <span id="cb93-15"><a href="dem-processing.html#cb93-15" tabindex="-1"></a><span class="co"># })</span></span></code></pre></div>
 </div>
-<div id="flow-direction-and-accumulation-rasters" class="section level3 hasAnchor" number="11.4.6">
-<h3><span class="header-section-number">11.4.6</span> Flow direction and accumulation rasters<a href="dem-processing.html#flow-direction-and-accumulation-rasters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="flow-direction-and-accumulation-rasters" class="section level3 hasAnchor" number="5.4.6">
+<h3><span class="header-section-number">5.4.6</span> Flow direction and accumulation rasters<a href="dem-processing.html#flow-direction-and-accumulation-rasters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="dem-processing.html#cb94-1" tabindex="-1"></a><span class="co"># # List all of the filled files and use this list to make a flow direction grid and flow accumulation raster</span></span>
 <span id="cb94-2"><a href="dem-processing.html#cb94-2" tabindex="-1"></a><span class="co"># breachdep &lt;- list.files(path = paste(&#39;breachdep&#39;, sep = &quot;/&quot;), pattern=&quot;*.tif&quot;, full.names=TRUE, recursive=FALSE)</span></span>
 <span id="cb94-3"><a href="dem-processing.html#cb94-3" tabindex="-1"></a><span class="co"># </span></span>
@@ -529,8 +460,8 @@ ANSWER:</p>
 <p><strong>Q7.</strong> (2pnts) What are the units for the values that you see in each of these legends? It may be helpful to check out the Manual again.
 ANSWER:</p>
 </div>
-<div id="streams" class="section level3 hasAnchor" number="11.4.7">
-<h3><span class="header-section-number">11.4.7</span> Streams<a href="dem-processing.html#streams" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="streams" class="section level3 hasAnchor" number="5.4.7">
+<h3><span class="header-section-number">5.4.7</span> Streams<a href="dem-processing.html#streams" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Define streams using the flow accumulation raster. Use of the wbt_extract_streams function will return a raster with stream cells indicated only.</p>
 <div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="dem-processing.html#cb97-1" tabindex="-1"></a><span class="co"># #List all of the filled files </span></span>
 <span id="cb97-2"><a href="dem-processing.html#cb97-2" tabindex="-1"></a><span class="co"># log_d8_flow_accum &lt;- list.files(path = paste(&#39;logd8flowaccum&#39;, sep = &quot;/&quot;), pattern=&quot;*.tif&quot;, full.names=TRUE, recursive=FALSE)</span></span>
@@ -570,8 +501,8 @@ ANSWER:</p>
 <span id="cb100-3"><a href="dem-processing.html#cb100-3" tabindex="-1"></a><span class="co"># </span></span>
 <span id="cb100-4"><a href="dem-processing.html#cb100-4" tabindex="-1"></a><span class="co"># mapview(raster(path))</span></span></code></pre></div>
 </div>
-<div id="final-thoughts-1" class="section level3 hasAnchor" number="11.4.8">
-<h3><span class="header-section-number">11.4.8</span> Final thoughts:<a href="dem-processing.html#final-thoughts-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="final-thoughts" class="section level3 hasAnchor" number="5.4.8">
+<h3><span class="header-section-number">5.4.8</span> Final thoughts:<a href="dem-processing.html#final-thoughts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are many more hydrological preprocessing and analysis tools available through Whitebox for R. If you are interested in watershed delineation in R, there is a <a href="https://www.whiteboxgeo.com/manual/wbt_book/available_tools/hydrological_analysis.html#Watershed">tutorial here</a> that is fairly easy to follow. However, if you find that you use these tools frequently and do not use R much in other work, you may also consider these options for hydrological analysis:<br><br>
 1. <a href="https://saga-gis.sourceforge.io/saga_tool_doc/4.1.0/ta_hydrology.html">SAGA</a>
 SAGA tools offer a versatile suite of geospatial processing capabilities accessible through both QGIS and ArcGIS plugins as well their standalone GUI interface. Often I find the GUI easiest for preprocessing, then I will import SAGA’s output rasters to QGIS for formatting or map making, or into model scripts. SAGA has a robust online support community, so it can be a valuable resource for hydrological work.<br><br>
@@ -580,14 +511,395 @@ When using these tools, the order of operations is similar to our work above: fi
 
 </div>
 </div>
+<div id="transfer-function-rainfall-runoff-models" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Transfer function rainfall-runoff models<a href="dem-processing.html#transfer-function-rainfall-runoff-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="summary-1" class="section level3 hasAnchor" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Summary<a href="dem-processing.html#summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In previous modules, we explored how watershed characteristics influence the flow of input water through or over hillslopes to quickly contribute to stormflow or to be stored for later contribution to baseflow. Therefore, the partitioning of flow into baseflow or stormflow can be determined by the time it spends in the watershed. Furthermore, the residence time of water in various pathways may affect weathering and solute transport within watersheds. To improve our understanding of water movement within a watershed, it can be crucial to incorporate water transit time into hydrological models. This consideration allows for a more realistic representation of how water moves through various storage compartments, such as soil, groundwater, and surface water, accounting for the time it takes for water to traverse these pathways.</p>
+<p>In this module, we will model the temporal aspects of runoff response to input using a transfer function. First, please read: <br/></p>
+<p><a href="docs/Weiler_etal_WRR2003.pdf">TRANSEP - a combined tracer and runoff transfer function hydrograph separation model</a>
+<br/></p>
+<p>Then this chapter will step through key concepts in the paper to facilitate hands-on exploration of the rainfall-runoff portion of the TRANSEP model in the assessment. Then, we will introduce examples of other transfer functions to demonstrate alternative ways of representing time-induced patterns in hydrological modeling, prompting you to consider response patterns in your study systems.</p>
+</div>
+<div id="overall-learning-objectives-1" class="section level3 hasAnchor" number="5.5.2">
+<h3><span class="header-section-number">5.5.2</span> Overall Learning Objectives<a href="dem-processing.html#overall-learning-objectives-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>At the end of this module, students should be able to describe several ways to model and identify transit time within hydrological models. They should have a general understanding of how water transit time may influence the timing and composition of runoff.</p>
+</div>
+<div id="terminology" class="section level3 hasAnchor" number="5.5.3">
+<h3><span class="header-section-number">5.5.3</span> Terminology<a href="dem-processing.html#terminology" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In modeling a flow system, note that consideration of time may vary depending on the questions being asked. <strong>Transit time</strong> is the average time required for water to travel through the entire flow system, from input (e.g., rainfall on soil surface) to output (e.g., discharge). <strong>Residence time</strong> is a portion of transit time, describing the amount of time water spends within a specific component of the flow system, like storage (e.g., in soil, groundwater, or a lake).</p>
+<div class="float">
+<img src="https://ars.els-cdn.com/content/image/1-s2.0-S0022169406002150-gr1.jpg" alt="Figure 6.3. Conceptual diagram of the lumped parameter transit time modeling approach (McGuire &amp; McDonnell, 2006)" />
+<div class="figcaption">Figure 6.3. Conceptual diagram of the lumped parameter transit time modeling approach (McGuire &amp; McDonnell, 2006)</div>
+</div>
+<p><br/><br/></p>
+<p>A <strong>transfer function</strong> (TF) is a mathematical representation of how a system responds to input signals. In a hydrological context, it describes the transformation of inputs (e.g. precipitation) to outputs (e.g. runoff). These models can be valuable tools for understanding the time-varying dynamics of a hydrological system.</p>
+</div>
+<div id="the-linear-time-invariant-tf" class="section level3 hasAnchor" number="5.5.4">
+<h3><span class="header-section-number">5.5.4</span> The Linear Time-Invariant TF<a href="dem-processing.html#the-linear-time-invariant-tf" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We’ll begin the discussion in the context of a <strong>linear reservoir</strong>. Linear reservoirs are simple models designed to simulate the storage and discharge of water in a catchment. These models assume that the catchment can be represented as single storage compartments or as a series of interconnected storage compartments and that the change the amount of water stored in the reservoir (or reservoirs) is directly proportional to the inflows and outflows. In other words, the linear relationship between inflows and outflows means that the rate of water release is proportional to the amount of water stored in the reservoir.</p>
+<p><img src="images/linear_storage_04.png" /></p>
+<p><br/><br/></p>
+<div id="the-instantaneous-unit-hydrograph" class="section level5 hasAnchor" number="5.5.4.0.1">
+<h5><span class="header-section-number">5.5.4.0.1</span> The Instantaneous Unit Hydrograph:<a href="dem-processing.html#the-instantaneous-unit-hydrograph" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>The Instantaneous Unit Hydrograph (IUH) represents the linear rainfall-runoff model used in the TRANSEP model. It is an approach to hydrograph separation that is useful for analyzing the temporal distribution of runoff in response to a ‘unit’ pulse of rainfall (e.g. uniform one-inch depth over a unit area represented by a unit hydrograph). In other words, it is a hydrograph that results from one unit (e.g. 1 mm) of effective rainfall uniformly distributed over the watershed and occurring in a short duration. Therefore, the following assumptions are made when the IUH is used as a transfer function: <br/>
+1. the IUH reflects the ensemble of watershed characteristics <br/>
+2. the shape characteristics of the unit hydrograph are independent of time <br/>
+3. the output response is linearly proportional to the input</p>
+<p><br/><br/></p>
+<div class="float">
+<img src="https://echo2.epfl.ch/VICAIRE/mod_1b/chapt_4/pictures/fi1.gif" alt="Figure 6.4.1.a Conceptual diagram of the linear unit hydrograph" />
+<div class="figcaption">Figure 6.4.1.a Conceptual diagram of the linear unit hydrograph</div>
+</div>
+<p><br/><br/></p>
+<p>Peak discharge of the unit hydrograph, <span class="math inline">\(u_p\)</span>; <br/>
+Base time <span class="math inline">\(t_b\)</span>is the total duration of the unit hydrograph; <br/>
+Increase time or time to peak <span class="math inline">\(t_p\)</span> is the time between the start point of the hydrograph and the peak; <br/>
+Concentration time <span class="math inline">\(t_c\)</span> is the time between the end of rainfall and the end of the hydrograph; <br/>
+Lag time <span class="math inline">\(t_lag\)</span> is the time between half rainfall depth and the peak of the hydrograph. <br/></p>
+<p>IUH as a transfer function allows the calculation of the direct runoff hydrograph for any given rainfall input. IUH is particularly valuable for understanding how the direct runoff is distributed over time in response to a rainfall event. It helps quantify the time distribution of runoff in relation to the rainfall input.</p>
+<p><br/><br/></p>
+<div class="float">
+<img src="https://echo2.epfl.ch/VICAIRE/mod_1b/chapt_4/pictures/fi2.gif" alt="Figure 6.4.1.b The discharge of the unit hydrograph(u) from a catchment at time (t) is expressed as h \cdot u(t) where h is the amount of effective rainfall." />
+<div class="figcaption">Figure 6.4.1.b The discharge of the unit hydrograph(u) from a catchment at time (t) is expressed as <span class="math inline">\(h \cdot u(t)\)</span> where h is the amount of effective rainfall.</div>
+</div>
+<p><br/><br/></p>
+<p>In the TRANSEP model, this transfer function is represented as <span class="math inline">\(g(\tau)\)</span> and thus the rainfall-induced response to runoff.</p>
+<p><span class="math display">\[
+g(\tau) = \frac{\tau^{\alpha-1}}{\mathrm{B}^{\alpha}\Gamma(\alpha)}exp(-\frac{\tau}{\alpha})
+\]</span>
+<br/><br/></p>
+<p>The linear portion of the TRANSEP model describes a convolution of the effective precipitation and a runoff transfer function.</p>
+<p><span class="math display">\[
+Q(t)= \int_{0}^{t} g(\tau)p_{\text{eff}}(t-\tau)d\tau
+\]</span>
+<br/><br/></p>
+<p>Whoa, wait…what? Tau, integrals, and convolution? Don’t worry about the details of the equations. Check out this video to have convolution described using dollars and cookies, then imagine each dollar as a rainfall unit and each cookie as a runoff unit. Review the equations again after the video.</p>
+<p><br/><br/></p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="dem-processing.html#cb101-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_url</span>(<span class="st">&quot;https://www.youtube.com/embed/aEGboJxmq-w&quot;</span>)</span></code></pre></div>
+<iframe src="https://www.youtube.com/embed/aEGboJxmq-w" width="672" height="400px" data-external="1">
+</iframe>
+</div>
+<div id="the-loss-function" class="section level5 hasAnchor" number="5.5.4.0.2">
+<h5><span class="header-section-number">5.5.4.0.2</span> The Loss Function:<a href="dem-processing.html#the-loss-function" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>The loss function represents the linear rainfall-runoff model used in the TRANSEP model.</p>
+<p><span class="math display">\[
+s(t) = b_{1} p(t + 1 - b_{2}^{-1}) s(t - \triangle t)
+\]</span>
+<span class="math display">\[
+s(t = 0) = b_{3}
+\]</span>
+<span class="math display">\[
+p_{\text{eff}}(t) = p(t) s(t)
+\]</span>
+where <span class="math inline">\(p_{\text{eff}}(t)\)</span> is the effective precipitation.<br/>
+<span class="math inline">\(s(t)\)</span> is the antecedent precipitation index which is determined by giving more importance to recent precipitation and gradually reducing that importance as we go back in time. <br/>
+The rate at which this importance decreases is controlled by the parameter <span class="math inline">\(b_{2}\)</span>. <br/>
+The parameter <span class="math inline">\(b_{3}\)</span> sets the initial antecedent precipitation index at the beginning of the simulated time series.</p>
+<p>In other words, these equations are used to simulate the flow of water in a hydrological system over time. The first equation represents the change in stored water at each time step, taking into account precipitation, loss to runoff, and the system’s past state. The second equation sets the initial condition for the storage at the beginning of the simulation. The third equation calculates the effective precipitation, considering both precipitation and the current storage state.</p>
+</div>
+<div id="how-do-we-code-this" class="section level5 hasAnchor" number="5.5.4.0.3">
+<h5><span class="header-section-number">5.5.4.0.3</span> How do we code this?<a href="dem-processing.html#how-do-we-code-this" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>We will use a skeletal version of TRANSEP, focusing only on the rainfall-runoff piece which includes the loss-function and the gamma transfer function.</p>
+<p>We will use rainfall and runoff data from TCEF to model annual streamflow at a daily time step. Then we can use this model as a jump-off point to start talking about model calibration and validation in future modules.</p>
+</div>
+<div id="final-thoughts-1" class="section level5 hasAnchor" number="5.5.4.0.4">
+<h5><span class="header-section-number">5.5.4.0.4</span> Final thoughts:<a href="dem-processing.html#final-thoughts-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>If during your modeling experience, you find yourself wading through a bog of complex physics and multiple layers of transfer functions to account for every drop of input into a system, it is time to revisit your objectives. Remember that a model is always ‘wrong’. Like a map, it provides a simplified representation of reality. It may not be entirely accurate, but it serves a valuable purpose. Models help us understand complex systems, make predictions, and gain insights even if they are not an exact replica of the real world. Check out this paper for more:</p>
+<p><a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/93WR00877" class="uri">https://agupubs.onlinelibrary.wiley.com/doi/10.1029/93WR00877</a></p>
+</div>
+</div>
+<div id="labwork-20-pts-3" class="section level3 hasAnchor" number="5.5.5">
+<h3><span class="header-section-number">5.5.5</span> Labwork (20 pts)<a href="dem-processing.html#labwork-20-pts-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="download-the-repo-for-this-lab-here-2" class="section level4 hasAnchor" number="5.5.5.1">
+<h4><span class="header-section-number">5.5.5.1</span> <a href="https://github.com/tpcovino/04_transfer_functions.git" target="_blank">Download the repo for this lab HERE</a><a href="dem-processing.html#download-the-repo-for-this-lab-here-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In this homework/lab, you will write a simple, lumped rainfall-runoff model. The foundation for this model is the TRANSEP model from Weiler et al., 2003. Since TRANSEP (tracer transfer function hydrograph separation model) contains a tracer module that we don’t need, we will only use the loss function (Jakeman and Hornberger) and the gamma transfer function for the water routing.<br />
+The data for the model is from the Tenderfoot Creek Experimental Forest in central Montana.</p>
+<p>Load packages with a function that checks and installs packages if needed:</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="dem-processing.html#cb102-1" tabindex="-1"></a><span class="co">#knitr::opts_chunk$set(echo = FALSE)</span></span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="dem-processing.html#cb103-1" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb103-2"><a href="dem-processing.html#cb103-2" tabindex="-1"></a><span class="co"># # Write your package testing function</span></span>
+<span id="cb103-3"><a href="dem-processing.html#cb103-3" tabindex="-1"></a><span class="co"># pkgTest &lt;- function(x)</span></span>
+<span id="cb103-4"><a href="dem-processing.html#cb103-4" tabindex="-1"></a><span class="co"># {</span></span>
+<span id="cb103-5"><a href="dem-processing.html#cb103-5" tabindex="-1"></a><span class="co">#   if (x %in% rownames(installed.packages()) == FALSE) {</span></span>
+<span id="cb103-6"><a href="dem-processing.html#cb103-6" tabindex="-1"></a><span class="co">#     install.packages(x, dependencies= TRUE)</span></span>
+<span id="cb103-7"><a href="dem-processing.html#cb103-7" tabindex="-1"></a><span class="co">#   }</span></span>
+<span id="cb103-8"><a href="dem-processing.html#cb103-8" tabindex="-1"></a><span class="co">#   library(x, character.only = TRUE)</span></span>
+<span id="cb103-9"><a href="dem-processing.html#cb103-9" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb103-10"><a href="dem-processing.html#cb103-10" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb103-11"><a href="dem-processing.html#cb103-11" tabindex="-1"></a><span class="co"># # Make a vector of the packages you need</span></span>
+<span id="cb103-12"><a href="dem-processing.html#cb103-12" tabindex="-1"></a><span class="co"># neededPackages &lt;- c(&#39;tidyverse&#39;, &#39;lubridate&#39;, &#39;tictoc&#39;, &#39;patchwork&#39;) #tools for plot titles </span></span>
+<span id="cb103-13"><a href="dem-processing.html#cb103-13" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb103-14"><a href="dem-processing.html#cb103-14" tabindex="-1"></a><span class="co"># # For every package in the vector, apply your pkgTest function</span></span>
+<span id="cb103-15"><a href="dem-processing.html#cb103-15" tabindex="-1"></a><span class="co"># for (package in neededPackages){pkgTest(package)}</span></span>
+<span id="cb103-16"><a href="dem-processing.html#cb103-16" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb103-17"><a href="dem-processing.html#cb103-17" tabindex="-1"></a><span class="co"># # tictoc times the execution of different modeling methods</span></span>
+<span id="cb103-18"><a href="dem-processing.html#cb103-18" tabindex="-1"></a><span class="co"># # patchwork is used for side-by-side plots</span></span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="dem-processing.html#cb104-1" tabindex="-1"></a><span class="co"># # Let&#39;s assume that you know you put your data file in the working directory, but cannot recall its name. Let&#39;s do some working directory exploration with script:</span></span>
+<span id="cb104-2"><a href="dem-processing.html#cb104-2" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb104-3"><a href="dem-processing.html#cb104-3" tabindex="-1"></a><span class="co"># # Check your working directory:</span></span>
+<span id="cb104-4"><a href="dem-processing.html#cb104-4" tabindex="-1"></a><span class="co"># print(getwd())</span></span>
+<span id="cb104-5"><a href="dem-processing.html#cb104-5" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb104-6"><a href="dem-processing.html#cb104-6" tabindex="-1"></a><span class="co"># # Check the datafile name or path by listing files in the working directory.</span></span>
+<span id="cb104-7"><a href="dem-processing.html#cb104-7" tabindex="-1"></a><span class="co"># filepaths &lt;-list.files()</span></span>
+<span id="cb104-8"><a href="dem-processing.html#cb104-8" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb104-9"><a href="dem-processing.html#cb104-9" tabindex="-1"></a><span class="co"># # Here is an option to list only .csv files in your working directory:</span></span>
+<span id="cb104-10"><a href="dem-processing.html#cb104-10" tabindex="-1"></a><span class="co"># csv_files &lt;- filepaths[grepl(&quot;.csv$&quot;, filepaths, ignore.case = TRUE)]</span></span>
+<span id="cb104-11"><a href="dem-processing.html#cb104-11" tabindex="-1"></a><span class="co"># print(csv_files)</span></span>
+<span id="cb104-12"><a href="dem-processing.html#cb104-12" tabindex="-1"></a><span class="co"># ```</span></span>
+<span id="cb104-13"><a href="dem-processing.html#cb104-13" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb104-14"><a href="dem-processing.html#cb104-14" tabindex="-1"></a><span class="co"># #### Read in the data, convert the column that has the date to a (lubridate) date, and add a column that contains the water year</span></span>
+<span id="cb104-15"><a href="dem-processing.html#cb104-15" tabindex="-1"></a></span>
+<span id="cb104-16"><a href="dem-processing.html#cb104-16" tabindex="-1"></a><span class="co"># # Identify the path to the desired data. </span></span>
+<span id="cb104-17"><a href="dem-processing.html#cb104-17" tabindex="-1"></a><span class="co"># filepath &lt;- &quot;P_Q_1996_2011.csv&quot;</span></span>
+<span id="cb104-18"><a href="dem-processing.html#cb104-18" tabindex="-1"></a><span class="co"># indata &lt;- read.csv(filepath)</span></span>
+<span id="cb104-19"><a href="dem-processing.html#cb104-19" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb104-20"><a href="dem-processing.html#cb104-20" tabindex="-1"></a><span class="co"># indata &lt;- indata %&gt;%</span></span>
+<span id="cb104-21"><a href="dem-processing.html#cb104-21" tabindex="-1"></a><span class="co">#   mutate(Date = mdy(Date)) %&gt;% # convert &quot;Date&quot; to a date object with mdy()</span></span>
+<span id="cb104-22"><a href="dem-processing.html#cb104-22" tabindex="-1"></a><span class="co">#   mutate(wtr_yr = if_else(month(Date) &gt; 9, year(Date) + 1, year(Date)))</span></span></code></pre></div>
+<p>Define input year
+We could use every year in the time series, but for starters, we’ll use 2006. Use filter() to extract the 2006 water year.</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="dem-processing.html#cb105-1" tabindex="-1"></a><span class="co"># PQ &lt;- indata %&gt;%</span></span>
+<span id="cb105-2"><a href="dem-processing.html#cb105-2" tabindex="-1"></a><span class="co">#   filter(wtr_yr == 2006) # extract the 2006 water year with filter()</span></span>
+<span id="cb105-3"><a href="dem-processing.html#cb105-3" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb105-4"><a href="dem-processing.html#cb105-4" tabindex="-1"></a><span class="co"># # plot discharge for 2006</span></span>
+<span id="cb105-5"><a href="dem-processing.html#cb105-5" tabindex="-1"></a><span class="co"># ggplot(PQ, aes(x = Date, y = Discharge_mm)) +</span></span>
+<span id="cb105-6"><a href="dem-processing.html#cb105-6" tabindex="-1"></a><span class="co">#   geom_line()</span></span>
+<span id="cb105-7"><a href="dem-processing.html#cb105-7" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb105-8"><a href="dem-processing.html#cb105-8" tabindex="-1"></a><span class="co"># # make flowtime correction - flowtime is a time-weighted cumulative flow, which aids in understanding the temporal distribution of flow, giving more weight to periods of higher discharge. flow time correction is relevant in hydrology when analyzing Q or time series data, so we can compare hydrological events on a standardized time scale. It can help to identify patterns, assess the duration of high or low flows, and compare behavior of watersheds over time.</span></span>
+<span id="cb105-9"><a href="dem-processing.html#cb105-9" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb105-10"><a href="dem-processing.html#cb105-10" tabindex="-1"></a><span class="co"># PQ &lt;- PQ %&gt;% </span></span>
+<span id="cb105-11"><a href="dem-processing.html#cb105-11" tabindex="-1"></a><span class="co">#   mutate(flowtime = cumsum(Discharge_mm)/mean(Discharge_mm)) %&gt;% </span></span>
+<span id="cb105-12"><a href="dem-processing.html#cb105-12" tabindex="-1"></a><span class="co">#   mutate(counter = 1:nrow(PQ))</span></span>
+<span id="cb105-13"><a href="dem-processing.html#cb105-13" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb105-14"><a href="dem-processing.html#cb105-14" tabindex="-1"></a><span class="co"># ggplot() +</span></span>
+<span id="cb105-15"><a href="dem-processing.html#cb105-15" tabindex="-1"></a><span class="co">#   geom_line(data=PQ, aes(x = flowtime, y = Discharge_mm)) + </span></span>
+<span id="cb105-16"><a href="dem-processing.html#cb105-16" tabindex="-1"></a><span class="co">#   geom_line(data=PQ, aes(x = counter, y = Discharge_mm), color=&quot;red&quot;)</span></span></code></pre></div>
+<p><strong>1) QUESTION: What does the function cumsum() do?(1 pt)</strong>
+ANSWER:</p>
+<p>Define the initial inputs <br><br>
+This chunk defines the initial inputs for measured precip and measured runoff</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="dem-processing.html#cb106-1" tabindex="-1"></a><span class="co"># tau &lt;- 1:nrow(PQ) # simple timestep counter the same length as PQ</span></span>
+<span id="cb106-2"><a href="dem-processing.html#cb106-2" tabindex="-1"></a><span class="co"># Pobs &lt;- PQ$RainMelt_mm # observed precipitation from PQ df</span></span>
+<span id="cb106-3"><a href="dem-processing.html#cb106-3" tabindex="-1"></a><span class="co"># Qobs &lt;- PQ$Discharge_mm # observed streamflow from PQ df</span></span></code></pre></div>
+<p>Parameterization <br><br>
+We will use these parameters. You can change them if you want, but I’d suggest leaving them like this at least until you get the model to work. Even tiny changes can have a huge effect on the simulated runoff.</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="dem-processing.html#cb107-1" tabindex="-1"></a><span class="co"># # Loss function parameters</span></span>
+<span id="cb107-2"><a href="dem-processing.html#cb107-2" tabindex="-1"></a><span class="co"># b1 &lt;- 0.0018 # volume control parameter (b1 in eq 4a)</span></span>
+<span id="cb107-3"><a href="dem-processing.html#cb107-3" tabindex="-1"></a><span class="co"># b2 &lt;- 50 # backwards weighting parameter (b2 in eq 4a) </span></span>
+<span id="cb107-4"><a href="dem-processing.html#cb107-4" tabindex="-1"></a><span class="co"># # determines how much weight or importance is given to past precipitation events when calculating an antecedent precipitation index. &quot;Exponential weighting backward in time&quot; means that the influence of past precipitation events diminishes as you move further back in time, and this diminishing effect follows an exponential pattern.</span></span>
+<span id="cb107-5"><a href="dem-processing.html#cb107-5" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb107-6"><a href="dem-processing.html#cb107-6" tabindex="-1"></a><span class="co"># b3 &lt;- 0.135 # initial s(t) value for s(t=0) (b3 in eq 4b) - Initial antecedent precipitation index value.</span></span>
+<span id="cb107-7"><a href="dem-processing.html#cb107-7" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb107-8"><a href="dem-processing.html#cb107-8" tabindex="-1"></a><span class="co"># # Transfer function parameters</span></span>
+<span id="cb107-9"><a href="dem-processing.html#cb107-9" tabindex="-1"></a><span class="co"># a &lt;- 1.84 # TF shape parameter</span></span>
+<span id="cb107-10"><a href="dem-processing.html#cb107-10" tabindex="-1"></a><span class="co"># b &lt;- 3.29 # TF scale parameter</span></span></code></pre></div>
+<p>Loss function <br><br>
+This is the module for the Jakeman and Hornberger loss function where we turn our measured input precip into effective precipitation (p_eff). This part contains three steps.<br />
+1) preallocate a vector p_eff: Initiate an empty vector for effective precipitation that we will fill in with a loop using Peff(t) = p(t)s(t). Effective precipitation is the portion of precipitation that generates streamflow and event water contribution to the stream. It is separated to produce event water and displace pre-event water into the stream.
+2) set the initial value for s: s(t) is an antecedent precipitation index. How much does antecedent precipitation affect effective precipitation?
+3) generate p_eff inside of a for-loop<br />
+Please note: The Weiler et al. (2003) paper states that one of the loss function parameters (vol_c) can be determined from the measured input. That is actually not the case.</p>
+<p>s(t) is the antecedent precipitation index that is calculated by
+exponentially weighting the precipitation backward in time according to the
+parameter b2 is a ‘dial’ that places weight on past precipitation events.</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="dem-processing.html#cb108-1" tabindex="-1"></a><span class="co"># # preallocate the p_eff vector</span></span>
+<span id="cb108-2"><a href="dem-processing.html#cb108-2" tabindex="-1"></a><span class="co"># p_eff &lt;- vector(mode = &quot;double&quot;, length(tau))</span></span>
+<span id="cb108-3"><a href="dem-processing.html#cb108-3" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb108-4"><a href="dem-processing.html#cb108-4" tabindex="-1"></a><span class="co"># s &lt;- b3 # at this point, s is equal to b3, the start value of s</span></span>
+<span id="cb108-5"><a href="dem-processing.html#cb108-5" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb108-6"><a href="dem-processing.html#cb108-6" tabindex="-1"></a><span class="co"># # loop with loss function</span></span>
+<span id="cb108-7"><a href="dem-processing.html#cb108-7" tabindex="-1"></a><span class="co"># for (i in 1:length(p_eff)) {</span></span>
+<span id="cb108-8"><a href="dem-processing.html#cb108-8" tabindex="-1"></a><span class="co">#   s &lt;- b1 * Pobs[i] + (1 - 1/b2) * s # this is eq 4a from Weiler et al. (2003)</span></span>
+<span id="cb108-9"><a href="dem-processing.html#cb108-9" tabindex="-1"></a><span class="co">#   p_eff[i] &lt;- Pobs[i] * s # this is eq 4c from Weiler et al. (2003)</span></span>
+<span id="cb108-10"><a href="dem-processing.html#cb108-10" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb108-11"><a href="dem-processing.html#cb108-11" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb108-12"><a href="dem-processing.html#cb108-12" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb108-13"><a href="dem-processing.html#cb108-13" tabindex="-1"></a><span class="co"># # #### alternative way to calculate p_eff by populating an s vector  </span></span>
+<span id="cb108-14"><a href="dem-processing.html#cb108-14" tabindex="-1"></a><span class="co"># # preallocate s_alt vector</span></span>
+<span id="cb108-15"><a href="dem-processing.html#cb108-15" tabindex="-1"></a><span class="co"># # s_alt &lt;- vector(mode = &quot;double&quot;, length(tau))</span></span>
+<span id="cb108-16"><a href="dem-processing.html#cb108-16" tabindex="-1"></a><span class="co"># # s_alt[1] &lt;- b3</span></span>
+<span id="cb108-17"><a href="dem-processing.html#cb108-17" tabindex="-1"></a><span class="co"># # # preallocate p_eff vector</span></span>
+<span id="cb108-18"><a href="dem-processing.html#cb108-18" tabindex="-1"></a><span class="co"># # p_eff_new &lt;- vector(mode = &quot;double&quot;, length(tau))</span></span>
+<span id="cb108-19"><a href="dem-processing.html#cb108-19" tabindex="-1"></a><span class="co"># # # start loop</span></span>
+<span id="cb108-20"><a href="dem-processing.html#cb108-20" tabindex="-1"></a><span class="co"># # for (i in 2:(length(p_eff))) {</span></span>
+<span id="cb108-21"><a href="dem-processing.html#cb108-21" tabindex="-1"></a><span class="co"># #   s_alt[i] &lt;- b1 * Pobs[i] + (1 - 1/b2) * s_alt[i-1]</span></span>
+<span id="cb108-22"><a href="dem-processing.html#cb108-22" tabindex="-1"></a><span class="co"># #   p_eff_new[i] &lt;- Pobs[i] * s_alt[i]</span></span>
+<span id="cb108-23"><a href="dem-processing.html#cb108-23" tabindex="-1"></a><span class="co"># # }</span></span>
+<span id="cb108-24"><a href="dem-processing.html#cb108-24" tabindex="-1"></a><span class="co"># ####</span></span>
+<span id="cb108-25"><a href="dem-processing.html#cb108-25" tabindex="-1"></a><span class="co"># # set a starting value for s</span></span>
+<span id="cb108-26"><a href="dem-processing.html#cb108-26" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb108-27"><a href="dem-processing.html#cb108-27" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb108-28"><a href="dem-processing.html#cb108-28" tabindex="-1"></a><span class="co"># ## plot observed and effective precipitation against the date</span></span>
+<span id="cb108-29"><a href="dem-processing.html#cb108-29" tabindex="-1"></a><span class="co"># # wide to long with pivot_longer()</span></span>
+<span id="cb108-30"><a href="dem-processing.html#cb108-30" tabindex="-1"></a><span class="co"># precip &lt;- tibble(date = PQ$Date, obs = Pobs, sim = p_eff) %&gt;%</span></span>
+<span id="cb108-31"><a href="dem-processing.html#cb108-31" tabindex="-1"></a><span class="co">#   pivot_longer(names_to = &quot;key&quot;, values_to = &quot;value&quot;, -date)</span></span>
+<span id="cb108-32"><a href="dem-processing.html#cb108-32" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb108-33"><a href="dem-processing.html#cb108-33" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb108-34"><a href="dem-processing.html#cb108-34" tabindex="-1"></a><span class="co"># # a good way to plot P time series is with a step function. ggplot2 has geom_step() for this.</span></span>
+<span id="cb108-35"><a href="dem-processing.html#cb108-35" tabindex="-1"></a><span class="co"># ggplot(precip, aes(x = date, y = value, color = key)) +</span></span>
+<span id="cb108-36"><a href="dem-processing.html#cb108-36" tabindex="-1"></a><span class="co">#   geom_step() +</span></span>
+<span id="cb108-37"><a href="dem-processing.html#cb108-37" tabindex="-1"></a><span class="co">#   labs(color = &quot;P&quot;)</span></span>
+<span id="cb108-38"><a href="dem-processing.html#cb108-38" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb108-39"><a href="dem-processing.html#cb108-39" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb108-40"><a href="dem-processing.html#cb108-40" tabindex="-1"></a><span class="co"># ## plot the ratio of p_eff/Pobs (call that ratio &quot;frac&quot;)</span></span>
+<span id="cb108-41"><a href="dem-processing.html#cb108-41" tabindex="-1"></a><span class="co"># precip_new &lt;- tibble(date = PQ$Date, obs = Pobs, sim = p_eff, frac = p_eff/Pobs)</span></span>
+<span id="cb108-42"><a href="dem-processing.html#cb108-42" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb108-43"><a href="dem-processing.html#cb108-43" tabindex="-1"></a><span class="co"># ggplot(data = precip_new, aes(x = date, y = frac)) +</span></span>
+<span id="cb108-44"><a href="dem-processing.html#cb108-44" tabindex="-1"></a><span class="co">#   geom_line()</span></span></code></pre></div>
+<p><strong>2) QUESTION (3 pts): Interpret the two figures. What is the meaning of “frac”?</strong>
+For this answer, think about what the effective precipitation represents. When is frac “high”, when is “frac” low?</p>
+<p>ANSWER:</p>
+<p><strong>Extra Credit (2 pt): Combine the two plots into one, with a meaningfully scaled secondary y-axis</strong></p>
+<p>Runoff transfer function<br><br>
+Routing module -</p>
+<p>This short chunk sets up the TF used for the water routing. This part contains only two steps:
+1) the calculation of the actual TF.
+2) normalization of the TF so that the sum of the TF equals 1.</p>
+<p>tau(0) is the mean residence time</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="dem-processing.html#cb109-1" tabindex="-1"></a><span class="co"># #gTF &lt;- tau</span></span>
+<span id="cb109-2"><a href="dem-processing.html#cb109-2" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb109-3"><a href="dem-processing.html#cb109-3" tabindex="-1"></a><span class="co"># # this is the &quot;raw&quot; transfer function. This is eq 13 from Weiler 2003. Use the time step for tau. The Gamma function in R is gamma(). </span><span class="al">NOTE</span><span class="co"> THAT THIS EQ IN WEILER ET AL IS WRONG! It&#39;s exp(-tau / b) and not divided by alpha.</span></span>
+<span id="cb109-4"><a href="dem-processing.html#cb109-4" tabindex="-1"></a><span class="co"># g &lt;- (tau^(a - 1)) / ((b^a * gamma(a))) * exp(-tau / b)</span></span>
+<span id="cb109-5"><a href="dem-processing.html#cb109-5" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb109-6"><a href="dem-processing.html#cb109-6" tabindex="-1"></a><span class="co"># # normalize the TF, g, by the total sum of g.</span></span>
+<span id="cb109-7"><a href="dem-processing.html#cb109-7" tabindex="-1"></a><span class="co"># gTF &lt;- g / sum(g)</span></span>
+<span id="cb109-8"><a href="dem-processing.html#cb109-8" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb109-9"><a href="dem-processing.html#cb109-9" tabindex="-1"></a><span class="co"># # plot the TF as a line against tau. You need to put the two vectors tau and gTF into a new df/tibble for this. </span></span>
+<span id="cb109-10"><a href="dem-processing.html#cb109-10" tabindex="-1"></a><span class="co"># tf_plot &lt;- tibble(tau, gTF)</span></span>
+<span id="cb109-11"><a href="dem-processing.html#cb109-11" tabindex="-1"></a><span class="co"># ggplot(tf_plot, aes(tau, gTF)) +</span></span>
+<span id="cb109-12"><a href="dem-processing.html#cb109-12" tabindex="-1"></a><span class="co">#   geom_line()</span></span></code></pre></div>
+<p><strong>3) QUESTION (2 pt): Why is it important to normalize the transfer function?</strong><br />
+ANSWER:</p>
+<p><strong>4) QUESTION (4 pt): Describe the transfer function. What are the units and what does the shape of the transfer function mean for runoff generation?</strong><br />
+ANSWER:</p>
+<p>Convolution<br><br></p>
+<p>This is the heart of the model. Here, we convolute the input with the TF to generate runoff. There is another thing you need to pay attention to: We are only interested in one year (365 days), but since our TF itself is 365 timesteps long, small parts of all inputs except for the first one, will be turned into streamflow AFTER the water year of interest, that is, in the following year. In practice, this means you have two options to handle this.<br />
+1) You calculate q_all and then manually cut the matrix/vector to the correct length at the end, or<br />
+2) You only populate a vector at each time step and put the generated runoff per iteration in the correct locations within the vector. For this to work, you would need to trim the length of the generated runoff by one during each iteration. This approach is more difficult to code, but saves a lot of memory since you are only calculating/storing one vector of length 365 (or 366 during a leapyear).<br />
+We will go with option 1). The code for option 2 is shown at the end for reference.</p>
+<p>Convolution summarized (recall dollars and cookies): Each loop iteration results in a row of the matrix representing the convolution at a specific time step. each time step of p_eff is an iteration, and for each timestep, it multiplies the effective precipitation at that timestep by the entire transfer function. Then each row is summed and stored in the vector q_all. q_all_loop is an intermediate step in the convolution process and can help visualize how the convolution evolves over time.
+As an example, if we have precip at time step 1, we are interested in how this contributes to runoff at time steps 1,2,3 etc, all the way to 365 (or the end of our period). so the first row of the matrix q_all_loop represents the contribution of precipitation at timestep 1 to runoff at each timestep. the second row represents the contribution of precipitation at time step 2 to runoff at each timestep. Then when we sum up the rows, we get q_all, where each element represents the total runoff at a specific time step.</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="dem-processing.html#cb110-1" tabindex="-1"></a><span class="co"># tic()</span></span>
+<span id="cb110-2"><a href="dem-processing.html#cb110-2" tabindex="-1"></a><span class="co"># # preallocate qsim matrix with the correct dimensions. Remember that p_eff and gTF are the same length.</span></span>
+<span id="cb110-3"><a href="dem-processing.html#cb110-3" tabindex="-1"></a><span class="co"># q_all_loop &lt;- matrix(0, length(p_eff) * 2, length(p_eff)) # set number of rows and columns</span></span>
+<span id="cb110-4"><a href="dem-processing.html#cb110-4" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb110-5"><a href="dem-processing.html#cb110-5" tabindex="-1"></a><span class="co"># # convolution for-loop</span></span>
+<span id="cb110-6"><a href="dem-processing.html#cb110-6" tabindex="-1"></a><span class="co"># for (i in 1:length(p_eff)) { # loop through length of precipitation timeseries</span></span>
+<span id="cb110-7"><a href="dem-processing.html#cb110-7" tabindex="-1"></a><span class="co">#   q_all_loop[(i):(length(p_eff) + i - 1), i] &lt;- p_eff[i] * gTF # populate the q_all matrix (this is the same code as the UH convolution problem with one tiny change because you need to reference gTF and not UH)</span></span>
+<span id="cb110-8"><a href="dem-processing.html#cb110-8" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb110-9"><a href="dem-processing.html#cb110-9" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb110-10"><a href="dem-processing.html#cb110-10" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb110-11"><a href="dem-processing.html#cb110-11" tabindex="-1"></a><span class="co"># # add up the rows of the matrix to generate the final runoff and replace matrix with final Q</span></span>
+<span id="cb110-12"><a href="dem-processing.html#cb110-12" tabindex="-1"></a><span class="co"># q_all &lt;- apply(q_all_loop, 1, sum, na.rm = TRUE)</span></span>
+<span id="cb110-13"><a href="dem-processing.html#cb110-13" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb110-14"><a href="dem-processing.html#cb110-14" tabindex="-1"></a><span class="co"># # cut the vector to the appropriate length of one year (otherwise it won&#39;t fit into the original df with the observed data)</span></span>
+<span id="cb110-15"><a href="dem-processing.html#cb110-15" tabindex="-1"></a><span class="co"># q_all &lt;- q_all[1:length(p_eff)]</span></span>
+<span id="cb110-16"><a href="dem-processing.html#cb110-16" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb110-17"><a href="dem-processing.html#cb110-17" tabindex="-1"></a><span class="co"># # Write the final runoff vector into the PQ df</span></span>
+<span id="cb110-18"><a href="dem-processing.html#cb110-18" tabindex="-1"></a><span class="co"># PQ$Qsim &lt;- q_all</span></span>
+<span id="cb110-19"><a href="dem-processing.html#cb110-19" tabindex="-1"></a><span class="co"># toc()</span></span></code></pre></div>
+<p><strong>5) QUESTION (5 pts): We set the TF length to 365. What is the physical meaning of this (i.e., how well does this represent a real system and why)? Could the transfer function be shorter or longer than that?</strong></p>
+<p>ANSWER:</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="dem-processing.html#cb111-1" tabindex="-1"></a><span class="co"># ## THIS PART SAVES ALL HOURLY Q RESPONSES IN A NEW DF AND PLOTS THEM</span></span>
+<span id="cb111-2"><a href="dem-processing.html#cb111-2" tabindex="-1"></a><span class="co"># Qall &lt;- as_tibble(q_all_loop, .name_repair = NULL)</span></span>
+<span id="cb111-3"><a href="dem-processing.html#cb111-3" tabindex="-1"></a><span class="co"># Qall &lt;- Qall[ -as.numeric(which(apply(Qall, 2, var) == 0))]</span></span>
+<span id="cb111-4"><a href="dem-processing.html#cb111-4" tabindex="-1"></a><span class="co"># toc()</span></span>
+<span id="cb111-5"><a href="dem-processing.html#cb111-5" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb111-6"><a href="dem-processing.html#cb111-6" tabindex="-1"></a><span class="co"># # Qall[Qall == 0] &lt;- NA</span></span>
+<span id="cb111-7"><a href="dem-processing.html#cb111-7" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb111-8"><a href="dem-processing.html#cb111-8" tabindex="-1"></a><span class="co"># Qall &lt;- Qall %&gt;%</span></span>
+<span id="cb111-9"><a href="dem-processing.html#cb111-9" tabindex="-1"></a><span class="co">#   mutate(Time_hrs = 1:nrow(Qall)) %&gt;% # add the time vector</span></span>
+<span id="cb111-10"><a href="dem-processing.html#cb111-10" tabindex="-1"></a><span class="co">#   gather(key, value, -Time_hrs)</span></span>
+<span id="cb111-11"><a href="dem-processing.html#cb111-11" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb111-12"><a href="dem-processing.html#cb111-12" tabindex="-1"></a><span class="co"># Qall$key &lt;- as.factor(Qall$key)</span></span>
+<span id="cb111-13"><a href="dem-processing.html#cb111-13" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb111-14"><a href="dem-processing.html#cb111-14" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb111-15"><a href="dem-processing.html#cb111-15" tabindex="-1"></a><span class="co"># ggplot(Qall, aes(x = Time_hrs, y = value, fill = key)) +</span></span>
+<span id="cb111-16"><a href="dem-processing.html#cb111-16" tabindex="-1"></a><span class="co">#   geom_line(alpha = 0.2) +</span></span>
+<span id="cb111-17"><a href="dem-processing.html#cb111-17" tabindex="-1"></a><span class="co">#   theme(legend.position = &quot;none&quot;) +</span></span>
+<span id="cb111-18"><a href="dem-processing.html#cb111-18" tabindex="-1"></a><span class="co">#   lims(x = c(1, 365)) +</span></span>
+<span id="cb111-19"><a href="dem-processing.html#cb111-19" tabindex="-1"></a><span class="co">#   labs(x = &quot;DoY&quot;, y = &quot;Q (mm/day&quot;)</span></span></code></pre></div>
+<p>Plots <br><br>
+Plot the observed and simulated runoff. Include a legend and label the y-axis.</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="dem-processing.html#cb112-1" tabindex="-1"></a><span class="co"># # make long form</span></span>
+<span id="cb112-2"><a href="dem-processing.html#cb112-2" tabindex="-1"></a><span class="co"># PQ_long &lt;- PQ %&gt;%</span></span>
+<span id="cb112-3"><a href="dem-processing.html#cb112-3" tabindex="-1"></a><span class="co">#   select(-wtr_yr, -RainMelt_mm) %&gt;%</span></span>
+<span id="cb112-4"><a href="dem-processing.html#cb112-4" tabindex="-1"></a><span class="co">#   pivot_longer(names_to = &quot;key&quot;, values_to = &quot;value&quot;, -Date)</span></span>
+<span id="cb112-5"><a href="dem-processing.html#cb112-5" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb112-6"><a href="dem-processing.html#cb112-6" tabindex="-1"></a><span class="co"># # plot hydrographs (as lines) and label the y-axis</span></span>
+<span id="cb112-7"><a href="dem-processing.html#cb112-7" tabindex="-1"></a><span class="co"># ggplot(data = PQ_long, aes(x = Date, y = value, color = key)) +</span></span>
+<span id="cb112-8"><a href="dem-processing.html#cb112-8" tabindex="-1"></a><span class="co">#   geom_line() +</span></span>
+<span id="cb112-9"><a href="dem-processing.html#cb112-9" tabindex="-1"></a><span class="co">#   labs(x = {}, y = &quot;Q (mm/day)&quot;, color = {}) +</span></span>
+<span id="cb112-10"><a href="dem-processing.html#cb112-10" tabindex="-1"></a><span class="co">#   lims(x = as.Date(c(&quot;2005-10-01&quot;, &quot;2006-09-30&quot;)))</span></span></code></pre></div>
+<p><strong>6) QUESTION (3 pt): Evaluate how good or bad the model performed (i.e., visually compare simulated and observed streamflow, e.g., low flows and peak flows).</strong><br />
+ANSWER:</p>
+<p><strong>7) QUESTION (2 pt): Compare the effective precipitation total with the simulated runoff total and the observed runoff total. What is p_eff and how is it related to q_all? Discuss why there is a (small) mismatch between the sums of p_eff and q_all.</strong><br />
+ANSWER:</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="dem-processing.html#cb113-1" tabindex="-1"></a><span class="co"># sum(Pobs) # observed P</span></span>
+<span id="cb113-2"><a href="dem-processing.html#cb113-2" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb113-3"><a href="dem-processing.html#cb113-3" tabindex="-1"></a><span class="co"># sum(p_eff) # effective (modeled) P</span></span>
+<span id="cb113-4"><a href="dem-processing.html#cb113-4" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb113-5"><a href="dem-processing.html#cb113-5" tabindex="-1"></a><span class="co"># sum(q_all) # modeled Q</span></span>
+<span id="cb113-6"><a href="dem-processing.html#cb113-6" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb113-7"><a href="dem-processing.html#cb113-7" tabindex="-1"></a><span class="co"># sum(Qobs) # observed Q</span></span></code></pre></div>
+<p>THIS IS THE CODE FOR CONVOLUTION METHOD 2<br />
+This method saves storage requirements since only a vector is generated and not a full matrix that contains all response pulses. The workflow here is to generate a a response vector for the first pulse. This will take up 365 time steps. On the second time step, we generate another response pulse with 364 steps that starts at t=2. We then add that vector to the first one. On the third time step, we generate a response pulse of length 363 that starts at t=3 and then add it to the existing one. And so on and so forth.</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="dem-processing.html#cb114-1" tabindex="-1"></a><span class="co"># # METHOD 2, Option 1</span></span>
+<span id="cb114-2"><a href="dem-processing.html#cb114-2" tabindex="-1"></a><span class="co"># tic()</span></span>
+<span id="cb114-3"><a href="dem-processing.html#cb114-3" tabindex="-1"></a><span class="co"># # preallocate qsim vector</span></span>
+<span id="cb114-4"><a href="dem-processing.html#cb114-4" tabindex="-1"></a><span class="co"># q_all &lt;- vector(mode = &quot;double&quot;, length(p_eff))</span></span>
+<span id="cb114-5"><a href="dem-processing.html#cb114-5" tabindex="-1"></a><span class="co"># # start convolution</span></span>
+<span id="cb114-6"><a href="dem-processing.html#cb114-6" tabindex="-1"></a><span class="co"># for (i in 1:length(p_eff)) {</span></span>
+<span id="cb114-7"><a href="dem-processing.html#cb114-7" tabindex="-1"></a><span class="co">#   A &lt;- p_eff[i] * gTF # vector with current Q pulse</span></span>
+<span id="cb114-8"><a href="dem-processing.html#cb114-8" tabindex="-1"></a><span class="co">#   B &lt;- vector(mode = &quot;double&quot;, length(p_eff)) # reset/preallocate vector with 0s</span></span>
+<span id="cb114-9"><a href="dem-processing.html#cb114-9" tabindex="-1"></a><span class="co">#   B[i:length(p_eff)] &lt;- A[1:(length(p_eff) - i + 1)] # iteration one uses the full A, iteration 2 full lengthmodel minus one, etc</span></span>
+<span id="cb114-10"><a href="dem-processing.html#cb114-10" tabindex="-1"></a><span class="co">#   q_all &lt;- q_all + B # add new convoluted vector to total runoff</span></span>
+<span id="cb114-11"><a href="dem-processing.html#cb114-11" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb114-12"><a href="dem-processing.html#cb114-12" tabindex="-1"></a><span class="co"># toc()</span></span>
+<span id="cb114-13"><a href="dem-processing.html#cb114-13" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb114-14"><a href="dem-processing.html#cb114-14" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb114-15"><a href="dem-processing.html#cb114-15" tabindex="-1"></a><span class="co"># # Method 2, Option 2</span></span>
+<span id="cb114-16"><a href="dem-processing.html#cb114-16" tabindex="-1"></a><span class="co"># tic()</span></span>
+<span id="cb114-17"><a href="dem-processing.html#cb114-17" tabindex="-1"></a><span class="co"># # preallocate qsim vector</span></span>
+<span id="cb114-18"><a href="dem-processing.html#cb114-18" tabindex="-1"></a><span class="co"># q_all_2 &lt;- vector(mode = &quot;double&quot;, length(p_eff))</span></span>
+<span id="cb114-19"><a href="dem-processing.html#cb114-19" tabindex="-1"></a><span class="co"># B &lt;- vector(mode = &quot;double&quot;, length(p_eff)) # preallocate vector with 0s</span></span>
+<span id="cb114-20"><a href="dem-processing.html#cb114-20" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb114-21"><a href="dem-processing.html#cb114-21" tabindex="-1"></a><span class="co"># # start convolution</span></span>
+<span id="cb114-22"><a href="dem-processing.html#cb114-22" tabindex="-1"></a><span class="co"># for (i in 1:length(p_eff)) {</span></span>
+<span id="cb114-23"><a href="dem-processing.html#cb114-23" tabindex="-1"></a><span class="co">#   A &lt;- p_eff[i] * gTF # vector with current Q pulse</span></span>
+<span id="cb114-24"><a href="dem-processing.html#cb114-24" tabindex="-1"></a><span class="co">#   B[i:length(p_eff)] &lt;- A[1:(length(p_eff) - i + 1)] # iteration one uses the full A, iteration 2 full lengthmodel minus one, etc</span></span>
+<span id="cb114-25"><a href="dem-processing.html#cb114-25" tabindex="-1"></a><span class="co">#   q_all_2[i:length(p_eff)] &lt;- q_all_2[i:length(p_eff)] + B[i:length(p_eff)] # add new convoluted vector to total runoff at correct locations</span></span>
+<span id="cb114-26"><a href="dem-processing.html#cb114-26" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb114-27"><a href="dem-processing.html#cb114-27" tabindex="-1"></a><span class="co"># toc()</span></span>
+<span id="cb114-28"><a href="dem-processing.html#cb114-28" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb114-29"><a href="dem-processing.html#cb114-29" tabindex="-1"></a><span class="co"># # plot to show the two Q timeseries are the same</span></span>
+<span id="cb114-30"><a href="dem-processing.html#cb114-30" tabindex="-1"></a><span class="co"># # Create two ggplot objects</span></span>
+<span id="cb114-31"><a href="dem-processing.html#cb114-31" tabindex="-1"></a><span class="co"># plot_q1 &lt;- ggplot(data=test_q_all, aes(x=time, y=q1)) +</span></span>
+<span id="cb114-32"><a href="dem-processing.html#cb114-32" tabindex="-1"></a><span class="co">#   geom_line() +</span></span>
+<span id="cb114-33"><a href="dem-processing.html#cb114-33" tabindex="-1"></a><span class="co">#   labs(title = &quot;Q1 Plot&quot;)</span></span>
+<span id="cb114-34"><a href="dem-processing.html#cb114-34" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb114-35"><a href="dem-processing.html#cb114-35" tabindex="-1"></a><span class="co"># plot_q2 &lt;- ggplot(data=test_q_all, aes(x=time, y=q2)) +</span></span>
+<span id="cb114-36"><a href="dem-processing.html#cb114-36" tabindex="-1"></a><span class="co">#   geom_line(color=&quot;blue&quot;) +</span></span>
+<span id="cb114-37"><a href="dem-processing.html#cb114-37" tabindex="-1"></a><span class="co">#   labs(title = &quot;Q2 Plot&quot;)</span></span>
+<span id="cb114-38"><a href="dem-processing.html#cb114-38" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb114-39"><a href="dem-processing.html#cb114-39" tabindex="-1"></a><span class="co"># # Combine plots side by side</span></span>
+<span id="cb114-40"><a href="dem-processing.html#cb114-40" tabindex="-1"></a><span class="co"># combined_plots &lt;- plot_q1 + plot_q2 + plot_layout(ncol = 2)</span></span>
+<span id="cb114-41"><a href="dem-processing.html#cb114-41" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb114-42"><a href="dem-processing.html#cb114-42" tabindex="-1"></a><span class="co"># # Display combined plots</span></span>
+<span id="cb114-43"><a href="dem-processing.html#cb114-43" tabindex="-1"></a><span class="co"># combined_plots</span></span></code></pre></div>
+
+</div>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="learning-module-10---gridded-and-tabular-data-retrieval.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="evapotranspiration.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="learning-module-10---gridded-and-tabular-data-retrieval.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -618,7 +930,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/tpcovino/lres_546_bookdown/edit/main/11_dem_preprocessing.Rmd",
+"link": "https://github.com/lekokremer/lres_546_bookdown_lk/edit/main/11_dem_preprocessing.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -626,7 +938,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/tpcovino/lres_546_bookdown/blob/main/11_dem_preprocessing.Rmd",
+"link": "https://github.com/lekokremer/lres_546_bookdown_lk/blob/main/11_dem_preprocessing.Rmd",
 "text": null
 },
 "download": null,

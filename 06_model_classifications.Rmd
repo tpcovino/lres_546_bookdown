@@ -1,11 +1,13 @@
+# Part 3: Bucket and Process-Based Models
 
-# Classifying model structure - Lecture only (0 pts)
+## Classifying model structure
+### Learning Module
 
 Throughout the rest of the course, we will gather data and create models to explore how environmental factors, such as snowmelt, land cover, evapotranspiration (ET), and topography, impact runoff. To discuss these methods, we should review some modeling terminology describing model complexity and type.
 
 Environmental models, including hydrological models, are built around simplifying assumptions of natural systems. The complexity of the model may depend on its application. Effective hydrological models share key traits: they are simple, parsimonious, and robust across various watersheds. In other words, they are easy to understand and streamlined and consistently perform well across different basins or even geographical areas. Therefore, more complex is only sometimes better. 
 
-## Spatial Complexity
+#### Spatial Complexity
 
 There are general terms that classify the spatial complexity of hydrological models:
 
@@ -25,7 +27,7 @@ knitr::include_graphics("images/lumpd_dist_ws.png")
 
 In small-scale studies, we can design a model structure that fits the specific situation well. However, when we are dealing with larger areas, model design may be challenging. Our data might differ across regions with variable climate and landscape features. Sometimes, it is best to use a complex model to capture all the different processes happening over a big area. However, it could be better to stick with a simpler model because we might have limited data or the number of calculations is very computationally expensive. It is up to the modeler to determine the simplest model that meets the desired application. 
 
-## Modeling Approaches
+#### Modeling Approaches
 
 **Empirical Models** are based on empirical analysis of observed inputs (e.g., rainfall) or outputs (ET, discharge). These simple models may not be transferable to other watersheds. Also, they may not reveal much about the physical processes influencing runoff. Therefore, these types of models may not be valid if the study area experiences land use or climate change. 
 

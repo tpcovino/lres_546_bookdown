@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Term Project Assignment 1 - 10 pnts | Quantitative Environmental Methods: LRES 546</title>
+  <meta name="description" content="Chapter 4 Term Project Assignment 1 - 10 pnts | Quantitative Environmental Methods: LRES 546" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Term Project Assignment 1 - 10 pnts | Quantitative Environmental Methods: LRES 546" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Term Project Assignment 1 - 10 pnts | Quantitative Environmental Methods: LRES 546" />
+  
+  
+  
+
+<meta name="author" content="Tim Covino &amp; Lauren Kremer" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="part-3-bucket-and-process-based-models.html"/>
+<link rel="next" href="part-4-spatial-models-and-gis-integration.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">lres_546</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Part 1: Foundations of Environmental Modeling</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#course-overview-and-objectives"><i class="fa fa-check"></i><b>1.2</b> Course overview and objectives</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#course-description"><i class="fa fa-check"></i><b>1.3</b> Course Description</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i><b>1.4</b> Structure</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#philosophical-approach-and-resources"><i class="fa fa-check"></i><b>1.5</b> Philosophical approach and resources</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#tentative-schedule-subject-to-change"><i class="fa fa-check"></i><b>1.6</b> Tentative schedule, subject to change</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html"><i class="fa fa-check"></i><b>2</b> Part 2: Tabular Models and Time-Series</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#hydrograph-separation"><i class="fa fa-check"></i><b>2.1</b> Hydrograph separation</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#learning-module"><i class="fa fa-check"></i><b>2.1.1</b> Learning Module</a></li>
+<li class="chapter" data-level="2.1.2" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#lecture"><i class="fa fa-check"></i><b>2.1.2</b> Lecture</a></li>
+<li class="chapter" data-level="2.1.3" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#labwork-20-pts"><i class="fa fa-check"></i><b>2.1.3</b> Labwork (20 pts)</a></li>
+<li class="chapter" data-level="2.1.4" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#repo"><i class="fa fa-check"></i><b>2.1.4</b> Repo</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#return-intervals"><i class="fa fa-check"></i><b>2.2</b> Return Intervals</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#learning-module-1"><i class="fa fa-check"></i><b>2.2.1</b> Learning Module</a></li>
+<li class="chapter" data-level="2.2.2" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#labwork-20-pts-1"><i class="fa fa-check"></i><b>2.2.2</b> Labwork (20 pts)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#rational-method-and-nrcs-curve-number-20-pts"><i class="fa fa-check"></i><b>2.3</b> Rational method and NRCS curve number (20 pts)</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#learning-module-2"><i class="fa fa-check"></i><b>2.3.1</b> Learning Module</a></li>
+<li class="chapter" data-level="2.3.2" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#labwork-20-pts-2"><i class="fa fa-check"></i><b>2.3.2</b> Labwork (20 pts)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#monte-carlo-simulation"><i class="fa fa-check"></i><b>2.4</b> Monte Carlo Simulation</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#learning-module-3"><i class="fa fa-check"></i><b>2.4.1</b> Learning Module</a></li>
+<li class="chapter" data-level="2.4.2" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#labwork-20-pnts"><i class="fa fa-check"></i><b>2.4.2</b> Labwork (20 pnts)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html"><i class="fa fa-check"></i><b>3</b> Part 3: Bucket and Process-Based Models</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#classifying-model-structure"><i class="fa fa-check"></i><b>3.1</b> Classifying model structure</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#learning-module-4"><i class="fa fa-check"></i><b>3.1.1</b> Learning Module</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#snowmelt-models"><i class="fa fa-check"></i><b>3.2</b> Snowmelt Models</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#learning-module-5"><i class="fa fa-check"></i><b>3.2.1</b> Learning Module</a></li>
+<li class="chapter" data-level="3.2.2" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#labwork-20-pnts-1"><i class="fa fa-check"></i><b>3.2.2</b> Labwork (20 pnts)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#evapotranspiration"><i class="fa fa-check"></i><b>3.3</b> Evapotranspiration</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#repo-here"><i class="fa fa-check"></i><b>3.3.1</b> Repo here</a></li>
+<li class="chapter" data-level="3.3.2" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#learning-module-6"><i class="fa fa-check"></i><b>3.3.2</b> Learning Module</a></li>
+<li class="chapter" data-level="3.3.3" data-path="part-3-bucket-and-process-based-models.html"><a href="part-3-bucket-and-process-based-models.html#labwork-20-pts-3"><i class="fa fa-check"></i><b>3.3.3</b> Labwork (20 pts):</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="term-project-assignment-1---10-pnts.html"><a href="term-project-assignment-1---10-pnts.html"><i class="fa fa-check"></i><b>4</b> Term Project Assignment 1 - 10 pnts</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="term-project-assignment-1---10-pnts.html"><a href="term-project-assignment-1---10-pnts.html#brainstorming"><i class="fa fa-check"></i><b>4.1</b> Brainstorming</a></li>
+<li class="chapter" data-level="4.2" data-path="term-project-assignment-1---10-pnts.html"><a href="term-project-assignment-1---10-pnts.html#data-exploration-and-selection"><i class="fa fa-check"></i><b>4.2</b> Data exploration and selection</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="term-project-assignment-1---10-pnts.html"><a href="term-project-assignment-1---10-pnts.html#expand-your-search"><i class="fa fa-check"></i><b>4.2.1</b> Expand your search</a></li>
+<li class="chapter" data-level="4.2.2" data-path="term-project-assignment-1---10-pnts.html"><a href="term-project-assignment-1---10-pnts.html#adapt-your-research-question"><i class="fa fa-check"></i><b>4.2.2</b> Adapt your research question</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="part-4-spatial-models-and-gis-integration.html"><a href="part-4-spatial-models-and-gis-integration.html"><i class="fa fa-check"></i><b>5</b> Part 4: Spatial Models and GIS Integration</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="part-4-spatial-models-and-gis-integration.html"><a href="part-4-spatial-models-and-gis-integration.html#gridded-and-tabular-data-retrieval"><i class="fa fa-check"></i><b>5.1</b> Gridded and tabular data retrieval</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="part-4-spatial-models-and-gis-integration.html"><a href="part-4-spatial-models-and-gis-integration.html#learning-module-7"><i class="fa fa-check"></i><b>5.1.1</b> Learning Module</a></li>
+<li class="chapter" data-level="5.1.2" data-path="part-4-spatial-models-and-gis-integration.html"><a href="part-4-spatial-models-and-gis-integration.html#labwork-20-pnts-2"><i class="fa fa-check"></i><b>5.1.2</b> Labwork (20 pnts)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="part-4-spatial-models-and-gis-integration.html"><a href="part-4-spatial-models-and-gis-integration.html#dem-processing"><i class="fa fa-check"></i><b>5.2</b> DEM processing</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="part-4-spatial-models-and-gis-integration.html"><a href="part-4-spatial-models-and-gis-integration.html#the-link-to-the-repo-is-here"><i class="fa fa-check"></i><b>5.2.1</b> THE LINK TO THE REPO IS HERE</a></li>
+<li class="chapter" data-level="5.2.2" data-path="part-4-spatial-models-and-gis-integration.html"><a href="part-4-spatial-models-and-gis-integration.html#learning-module-8"><i class="fa fa-check"></i><b>5.2.2</b> Learning Module:</a></li>
+<li class="chapter" data-level="5.2.3" data-path="part-4-spatial-models-and-gis-integration.html"><a href="part-4-spatial-models-and-gis-integration.html#labwork-20-pts-4"><i class="fa fa-check"></i><b>5.2.3</b> Labwork (20 pts)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="part-4-spatial-models-and-gis-integration.html"><a href="part-4-spatial-models-and-gis-integration.html#transfer-function-rainfall-runoff-models"><i class="fa fa-check"></i><b>5.3</b> Transfer function rainfall-runoff models</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="part-4-spatial-models-and-gis-integration.html"><a href="part-4-spatial-models-and-gis-integration.html#learning-module-9"><i class="fa fa-check"></i><b>5.3.1</b> Learning Module</a></li>
+<li class="chapter" data-level="5.3.2" data-path="part-4-spatial-models-and-gis-integration.html"><a href="part-4-spatial-models-and-gis-integration.html#labwork-20-pts-5"><i class="fa fa-check"></i><b>5.3.2</b> Labwork (20 pts)</a></li>
+<li class="chapter" data-level="5.3.3" data-path="part-4-spatial-models-and-gis-integration.html"><a href="part-4-spatial-models-and-gis-integration.html#download-the-repo-for-this-lab-here-2"><i class="fa fa-check"></i><b>5.3.3</b> Download the repo for this lab HERE</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Environmental Methods: LRES 546</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="term-project-assignment-1---10-pnts" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Term Project Assignment 1 - 10 pnts<a href="term-project-assignment-1---10-pnts.html#term-project-assignment-1---10-pnts" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>As part of the Professional Masters’ Program, you are required to develop a professional paper. It is intended to give you an in-depth experience in the design, implementation, and completion of an original project. The paper will also be a way to showcase your research interests and accomplishments to potential employers or admissions committees. (See LRES 575 for more).</p>
+<p>In this assignment, you will develop the main goal and objectives of your term project and explore, evaluate and select data sources. The workflow for this assignment will help you develop your research question and identify the datasets you will use to address that question.</p>
+<div id="brainstorming" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Brainstorming<a href="term-project-assignment-1---10-pnts.html#brainstorming" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Q1. What is the primary research question for your term project?(1-2 sentences)(1 pt)</strong> <br>
+Think of this as your first approach to developing a research question. It should reflect a clear purpose and be specific enough to guide your initial search for data, but it likely will evolve throughout this assignment. That is okay, even expected. You will be asked for a refined response at the end of the assignment.<br>
+Consider: <br>
+- The problem or issue you want to address <br>
+- What specific phenomenon within that issue are you interested in understanding <br>
+- What measurable or observable outcomes do you want to analyze. <br>
+For example, instead of ‘how does climate change affect forests?’, you might consider ‘How has seasonal precipitation variability impacted the timing of peak NDVI in the Pacific Northwest from 2000 to 2020.’ Note that this question is specific enough to guide your search for the necessary data, such as precipitation records and NDVI time series. <br>
+ANSWER:</p>
+<p><strong>Q2. What are 2-3 types of data your research question requires? Address each sub-question (2 pts)</strong>
+Be as specific as you can, what types of variables or indicators are you looking for? <br>
+What format should the data be in (e.g., spatial datasets, time-series data, species counts)? <br>
+What might be the origin of this data? (e.g., satellite imagery, weather station records, survey data?) <br>
+What temporal length and resolution would be ideal to answer this question?<br>
+ANSWER:</p>
+</div>
+<div id="data-exploration-and-selection" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Data exploration and selection<a href="term-project-assignment-1---10-pnts.html#data-exploration-and-selection" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now that you have an idea of what kind of data your question requires, the next step is to locate actual datasets that support your inquiry. There are numerous datasets available to public use, including public repositories, government agencies, academic institutions, even data uploaded to repositories like Zendodo and Figshare making data for specific studies discoverable and citable by other researchers. It is up to you to explore a variety of sources and identify datasets that you can retrieve and work with, but here are some suggestions to get you started. Many of these platforms allow R access to their datasets with packages that facilitate downloading, managing, and analyzing the data directly within R. <br></p>
+<p>Climate or weather data:<br>
+<a href="https://www.ncei.noaa.gov/cdo-web/">NOAA</a>,<br> <a href="https://www.nrcs.usda.gov/resources/data-and-reports/snow-and-water-interactive-map%5D,%20NASA%20POWER%5Bhttps://power.larc.nasa.gov/data-access-viewer/">SNOTEL</a>, <br> and <a href="https://www.climateengine.org/">Google’s climate engine</a> are all potential sources of earth data. <br></p>
+<p>Hydrological data: <a href="https://waterdata.usgs.gov/nwis/rt">USGS</a> <br></p>
+<p>Soil data: <a href="https://websoilsurvey.nrcs.usda.gov/app/">Web Soil Survey</a>, try R package soilDB <br></p>
+<p>Water quality and air pollution: <a href="https://enviro.epa.gov/">EPA Envirofacts</a><br></p>
+<p>Global biodiversity: <a href="https://www.gbif.org">Global Biodiversity Information Facility</a> with the R processing package rgbif <br>
+<a href="https://ebird.org">eBird</a> and R package auk <br></p>
+<p>Fire: <a href="https://www.mtbs.gov/">Monitoring Trends in Burn Severity</a> <br></p>
+<p>Remotely sensed spatial data: You may have already some experience with Google Earth Engine. This is a fast way to access <a href="https://developers.google.com/earth-engine/datasets/">an incredible library</a> of resources. If you have used this in other courses but feel rusty, we can help! Also check out <a href="https://www.eefabook.org/go-to-the-book.html">this e-book</a>. However, if your interest is in a few images, USGS’ Earth Explorer <a href="https://glovis.usgs.gov/">GloVis</a> is also a good resource.</p>
+<div id="expand-your-search" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Expand your search<a href="term-project-assignment-1---10-pnts.html#expand-your-search" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This is not an exhaustive list of possibilities. Consider searching MSU’s library databases. For example, the Web of Science database contains organized searchable datasets built by published researchers. Google searches using advanced search operators to include specific file types with your search terms can be helpful (e.g., .csc, .xlsx, .geojson). Engage with AI tools to explore potential datasets or repositories based your specific topic. An active approach to searching and learning will help you discover datasets that will support your research question. <br></p>
+</div>
+<div id="adapt-your-research-question" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Adapt your research question<a href="term-project-assignment-1---10-pnts.html#adapt-your-research-question" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Once you spend a solid hour or two searching databases, you may find that you need to adapt your research question based on data availability. You will likely spend some time refining your initial question to fit the datasets you find and that is encouraged! Then resume the dataset search, and continue refining your question and searching until you can develop an executable methodology. <br></p>
+<p><strong>PART 3. Explore your data (3 pnts)</strong></p>
+<p>You are encouraged to explore many packages and write many more code chunks for your personal use. However, for the assignment submission, retrieve at least one dataset using an R package like dataRetrieval.</p>
+<p>Install needed packages</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="term-project-assignment-1---10-pnts.html#cb4-1" tabindex="-1"></a><span class="co">#install.packages(&#39;&#39;)</span></span>
+<span id="cb4-2"><a href="term-project-assignment-1---10-pnts.html#cb4-2" tabindex="-1"></a><span class="co">#library()</span></span></code></pre></div>
+<p>Explore the available data using vignettes or Cran documentation for your specific dataset and package like <a href="https://cran.r-project.org/web/packages/dataRetrieval/vignettes/dataRetrieval.html">dataRetrieval’s documentation</a>. Create a dataframe containing 4-6 columns and print the head of the dataframe.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="term-project-assignment-1---10-pnts.html#cb5-1" tabindex="-1"></a><span class="co">#head(dfname)</span></span></code></pre></div>
+<p><strong>Write a brief summary (3-4 sentences) of what your dataframe describes.</strong></p>
+<p>Generate plots:
+Create at least one plot that summarizes the data and describes it’s use to you. Are there gaps in the data? Does the data cover the time or space you are interested in? Are there significant outliers that need consideration?</p>
+<p>Generate a histogram or density plot of at least one variable in your dataset. The script here will help start a density plot showing multiple variables. You may adapt or change this as needed.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="term-project-assignment-1---10-pnts.html#cb6-1" tabindex="-1"></a><span class="co">#plottable_vars &lt;- dfname %&gt;%</span></span>
+<span id="cb6-2"><a href="term-project-assignment-1---10-pnts.html#cb6-2" tabindex="-1"></a><span class="co">#  dplyr::select(variable1, variable2,...)</span></span>
+<span id="cb6-3"><a href="term-project-assignment-1---10-pnts.html#cb6-3" tabindex="-1"></a>                </span>
+<span id="cb6-4"><a href="term-project-assignment-1---10-pnts.html#cb6-4" tabindex="-1"></a><span class="co">#long &lt;- plottable_vars %&gt;%</span></span>
+<span id="cb6-5"><a href="term-project-assignment-1---10-pnts.html#cb6-5" tabindex="-1"></a><span class="co">#  pivot_longer(cols = everything(), names_to = &quot;Variable&quot;, values_to = &quot;Value&quot;)</span></span>
+<span id="cb6-6"><a href="term-project-assignment-1---10-pnts.html#cb6-6" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="term-project-assignment-1---10-pnts.html#cb6-7" tabindex="-1"></a><span class="co"># Plot density plots for each variable</span></span>
+<span id="cb6-8"><a href="term-project-assignment-1---10-pnts.html#cb6-8" tabindex="-1"></a><span class="co">#ggplot(long, aes(x = Value, fill = Variable)) +</span></span>
+<span id="cb6-9"><a href="term-project-assignment-1---10-pnts.html#cb6-9" tabindex="-1"></a><span class="co">#  geom_density(alpha = 0.5) +  # Add transparency for overlapping densities</span></span>
+<span id="cb6-10"><a href="term-project-assignment-1---10-pnts.html#cb6-10" tabindex="-1"></a><span class="co"># facet_wrap(~ Variable, scales = &quot;free&quot;, ncol = 2) +  # Create separate panels per variable</span></span>
+<span id="cb6-11"><a href="term-project-assignment-1---10-pnts.html#cb6-11" tabindex="-1"></a><span class="co">#  theme_minimal() +</span></span>
+<span id="cb6-12"><a href="term-project-assignment-1---10-pnts.html#cb6-12" tabindex="-1"></a><span class="co">#  labs(title = &quot;Density Plots for Variables&quot;,</span></span>
+<span id="cb6-13"><a href="term-project-assignment-1---10-pnts.html#cb6-13" tabindex="-1"></a> <span class="co">#      x = &quot;Value&quot;, y = &quot;Density&quot;)</span></span></code></pre></div>
+<p><strong>What does the above plot tell you about the distribution of your data? Is it as expected? Why do we need to consider the distribution of data when deciding on analysis methods?</strong></p>
+<p><strong>Q4. Putting it all together (3 pts)</strong>
+Create a table in R and export it as a .csv file to submit with this assignment .rmd.</p>
+<p>In this table, include all datasets (at least two; one explanatory variable and one response variable though you can have more of either) that you will use for your term project. The script below specifies all of the sections required in this table, though you will need to change names and information accordingly in c().</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="term-project-assignment-1---10-pnts.html#cb7-1" tabindex="-1"></a><span class="co"># Load necessary library</span></span>
+<span id="cb7-2"><a href="term-project-assignment-1---10-pnts.html#cb7-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb7-3"><a href="term-project-assignment-1---10-pnts.html#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="term-project-assignment-1---10-pnts.html#cb7-4" tabindex="-1"></a><span class="co"># Create a data frame</span></span>
+<span id="cb7-5"><a href="term-project-assignment-1---10-pnts.html#cb7-5" tabindex="-1"></a>data_table <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb7-6"><a href="term-project-assignment-1---10-pnts.html#cb7-6" tabindex="-1"></a>  <span class="at">Dataset_Name =</span> <span class="fu">c</span>(<span class="st">&quot;Dataset1&quot;</span>, <span class="st">&#39;Dataset2&#39;</span>),</span>
+<span id="cb7-7"><a href="term-project-assignment-1---10-pnts.html#cb7-7" tabindex="-1"></a>  <span class="at">Data_Source =</span> <span class="fu">c</span>(<span class="st">&#39;NOAA&#39;</span>, <span class="st">&#39;NRCS&#39;</span>), <span class="co">#Agency or institution name</span></span>
+<span id="cb7-8"><a href="term-project-assignment-1---10-pnts.html#cb7-8" tabindex="-1"></a>  <span class="at">Data_Type =</span> <span class="fu">c</span>(<span class="st">&quot;Climate&quot;</span>, <span class="st">&quot;Hydrology&quot;</span>), <span class="co"># what kind of data is it?</span></span>
+<span id="cb7-9"><a href="term-project-assignment-1---10-pnts.html#cb7-9" tabindex="-1"></a>  <span class="at">Source_Link =</span> <span class="fu">c</span>(<span class="st">&quot;https://www.link1/&quot;</span>, </span>
+<span id="cb7-10"><a href="term-project-assignment-1---10-pnts.html#cb7-10" tabindex="-1"></a>                  <span class="st">&quot;https://link2/&quot;</span>), <span class="co"># We will used these to access the sources</span></span>
+<span id="cb7-11"><a href="term-project-assignment-1---10-pnts.html#cb7-11" tabindex="-1"></a>  <span class="at">Key_variables =</span> <span class="fu">c</span>(<span class="st">&#39;precipitation&#39;</span>, <span class="st">&#39;soil_conductivity&#39;</span>), </span>
+<span id="cb7-12"><a href="term-project-assignment-1---10-pnts.html#cb7-12" tabindex="-1"></a>  <span class="at">Temporal_range =</span> <span class="fu">c</span>(<span class="st">&#39;2020-2021&#39;</span>, <span class="st">&#39;1979-today&#39;</span>),</span>
+<span id="cb7-13"><a href="term-project-assignment-1---10-pnts.html#cb7-13" tabindex="-1"></a>  <span class="at">Spatial_Coverage =</span> <span class="fu">c</span>(<span class="st">&#39;Montana&#39;</span>, <span class="st">&#39;Juneau_AK&#39;</span>),</span>
+<span id="cb7-14"><a href="term-project-assignment-1---10-pnts.html#cb7-14" tabindex="-1"></a>  <span class="at">Data_Quality =</span> <span class="fu">c</span>(<span class="st">&quot;High&quot;</span>, <span class="st">&quot;Moderate&quot;</span>), <span class="co"># An example of high quality might be a dataset that has already been cleaned by an agency is not missing data in the period or space of interest. </span></span>
+<span id="cb7-15"><a href="term-project-assignment-1---10-pnts.html#cb7-15" tabindex="-1"></a>  <span class="at">Data_Quality_notes =</span> <span class="fu">c</span>(<span class="st">&#39;missing some dates&#39;</span>, <span class="st">&#39;some unexpected values&#39;</span>),</span>
+<span id="cb7-16"><a href="term-project-assignment-1---10-pnts.html#cb7-16" tabindex="-1"></a>  <span class="at">Feasibility =</span> <span class="fu">c</span>(<span class="st">&quot;High&quot;</span>, <span class="st">&quot;Medium&quot;</span>), <span class="co"># How useable is this to you? Do you need help figuring out how to download it? Is there an R package that you need to learn to access the data?</span></span>
+<span id="cb7-17"><a href="term-project-assignment-1---10-pnts.html#cb7-17" tabindex="-1"></a>  <span class="at">Feasibility_notes =</span> <span class="fu">c</span>(<span class="st">&#39;note1&#39;</span>, <span class="st">&#39;note2&#39;</span>),</span>
+<span id="cb7-18"><a href="term-project-assignment-1---10-pnts.html#cb7-18" tabindex="-1"></a>  <span class="at">explain_response =</span> <span class="fu">c</span>(<span class="st">&#39;explanatory&#39;</span>, <span class="st">&#39;response&#39;</span>)</span>
+<span id="cb7-19"><a href="term-project-assignment-1---10-pnts.html#cb7-19" tabindex="-1"></a>)</span>
+<span id="cb7-20"><a href="term-project-assignment-1---10-pnts.html#cb7-20" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="term-project-assignment-1---10-pnts.html#cb7-21" tabindex="-1"></a><span class="co"># Display the table</span></span>
+<span id="cb7-22"><a href="term-project-assignment-1---10-pnts.html#cb7-22" tabindex="-1"></a><span class="fu">print</span>(data_table)</span>
+<span id="cb7-23"><a href="term-project-assignment-1---10-pnts.html#cb7-23" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="term-project-assignment-1---10-pnts.html#cb7-24" tabindex="-1"></a><span class="co"># Export the data table as a .csv to a file path of your choice:</span></span>
+<span id="cb7-25"><a href="term-project-assignment-1---10-pnts.html#cb7-25" tabindex="-1"></a><span class="co">#exportpath &lt;- file.path(getwd(), somefolder, term_assign_table.csv) #replace somefolde with an actual folder name that exists in your local environment</span></span>
+<span id="cb7-26"><a href="term-project-assignment-1---10-pnts.html#cb7-26" tabindex="-1"></a><span class="co">#write.csv(data_able, exportpath, row.names=FALSE)</span></span></code></pre></div>
+<p>Once this is exported, you can format if desired for readibility and submit the .csv with a completed .rmd.</p>
+<p><strong>Q5. What is your updated research question? How, specifically, will the data sources listed above help you to answer that question? (1 pt)</strong></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="part-3-bucket-and-process-based-models.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="part-4-spatial-models-and-gis-integration.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/tpcovino/lres_546_bookdown/edit/main/09_term_project_assign_1.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/tpcovino/lres_546_bookdown/blob/main/09_term_project_assign_1.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

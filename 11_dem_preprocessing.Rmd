@@ -1,22 +1,24 @@
-# DEM processing
 
-## THE [LINK TO THE REPO IS HERE](https://github.com/tpcovino/08_dem_processing.git){target="_blank"}
+## DEM processing
+
+### THE [LINK TO THE REPO IS HERE](https://github.com/tpcovino/08_dem_processing.git){target="_blank"}
 
 15pnts
 
-## Objective:
 
-Users will explore basic hydrological tools through the process of DEM preprocessing and defining stream networks for a watershed in the Fraser Experimental Forest in Colorado using Whitebox Tools for R. This exercise will also demonstrate methods for writing functions and efficiently handling multiple files simultaneously, including importing, processing, and exporting data within the context of Whitebox Tools for R.
+### Learning Module: 
 
-## Background: 
+#### Objective:
+
+  Users will explore basic hydrological tools through the process of DEM preprocessing and defining stream networks for a watershed in the Fraser Experimental Forest in Colorado using Whitebox Tools for R. This exercise will also demonstrate methods for writing functions and efficiently handling multiple files simultaneously, including importing, processing, and exporting data within the context of Whitebox Tools for R.
 
   Hydrological analysis preprocessing involves the use of digital elevation model (DEM) raster data to establish a watershed model and a simulation of surface hydrological processes. These steps enable us to quantify key parameters such as flow accumulation, stream network characteristics, and hydrological connectivity, which are essential for studying the dynamics of water movement within a landscape. Overall, preprocessing is the set of foundational steps in hydrological modeling and analysis. 
 
 **Whitebox Tools** is an advanced geospatial data analysis platform that can be used to perform common geographical information systems (GIS) analysis operations. This platform was developed with the Center for Hydrogeomatics in Guelph University so it is focused on hydrological analysis. With just a DEM, it allows us to produce a multitude of outputs that can be used for future analysis (Lindsay, 2016) <doi:10.1016/j.cageo.2016.07.003>). While we are demonstrating its use in R, these tools are also available in QGIS and Python platforms.
 
-## Codework
+### Labwork (20 pts)
 
-### Installing libraries
+#### Installing libraries
 
 We are going to try installing the whitebox R package from CRAN as it should be the simplest method. 
 
@@ -61,10 +63,10 @@ When writing scripts, developers typically follow a standard workflow:<br>
 
 While you might find slight variations among collaborators, following this general workflow ensures that our scripts are structured in a way that facilitates easy sharing and reproducibility of results. <br>
 
-### Generate functions
+##### Generate functions
 Since we have imported the required libraries, let's generate some functions.
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # extractsitename will extract a site name from the filepaths we provide. You will likely need to change the indexing in this function based on the filepaths to your DEMs. 
 # extractsitename <- function(x) {
 #     splitpath <- strsplit(x,'/')
@@ -78,25 +80,21 @@ Since we have imported the required libraries, let's generate some functions.
 # # List all files recursively in the current working directory
 # all_files <- list.files(recursive = TRUE)
 ```
+
 **Q1.**(2 pnt) What does date: "`r format(Sys.time(), '%d %B, %Y')`" in the header do? 
 
 ANSWER:
 
-
-
-**Q2.**(2 pnt) What does 'recursive = TRUE' do? What would the 'recursive = FALSE' return?
+**Q2.**(3 pnt) What does 'recursive = TRUE' do? What would the 'recursive = FALSE' return?
 ANSWER:
 
-
-
-
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Now look at all_files printed in your console and select a filepath that represents a DEM. You can access that filepath alone by indexing all_files
 # 
 # print(all_files[3]) # you will likely have to change '3' here to match your filepath of choice
 ```
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # You can use this indexed file list to test each line of the extractsitename function to see what it does:
 # splitpath <- strsplit(all_files[3], split = '/') # again, change '3' to match your filepath
 # splitpath
@@ -107,7 +105,7 @@ ANSWER:
 # basename
 ```
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Now we can split the tif name to extract the site name:
 # splitbase <- strsplit(basename,'_')[[1]][1]
 # splitbase
@@ -115,7 +113,7 @@ ANSWER:
 # Note that here we combined a couple of steps, splitting the file name and extracting the desired string in one line. 
 ```
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Now let's save the function extractsitename again, but with the indices generate the sitenames using your current working directory.
 # 
 # extractsitename <- function(x) {
@@ -128,14 +126,13 @@ ANSWER:
 # You can test the function in your console with: extractsitename(all_files[2]). This should return a site name (in this exercise, fool, lexen or deadhorse). 
 ```
 
-**EXTRA** (1pnt) : Rewrite this function to generate 'splitbase' with fewer lines. For example, what happens when you replace 'basename' in 'splitbase <- strsplit(basename,'_')[[1]][1]' with 'splitpath[[1]][2]'?
+**EXTRA** (1 pnt) : Rewrite this function to generate 'splitbase' with fewer lines. For example, what happens when you replace 'basename' in 'splitbase <- strsplit(basename,'_')[[1]][1]' with 'splitpath[[1]][2]'?
 
 ```{r}
 
 ```
 
-
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # Here we will generate another function that we will use later in the script. 
 # 
 # # Create a function to resample and export a single raster
@@ -147,19 +144,16 @@ ANSWER:
 #   writeRaster(r_resamp, filename = output_file_path, format = "GTiff", overwrite = TRUE) # Export the resampled raster
 #   return(list(sitename = sitename, output_file_path = output_file_path)) # Return the sitename and output file path as a list
 # }
-
 ```
 
-**Q3.** (2pnt) What is the point of writing a function and why do you think it is advantageous to write functions early in your script?
+**Q3.** (3 pnt) What is the point of writing a function? Why do you think it is advantageous to write functions early in your script?
 ANSWER:
 
+##### Establish new directories(folders) 
 
-
-
-### Establish new directories(folders) 
 in our working directory. We will use these to store the outputs of the Whitebox functions. 
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Define the directory names
 # directory_names <- c('breachsinglecellpits', 'breachdep', 'resampleddems', 'd8pointer', 'logd8flowaccum', 'd8flowaccum', 'streams_wws','streams')
 # 
@@ -174,11 +168,10 @@ in our working directory. We will use these to store the outputs of the Whitebox
 
 Check your working directory, you should see the new folders there. 
 
-
-### Resample DEMs
+#### Resample DEMs
 Here we will start with LiDAR data with 0.5m resolution. While this resolution has useful applications, a high resolution DEM can make hydrological models very computationally expensive with little or no improvement to the output. If you have the option of high resolution data in your work, you can test model outputs at different resolutions to determine what is the most efficient and effective resolution for your work. Here, we will resample our LiDAR data to a 10m resolution. 
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Resample dem to 10m
 # 
 # #List all of the dem files within the LiDARdem directory
@@ -188,14 +181,13 @@ Here we will start with LiDAR data with 0.5m resolution. While this resolution h
 # output_files <- lapply(files, resample_and_export)
 ```
 
-**Q4.** (3pnts) Did we use the function extractsitenames in the above chunk? How? What did it do?
+**Q4.** (3 pnt) Did we use the function extractsitenames in the above chunk? How? What did it do?
 
 ANSWER:
 
-
-
 Let's quickly check our work by importing a resampled DEM and checking the resolution. 
-```{r}
+
+```{r, include=FALSE, warning=FALSE}
 # # Specify the path to the raster file
 # path <- 'resampleddems/fool_resampled.tif'
 # 
@@ -208,36 +200,31 @@ Let's quickly check our work by importing a resampled DEM and checking the resol
 # # Print the resolution
 # print(resolution)
 ```
+
 Note: This can also be done without importing the raster to the workspace by installing the library gdalUtils.
 
-**Q5.**(2pnts) What is the resolution of the resampled DEM? Where and how could we change the resolution to 30m if desired?
+**Q5.**(2 pnt) What is the resolution of the resampled DEM? Where and how could we change the resolution to 30m if desired?
 
 ANSWER:
 
-
-
-
-
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # #List all of the resampled dem files within the resampleddems directory
 # files <- list.files(path = paste('resampleddems', sep = "/"), pattern="*.tif", full.names=TRUE, recursive=FALSE)
-
 ```
 
-###  Filling and breaching
+####  Filling and breaching
 
 When performing hydrological analysis on a DEM, the DEM usually needs to be pre-processed by ['filling' or  'breaching'](https://www.researchgate.net/figure/Main-principles-of-depression-preprocessing-methods-Depressions-are-caused-by_fig2_260064729) any depressions or sinks to create a hydraulically connected and filled DEM. There are several depression or pit filling options available in whitebox. Breach depressions can be a better option that just pit filling according to whitebox documentation, however, some users argue that this can smooth too much, resulting in an altered watershed delineation. It is prudent to investigate different DEM pre-processing methods and their resulting DEM. You can fill depressions directly, breach depressions and then fill them, applying breach or fill single cell pit before breach/fill depressions, and use the one that generates the most reasonable watershed delineation results. 
 Here we are going to make extra sure our flowpaths are uninhibited by first filling in single cell pits, and then breaching any larger depressions. 
 
-```{r}
-
+```{r, include=FALSE, warning=FALSE}
 # #Fill single cell pits for all rasters the folder 'resampleddems' (for hydrologic correctness)
 # 
 # lapply(files, function(x) {
 #     sitename <- extractsitename(x)
 #     bscp <- wbt_breach_single_cell_pits(x, output = paste0(getwd(), '/breachsinglecellpits/', sitename, "_breach1")) #first wb function input
 # })
-# 
+
 # #List all of the files from previous function 
 # breach1 <- list.files(path= paste('breachsinglecellpits', sep = '/'), pattern="*.tif", full.names=TRUE, recursive=FALSE)
 # 
@@ -248,9 +235,12 @@ Here we are going to make extra sure our flowpaths are uninhibited by first fill
 # })
 ```
 
-### Flow direction and accumulation rasters
+**Q6** (2 pnt) What is breach1? How is lapply using breach1?
+ANSWER: 
 
-```{r}
+#### Flow direction and accumulation rasters
+
+```{r, include=FALSE, warning=FALSE}
 # # List all of the filled files and use this list to make a flow direction grid and flow accumulation raster
 # breachdep <- list.files(path = paste('breachdep', sep = "/"), pattern="*.tif", full.names=TRUE, recursive=FALSE)
 # 
@@ -278,13 +268,12 @@ Here we are going to make extra sure our flowpaths are uninhibited by first fill
 # })
 ```
 
-**Q6** (2pnts) Check out the [WhiteboxTools User Manual](https://www.whiteboxgeo.com/manual/wbt_book/available_tools/hydrological_analysis.html#D8Pointer). What does a d8pointer raster tell us and what might we use it for?
+**Q7** (2 pnt) Check out the [WhiteboxTools User Manual](https://www.whiteboxgeo.com/manual/wbt_book/available_tools/hydrological_analysis.html#D8Pointer). What does a d8pointer raster tell us and what might we use it for?
 ANSWER: 
 
-
-
 Let's visualize some of our work so far:
-```{r}
+
+```{r, include=FALSE, warning=FALSE}
 # #%%%%%%$$$$$$$$$ Visualize
 # path <- paste0(getwd(), '/d8pointer/fool_d8pointer.tif')
 # 
@@ -292,23 +281,21 @@ Let's visualize some of our work so far:
 # mapview(checkwrk)
 ```
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # #%%%%%%$$$$$$$$$ Visualize
 # path <- paste0(getwd(), '/d8flowaccum/fool_d8flowaccum.tif')
 # 
 # checkwrk <- raster(path)
 # mapview(checkwrk)
 ```
-**Q7.** (2pnts) What are the units for the values that you see in each of these legends? It may be helpful to check out the Manual again. 
+
+**Q8.** (3 pnt) What are the units for the values that you see in each of these legends? It may be helpful to check out the Manual again. 
 ANSWER:
 
-
-
-
-###  Streams 
+####  Streams 
 Define streams using the flow accumulation raster. Use of the wbt_extract_streams function will return a raster with stream cells indicated only. 
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # #List all of the filled files 
 # log_d8_flow_accum <- list.files(path = paste('logd8flowaccum', sep = "/"), pattern="*.tif", full.names=TRUE, recursive=FALSE)
 # 
@@ -318,7 +305,7 @@ Define streams using the flow accumulation raster. Use of the wbt_extract_stream
 # })
 ```
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # #%%%%%%$$$$$$$$$ Visualize
 # path <- paste0(getwd(), '/streams/fool_streams.tif')
 # 
@@ -327,7 +314,7 @@ Define streams using the flow accumulation raster. Use of the wbt_extract_stream
 
 Sometimes we would prefer to see the stream within the watershed boundary. Here we are using the extent of the flow accumulation raster to generate a raster with '0' to indicate watershed cells, along with stream cells indicated by the streams.tif. This is a demonstration for one watershed.
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # input_path <- paste0(getwd(), '/streams/fool_streams.tif')
 # # Read the output raster
 # stream_raster <- raster(input_path)
@@ -352,14 +339,14 @@ Sometimes we would prefer to see the stream within the watershed boundary. Here 
 
 ```
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # #%%%%%%$$$$$$$$$ Visualize
 # path <- paste0(getwd(), '/streams_wws/fool_streams_wws.tif')
 # 
 # mapview(raster(path))
 ```
 
-### Final thoughts:
+#### Final thoughts:
 
 There are many more hydrological preprocessing and analysis tools available through Whitebox for R. If you are interested in watershed delineation in R, there is a [tutorial here](https://www.whiteboxgeo.com/manual/wbt_book/available_tools/hydrological_analysis.html#Watershed) that is fairly easy to follow. However, if you find that you use these tools frequently and do not use R much in other work, you may also consider these options for hydrological analysis:<br><br>
 1. [SAGA](https://saga-gis.sourceforge.io/saga_tool_doc/4.1.0/ta_hydrology.html)

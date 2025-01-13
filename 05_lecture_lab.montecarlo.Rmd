@@ -1,5 +1,7 @@
-# Monte Carlo Simulation (20 pnts)
-## Background:
+## Monte Carlo Simulation 
+
+### Learning Module
+#### Background:
 
 Monte Carlo Simulation is a method to estimate the probability of the outcomes of an uncertain event. It is based on a law of probability theory that says if we repeat an experiment many times, the average of the results will get closer to the true probability of those outcomes. 
 
@@ -8,10 +10,10 @@ First check out this video:
 knitr::include_url("https://www.youtube.com/embed/7TqhmX92P6U")
 ```
 
-### Reading
+#### Reading
 Then read this: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2924739/ for a understanding of the fundamentals.
 
-## How does this apply to hydrological modeling?
+#### How does this apply to hydrological modeling?
 
 When modeling watershed hydrological processes, we often attempting to quantify<br><br>
 
@@ -30,7 +32,7 @@ Monte Carlo Simulation is not only useful for estimating probabilities, but for 
   - Using Monte Carlo Simulation, randomly sample values from the defined ranges for each parameter
   - Analyze output to understand how different input sample values affect the predicted output
 
-### Example
+#### Example
 
 Let's consider all of this in an example model called [WECOH - Watershed ECOHydrology](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2014WR016719). In this study, researchers (Nippgen et al.) were interested in the change in subsurface water storage through time and space on a daily and seasonal basis.
 
@@ -40,10 +42,10 @@ Let's consider all of this in an example model called [WECOH - Watershed ECOHydr
 The authors directly measured runoff/discharge, collected precipitation data at several points within the watershed, used remote sensing to estimate how much water was lost to evapotranspiration, and used digital elevation models to characterize the watershed topography. As we learned in the hydrograph separation module, topographic characteristics can have a significant impact on storage. <br>
 Though resources like [USDA's Web Soil Survey](https://websoilsurvey.sc.egov.usda.gov/app/) can provide a basic understanding underlying geology across a large region, characterizing the heterogeneous nature of soils within a watershed can be logistically unfeasible. To estimate the soil characteristics like storage capacity (how much water the soil can hold) and hydraulic conductivity (how easily water can move through soil) in the study watershed, the authors used available resources to determine the possible range of values for each of their unknown parameters. They then tested thousands of model simulations using randomly selected values with the predetermined range for each of the soil characteristics. They compared the simulated discharge from these simulations to the actual discharge measurements. The simulations that predicted discharge patterns that closely matched reality helped them to estimate the unknown soil properties. Additionally, from the results of these simulations, they could identify which model inputs had the most significant impact on the discharge predictions, and how sensitive the output was to changes in each parameter. In this case, they determined that the model and system were most sensitive to precipitation. This type of sensitivity analysis can help us interpret the relative importance of different parameters and understand the overall sensitivity of the model or system. The study is linked for your reference but a thorough reading is not required. 
 
-### Reading
+#### Reading
 However, do read [this methods paper](https://www.researchgate.net/publication/262765548_Development_of_probability_distributions_for_urban_hydrologic_model_parameters_and_a_Monte_Carlo_analysis_of_model_sensitivity) by Knighton et al. for an example of how Monte Carlo Simulation was used to estimate hydraulic conductivity in an urban system with varied land-cover.
 
-## How do we generate a simulation with code? 
+#### Generate a simulation with code 
 
 For a 12-minute example in RStudio, check this out. If you are still learning the basics of R functionality, it may be helpful to code along with this video, pausing as needed. Note that this instruction is coding in an Rscript (after opening RStudio > File > New File > R Script), rather than an Rmarkdown that we use in this class. 
 
@@ -52,9 +54,9 @@ knitr::include_url("https://www.youtube.com/embed/inJsu-ygBfM")
 ```
 
 
-## Codework
+### Labwork (20 pnts)
 
-### [Download the repo for this lab HERE](https://github.com/tpcovino/05_monte_carlo.git){target="_blank"}
+#### [Download the repo for this lab HERE](https://github.com/tpcovino/05_monte_carlo.git){target="_blank"}
 
 In this lab/homework, you will use the transfer function model from the previous module for some sensitivity analysis using Monte Carlo simulations. The code is mostly the same as last module with some small adjustments to save the parameters from each Monte Carlo run. As a reminder, in the Monte Carlo analysis, we will run the model x number of times, save the parameters and evaluate the fit after each run. After the completion of the MC runs, we will use the GLUE method to evaluate parameter sensitivity. There are three main objectives for this homework:  
 1) Set up the Monte Carlo analysis
@@ -63,7 +65,7 @@ In this lab/homework, you will use the transfer function model from the previous
 
 A lot of the code in this homework will be provided.
 
-### Setup
+#### Setup
 Import packages, including the "progress" and "tictoc" packages. These will allow us to time our loops and functions
 
 ```{r setup, include=FALSE}
@@ -77,7 +79,7 @@ Import packages, including the "progress" and "tictoc" packages. These will allo
 
 Read data - this is the same PQ data we have worked with in previous modules.
 
-```{r read_in_data}
+```{r, include=FALSE, warning=FALSE}
 # rm(list = ls(all = TRUE)) # clear global environment
 # 
 # indata <- read_csv("P_Q_1996_2011.csv")
@@ -92,16 +94,16 @@ Read data - this is the same PQ data we have worked with in previous modules.
 
 
 Define variables
-```{r define_inputs}
+```{r, include=FALSE, warning=FALSE}
 # tau <- 1:nrow(PQ) # simple timestep counter
 # Pobs <- PQ$RainMelt_mm # observed precipitation
 # Qobs <- PQ$Discharge_mm # observed streamflow
 ```
 
-### Parameter initialization
+#### Parameter initialization
 This chunk has two purposes. The first is to set up the number of iterations for the Monte Carlo simulation. The entire model code is essentially wrapped into the main MC for loop. Each iteration of that loop is one full model realization: loss function, TF, convolution, model fit assessment (objective function). For each model run (each MC iteration), we will save the model parameters and respective objective functions in a dataframe. This will be the main source for the GLUE sensitivity analysis at the end. The model parameters are sampled in the main model chunk, this is just the preallocation of the dataframe.  
 You will both run your own MC simulation, to set up the code, but will also receive a .Rdata file with 100,000 runs to give you more behavioral runs for the sensitivity analysis and uncertainty bounds. As a tip, while setting up the code, I would recommend setting the number of MC iterations to something low, for example 10 or maybe even 1. Once you have confirmed that your code works, crank up the number of iterations. Set it to 1000 to see how many behavioral runs you get. After that, load the file with the provided runs.  
-```{r define_parameters}
+```{r, include=FALSE, warning=FALSE}
 # nx sets the number of Monte Carlo runs
 # nx <- 100 # number of runs
 # 
@@ -120,11 +122,10 @@ You will both run your own MC simulation, to set up the code, but will also rece
 # )
 ```
 
+#### MC Model run
+This is the main model chunk. The tic() and toc() statements measure the execution time for the whole chunk. There is also a progressbar in the chunk that3 will run in the console and inform you about the progress of the MC simulation. The loss function parameters are set in the loss function, the TF parameters in the loss function code. For each loop iteration, we will store the parameter values and the simulated discharge in the "param" dataframe. So, if we ran the MC simulation 100 times, we would end up with 100 parameter combinations and simulated discharges.
 
-### MC Model run
-This is the main model chunk. The tic() and toc() statements measure the execution time for the whole chunk. There is also a progressbar in the chunk that will run in the console and inform you about the progress of the MC simulation. The loss function parameters are set in the loss function, the TF parameters in the loss function code. For each loop iteration, we will store the parameter values and the simulated discharge in the "param" dataframe. So, if we ran the MC simulation 100 times, we would end up with 100 parameter combinations and simulated discharges.
-
-```{r model_chunk, echo=F, eval=F}
+```{r, include=FALSE, warning=FALSE}
 # tic("MC Simulation")
 # 
 # # initialize progress bar
@@ -260,19 +261,17 @@ Save or load data
 
 After setting up the MC simulation, we will actually use a pre-created dataset. Running the MC simulation tens of thousands of times will take multiple hours. For that reason, we will use an existing data set.
 
-```{r data_saving}
+```{r, include=FALSE, warning=FALSE}
 # save.image(file = 'AllData.RData')
 
 # load the MC data
 # load("AllData.RData")
 ```
 
-
-
 Best run
 
 Now that we have the dataframe with all parameter combinations and all efficiencies, we can plot the best simulation and compare it to the observed discharge
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # take the best run (i.e., first row in param df), unlist the simulated discharge, and store it in a dataframe
 # PQ$Qsim <- unlist(param$qsim[1])
 # 
@@ -289,13 +288,11 @@ Now that we have the dataframe with all parameter combinations and all efficienc
 #   })
 ```
 
-
-
-### Sensitivity analysis
+#### Sensitivity analysis
 We will use the GLUE methodology to assess parameter sensitivity. We will use GLUE for two things: 1) To assess parameter sensitivity, and 2) to create an envelope of model simulations. For the first step, we need to bring the data into shape so that we can plot dotty plots and density plots. We will use NSE for this. 
 You want to plot each parameter in its own box. Look up facet_wrap() for how to do this! You want the axis scaling to be "free".
 
-```{r dotty_plots}
+```{r, include=FALSE, warning=FALSE}
 # # select columns and make long form data
 # param_long <- param %>%
 #   select(-Run, -kge, -rmse, -mae, -qsim) %>% # remove unnecessary columns. We only want the five parameters and nse
@@ -372,14 +369,11 @@ You want to plot each parameter in its own box. Look up facet_wrap() for how to 
 **Q2 (5 pts) Describe the sensitivity analysis with the three different plots. Are the parameters sensitive? Which ones are, which ones are not? Does this affect your "trust" in the model? (5-8 sentences)**    
 ANSWER: 
 
-
-
 **Q3 (4 pts) What are the differences between the dotty plots and the density plots? What are the differences between the two density plots? (2-3 sentences)**  ANSWER: 
  
-
 Uncertainty bounds
 In this chunk, we will generate uncertainty bounds for the simulation. We will again only use the runs that we identified as behavioral.
-```{r envelope}
+```{r, include=FALSE, warning=FALSE}
 # # remove non-behavioral runs using the cutoff
 # param_ci <- param %>%
 #   filter(nse > 0.872) # only use obj function (nse) values above the previously defined threshold
@@ -442,13 +436,11 @@ ANSWER:
 **Q5 (3 pts) If you inspect the individual model runs (in the Qruns df), you will notice that they all perform somewhat poorly when it comes to the initial baseflow. Why is that and what could you do to change this? (Note: you don't have to actually do this, just describe how you might approach that issue (2-3 sentences)**  
 ANSWER: 
 
-
 **Q6 (3 pts) Plot AND compare the best model run for the four objective functions. Note: This requires you to completely examine the figure generated in the previous code chunk. Remember that you can zoom into the plot to better see differences in peakflow and baseflow, timing, etc.(4+ sentences) **  
 ANSWER:  
 
-
 The coding steps are: 1) get the simulated q vector with the best run for each objective function, 2) put them in a dataframe/tibble, 3) create the long form, 4) plot the long form dataframe/tibble. These steps are just ONE possible outline how the coding steps can be broken up.
-```{r Obj_fct_comparison}
+```{r, include=FALSE, warning=FALSE}
 # # sort the param dataframe to select the best objective functions and unlist the relevant qsim values from the initial param dataset
 # param <- arrange(param, desc(param$nse)) # nse
 # q1 <- unlist(param$qsim[1])
@@ -498,7 +490,7 @@ The coding steps are: 1) get the simulated q vector with the best run for each o
 ```
 
 Response surface
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # param_surf <- param %>%
 #   select(-Run, -qsim) %>%
 #   drop_na() %>%

@@ -1,17 +1,19 @@
 
-# Evapotranspiration
+## Evapotranspiration
 
-## The repo can be found [here](https://github.com/tpcovino/09_evapotranspiration){target="blank"}
+### Repo [here](https://github.com/tpcovino/09_evapotranspiration){target="blank"}
+
+### Learning Module
 
 15pnts<br>
 
-## Background
+#### Background
 
 Evapotranspiration (ET) encompasses all processes through which water moves from the Earth's surface to the atmosphere, comprising both evaporation and transpiration. This includes water vaporizing into the air from soil surfaces, the capillary fringe of groundwater, and water bodies on land. 
 Much like snowmelt modeling, ET modeling and measurements are critical to many fields and could be a full course on its own. We will be focused on the basics of ET, modeling and data retrieval methods for water balance in hydrological modeling. Evapotranspiration is an important variable in hydrological models, as it accounts for much of the water loss in a system, outside of discharge. 
 Transpiration, a significant component of ET, involves the movement of water from soil to atmosphere through plants. This occurs as plants absorb liquid water from the soil and release water vapor through their leaves. To gain a deeper understanding of ET, let's review transpiration.
 
-### Transpiration
+##### Transpiration
 Plant root systems to absorb water and nutrients from the soil, which they then distribute to their stems and leaves. As part of this process, plants regulate the loss of water vapor into the atmosphere through stomatal apertures, or transpiration. However, the volume of water transpired can vary widely due to factors like weather conditions and plant traits.
 
 Vegetation type: Plants transpire water at different rates. Some plants in arid regions have evolved mechanisms to conserve water by reducing transpiration. One mechanism involves regulating stomatal opening and closure. These plants can minimize water loss, especially during periods of high heat and low humidity. This closure of stomata can lead to diel and seasonal patterns in transpiration rates. Throughout the day, when environmental conditions are favorable for photosynthesis, stomata open to allow gas exchange, leading to increased transpiration. Conversely, during the night or under stressful conditions, stomata may close to conserve water, resulting in reduced transpiration rates. 
@@ -28,7 +30,7 @@ The availability and intensity of sunlight have a direct impact on transpiration
 
 Wind & air movement: Increased movement of the air around a plant will result in a higher transpiration rate. Wind will move the air around, with the result that the more saturated air close to the leaf is replaced by drier air. 
 
-### Measurements
+#### Measurements
 
 In the realm of evapotranspiration (ET) modeling and data analysis, you'll frequently encounter the terms potential ET and actual ET. These terms are important to consider when selecting data, as they offer very different insights into water loss processes from the land surface to the atmosphere.
 
@@ -48,7 +50,7 @@ Kc is the crop coefficient.
 The crop coefficient accounts for factors such as crop type, soil moisture levels, climate conditions, and management practices. It can vary throughout the growing season as well.
 
 
-#### Direct measurements: 
+##### Direct measurements: 
 
 There are several methods to measure ET directly like lysimeters and gravimetric analysis, but this data rarely available to the public. There has been a concerted effort to enhance the accessibility of Eddy Covariance data, so this dataset may expand in the years to come. 
 
@@ -58,7 +60,7 @@ knitr::include_url("https://www.youtube.com/embed/CR4Anc8Mkas")
 
 This video focuses on CO2 as an output of eddy covariance data, but among the 'other gases' mentioned, water vapor is included, offering measurements of actual ET. The video also provides a resource where you might find eddy covariance data for your region of interest.  
 
-#### Remote sensing: 
+##### Remote sensing: 
 
 Remote sensing of evapotranspiration (ET) involves the use of satellite or airborne sensors to observe and quantify the exchange of water vapor between the Earth's surface and the atmosphere over large spatial scales. This approach offers several advantages, including the ability to monitor ET across diverse landscapes, regardless of accessibility, and to capture variations in ET over time with high temporal resolution.
 
@@ -72,16 +74,16 @@ Some resources for finding ET modeled from remote sensing data:
 
 #### Modeling:
 
-## Codework:
+### Labwork (20 pts):
 
 For this assignment, we will work again in the Fraser Experimental Forest (same site as snowmelt module). Not only are there meteorological stations in our watershed of interest, but there is a Eddy Covariance tower nearby, in a forest with the same tree community as our watershed of interest. We can use this data to verify our model output for modeled data.
 
-### The [Evapotranspiration package](https://cran.r-project.org/web/packages/Evapotranspiration/index.html)
+#### The [Evapotranspiration package](https://cran.r-project.org/web/packages/Evapotranspiration/index.html)
 We will test a couple of simple methods that require few data inputs. However, it may be helpful to know that this package will allow calculations of PET, AET and Reference Crop Evapotranspiration from many different equations. Your selection of models may depend on the study region and the data available.  
 
 #### Import libraries
 
-```{r, include = FALSE}
+```{r, include=FALSE, warning=FALSE}
 # knitr::opts_chunk$set(echo = TRUE)
 # 
 # #Load packages
@@ -104,7 +106,7 @@ We'll import three datasets in this workflow, one containing actual data from th
 Also imported is the discharge (Q) data from our watershed. Note that data is not collected during periods of deep snow. We will use this data to estimate the total discharge for 2022. <br>
 Additionally, we'll import the meteorological data from our watershed for the years of interest. We are going to estimate ET for our watershed during the 2022 water year, though met data is provided in calendar years, so we will need to extract the desired data from the met dataframe.
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # We have two meteorological (met) files in the working directory, 
 # # List all files in the directory
 # file_list <- list.files(pattern = "\\.csv$")
@@ -124,7 +126,7 @@ Additionally, we'll import the meteorological data from our watershed for the ye
 
 We will model ET at daily timesteps. Note that all imported data is for different timesteps, units and measurements than what we need for analysis. It is common practice to manipulate the imported data and adjust it to align with our model functions. Ensuring the correct structure of the data can prevent potential issues later in the code
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Let's start with met data. We need RHmax and RHmin, so we will choose the max and min of each day from the 10 minute intervals. 
 # 
 # # Convert 'TIMESTAMP' column to POSIXct type using lubridate
@@ -150,7 +152,7 @@ We will model ET at daily timesteps. Note that all imported data is for differen
 ```
 
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Let's add daylight hours to the met dataframe
 # # daylight contains month and day, lets format month and day for usfs_met so we can merge the dataframes:
 # usfs_met_rh$month <- format(usfs_met_rh$Date, "%m")
@@ -173,8 +175,7 @@ Now we have the RHmax and RHmin values that we will need for our ET models
 
 ##### Precipitation 
 To add a layer of checks we will also check precipitation totals for the watershed from our met data. This dataframe also provides cumulative precipitation, though the accumulation begins on January 1. Therefore we will need to calculate daily precipitation for each day of the water year and generate a new cumulative value.
-```{r}
-
+```{r, include=FALSE, warning=FALSE}
 # # Calculate daily precipitation by subtracting consecutive values
 # usfs_met <- usfs_met %>%
 #   mutate(daily_ppt_mm = Cumulative_ppt..mm. - lag(Cumulative_ppt..mm., default = 0))
@@ -199,11 +200,6 @@ Often when writing code, it is necessary to first write 'pseudocode'. This allow
 
 ANSWER:
 
-
-
-
-
-
 ##### Discharge data
 
 Our next step will be to import and format discharge data collected from the weir at Fool Creek. Again, data collection starts on April 20th this year. To estimate discharge between Sept 31 of the previous year and April 20th of 2022, we will assume daily discharge between these dates is the mean of the discharge values from each of these dates. 
@@ -214,8 +210,7 @@ ANSWER:
 1. Import dataframe
 2. ...
 
-
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Import weir data
 # lfc_weir<- read.csv("LFC_weir_2022.csv")
 # 
@@ -261,7 +256,8 @@ Note that ET data is in mmol/m2/s. We want to convert this to mm/day. <br>
 Eddy covariance data collected from towers represents the exchange of gases, including water vapor, between the atmosphere and the land surface within a certain area known as the "footprint." This footprint area is not fixed; it changes in size and shape depending on factors like wind direction, thermal stability, and measurement height. Typically, it has a gradual border, meaning that the influence of the tower measurements extends beyond its immediate vicinity.
 
 For our specific tower data, we've estimated the mean flux area, or footprint area, to be approximately 0.4 square kilometers. However, when estimating the total evapotranspiration (ET) for our entire watershed, we need to extrapolate the ET measured by the tower to cover the entire watershed area. This extrapolation involves scaling up the measurements from the tower footprint to the larger area of the watershed to get a more comprehensive understanding of water vapor exchange over the entire region.
-```{r}
+
+```{r, include=FALSE, warning=FALSE}
 # # Import ET data
 # usfs_et <- read.csv("US_FEF_ET.csv")
 # 
@@ -303,21 +299,19 @@ For our specific tower data, we've estimated the mean flux area, or footprint ar
 ```
 
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # Hbalance <- cumulative_ppt_2022 - ws_et_2022 - Qsum2022
 # print(Hbalance)
 ```
 This appears to be a fairly well balanced water budget, especially consdering that we have made some estimates along the way. Let's see how this ET data compares to modeled data. 
 
-
-### [The Priestly Taylor method](https://search.r-project.org/CRAN/refmans/Evapotranspiration/html/ET.PriestleyTaylor.html) (actual evapotranspiration)
+#### [The Priestly Taylor method](https://search.r-project.org/CRAN/refmans/Evapotranspiration/html/ET.PriestleyTaylor.html) (actual evapotranspiration)
 The Priestley-Taylor method is a semi-empirical model that estimates potential evapotranspiration as a function of net radiation. This method requires a list which contains:<br> (climate variables) required by Priestley-Taylor formulation:
 Tmax, Tmin (degree Celcius), RHmax, RHmin (percent), Rs (Megajoules per sqm) or n (hour). <br>
 We have measurements of relative humidity (RH) data from within our watershed meteorological station. However, RH data can be found through many sources providing local weather data. <br>
 n refers to the number of sunshine hours. 
 
-
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Transform data to a list for the function 
 # data_list <- list(
 #   Date.daily = usfs_met_rh$Date,  # Assuming this is your "Date" column
@@ -332,7 +326,8 @@ n refers to the number of sunshine hours.
 ```
 
 Evapotranspiration comes with a list physical 'constants', but we want to replace important constants with data specific to our cite. 
-```{r}
+
+```{r, include=FALSE, warning=FALSE}
 # data("constants")
 # constants$Elev <- 2900
 # constants$lat <- 39.89
@@ -347,7 +342,7 @@ Evapotranspiration comes with a list physical 'constants', but we want to replac
 # solar="sunshine hours", alpha=0.23, message="yes", AdditionalStats="no", save.csv="no")
 ```
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Lets plot the modeled output: 
 # plot(outputPT$ET.Daily, main = "ET Daily Data", xlab = "Date", ylab = "ET")
 ```
@@ -357,7 +352,7 @@ Evapotranspiration comes with a list physical 'constants', but we want to replac
 # solar="sunshine hours", alpha=0.23, message="yes", AdditionalStats="no", save.csv="no")
 ```
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Lets plot the modeled output: 
 # # Plot the first zoo object
 # plot(outputH$ET.Daily, main = "ET Daily Data", xlab = "Date", ylab = "ET", col = "blue")
@@ -374,7 +369,8 @@ Recall that each of these are estimates of potential ET.
 Crop coefficients (Kc values) for specific tree species like those found in the Fraser Experimental Forest (lodgepole pine or Englemann spruce) may not be as readily available as they are for agricultural crops. However, you may be able to find some guidance in scientific literature or forestry publications. From what we have found, Kc estimates for lodgepole pine forests can be between 0.4 and 0.8. These values may vary depending on factors such as climate, soil type, elevation, and other site-specific factors. Our own estimates using water balance data from dates that correspond with the eddy flux tower data suggest seasonal fluctuations, with a mean of 0.55. 
 
 AET = PET * Kc
-```{r}
+
+```{r, include=FALSE, warning=FALSE}
 # kc = 0.55
 # 
 # # Convert zoo series to dataframe
@@ -387,7 +383,7 @@ AET = PET * Kc
 
 Let's plot the two modeled ET timeseries with the eddy covaraince tower data. 
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Plot
 # ggplot() +
 #   geom_line(data = subset_data, aes(x = date, y = ET_mm, color = "ET_mm")) +
@@ -407,16 +403,9 @@ Let's plot the two modeled ET timeseries with the eddy covaraince tower data.
 
 ANSWER:
 
-
-
-
 **Q4** (3pnts) Let's assume we do not have eddy covariance tower data for this time period, but you have the provided discharge and precipitation measurements. Which model would you choose to estimate an annual ET sum and why? 
 
-
 ANSWER:
-
-
-
 
 **Q5** (3pnts) In our modeling script, while our main objective was to estimate evapotranspiration (ET), which specific aspect required the most labor and attention to detail? Reflect on the tasks involved in data preparation, cleaning, and formatting. How did these preliminary steps impact the overall modeling process? 
 

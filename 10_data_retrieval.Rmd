@@ -1,18 +1,20 @@
-# Learning Module 10 - Gridded and tabular data retrieval
+# Part 4: Spatial Models and GIS Integration
+## Gridded and tabular data retrieval
 **15 pnts**
 
 The repo for this module can be found [here](https://github.com/tpcovino/07_gridded_data_retrieval){target="_blank"}
 
-## Objectives
+### Learning Module
+#### Objectives
  In this module you will:<br><br>
  -Retrieve flow data using the dataretrieval package<br>
  -Learn to retrieve and manage digital elevation models<br> 
  -Retrieve and import remotely sensed data for the watershed extent<br> 
 
 
-## Background
+#### Background
 
-### A refresher in GIS concepts:
+A refresher in GIS concepts:
   This module assumes familiarity with basic Geographic Information System (GIS) such as coordinate systems (latitude and lognitude, UTM). Some terms to recall: 
   
   **Gridded data** refers to spatial data in raster format. If you have performed any GIS work, you are likely using gridded data. Rasters organize geographical areas into a grid where each regularly spaced cell represents a specific location and contains some attribute representing that location. For example, digital elevation models (DEM) are a form of gridded data. Imagine that we are working in a watershed and we can drop a grid or square celled net over the entire catchment. We can then model the elevation data of that catchment by assigning each cell in the net a mean elevation value for the area represented by the cell. Similarly, we can assign any value we wish to model to the cells. If we were to drop another net and assign a maximum tree height to every cell, we would be adding another 'layer' to our model. The **spatial resolution** of gridded data refers to the length and width of each cell represents. If we want to observe gridded data over time, we can generate a raster stack, where each raster layer represents a point in time. With a raster stack, we can increase the **temporal resolution** of our gridded data. 
@@ -21,7 +23,7 @@ The repo for this module can be found [here](https://github.com/tpcovino/07_grid
 
   **Tabular data** refers to data organized in a row-column format. In this class, each of our .csv datasets are a form of tabular data. 
 
-### A refresher in remote sensing:
+#### A refresher in remote sensing:
 
 Remote sensing is the science of obtaining information about objects or areas from a distance, typically from aircraft or satellites. It involves the collection and interpretation of data gathered by sensors that detect electromagnetic radiation reflected or emitted from the Earth's surface and atmosphere. As ecologists, many of us utilize remote sensing to observe and analyze the Earth's surface and its dynamics, providing valuable insights into environmental processes, land use and land cover changes, natural disasters, and more. 
 Some helpful terms to recall:
@@ -32,7 +34,7 @@ Some helpful terms to recall:
 
 We often find that data collection requires a balance of spatial and temporal resolution to select the most appropriate data for the coverage and detail that ecological work requires. 
 
-### Ethical conduct
+#### Ethical conduct
 
 When utilizing publicly available datasets, it is important for us as users to:<br><br>
   -Be aware of any copyright or licensing agreements. There may be restrictions or usage terms imposed by data providers. Read provided agreements or terms to be sure we are in compliance with these when using datasets in our research. This may also include requirements for registration or subscription established by providers or agencies like USGS or NASA.<br><br>
@@ -40,14 +42,15 @@ When utilizing publicly available datasets, it is important for us as users to:<
   - Assess the quality and accuracy of geospatial data before using it for decision making purposes. It is important that we consider spatial resolution, temporal resolution and metadata documentation to critically evaluate the reliability of the datasets we use.<br><br> 
   -Promote Open Data Principles: Try to explore and use publicly available datasets that support transparency and collaboration within our scientific and academic communities.<br><br>
   
-## Codework
+### Labwork (20 pnts)
 
 In this module we will import streamflow (tablular) data, using USGS's DataRetrieval package, then visualize vector data to delineate our area of interest and learn how to find spatial gridded data for the area. 
 
-### Setup:<br>
+#### Setup:<br>
+
 When importing packages and setting parameters, think about how the local working environment can vary among users and computers. A function that examines and installs packages before importing them enhances the script's ability to be easily used by others. 
 
-```{r include=FALSE}
+```{r, include=FALSE, warning=FALSE}
 # Above, include = FALSE means this chunk of script will not show when you convert this Markdown document to an HTML.
 
 # pkgTest <- function(x)
@@ -69,11 +72,11 @@ When importing packages and setting parameters, think about how the local workin
 # for (package in neededPackages){pkgTest(package)}
 ```
 
-### Selecting a watershed: 
+#### Selecting a watershed: 
 Here, we are using USGS' dataRetrieval package to search and filter hydrologic datasets. There are many ways data can be searched; more can be found in this [dataRetrieval vingette](https://cran.r-project.org/web/packages/dataRetrieval/vignettes/dataRetrieval.html). In this example, we will fetch USGS site numbers for Colorado watersheds with streamflow (discharge) data for a specified time period. 
 
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # Start by defining and storing your search parameters as variables at the beginning of the script. This practice enables you and other users to easily modify the search parameters from a single location within the script.
 
 # stateCd <- "CO"  # Colorado
@@ -86,19 +89,19 @@ Here, we are using USGS' dataRetrieval package to search and filter hydrologic d
 # sites <- whatNWISsites(stateCd = stateCd, parameterCd = parameterCd)
 ```
 
-**Q1** (2pnts). If you were creating this script for your work team's shared collaboration, or for yourself to use again a year from now, what might be the disadvantages of embedding search parameters directly into the function parameters? 
+**Q1** (2 pts). If you were creating this script for your work team's shared collaboration, or for yourself to use again a year from now, what might be the disadvantages of embedding search parameters directly into the function parameters? 
 
 ANSWER: 
 
-**Q2** (2pnts). What is a potential use for whatNWISsites?
+**Q2** (3 pts). What is a potential use for whatNWISsites?
 
 ANSWER:
 
-**EXTRA** (1pnt): Why might the above script return an error if dpylr:: is not placed before select()?
+**EXTRA** (1 pt): Why might the above script return an error if dpylr:: is not placed before select()?
 
 ANSWER: 
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Now we will request more data from these sites by looping through the list we just generated. This chunk will take several minutes. Feel free to comment this out if needed once you have executed it once.
 # 
 # # Initialize an empty dataframe to store the results from each list item
@@ -119,34 +122,29 @@ ANSWER:
 ```
 drain_area_va is a column value returned by readNWISsite. [Other variables can be found here](https://rconnect.usgs.gov/dataRetrieval/reference/readNWISsite.html)
 
-**Q3** (1pnt). In a sentence, what does this dataframe (all_site_data) tell you?
+**Q3** (1 pt). In a sentence, what does this dataframe (all_site_data) tell you?
 
 ANSWER: 
 
-
 Note that while your research interests may not require streamflow data, it can serve as a valuable resource for a wide array of data types. 
-
-
 
 For the remainder of this assignment, we'll focus on a single watershed in central Colorado near the Experimental Forest that we explored in the Snowmelt module. There are several dataRetrieval functions could we utilize to see what data is available for a particular site number. Check [dataRetrieval docs](https://waterdata.usgs.gov/blog/dataretrieval/) to learn package functions or tools.
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # Check data availability for the gage_no of interest
 # dataavailable <- whatNWISdata(siteNumber = BLANK, service="all")
 ```
 
-**Q4** (4pnts). Find the longest running dataset in DataAvailable (i.e. either by count or by start and end date). Use https://help.waterdata.usgs.gov to look up the meaning of some of column headers and the codes associated with them.<br> 
+**Q4** (4 pts). Find the longest running dataset in DataAvailable (i.e. either by count or by start and end date). Use https://help.waterdata.usgs.gov to look up the meaning of some of column headers and the codes associated with them.<br> 
 a. What kind of data does this long running dataset hold? <br> 
 b. What column did you use to learn that? <br> 
 c. What does 'dv' mean in data_type_cd? <br> 
 
 ANSWER: 
 
+#### Flow data retrieval:
 
-
-### Flow data retrieval:
-
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # Can change filter() arguments to use as you need
 
 # CHECK UNITS of data imported:
@@ -154,7 +152,7 @@ ANSWER:
 #   filter(srsname == 'Precipitation', parameter_cd =='00045')
 ```
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # #import - determine years of burn
 # gage_no <- '09032100' 
 # 
@@ -165,7 +163,7 @@ ANSWER:
 
 Let's rename our columns. For this you will need to determine the units of the date 
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # rawQData <- rawQData %>%
 #   rename ('BLANK' = 'X_00060_00003') %>%
 # # the X_00060_00003_cd column provides information about the data quality. It is good to check this to anticipate or understand potential data anomalies. We have checked this and determined that we no longer need it for this exercise:
@@ -173,7 +171,7 @@ Let's rename our columns. For this you will need to determine the units of the d
 
 ```
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # It is good to visualize your data upon import:
 # 
 # ggplot(rawQData, aes(x = Date, y = BLANK)) +
@@ -182,34 +180,31 @@ Let's rename our columns. For this you will need to determine the units of the d
 #   theme(axis.text.x = element_text(angle = BLANK, hjust = 1))
 ```
 
-**Q5** (2pnts). Based on the hydrograph plot, what type of precipitation events appear to influence the observed intra-annual variations in flow rates? 
+**Q5** (2 pts). Based on the hydrograph plot, what type of precipitation events appear to influence the observed intra-annual variations in flow rates? 
 
 ANSWER: 
 
-
-
-
-### Watershed boundary vector data: 
+#### Watershed boundary vector data: 
 
 A boundary shapefile has been provided to save time and improve repeatability. Watershed boundaries for gauging stations can be found at [USGS StreamStats](https://streamstats.usgs.gov/ss/) by zooming into the water map and clicking 'Delineate' near your desired gage or point. Once your watershed is delineated, you can click on 'Download Basin' and select from a choice of file types. This can be a great to to delineate river basins if all you require is a shapefile. For smaller streams, other analyses are available. We will cover those in the next module. 
 
 Let's import a pre-created shapefile: 
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # import_path <- paste(getwd(), '/cabin_creek_shp/globalwatershed.shp', sep='')
 # 
 # # Read the shapefile
 # ws_boundary <- st_read(import_path)
 ```
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # Check the coordinate reference system (CRS) of the shapefile
 # print(st_crs(ws_boundary))
 ```
 
 Let's transform this to a projected CRS (flat surface) rather than a geographic (spherical surface) CRS. A projected CRS will depict the data on a flat surface which is required for distance or area measurements. A more detailed explanation can be [found at the University of Colorado's Earth Lab](https://www.earthdatascience.org/courses/earth-analytics/spatial-data-r/intro-to-coordinate-reference-systems/) if needed.
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Use the EPSG code for UTM Zone 12. Choose a UTM or other code appropriate for the area of interest.
 # new_crs <- st_crs(32613)  # Use the appropriate EPSG code for your CRS
 # ws_boundary <- st_transform(ws_boundary, crs = BLANK)
@@ -221,7 +216,7 @@ Let's transform this to a projected CRS (flat surface) rather than a geographic 
 #### Visualization - watershed boundary 
 i.e., sanity check
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Let's look at the shapefile with a basic leaflet map. Leaflet can be a nice way to see your data with on a basemap for geographic context.
 # 
 # # Transform the shapefile to long-lat for visualization
@@ -237,7 +232,7 @@ i.e., sanity check
 # map
 ```
 
-### Digital Elevation Models (DEM)
+#### Digital Elevation Models (DEM)
 A DEM has been provided for consistency among users.
 
 However, if you are unfamiliar with the process of retrieving a DEM here are three methods that our team commonly uses:<br>
@@ -250,7 +245,7 @@ However, if you are unfamiliar with the process of retrieving a DEM here are thr
 
 Let's check out our DEM:
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Import the pre-downloaded DEMs. Note that we need two files to obtain a complete DEM for our watershed.
 # dem1 <- raster(file.path('cabin_creek_dems_raw/n39_w106_1arc_v3.tif'))
 # dem2 <- raster(file.path('cabin_creek_dems_raw/n40_w106_1arc_v3.tif'))
@@ -271,7 +266,7 @@ Let's check out our DEM:
 
 If the watershed and raster don't overlap as you expect, be sure the projection and extent is the same for all data files plotted. 
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Clip the dem to the watershed. This will change all elevation values outside of the watershed to 'NA'
 # dem_clipped <- mask(dem_projected, ws_boundary) 
 # 
@@ -284,7 +279,7 @@ If the watershed and raster don't overlap as you expect, be sure the projection 
 # plot(dem_trimmed)
 ```
 
-### Other remotely sensed data:
+#### Other remotely sensed data:
 
 Now that we have site data spatial data, let's cover a couple of techniques or resources you can use to access satellite data for your site. In the event that you only need a vegetative map layer from a specific point in time, it is not too difficult to download actual Landsat imagery from usgs.gov. In the case of Cabin Creek let's look at a single summer image from 2020.<br><br>
 
@@ -295,25 +290,23 @@ Let's say we want an NDVI map layer from summer of 2020. In 'date range', select
 
 We can skip ‘Additional Criteria’ for now and go to ‘Results’. You should receive a set of about 11 images. For each image you can check out the metadata. That is the 'pen and notepad' icon in the middle of image specific menu. Here you can look at data like cloud cover. For these images, the values you see are a cloud coverage percent. Cloud coverage measurements and the codes to filter for certain cloud cover thresholds may change across missions. If you are retrieving Landsat data for time series using code, it will be important to explore the different quality control parameters and what they represent. You don't need to download anything for this assignment, we've provided it for you. However to gain familiarity with this process, click on the 'download' icon for July 7, 2020 and click 'select files' on the Reflectance Bands option. 
 
-
-**Q6** (1pnt): What 2 bands should we download to calculate NDVI?
+**Q6** (1 pt): What 2 bands should we download to calculate NDVI?
 
 Answer:
 
-
+**Q7** (3 pt): Find 2 other indices that can be used as indicators of vegetative health. What might each of these indices indicate. What are the bands used for each index? 
 
 Check out other earthexplorer resources while you are at the site. You will likely find resources here for your MS projects, even if it is just for making maps of your study area for presentations or paper.
 
 ##### Landsat 
-If you want to learn about Landsat missions or utilize Landsat data, USGS offers all of the reference information you need. The sensors on these missions can be a fantastic resource if characterizing land or water surface over large temporal scales. Landsat data provides (30m) spatial resolution so can capture spatial heterogeneity, even for smaller study areas. If calculating vegetation indices over different time periods, it is important to know which mission you are retrieving data from and check the band assignments for that mission. For example, on the Landsat 6 instrument, Band 4 is near-infrared, whereas Band 4 on Landsat 9's instrument is red. 
+If you want to learn about Landsat missions or utilize Landsat data, USGS offers all of the reference information you need. The sensors on these missions can be a fantastic resource if characterizing land or water surface over large temporal scales. Landsat data provides (30m) spatial resolution so can capture spatial heterogeneity, even for smaller study areas. If calculating vegetation indices over different time periods, it is important to know which mission you are retrieving data from and check the band assignments for that mission. For example, on the Landsat 6 instrument, Band 4 is near-infrared, whereas Band 4 on Landsat 9's instrument is red.
 
 ##### Moderate Resolution Imaging Spectroradiometer (MODIS):
 is a sensor aboard NASA's Terra and Aqua satellites which orbit Earth and collect data on a daily basis. MODIS data provides moderate spatial resolution (250m to 1km) and high temporal resolution. Therefore, MODIS data can be an optimal way to monitor or characterize rapid changes to Earth's surface like land cover changes resulting from wildfire. Data can be accessed and downloaded directly through [NASA's Earthdata tool](https://www.earthdata.nasa.gov/).
 
-
 Let's import our raster data. 
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Import the two bands needed for NDVI calculation
 # red_band <- raster("landsat/LC08_L2SP_034032_20200702_20200913_02_T1_SR_B4.TIF")
 # nir_band <- raster("landsat/LC08_L2SP_034032_20200702_20200913_02_T1_SR_B5.TIF")
@@ -336,17 +329,13 @@ Let's import our raster data.
 # plot(ws_boundary, add = TRUE, border = "black", lwd = 2, col = "transparent")
 ```
 
-
-**Q7** (1pnt)  What does 'SR' in the .tif names tell us about the data?
-
-ANSWER: 
-
-
-**Q8** (2pnts)  What is the difference between 'mask' and 'crop' when filtering large files to fit the area of interest?
-
+**Q8** (2 pt)  What does 'SR' in the .tif names tell us about the data?
 
 ANSWER: 
 
+**Q9** (2 pts)  What is the difference between 'mask' and 'crop' when filtering large files to fit the area of interest?
+
+ANSWER: 
 
 #### Earth surface changes over time
 

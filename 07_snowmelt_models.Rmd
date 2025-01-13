@@ -1,9 +1,8 @@
 
-# Snowmelt Models for runoff timing - Lecture & Lab (20 pts)
+## Snowmelt Models
+### Learning Module
 
-## [Module repo](https://github.com/tpcovino/06_snowmelt_models.git){target="_blank"}
-
-## Background:
+#### Background:
 
 Understanding snowmelt runoff is crucial for managing water resources and assessing flood risks, as it plays a significant role in the hydrologic cycle. Annual runoff and peak flow are influenced by snowmelt, rainfall, or a combination of both. In regions with a snowmelt-driven hydrologic cycle, such as the Rocky Mountains, snowpack acts as a natural reservoir, storing water during the winter months and releasing it gradually during the spring and early summer, thereby playing a vital role in maintaining water availability for various uses downstream.  By examining how snowmelt interacts with other factors like precipitation, land cover, and temperature, we can better anticipate water supply fluctuations and design effective flood management strategies.
 
@@ -15,7 +14,7 @@ Helpful terms:
 
 The most common way to measure the water content of the snowpack is by the Snow Water Equivalent or **SWE**. The SWE is the water depth resulting from melting a unit column of the snowpack.
 
-## Model Approaches
+#### Model Approaches
 
 Similar to the model development structure we discussed in the last module, snowmelt models are generally classified into three different types of [abalation](https://nsidc.org/learn/cryosphere-glossary/ablation#:~:text=Ice%20Data%20Center-,ablation,melting%2C%20evaporation%2C%20wind%20and%20avalanches){target="_blank"} algorithms 
 
@@ -39,7 +38,7 @@ examples: layered snow thermal model (SNTHERM) and physical snowpack model (SNOW
 
 Many effective models may incorporate elements from some or all of these modeling approaches. 
 
-## Spatial complexity
+#### Spatial complexity
 
 We may also identify models based on the model architecture or spatial complexity. The architecture can be designed based on assumptions about the physical processes that may affect the snowmelt to runoff volume and timing. 
 
@@ -63,7 +62,7 @@ Observing depletion patterns may not be effective in ecosystems where patterns a
 
 You can further explore all readings linked in the above section. These readings may assist in developing the workflow for your term project, though they are optional for completing this assignment. However, it is recommended that you review the figures to grasp the concepts and retain them for future reference if necessary.
 
-## Model choices: My snow is different from your snow 
+#### Model choices: My snow is different from your snow 
 
 When determining the architecture of your snow model, your model choices will reflect the application of your model and the processes you are trying to represent. Recall that parsimony and simplicity often make for the most effective models. So, how do we know if we have a good model? Here are a few things we can check to validate our model choices:
 
@@ -77,9 +76,9 @@ When determining the architecture of your snow model, your model choices will re
 
 **Applicability and simplicity:** A good model should provide valuable insights or aid in decision-making processes relevant to the problem it addresses. It strikes a balance between complexity and simplicity, avoiding unnecessary intricacies that can lead to overfitting or computational inefficiency while sufficiently capturing the system's complexities. 
 
-## Codework
+### Labwork (20 pnts)
 
-### [Download the repo for this lab HERE](https://github.com/tpcovino/06_snowmelt_models.git){target="_blank"}
+#### [Download the repo for this lab HERE](https://github.com/tpcovino/06_snowmelt_models.git){target="_blank"}
 
 In this module, we will simulate snowmelt in a montane watershed in central Colorado with a simple temperature model. The Fool Creek watershed is located in the Fraser Experimental Forest (FEF), 137 km west of Denver, Colorado. The FEF contains several headwater streams (Strahler order 1-3) within the Colorado Headwaters watershed which supplies much of the water to the populated Colorado Front Range. This Forest has been the site of many studies to evaluate the effects of land cover change on watershed hydrology. The Fool Creek is a small, forested headwater stream, with an approximate watershed area of 2.75 km^2. The watershed elevation ranges from approximately 2,930m (9,600ft) at the USFS monitoring station to 3,475m (11,400ft) at the highest point. There is a SNOTEL station located at 3,400m. 
 
@@ -88,11 +87,9 @@ In this module, we will simulate snowmelt in a montane watershed in central Colo
 
 
 
-Question 1: Using this map, what differences can you see between these two sites or what variation do you see in the watershed that may affect snow accumulation and melt? (2 points)?
+**Question 1: Using this map, what differences can you see between these two sites or what variation do you see in the watershed that may affect snow accumulation and melt? (2 points)?**
 
 ANSWER: 
-
-
 
 Let's look at some data for Fool Creek:
 
@@ -117,7 +114,7 @@ Let's look at some data for Fool Creek:
 
 This script collects [SNOTEL](https://www.nrcs.usda.gov/wps/portal/wcc/home/aboutUs/monitoringPrograms/automatedSnowMonitoring/){target="_blank"} input data using snotelr. The SNOTEL automated collection site in Fool Creek supplies SWE data that can simplify our runoff modeling. Lets explore the sites available through snotelr and select the site of interest.
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # Save metadata for review. 
 # meta_data <- snotel_info()
 
@@ -125,10 +122,10 @@ This script collects [SNOTEL](https://www.nrcs.usda.gov/wps/portal/wcc/home/abou
 # View(meta_data) # Locate the site_id for Fool Creek
 ```
 
-### Import data: 
+#### Import data: 
 We will generate a conceptual runoff model using the date, daily mean temperature, SWE depth in mm, and daily precipitation (mm). We will use select() to keep the desired columns only. Then we will use mutate() to add a water year, and group_by() to add a cumulative precipitation column for each water year. 
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Let's download data for the water years 2021 to 2022:
 # df <- snotel_download(site_id = 1186, internal = TRUE) %>%
 #     mutate(date = lubridate::ymd(date)) %>% # format the date
@@ -146,7 +143,7 @@ We will generate a conceptual runoff model using the date, daily mean temperatur
 
 We will also download flow data collected by USFS at the Fool Creek outlet at 2,930m. 
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # fool_q <- read.csv("LFC_weir WY21-WY22.csv") %>%
 #   mutate(date = mdy_hm(TIMESTAMP)) %>%
 #   # convert cubic feet per second to metric (m/s^3)
@@ -156,7 +153,7 @@ We will also download flow data collected by USFS at the Fool Creek outlet at 2,
 
 Let's look at the data for the SNOTEL station at 3400m in elevation.
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # Plot imported SWE, precip and depth data data
 # ggplot(data = df) +
 #   geom_line(aes(x = date, y = swe.mm, color = 'swe.mm')) +
@@ -171,10 +168,10 @@ Let's look at the data for the SNOTEL station at 3400m in elevation.
 #   xlab('Date') 
 ```
 
-### Calculate liquid input 
+#### Calculate liquid input 
 to the ground by analyzing the daily changes in Snow Water Equivalent (SWE) and precipitation. This script incorporates temperature conditions to determine when to add changes to liquid input.
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # sntl <- df 
 # 
 # sntl <- sntl %>%
@@ -195,15 +192,12 @@ to the ground by analyzing the daily changes in Snow Water Equivalent (SWE) and 
 #   mutate(date = lubridate::ymd(date))
 ```
 
-Question 2: In plain language, explain each step of the 5 if-else statements above (~5 brief sentences) (3pts).
+**Question 2: In plain language, explain each step of the 5 if-else statements above (~5 brief sentences) (3pts).**
 
 ANSWER:
 
 
-
-
-
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Create a cumulative input column for visualization and calculations
 # sntl <- sntl %>%
 #   group_by(wtr_yr) %>%
@@ -213,7 +207,7 @@ ANSWER:
 
 Let's visualize the timing disparities between precipitation and melt input in relation to discharge.
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Convert date column to POSIXct format
 # fool_q$date <- as.POSIXct(fool_q$date)
 # sntl$date <- as.POSIXct(sntl$date)
@@ -235,23 +229,20 @@ Let's visualize the timing disparities between precipitation and melt input in r
 #   scale_y_continuous(sec.axis = sec_axis(trans = ~ . / 10000, name = expression(Q[paste(m^3,'/second')])))
 ```
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 #print(max(sntl$cum_input.mm, na.rm = TRUE))
 #print(max(sntl$pcumul.mm, na.rm = TRUE ))
 ```
 
-Question 3. What processes could account for the differences between cumulative input, calculated from SWE data, and cumulative precipitation, both measured at the same SNOTEL station? (1 or 2 processes) What could explain the discrepancy if the cumulative input, is found to be less than the cumulative precipitation measured at the same SNOTEL station? (at least 2 possible processes) (4 points) (2-3 sentences)
+**Question 3. What processes could account for the differences between cumulative input, calculated from SWE data, and cumulative precipitation, both measured at the same SNOTEL station? (1 or 2 processes) What could explain the discrepancy if the cumulative input, is found to be less than the cumulative precipitation measured at the same SNOTEL station? (at least 2 possible processes) (4 points) (2-3 sentences)**
 
 ANSWER: 
 
 
-
-
-
-## Modeling SWE 
+#### Modeling SWE 
 Let's assume that we have a precipitation gage at 3400m in Fool Creek, but without SWE data, how could we model SWE using temperature? 
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Filter to a single water year for the snowmelt model
 # wateryr = '2021'
 # 
@@ -264,7 +255,7 @@ Let's assume that we have a precipitation gage at 3400m in Fool Creek, but witho
 
 The model below is a variation of the [degree-day method](https://www.researchgate.net/publication/229698275_Revisiting_the_Degree-day_Method_for_Snowmelt_Computations){target="_blank"}. Here we are running a similar script to the input calculations above, using temperature as the primary determinant. When the temperature falls below a certain threshold and precipitation occurs, an equivalent amount is added to our SWE accumulation. We'll conduct a simulation with 100 Monte Carlo runs and analyze the optimal outcome. The parameters we are testing are pack threshold, a degree-day factor, and the threshold temperature for determining rain from snow. 
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # ########################################
 # # nx sets the number of Monte Carlo runs
 # nx <- 100 # number of runs
@@ -364,7 +355,7 @@ The model below is a variation of the [degree-day method](https://www.researchga
 
 ```
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Plot best run
 # swe_plot <- ggplot(data = SWE.Model) +
 #   geom_line(aes(x = date, y = SWEsim.mm, color = "Simulated SWE")) +
@@ -377,7 +368,7 @@ The model below is a variation of the [degree-day method](https://www.researchga
 
 This simple model seems to simulate SWE well if assessed with the NSE. Let's model SWE at the Fool Creek outlet, where we do not have daily SWE data. First we'll bring in precipitation data, measured at a USFS maintained meteorological station located near the Fool outlet:
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # fc_precip <- read.csv("LFCmet_WY21_WY22.csv") %>%
 #   mutate(date = lubridate::mdy_hm(TS)) %>%
 #   select(date, water_year, PPT_10min..mm.) %>%
@@ -386,7 +377,7 @@ This simple model seems to simulate SWE well if assessed with the NSE. Let's mod
 
 We also need temperature data. This is also collected at the USFS Lower Fool meteorological station. 
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # fc_temp <- read.csv("lfc_airtemp.csv") %>%
 #   mutate(date = lubridate::mdy_hm(TMSTAMP)) %>%
 #   mutate(wtr_yr = if_else(month(date) < 10, year(date), year(date) + 1)) %>%
@@ -413,7 +404,7 @@ We also need temperature data. This is also collected at the USFS Lower Fool met
 
 Even though this meteorological station is very close to the SNOTEL station, lets compare the values between the upper watershed and the lower
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Convert date column in sntl to Date format that matches lfc_data
 # sntl$date <- as.Date(sntl$date)
 # 
@@ -431,7 +422,7 @@ Even though this meteorological station is very close to the SNOTEL station, let
 Now let's estimate SWE for the Lower Fool Creek.
 Again, we'll just simulate a single year.
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # # Filter to a single water year for the snowmelt model
 # wateryr = '2021'
 # 
@@ -447,7 +438,7 @@ Again, we'll just simulate a single year.
 
 Run another set of simulations and compare the values of the best performing parameters across sites.
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # ########################################
 # # nx sets the number of Monte Carlo runs
 # nx <- 100 # number of runs
@@ -549,7 +540,7 @@ Run another set of simulations and compare the values of the best performing par
 
 Since we don't have SWE measurement for Lower Fool Creek, let's see how the simulated values compare to acutal Upper Fool SNOTEL SWE measurements.
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # SWE.Model$date <- as.Date(SWE.Model$date)
 # # Plot best run
 # swe_plot <- ggplot() +
@@ -561,7 +552,7 @@ Since we don't have SWE measurement for Lower Fool Creek, let's see how the simu
 # ggplotly(swe_plot)
 ```
 
-```{r}
+```{r, include=FALSE, warning=FALSE}
 # compare the best performing parameters for the Upper Fool Creek and Lower Fool Creek
 # print(param[1, ])
 # print(param_lfc[1, ])
@@ -570,32 +561,20 @@ Since we don't have SWE measurement for Lower Fool Creek, let's see how the simu
 # print(paste('The estimated threshold temperature distinguishing rain from snow in Lower Fool is ', round(param_lfc[1, 2], 2), 'degrees and in Upper Fool Creek is', round(param[1, 2],2), 'degrees'))
 ```
 
-Question 3: Based on the differences in precipitation and temperature totals between the two sites, are SWE simulation results as you expected? (1 sentence)(2pnts)
+**Question 3: Based on the differences in precipitation and temperature totals between the two sites, are SWE simulation results as you expected? (1 sentence)(2 pts)**
 
 ANSWER: 
 
-
-
-
-
-Question 4: How does the estimated threshold temperature distinguishing rain from snow change with elevation? Is the relationship between your parameter estimations as expected? How does this influence your confidence in the model? (2pnts) 
+**Question 4: How does the estimated threshold temperature distinguishing rain from snow change with elevation? Is the relationship between your parameter estimations as expected? How does this influence your confidence in the model? (2 pts)** 
 
 ANSWER
 
 
-
-
-
-
-Question 4: Compare the precipitation and snow accumulation patterns between two sites. Discuss at least 3 potential natural and/or anthropogenic mechanisms driving the observed variations in precipitation and snow accumulation. Consider the factors you observed in question 1 (3 points)(2-3 sentences).
+**Question 4: Compare the precipitation and snow accumulation patterns between two sites. Discuss at least 3 potential natural and/or anthropogenic mechanisms driving the observed variations in precipitation and snow accumulation. Consider the factors you observed in question 1 (3 points)(2-3 sentences).**
 
 ANSWER:
 
-
-
-
-
-Question 5: Let's say you want to model runoff for the Fool Creek catchment identified above. To do that, you want to estimate the timing and volume of snowmelt for this watershed. Refer to at least 2 model types reviewed in the 06_model_classifications lecture or terms in the lecture above and qualitatively describe a model that you could use to capture the spatial heterogeneity of snow accumulation in this watershed (4 points) (2-4 sentences).
+**Question 5: Let's say you want to model runoff for the Fool Creek catchment identified above. To do that, you want to estimate the timing and volume of snowmelt for this watershed. Refer to at least 2 model types reviewed in the 06_model_classifications lecture or terms in the lecture above and qualitatively describe a model that you could use to capture the spatial heterogeneity of snow accumulation in this watershed (4 points) (2-4 sentences).**
 
 ANSWER:
 
