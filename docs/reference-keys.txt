@@ -144,3 +144,5 @@ how-do-we-code-this
 final-thoughts-1
 labwork-20-pts-5
 download-the-repo-for-this-lab-here-2
+repo-link
+a-priori-model-selection

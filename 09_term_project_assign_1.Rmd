@@ -6,7 +6,7 @@ In this assignment, you will develop the main goal and objectives of your term p
 
 ## Brainstorming
 
-**Q1. What is the primary research question for your term project?(1-2 sentences)(1 pt)** <br>
+**Q1. What is the primary research question for your term project? (1-2 sentences)(1 pt)** <br>
 Think of this as your first approach to developing a research question. It should reflect a clear purpose and be specific enough to guide your initial search for data, but it likely will evolve throughout this assignment. That is okay, even expected. You will be asked for a refined response at the end of the assignment.<br>
 Consider: <br>
 - The problem or issue you want to address  <br>
@@ -52,7 +52,7 @@ Once you spend a solid hour or two searching databases, you may find that you ne
 
 **PART 3. Explore your data (3 pnts)**
 
-You are encouraged to explore many packages and write many more code chunks for your personal use. However, for the assignment submission, retrieve at least one dataset using an R package like dataRetrieval.
+You are encouraged to explore many packages and write many more code chunks for your personal use. However, for the assignment submission, retrieve at least one dataset relevant to your question using an R package like dataRetrieval.
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -74,7 +74,7 @@ Explore the available data using vignettes or Cran documentation for your specif
 **Write a brief summary (3-4 sentences) of what your dataframe describes.** 
 
 Generate plots:
-Create at least one plot that summarizes the data and describes it's use to you. Are there gaps in the data? Does the data cover the time or space you are interested in? Are there significant outliers that need consideration? 
+Create at least one plot that summarizes the data and describe it's use to you. Are there gaps in the data? Does the data cover the time or space you are interested in? Are there significant outliers that need consideration? 
 
 ```{r}
 
@@ -120,10 +120,10 @@ data_table <- data.frame(
   Temporal_range = c('2020-2021', '1979-today'),
   Spatial_Coverage = c('Montana', 'Juneau_AK'),
   Data_Quality = c("High", "Moderate"), # An example of high quality might be a dataset that has already been cleaned by an agency is not missing data in the period or space of interest. 
-  Data_Quality_notes = c('missing some dates', 'some unexpected values'),
+  Data_Quality_notes = c('QCd with no missing data', 'some unexpected values'),
   Feasibility = c("High", "Medium"), # How useable is this to you? Do you need help figuring out how to download it? Is there an R package that you need to learn to access the data?
   Feasibility_notes = c('note1', 'note2'),
-  explain_response = c('explanatory', 'response')
+  variable_type = c('explanatory', 'response')
 )
 
 # Display the table

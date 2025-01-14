@@ -23,7 +23,7 @@ Lynne, V., Hollick, M. (1979) Stochastic time-variable rainfall-runoff modelling
 
 At the end of this module, students should be able to describe the components of streamflow, the basics of how water moves through a hillslope, and the watershed characteristics that affect partitioning between baseflow and stormflow. 
 
-### Lecture
+#### Lecture
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0gQZ1rOQeGo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -90,9 +90,9 @@ The partitioning is a combination of all of these factors. A watershed may have 
 In this lab we will analyze stream flow (Q) and precipitation (P) data from Tenderfoot Creek Experimental Forest (TCEF). TCEF is located in central Montana, north of White Sulphur Springs. [See here](https://www.fs.usda.gov/research/rmrs/forestsandranges/locations/tcef){target="_blank"} for information about TCEF. You will do some data analysis on flows, calculate annual runoff ratios, and perform a hydrograph separation. 
 
 
-### Repo
+### Repo link
 
 Follow this [link](https://github.com/tpcovino/01_hydrograph_sep){target="_blank"} to download everything you need for this unit. When you get to GitHub click on "Code" (green button) and select "download zip". You will then save this to a local folder where you should do all of your work for this class. You will work through the "_blank.Rmd" or "_partial.Rmd". Always be sure to read the README.md files in the GitHub repo. Sometimes they are useful, sometimes they aren't, but always have a look. 
-As I mentioned above you will work through the "_blank.Rmd" or "_partial.Rmd". However, there is also a "_complete.Rmd" in the repo. This has all the code. So you can use it as a cheat sheet, but if you want to learn how to code in R, I encourage you to work through the blank version as much as possible. Also, if you don't have much R background this lab might seem kind of challenging. But don't worry. I'm challenging you right now, but I'm going to post videos explaining how I would code this and walk you through everything. So don't get frustrated if this seems tough right now. Soon you will be rattling off code with ease. Conversely, if you are an experienced coder and have ideas for how to do this in ways other than what I've shown here, please share code with your colleagues and help them develop their coding skills! 
+As I mentioned above you will work through the "_blank.Rmd" or "_partial.Rmd". If you want to learn how to code in R, I encourage you to work through the blank version as much as possible. Also, if you don't have much R background this lab might seem kind of challenging. But don't worry. I'm challenging you right now, but it will get easier, and we can video chat if a live demonstration is needed. So don't get frustrated if this seems tough right now. Soon you will be rattling off code with ease. Conversely, if you are an experienced coder and have ideas for how to do this in ways other than what I've shown here, please share code with your colleagues and help them develop their coding skills! 
 
 Once you have this folder saved where you would like it, open RStudio and navigate to the folder. Next, open the project (".Rproj"). Doing so will set the folder as the working directory, make your life easier, and make everything generally work. The use of projects is highly recommended and is the practice we will follow in this class. See [here](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/) for an overview of projects and why you should use them from Jenny Bryan. 

@@ -177,7 +177,7 @@ Now, plot total anual P on the Y and water year on the x. What do you see?
 
 Now let's calculate some probabilities. Look up the `pnorm()` function for this (either type it into the Help window, or type ?pnorm in the console. You only need x, the mean, and standard deviation (sd) for the calculations.
 
-**Q1. (2 pts) What is the probability that the annual precipitation in a given year is less than 400 mm? This is the F(A) in the CDF in the probability lecture slides.** 
+**Q1. (3 pts) What is the probability that the annual precipitation in a given year is less than 400 mm? This is the F(A) in the CDF in the probability lecture slides.** 
 
 ```{r, include=FALSE, warning=FALSE}
 # p_400 <- pnorm(400, mean(climate_an$tot_p), sd(climate_an$tot_p))
@@ -186,7 +186,7 @@ Now let's calculate some probabilities. Look up the `pnorm()` function for this 
 
 Q1 ANSWER:
 
-**Q2. (2 pts) What is the probability that the maximum annual precipitation in a given year is GREATER than 500 mm?** 
+**Q2. (3 pts) What is the probability that the maximum annual precipitation in a given year is GREATER than 500 mm?** 
 
 ```{r, include=FALSE, warning=FALSE}
 # p_500 <- pnorm(500, mean(climate_an$tot_p), sd(climate_an$tot_p))
@@ -196,7 +196,7 @@ Q1 ANSWER:
 
 Q2 ANSWER:
 
-**Q3. (2 pts) What is the probability that the annual P is between 400 and 500 mm?**
+**Q3. (3 pts) What is the probability that the annual P is between 400 and 500 mm?**
 
 ```{r, include=FALSE, warning=FALSE}
 # p_500_400 <- p_500 - p_400
@@ -204,7 +204,7 @@ Q2 ANSWER:
 # p_500_400
 ```
 
-**Q4. (2 pts) What is the return period for a year with AT LEAST 550 mm of precip? The return period, Tr, is calculated as Tr = 1/p, with p being the probability for an event to occur.**
+**Q4. (3 pts) What is the return period for a year with AT LEAST 550 mm of precip? The return period, Tr, is calculated as Tr = 1/p, with p being the probability for an event to occur.**
 
 ```{r, include=FALSE, warning=FALSE}
 # p_550 <- pnorm(550, mean(climate_an$tot_p), sd(climate_an$tot_p))
@@ -214,7 +214,7 @@ Q2 ANSWER:
 # ri
 ```
 
-**Q5. (6 pts) Explain why probability analysis of climate data assumes the data are normally distributed and stationary? Below provide a histogram and a density plot of the total annual P data and comment on the visual appearance in terms of normality. Next use google and the links below to test for normality and stationarity. Be quantitative in commenting on the normality and stationarity of the total P data.** 
+**Q5. (8 pts) Explain why probability analysis of climate data assumes the data are normally distributed and stationary? Below provide a histogram and a density plot of the total annual P data and comment on the visual appearance in terms of normality. Next use google and the links below to test for normality and stationarity. Be quantitative in commenting on the normality and stationarity of the total P data.** 
 
 - [here](https://rpubs.com/richkt/269797){target="_blank"}  
 
