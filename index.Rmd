@@ -8,7 +8,7 @@ site: bookdown::bookdown_site
 
 This book provides the materials that we will use in Quantitative Environmental Methods (LRES 546). In this class we will be learning the fundamentals of environmental data analysis and simulation in R. 
 
-This class can be taken online or in-person. The online will be asynchronous. As a function of demand, in 2024, this class will be taught online.
+This class can be taken online or in-person. The online will be asynchronous. As a function of demand, in 2025, this class will be taught online.
 
 ![](images/east_river.png)
 
