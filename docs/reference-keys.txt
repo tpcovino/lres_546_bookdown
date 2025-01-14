@@ -18,7 +18,7 @@ how-we-quantify-baseflow
 baseflow-separation-methods
 watershed-controls-on-baseflow-and-stormflow
 labwork-20-pts
-repo
+repo-link
 return-intervals
 learning-module-1
 background-information
@@ -62,6 +62,7 @@ classifying-model-structure
 learning-module-4
 spatial-complexity
 modeling-approaches
+a-priori-model-selection
 snowmelt-models
 learning-module-5
 background-1
@@ -144,5 +145,3 @@ how-do-we-code-this
 final-thoughts-1
 labwork-20-pts-5
 download-the-repo-for-this-lab-here-2
-repo-link
-a-priori-model-selection

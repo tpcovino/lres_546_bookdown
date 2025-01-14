@@ -153,9 +153,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#hydrograph-separation"><i class="fa fa-check"></i><b>2.1</b> Hydrograph separation</a>
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#learning-module"><i class="fa fa-check"></i><b>2.1.1</b> Learning Module</a></li>
-<li class="chapter" data-level="2.1.2" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#lecture"><i class="fa fa-check"></i><b>2.1.2</b> Lecture</a></li>
-<li class="chapter" data-level="2.1.3" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#labwork-20-pts"><i class="fa fa-check"></i><b>2.1.3</b> Labwork (20 pts)</a></li>
-<li class="chapter" data-level="2.1.4" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#repo"><i class="fa fa-check"></i><b>2.1.4</b> Repo</a></li>
+<li class="chapter" data-level="2.1.2" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#labwork-20-pts"><i class="fa fa-check"></i><b>2.1.2</b> Labwork (20 pts)</a></li>
+<li class="chapter" data-level="2.1.3" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#repo-link"><i class="fa fa-check"></i><b>2.1.3</b> Repo link</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="part-2-tabular-models-and-time-series.html"><a href="part-2-tabular-models-and-time-series.html#return-intervals"><i class="fa fa-check"></i><b>2.2</b> Return Intervals</a>
 <ul>
@@ -245,7 +244,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this assignment, you will develop the main goal and objectives of your term project and explore, evaluate and select data sources. The workflow for this assignment will help you develop your research question and identify the datasets you will use to address that question.</p>
 <div id="brainstorming" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Brainstorming<a href="term-project-assignment-1---10-pnts.html#brainstorming" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Q1. What is the primary research question for your term project?(1-2 sentences)(1 pt)</strong> <br>
+<p><strong>Q1. What is the primary research question for your term project? (1-2 sentences)(1 pt)</strong> <br>
 Think of this as your first approach to developing a research question. It should reflect a clear purpose and be specific enough to guide your initial search for data, but it likely will evolve throughout this assignment. That is okay, even expected. You will be asked for a refined response at the end of the assignment.<br>
 Consider: <br>
 - The problem or issue you want to address <br>
@@ -280,7 +279,7 @@ ANSWER:</p>
 <h3><span class="header-section-number">4.2.2</span> Adapt your research question<a href="term-project-assignment-1---10-pnts.html#adapt-your-research-question" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Once you spend a solid hour or two searching databases, you may find that you need to adapt your research question based on data availability. You will likely spend some time refining your initial question to fit the datasets you find and that is encouraged! Then resume the dataset search, and continue refining your question and searching until you can develop an executable methodology. <br></p>
 <p><strong>PART 3. Explore your data (3 pnts)</strong></p>
-<p>You are encouraged to explore many packages and write many more code chunks for your personal use. However, for the assignment submission, retrieve at least one dataset using an R package like dataRetrieval.</p>
+<p>You are encouraged to explore many packages and write many more code chunks for your personal use. However, for the assignment submission, retrieve at least one dataset relevant to your question using an R package like dataRetrieval.</p>
 <p>Install needed packages</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="term-project-assignment-1---10-pnts.html#cb4-1" tabindex="-1"></a><span class="co">#install.packages(&#39;&#39;)</span></span>
 <span id="cb4-2"><a href="term-project-assignment-1---10-pnts.html#cb4-2" tabindex="-1"></a><span class="co">#library()</span></span></code></pre></div>
@@ -288,7 +287,7 @@ ANSWER:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="term-project-assignment-1---10-pnts.html#cb5-1" tabindex="-1"></a><span class="co">#head(dfname)</span></span></code></pre></div>
 <p><strong>Write a brief summary (3-4 sentences) of what your dataframe describes.</strong></p>
 <p>Generate plots:
-Create at least one plot that summarizes the data and describes it’s use to you. Are there gaps in the data? Does the data cover the time or space you are interested in? Are there significant outliers that need consideration?</p>
+Create at least one plot that summarizes the data and describe it’s use to you. Are there gaps in the data? Does the data cover the time or space you are interested in? Are there significant outliers that need consideration?</p>
 <p>Generate a histogram or density plot of at least one variable in your dataset. The script here will help start a density plot showing multiple variables. You may adapt or change this as needed.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="term-project-assignment-1---10-pnts.html#cb6-1" tabindex="-1"></a><span class="co">#plottable_vars &lt;- dfname %&gt;%</span></span>
 <span id="cb6-2"><a href="term-project-assignment-1---10-pnts.html#cb6-2" tabindex="-1"></a><span class="co">#  dplyr::select(variable1, variable2,...)</span></span>
@@ -321,10 +320,10 @@ Create a table in R and export it as a .csv file to submit with this assignment 
 <span id="cb7-12"><a href="term-project-assignment-1---10-pnts.html#cb7-12" tabindex="-1"></a>  <span class="at">Temporal_range =</span> <span class="fu">c</span>(<span class="st">&#39;2020-2021&#39;</span>, <span class="st">&#39;1979-today&#39;</span>),</span>
 <span id="cb7-13"><a href="term-project-assignment-1---10-pnts.html#cb7-13" tabindex="-1"></a>  <span class="at">Spatial_Coverage =</span> <span class="fu">c</span>(<span class="st">&#39;Montana&#39;</span>, <span class="st">&#39;Juneau_AK&#39;</span>),</span>
 <span id="cb7-14"><a href="term-project-assignment-1---10-pnts.html#cb7-14" tabindex="-1"></a>  <span class="at">Data_Quality =</span> <span class="fu">c</span>(<span class="st">&quot;High&quot;</span>, <span class="st">&quot;Moderate&quot;</span>), <span class="co"># An example of high quality might be a dataset that has already been cleaned by an agency is not missing data in the period or space of interest. </span></span>
-<span id="cb7-15"><a href="term-project-assignment-1---10-pnts.html#cb7-15" tabindex="-1"></a>  <span class="at">Data_Quality_notes =</span> <span class="fu">c</span>(<span class="st">&#39;missing some dates&#39;</span>, <span class="st">&#39;some unexpected values&#39;</span>),</span>
+<span id="cb7-15"><a href="term-project-assignment-1---10-pnts.html#cb7-15" tabindex="-1"></a>  <span class="at">Data_Quality_notes =</span> <span class="fu">c</span>(<span class="st">&#39;QCd with no missing data&#39;</span>, <span class="st">&#39;some unexpected values&#39;</span>),</span>
 <span id="cb7-16"><a href="term-project-assignment-1---10-pnts.html#cb7-16" tabindex="-1"></a>  <span class="at">Feasibility =</span> <span class="fu">c</span>(<span class="st">&quot;High&quot;</span>, <span class="st">&quot;Medium&quot;</span>), <span class="co"># How useable is this to you? Do you need help figuring out how to download it? Is there an R package that you need to learn to access the data?</span></span>
 <span id="cb7-17"><a href="term-project-assignment-1---10-pnts.html#cb7-17" tabindex="-1"></a>  <span class="at">Feasibility_notes =</span> <span class="fu">c</span>(<span class="st">&#39;note1&#39;</span>, <span class="st">&#39;note2&#39;</span>),</span>
-<span id="cb7-18"><a href="term-project-assignment-1---10-pnts.html#cb7-18" tabindex="-1"></a>  <span class="at">explain_response =</span> <span class="fu">c</span>(<span class="st">&#39;explanatory&#39;</span>, <span class="st">&#39;response&#39;</span>)</span>
+<span id="cb7-18"><a href="term-project-assignment-1---10-pnts.html#cb7-18" tabindex="-1"></a>  <span class="at">variable_type =</span> <span class="fu">c</span>(<span class="st">&#39;explanatory&#39;</span>, <span class="st">&#39;response&#39;</span>)</span>
 <span id="cb7-19"><a href="term-project-assignment-1---10-pnts.html#cb7-19" tabindex="-1"></a>)</span>
 <span id="cb7-20"><a href="term-project-assignment-1---10-pnts.html#cb7-20" tabindex="-1"></a></span>
 <span id="cb7-21"><a href="term-project-assignment-1---10-pnts.html#cb7-21" tabindex="-1"></a><span class="co"># Display the table</span></span>
