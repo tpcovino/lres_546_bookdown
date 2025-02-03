@@ -52,7 +52,7 @@ $$
 #### Reading - Curve numbers<br> 
 
 Curve Number selection tables are available from the
-[USDA.](https://directives.sc.egov.usda.gov/17758.wba){target="_blank"}
+[US Army Corps.](https://www.hec.usace.army.mil/confluence/hmsdocs/hmstrm/cn-tables){target="_blank"}
 
 Slides on selecting curve number start around slide 8. <br>
 - [Link](https://cdn.serc.carleton.edu/files/geoinformatics/steps/presentation_selecting_cn_vari.pdf){target="_blank"}
@@ -60,7 +60,7 @@ Slides on selecting curve number start around slide 8. <br>
 #### Reading - Supporting material
 
 Time of concentration. Up to "other considerations", pages 15-1 to 15-9. <br>
-- [Link](https://directives.sc.egov.usda.gov/27002.wba){target="_blank"}
+- [Link](https://irrigationtoolbox.com/NEH/Part630_Hydrology/NEH630-ch15draft.pdf){target="_blank"}
 
 We will use the Kirpich method to calculate the time of concentration. Here is the citation for your reference.
 

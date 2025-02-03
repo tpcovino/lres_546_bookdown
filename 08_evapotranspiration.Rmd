@@ -5,7 +5,7 @@
 
 ### Learning Module
 
-15pnts<br>
+20pnts<br>
 
 #### Background
 
@@ -79,7 +79,7 @@ Some resources for finding ET modeled from remote sensing data:
 For this assignment, we will work again in the Fraser Experimental Forest (same site as snowmelt module). Not only are there meteorological stations in our watershed of interest, but there is a Eddy Covariance tower nearby, in a forest with the same tree community as our watershed of interest. We can use this data to verify our model output for modeled data.
 
 #### The [Evapotranspiration package](https://cran.r-project.org/web/packages/Evapotranspiration/index.html)
-We will test a couple of simple methods that require few data inputs. However, it may be helpful to know that this package will allow calculations of PET, AET and Reference Crop Evapotranspiration from many different equations. Your selection of models may depend on the study region and the data available.  
+We will test a couple of simple methods that require few data inputs. However, it may be helpful to know that this package will allow calculations of PET, AET and Reference Crop Evapotranspiration from many different equations. Your selection of models may depend on the study region and the data available.
 
 #### Import libraries
 
@@ -102,7 +102,8 @@ We will test a couple of simple methods that require few data inputs. However, i
 
 #### Import data
 ##### Meteorological data
-We'll import three datasets in this workflow, one containing actual data from the eddy covariance tower for the years 2017-2018. <br>
+
+We'll import three datasets in this workflow, one containing actual data from the eddy covariance tower for the years 2017-2018. <br> 
 Also imported is the discharge (Q) data from our watershed. Note that data is not collected during periods of deep snow. We will use this data to estimate the total discharge for 2022. <br>
 Additionally, we'll import the meteorological data from our watershed for the years of interest. We are going to estimate ET for our watershed during the 2022 water year, though met data is provided in calendar years, so we will need to extract the desired data from the met dataframe.
 
@@ -174,7 +175,9 @@ We will model ET at daily timesteps. Note that all imported data is for differen
 Now we have the RHmax and RHmin values that we will need for our ET models
 
 ##### Precipitation 
+
 To add a layer of checks we will also check precipitation totals for the watershed from our met data. This dataframe also provides cumulative precipitation, though the accumulation begins on January 1. Therefore we will need to calculate daily precipitation for each day of the water year and generate a new cumulative value.
+
 ```{r, include=FALSE, warning=FALSE}
 # # Calculate daily precipitation by subtracting consecutive values
 # usfs_met <- usfs_met %>%
@@ -196,7 +199,7 @@ This was a lot of work to save one value.
 
 Often when writing code, it is necessary to first write 'pseudocode'. This allows us to think about workflow before writing scripts involves planning and structuring the logic of a script. Psuedocode is usually mixture of natural language and code-like constructs (e.g., 'I'll use 'merge' or 'ggplot' to...') that serves as a blueprint for our script before we dive into specific programming language syntax. Then we can develop our code by filling in the programming language as needed. 
 
-**Q1.** (2pnts)  In you own words, what did we do at each step in the above chunk and what is cumulative_ppt_2022. Why do we want to know this? 
+**Q1. (2 pnts)  In you own words, what did we do at each step in the above chunk and what is cumulative_ppt_2022. Why do we want to know this?**
 
 ANSWER:
 
@@ -204,7 +207,7 @@ ANSWER:
 
 Our next step will be to import and format discharge data collected from the weir at Fool Creek. Again, data collection starts on April 20th this year. To estimate discharge between Sept 31 of the previous year and April 20th of 2022, we will assume daily discharge between these dates is the mean of the discharge values from each of these dates. 
 
-**Q2** (3pnts) Write pseudocode in a stepwise fashion to describe the workflow that will need to happen to estimate the total volume of water in mm/watershed area for 2022 lost to stream discharge. Consider that the units provided by USFS are in cubic feet/second (cfs).
+**Q2 (3 pnts) Write pseudocode in a stepwise fashion to describe the workflow that will need to happen to estimate the total volume of water in mm/watershed area for 2022 lost to stream discharge. Consider that the units provided by USFS are in cubic feet/second (cfs).**
 
 ANSWER:
 1. Import dataframe
@@ -303,6 +306,7 @@ For our specific tower data, we've estimated the mean flux area, or footprint ar
 # Hbalance <- cumulative_ppt_2022 - ws_et_2022 - Qsum2022
 # print(Hbalance)
 ```
+
 This appears to be a fairly well balanced water budget, especially consdering that we have made some estimates along the way. Let's see how this ET data compares to modeled data. 
 
 #### [The Priestly Taylor method](https://search.r-project.org/CRAN/refmans/Evapotranspiration/html/ET.PriestleyTaylor.html) (actual evapotranspiration)
@@ -333,7 +337,6 @@ Evapotranspiration comes with a list physical 'constants', but we want to replac
 # constants$lat <- 39.89
 # constants$lat_rad <- 0.6962
 ```
-
 
 ```{r, include = FALSE}
 # data_list$Date <- as.Date(data_list$Date, format = "%Y-%m-%d")
@@ -399,13 +402,19 @@ Let's plot the two modeled ET timeseries with the eddy covaraince tower data.
 
 ```
 
-**Q3**. (4pnts) Consider the two evapotranspiration (ET) models we have generated, one consistently underestimates ET, while the other consistently overestimates summer values and underestimates winter values. Consider cosystem specificity in modeling. Why do you think these two methods generate such different estimates? What ecosystem-specific factors might contribute to the discrepancies between models?
+**Q3 (4 pnts) Considering that models are often developed for specific ecosystems, discuss why these two methods might yield such different results when applied to the current system. What ecosystem-specific factors could influence the accuracy of these models in this context?**
 
 ANSWER:
 
-**Q4** (3pnts) Let's assume we do not have eddy covariance tower data for this time period, but you have the provided discharge and precipitation measurements. Which model would you choose to estimate an annual ET sum and why? 
+**Q4. (3pnts) In the context of evapotranspiration modeling, discuss how vegetation type and soil properties might interact to influence AET in the Fraser Experimental Forest. Provide a hypothetical example of how these factors could vary between two sub-watersheds in the area.**
 
 ANSWER:
 
-**Q5** (3pnts) In our modeling script, while our main objective was to estimate evapotranspiration (ET), which specific aspect required the most labor and attention to detail? Reflect on the tasks involved in data preparation, cleaning, and formatting. How did these preliminary steps impact the overall modeling process? 
+**Q5 (5 pnts) Review the map watershed figure and consider changes in vegetation type and soil properties in high elevation watersheds. How might these variables interact to influence AET in the Fraser Experimental Forest. Provide a hypothetical example of how these factors could vary between two sub-watersheds in the area.**
+
+**Q6 (3 pnts) Let's assume we do not have eddy covariance tower data for this time period, but you have the provided discharge and precipitation measurements. Which model would you choose to estimate an annual ET sum and why?** 
+
+ANSWER:
+
+**Q6 (4 pnts) In our modeling script, while our main objective was to estimate evapotranspiration (ET), which specific aspect required the most labor and attention to detail? Reflect on the tasks involved in data preparation, cleaning, and formatting. How did these preliminary steps impact the overall modeling process? **
 

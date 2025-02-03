@@ -346,7 +346,7 @@ Observing depletion patterns may not be effective in ecosystems where patterns a
 <img src="images/fool_studyarea.png" alt="Fool Creek delineated watershed" />
 <div class="figcaption">Fool Creek delineated watershed</div>
 </div>
-<p><strong>Question 1: Using this map, what differences can you see between these two sites or what variation do you see in the watershed that may affect snow accumulation and melt? (2 points)?</strong></p>
+<p><strong>Q1: Using this map, what differences can you see between these two sites or what variation do you see in the watershed that may affect snow accumulation and melt? (2 points)?</strong></p>
 <p>ANSWER:</p>
 <p>Let’s look at some data for Fool Creek:</p>
 <p>This script collects <a href="https://www.nrcs.usda.gov/wps/portal/wcc/home/aboutUs/monitoringPrograms/automatedSnowMonitoring/" target="_blank">SNOTEL</a> input data using snotelr. The SNOTEL automated collection site in Fool Creek supplies SWE data that can simplify our runoff modeling. Lets explore the sites available through snotelr and select the site of interest.</p>
@@ -360,10 +360,10 @@ Observing depletion patterns may not be effective in ecosystems where patterns a
 <div id="calculate-liquid-input" class="section level4 hasAnchor" number="3.2.2.3">
 <h4><span class="header-section-number">3.2.2.3</span> Calculate liquid input<a href="part-3-bucket-and-process-based-models.html#calculate-liquid-input" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>to the ground by analyzing the daily changes in Snow Water Equivalent (SWE) and precipitation. This script incorporates temperature conditions to determine when to add changes to liquid input.</p>
-<p><strong>Question 2: In plain language, explain each step of the 5 if-else statements above (~5 brief sentences) (3pts).</strong></p>
+<p><strong>Q2: In plain language, explain each step of the 5 if-else statements above (~5 brief sentences) (3pts).</strong></p>
 <p>ANSWER:</p>
 <p>Let’s visualize the timing disparities between precipitation and melt input in relation to discharge.</p>
-<p><strong>Question 3. What processes could account for the differences between cumulative input, calculated from SWE data, and cumulative precipitation, both measured at the same SNOTEL station? (1 or 2 processes) What could explain the discrepancy if the cumulative input, is found to be less than the cumulative precipitation measured at the same SNOTEL station? (at least 2 possible processes) (4 points) (2-3 sentences)</strong></p>
+<p><strong>Q3. What processes could account for the differences between cumulative input, calculated from SWE data, and cumulative precipitation, both measured at the same SNOTEL station? (1 or 2 processes) What could explain the discrepancy if the cumulative input, is found to be less than the cumulative precipitation measured at the same SNOTEL station? (at least 2 possible processes) (4 points) (2-3 sentences)</strong></p>
 <p>ANSWER:</p>
 </div>
 <div id="modeling-swe" class="section level4 hasAnchor" number="3.2.2.4">
@@ -377,13 +377,13 @@ Observing depletion patterns may not be effective in ecosystems where patterns a
 Again, we’ll just simulate a single year.</p>
 <p>Run another set of simulations and compare the values of the best performing parameters across sites.</p>
 <p>Since we don’t have SWE measurement for Lower Fool Creek, let’s see how the simulated values compare to acutal Upper Fool SNOTEL SWE measurements.</p>
-<p><strong>Question 3: Based on the differences in precipitation and temperature totals between the two sites, are SWE simulation results as you expected? (1 sentence)(2 pts)</strong></p>
+<p><strong>Q4: Based on the differences in precipitation and temperature totals between the two sites, are SWE simulation results as you expected? (1 sentence)(2 pts)</strong></p>
 <p>ANSWER:</p>
-<p><strong>Question 4: How does the estimated threshold temperature distinguishing rain from snow change with elevation? Is the relationship between your parameter estimations as expected? How does this influence your confidence in the model? (2 pts)</strong></p>
+<p><strong>Q5: How does the estimated threshold temperature distinguishing rain from snow change with elevation? Is the relationship between your parameter estimations as expected? How does this influence your confidence in the model? (2 pts)</strong></p>
 <p>ANSWER</p>
-<p><strong>Question 4: Compare the precipitation and snow accumulation patterns between two sites. Discuss at least 3 potential natural and/or anthropogenic mechanisms driving the observed variations in precipitation and snow accumulation. Consider the factors you observed in question 1 (3 points)(2-3 sentences).</strong></p>
+<p><strong>Q6: Compare the precipitation and snow accumulation patterns between two sites. Discuss at least 3 potential natural and/or anthropogenic mechanisms driving the observed variations in precipitation and snow accumulation. Consider the factors you observed in question 1 (3 points)(2-3 sentences).</strong></p>
 <p>ANSWER:</p>
-<p><strong>Question 5: Let’s say you want to model runoff for the Fool Creek catchment identified above. To do that, you want to estimate the timing and volume of snowmelt for this watershed. Refer to at least 2 model types reviewed in the 06_model_classifications lecture or terms in the lecture above and qualitatively describe a model that you could use to capture the spatial heterogeneity of snow accumulation in this watershed (4 points) (2-4 sentences).</strong></p>
+<p><strong>Q7: Let’s say you want to model runoff for the Fool Creek catchment identified above. To do that, you want to estimate the timing and volume of snowmelt for this watershed. Refer to at least 2 model types reviewed in the 06_model_classifications lecture or terms in the lecture above and qualitatively describe a model that you could use to capture the spatial heterogeneity of snow accumulation in this watershed (4 points) (2-4 sentences).</strong></p>
 <p>ANSWER:</p>
 
 </div>
@@ -396,7 +396,7 @@ Again, we’ll just simulate a single year.</p>
 </div>
 <div id="learning-module-6" class="section level3 hasAnchor" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> Learning Module<a href="part-3-bucket-and-process-based-models.html#learning-module-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>15pnts<br></p>
+<p>20pnts<br></p>
 <div id="background-2" class="section level4 hasAnchor" number="3.3.2.1">
 <h4><span class="header-section-number">3.3.2.1</span> Background<a href="part-3-bucket-and-process-based-models.html#background-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Evapotranspiration (ET) encompasses all processes through which water moves from the Earth’s surface to the atmosphere, comprising both evaporation and transpiration. This includes water vaporizing into the air from soil surfaces, the capillary fringe of groundwater, and water bodies on land.
@@ -479,12 +479,12 @@ Additionally, we’ll import the meteorological data from our watershed for the 
 <div id="pseudocode" class="section level4 hasAnchor" number="3.3.3.5">
 <h4><span class="header-section-number">3.3.3.5</span> Pseudocode<a href="part-3-bucket-and-process-based-models.html#pseudocode" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Often when writing code, it is necessary to first write ‘pseudocode’. This allows us to think about workflow before writing scripts involves planning and structuring the logic of a script. Psuedocode is usually mixture of natural language and code-like constructs (e.g., ‘I’ll use ’merge’ or ‘ggplot’ to…’) that serves as a blueprint for our script before we dive into specific programming language syntax. Then we can develop our code by filling in the programming language as needed.</p>
-<p><strong>Q1.</strong> (2pnts) In you own words, what did we do at each step in the above chunk and what is cumulative_ppt_2022. Why do we want to know this?</p>
+<p><strong>Q1. (2 pnts) In you own words, what did we do at each step in the above chunk and what is cumulative_ppt_2022. Why do we want to know this?</strong></p>
 <p>ANSWER:</p>
 <div id="discharge-data" class="section level5 hasAnchor" number="3.3.3.5.1">
 <h5><span class="header-section-number">3.3.3.5.1</span> Discharge data<a href="part-3-bucket-and-process-based-models.html#discharge-data" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Our next step will be to import and format discharge data collected from the weir at Fool Creek. Again, data collection starts on April 20th this year. To estimate discharge between Sept 31 of the previous year and April 20th of 2022, we will assume daily discharge between these dates is the mean of the discharge values from each of these dates.</p>
-<p><strong>Q2</strong> (3pnts) Write pseudocode in a stepwise fashion to describe the workflow that will need to happen to estimate the total volume of water in mm/watershed area for 2022 lost to stream discharge. Consider that the units provided by USFS are in cubic feet/second (cfs).</p>
+<p><strong>Q2 (3 pnts) Write pseudocode in a stepwise fashion to describe the workflow that will need to happen to estimate the total volume of water in mm/watershed area for 2022 lost to stream discharge. Consider that the units provided by USFS are in cubic feet/second (cfs).</strong></p>
 <p>ANSWER:
 1. Import dataframe
 2. …</p>
@@ -509,11 +509,14 @@ n refers to the number of sunshine hours.</p>
 Crop coefficients (Kc values) for specific tree species like those found in the Fraser Experimental Forest (lodgepole pine or Englemann spruce) may not be as readily available as they are for agricultural crops. However, you may be able to find some guidance in scientific literature or forestry publications. From what we have found, Kc estimates for lodgepole pine forests can be between 0.4 and 0.8. These values may vary depending on factors such as climate, soil type, elevation, and other site-specific factors. Our own estimates using water balance data from dates that correspond with the eddy flux tower data suggest seasonal fluctuations, with a mean of 0.55.</p>
 <p>AET = PET * Kc</p>
 <p>Let’s plot the two modeled ET timeseries with the eddy covaraince tower data.</p>
-<p><strong>Q3</strong>. (4pnts) Consider the two evapotranspiration (ET) models we have generated, one consistently underestimates ET, while the other consistently overestimates summer values and underestimates winter values. Consider cosystem specificity in modeling. Why do you think these two methods generate such different estimates? What ecosystem-specific factors might contribute to the discrepancies between models?</p>
+<p><strong>Q3 (4 pnts) Considering that models are often developed for specific ecosystems, discuss why these two methods might yield such different results when applied to the current system. What ecosystem-specific factors could influence the accuracy of these models in this context?</strong></p>
 <p>ANSWER:</p>
-<p><strong>Q4</strong> (3pnts) Let’s assume we do not have eddy covariance tower data for this time period, but you have the provided discharge and precipitation measurements. Which model would you choose to estimate an annual ET sum and why?</p>
+<p><strong>Q4. (3pnts) In the context of evapotranspiration modeling, discuss how vegetation type and soil properties might interact to influence AET in the Fraser Experimental Forest. Provide a hypothetical example of how these factors could vary between two sub-watersheds in the area.</strong></p>
 <p>ANSWER:</p>
-<p><strong>Q5</strong> (3pnts) In our modeling script, while our main objective was to estimate evapotranspiration (ET), which specific aspect required the most labor and attention to detail? Reflect on the tasks involved in data preparation, cleaning, and formatting. How did these preliminary steps impact the overall modeling process?</p>
+<p><strong>Q5 (5 pnts) Review the map watershed figure and consider changes in vegetation type and soil properties in high elevation watersheds. How might these variables interact to influence AET in the Fraser Experimental Forest. Provide a hypothetical example of how these factors could vary between two sub-watersheds in the area.</strong></p>
+<p><strong>Q6 (3 pnts) Let’s assume we do not have eddy covariance tower data for this time period, but you have the provided discharge and precipitation measurements. Which model would you choose to estimate an annual ET sum and why?</strong></p>
+<p>ANSWER:</p>
+<p><strong>Q6 (4 pnts) In our modeling script, while our main objective was to estimate evapotranspiration (ET), which specific aspect required the most labor and attention to detail? Reflect on the tasks involved in data preparation, cleaning, and formatting. How did these preliminary steps impact the overall modeling process? </strong></p>
 
 </div>
 </div>

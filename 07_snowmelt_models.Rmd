@@ -87,7 +87,7 @@ In this module, we will simulate snowmelt in a montane watershed in central Colo
 
 
 
-**Question 1: Using this map, what differences can you see between these two sites or what variation do you see in the watershed that may affect snow accumulation and melt? (2 points)?**
+**Q1: Using this map, what differences can you see between these two sites or what variation do you see in the watershed that may affect snow accumulation and melt? (2 points)?**
 
 ANSWER: 
 
@@ -192,7 +192,7 @@ to the ground by analyzing the daily changes in Snow Water Equivalent (SWE) and 
 #   mutate(date = lubridate::ymd(date))
 ```
 
-**Question 2: In plain language, explain each step of the 5 if-else statements above (~5 brief sentences) (3pts).**
+**Q2: In plain language, explain each step of the 5 if-else statements above (~5 brief sentences) (3pts).**
 
 ANSWER:
 
@@ -234,7 +234,7 @@ Let's visualize the timing disparities between precipitation and melt input in r
 #print(max(sntl$pcumul.mm, na.rm = TRUE ))
 ```
 
-**Question 3. What processes could account for the differences between cumulative input, calculated from SWE data, and cumulative precipitation, both measured at the same SNOTEL station? (1 or 2 processes) What could explain the discrepancy if the cumulative input, is found to be less than the cumulative precipitation measured at the same SNOTEL station? (at least 2 possible processes) (4 points) (2-3 sentences)**
+**Q3. What processes could account for the differences between cumulative input, calculated from SWE data, and cumulative precipitation, both measured at the same SNOTEL station? (1 or 2 processes) What could explain the discrepancy if the cumulative input, is found to be less than the cumulative precipitation measured at the same SNOTEL station? (at least 2 possible processes) (4 points) (2-3 sentences)**
 
 ANSWER: 
 
@@ -561,20 +561,20 @@ Since we don't have SWE measurement for Lower Fool Creek, let's see how the simu
 # print(paste('The estimated threshold temperature distinguishing rain from snow in Lower Fool is ', round(param_lfc[1, 2], 2), 'degrees and in Upper Fool Creek is', round(param[1, 2],2), 'degrees'))
 ```
 
-**Question 3: Based on the differences in precipitation and temperature totals between the two sites, are SWE simulation results as you expected? (1 sentence)(2 pts)**
+**Q4: Based on the differences in precipitation and temperature totals between the two sites, are SWE simulation results as you expected? (1 sentence)(2 pts)**
 
 ANSWER: 
 
-**Question 4: How does the estimated threshold temperature distinguishing rain from snow change with elevation? Is the relationship between your parameter estimations as expected? How does this influence your confidence in the model? (2 pts)** 
+**Q5: How does the estimated threshold temperature distinguishing rain from snow change with elevation? Is the relationship between your parameter estimations as expected? How does this influence your confidence in the model? (2 pts)** 
 
 ANSWER
 
 
-**Question 4: Compare the precipitation and snow accumulation patterns between two sites. Discuss at least 3 potential natural and/or anthropogenic mechanisms driving the observed variations in precipitation and snow accumulation. Consider the factors you observed in question 1 (3 points)(2-3 sentences).**
+**Q6: Compare the precipitation and snow accumulation patterns between two sites. Discuss at least 3 potential natural and/or anthropogenic mechanisms driving the observed variations in precipitation and snow accumulation. Consider the factors you observed in question 1 (3 points)(2-3 sentences).**
 
 ANSWER:
 
-**Question 5: Let's say you want to model runoff for the Fool Creek catchment identified above. To do that, you want to estimate the timing and volume of snowmelt for this watershed. Refer to at least 2 model types reviewed in the 06_model_classifications lecture or terms in the lecture above and qualitatively describe a model that you could use to capture the spatial heterogeneity of snow accumulation in this watershed (4 points) (2-4 sentences).**
+**Q7: Let's say you want to model runoff for the Fool Creek catchment identified above. To do that, you want to estimate the timing and volume of snowmelt for this watershed. Refer to at least 2 model types reviewed in the 06_model_classifications lecture or terms in the lecture above and qualitatively describe a model that you could use to capture the spatial heterogeneity of snow accumulation in this watershed (4 points) (2-4 sentences).**
 
 ANSWER:
 
