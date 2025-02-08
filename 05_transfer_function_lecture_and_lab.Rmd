@@ -1,8 +1,12 @@
+# Process-Based Modeling - Probabilistic and Process Simulation
+\* Modules 3.1 and 3.2 are adapted from Fabian Nipggen (REWM.4500.500)\
 
 ## Transfer function rainfall-runoff models 
 
-### Learning Module
+### Learning Module 4
+
 #### Summary
+
 In previous modules, we explored how watershed characteristics influence the flow of input water through or over hillslopes to quickly contribute to stormflow or to be stored for later contribution to baseflow. Therefore, the partitioning of flow into baseflow or stormflow can be determined by the time it spends in the watershed. Furthermore, the residence time of water in various pathways may affect weathering and solute transport within watersheds. To improve our understanding of water movement within a watershed, it can be crucial to incorporate water transit time into hydrological models. This consideration allows for a more realistic representation of how water moves through various storage compartments, such as soil, groundwater, and surface water, accounting for the time it takes for water to traverse these pathways. 
 
 In this module, we will model the temporal aspects of runoff response to input using a transfer function. First, please read: <br/>
@@ -99,9 +103,10 @@ If during your modeling experience, you find yourself wading through a bog of co
 
 https://agupubs.onlinelibrary.wiley.com/doi/10.1029/93WR00877
 
-### Labwork (20 pts)
+### Repo link
+[Download the repo for this lab HERE](https://github.com/tpcovino/04_transfer_functions.git){target="_blank"}
 
-### [Download the repo for this lab HERE](https://github.com/tpcovino/04_transfer_functions.git){target="_blank"}
+### Labwork (20 pts)
 
 In this homework/lab, you will write a simple, lumped rainfall-runoff model. The foundation for this model is the TRANSEP model from Weiler et al., 2003. Since TRANSEP (tracer transfer function hydrograph separation model) contains a tracer module that we don't need, we will only use the loss function (Jakeman and Hornberger) and the gamma transfer function for the water routing.  
 The data for the model is from the Tenderfoot Creek Experimental Forest in central Montana.  

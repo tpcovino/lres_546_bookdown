@@ -1,6 +1,6 @@
 ## Monte Carlo Simulation 
 
-### Learning Module 4
+### Learning Module 5
 #### Background:
 
 Monte Carlo Simulation is a method to estimate the probability of the outcomes of an uncertain event. It is based on a law of probability theory that says if we repeat an experiment many times, the average of the results will get closer to the true probability of those outcomes. 
@@ -53,9 +53,10 @@ For a 12-minute example in RStudio, check this out. If you are still learning th
 knitr::include_url("https://www.youtube.com/embed/inJsu-ygBfM")
 ```
 
-### Labwork (20 pnts)
+### Repo link
+[Download the repo for this lab HERE](https://github.com/tpcovino/05_monte_carlo.git){target="_blank"}
 
-#### [Download the repo for this lab HERE](https://github.com/tpcovino/05_monte_carlo.git){target="_blank"}
+### Labwork (20 pnts)
 
 In this lab/homework, you will use the transfer function model from the previous module for some sensitivity analysis using Monte Carlo simulations. The code is mostly the same as last module with some small adjustments to save the parameters from each Monte Carlo run. As a reminder, in the Monte Carlo analysis, we will run the model x number of times, save the parameters and evaluate the fit after each run. After the completion of the MC runs, we will use the GLUE method to evaluate parameter sensitivity. There are three main objectives for this homework:  
 1) Set up the Monte Carlo analysis\

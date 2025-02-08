@@ -1,7 +1,6 @@
-# Part 3: Bucket and Process-Based Models
-
+# Model Classification and Application
 ## Classifying model structure
-### Learning Module 5A
+### Learning Module 6
 
 Throughout the rest of the course, we will gather data and create models to explore how measurable environmental factors, such as snow melt, land cover, and topography, impact runoff. To discuss these methods, we should review some modeling terminology describing model complexity and type.
 

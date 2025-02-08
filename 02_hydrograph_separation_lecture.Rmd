@@ -1,4 +1,4 @@
-# Part 2: Tabular Models and Time-Series
+# Fundamentals of Hydrological Analysis - Physical Hydrology and Empirical Methods
 ## Hydrograph separation 
 - This module was developed by Ana Bergrstrom and Matt Ross. 
 

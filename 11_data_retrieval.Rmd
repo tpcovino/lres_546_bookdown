@@ -1,10 +1,8 @@
-# Part 4: Spatial Models and GIS Integration
+# Spatial Models and GIS Integration
 ## Gridded and tabular data retrieval
 **15 pnts**
 
-The repo for this module can be found [here](https://github.com/tpcovino/07_gridded_data_retrieval){target="_blank"}
-
-### Learning Module 
+### Learning Module 9 
 #### Objectives
  In this module you will:<br><br>
  -Retrieve flow data using the dataretrieval package<br>
@@ -13,6 +11,7 @@ The repo for this module can be found [here](https://github.com/tpcovino/07_grid
 
 
 #### Background
+This final section moves toward spatially explicit modeling, integrating everything we have learned so far with geospatial data. 
 
 A refresher in GIS concepts:
   This module assumes familiarity with basic Geographic Information System (GIS) such as coordinate systems (latitude and lognitude, UTM). Some terms to recall: 
@@ -41,7 +40,11 @@ When utilizing publicly available datasets, it is important for us as users to:<
   -Cite and acknowledge the contributions of data providers and researchers whose datasets we utilize. This also facilitates transparency and reproducibility in our research.<br><br>
   - Assess the quality and accuracy of geospatial data before using it for decision making purposes. It is important that we consider spatial resolution, temporal resolution and metadata documentation to critically evaluate the reliability of the datasets we use.<br><br> 
   -Promote Open Data Principles: Try to explore and use publicly available datasets that support transparency and collaboration within our scientific and academic communities.<br><br>
-  
+
+### Repo link
+
+The repo for this module can be found [here](https://github.com/tpcovino/07_gridded_data_retrieval){target="_blank"}
+
 ### Labwork (20 pnts)
 
 In this module we will import streamflow (tablular) data, using USGS's DataRetrieval package, then visualize vector data to delineate our area of interest and learn how to find spatial gridded data for the area. 

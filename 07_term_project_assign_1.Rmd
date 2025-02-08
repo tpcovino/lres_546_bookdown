@@ -1,10 +1,10 @@
-# Term Project Assignment 1 - 10 pnts
+## Term Project Assignment 1 - 10 pnts
 
 As part of the Professional Masters’ Program, you are required to develop a professional paper. It is intended to give you an in-depth experience in the design, implementation, and completion of an original project. The paper will also be a way to showcase your research interests and accomplishments to potential employers or admissions committees. (See LRES 575 for more). 
 
 In this assignment, you will develop the main goal and objectives of your term project and explore, evaluate and select data sources. The workflow for this assignment will help you develop your research question and identify the datasets you will use to address that question.
 
-## Brainstorming
+### Brainstorming
 
 **Q1. What is the primary research question for your term project? (1-2 sentences)(1 pt)** <br>
 Think of this as your first approach to developing a research question. It should reflect a clear purpose and be specific enough to guide your initial search for data, but it likely will evolve throughout this assignment. That is okay, even expected. You will be asked for a refined response at the end of the assignment.<br>
@@ -24,7 +24,7 @@ What temporal length and resolution would be ideal to answer this question?<br>
 ANSWER:
 
 
-## Data exploration and selection
+### Data exploration and selection
 
 Now that you have an idea of what kind of data your question requires, the next step is to locate actual datasets that support your inquiry. There are numerous datasets available to public use, including public repositories, government agencies, academic institutions, even data uploaded to repositories like Zendodo and Figshare making data for specific studies discoverable and citable by other researchers. It is up to you to explore a variety of sources and identify datasets that you can retrieve and work with, but here are some suggestions to get you started. Many of these platforms allow R access to their datasets with packages that facilitate downloading, managing, and analyzing the data directly within R. <br>
 
@@ -44,10 +44,10 @@ Fire: [Monitoring Trends in Burn Severity](https://www.mtbs.gov/) <br>
 
 Remotely sensed spatial data: You may have already some experience with Google Earth Engine. This is a fast way to access [an incredible library](https://developers.google.com/earth-engine/datasets/) of resources. If you have used this in other courses but feel rusty, we can help!  Also check out [this e-book](https://www.eefabook.org/go-to-the-book.html). However, if your interest is in a few images, USGS' Earth Explorer [GloVis](https://glovis.usgs.gov/) is also a good resource. 
 
-### Expand your search
+#### Expand your search
 This is not an exhaustive list of possibilities. Consider searching MSU's library databases. For example, the Web of Science database contains organized searchable datasets built by published researchers. Google searches using advanced search operators to include specific file types with your search terms can be helpful (e.g., .csc, .xlsx, .geojson). Engage with AI tools to explore potential datasets or repositories based your specific topic. An active approach to searching and learning will help you discover datasets that will support your research question. <br>
 
-### Adapt your research question
+#### Adapt your research question
 Once you spend a solid hour or two searching databases, you may find that you need to adapt your research question based on data availability. You will likely spend some time refining your initial question to fit the datasets you find and that is encouraged! Then resume the dataset search, and continue refining your question and searching until you can develop an executable methodology. <br>
 
 **PART 3. Explore your data (3 pnts)**
