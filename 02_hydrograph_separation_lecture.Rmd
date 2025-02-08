@@ -2,7 +2,7 @@
 ## Hydrograph separation 
 - This module was developed by Ana Bergrstrom and Matt Ross. 
 
-### Learning Module
+### Learning Module 1
 #### Summary
 
 Streamflow can come from a range of water sources. When it is not raining, streams are fed by the slow drainage of groundwater. When a rainstorm occurs, streamflow increases and water enters the stream more quickly. The rate at which water reaches the stream and the partitioning between groundwater and faster flow pathways is variable across watersheds. It is important to understand how water is partitioned between fast and slow pathways (baseflow and stormflow) and what controls this partitioning in order to better predict susceptibility to flooding and if and how groundwater can sustain streamflow in long periods of drought.

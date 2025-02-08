@@ -1,9 +1,9 @@
 # Part 3: Bucket and Process-Based Models
 
 ## Classifying model structure
-### Learning Module
+### Learning Module 5A
 
-Throughout the rest of the course, we will gather data and create models to explore how environmental factors, such as snowmelt, land cover, and topography, impact runoff. To discuss these methods, we should review some modeling terminology describing model complexity and type.
+Throughout the rest of the course, we will gather data and create models to explore how measurable environmental factors, such as snow melt, land cover, and topography, impact runoff. To discuss these methods, we should review some modeling terminology describing model complexity and type.
 
 Environmental models, including hydrological models, are built around simplifying assumptions of natural systems. The complexity of the model may depend on its application. Effective hydrological models share key traits: they are simple, parsimonious, and robust across various watersheds. In other words, they are easy to understand and streamlined and consistently perform well across different basins or even geographical areas. Therefore, more complex is only sometimes better. 
 
@@ -25,15 +25,17 @@ A **semi-distributed** system is an intermediate approach that combines elements
 knitr::include_graphics("images/lumpd_dist_ws.png")
 ```
 
-In small-scale studies, we can design a model structure that fits the specific situation well. However, when we are dealing with larger areas, model design may be challenging. Our data might differ across regions with variable climate and landscape features. Sometimes, it is best to use a complex model to capture all the different processes happening over a big area. However, it could be better to stick with a simpler model because we might have limited data or the number of calculations is very computationally expensive. It is up to the modeler to determine the simplest model that meets the desired application. 
+In small-scale studies, we can design a model structure that fits the specific situation well. However, when we are dealing with larger areas, model design may be challenging. Our data might differ across regions with variable climate and landscape features. Sometimes, it is best to use a complex model to capture all the different processes happening over a big area. However, it could be better to stick with a simpler model because we might have limited data or the number of calculations is very computationally expensive. It is up to the modeler to determine the simplest model that meets the desired application.
+
+For this determination, it is important to understand the advantages of different modeling approaches. 
 
 #### Modeling Approaches
 
-**Empirical Models** are based on empirical analysis of observed inputs (e.g., rainfall) or outputs (ET, discharge). These simple models may not be transferable to other watersheds. Also, they may not reveal much about the physical processes influencing runoff. Therefore, these types of models may not be valid if the study area experiences land use or climate change. 
+**Empirical Models** are based on empirical analysis of observed inputs (e.g., rainfall) or outputs (ET, discharge). These are most useful if you have extensive historical data so models can capture trends effectively. For example, if your goal is to predict the amount of dissolved organic carbon (DOC) transported out of a certain watershed, an empirical model will likely suffice. However, simple models may not be transferable to other watersheds. Also, they may not reveal much about the physical processes influencing runoff. Therefore, these types of models may not be valid after the study area experiences land use or climate change. 
 
-**Conceptual Models** describe processes with simple mathematical equations. For example, we might use a simple linear equation to interpolate precipitation inputs over a watershed with a high elevation gradient using precipitation measurements from two points (high and low). This represents the basic relationship between precipitation and elevation, but does not capture all features that affect precipitation patterns (e.g. aspect, prevailing winds). The combined impact of these factors is probably negligible compared to the substantial amount of data required to accurately model them.
+**Conceptual Models** describe processes with simple mathematical equations. For example, we might use a simple linear equation to interpolate precipitation inputs over a watershed with a high elevation gradient using precipitation measurements from two points (high and low). This represents the basic relationship between precipitation and elevation, but does not capture all features that affect precipitation patterns (e.g. aspect, prevailing winds). The combined impact of these factors is probably negligible compared to the substantial amount of data required to accurately model them, so a conceptual model is sufficient. These can models can be especially useful when we have limited data, but theoretical knowledge to help 'fill in the blanks'. 
 
-**Physically Based Models ** These models offer deep insights into the processes governing runoff generation by relying on fundamental physical equations like mass conservation. However, they come with drawbacks. Their implementation often demands complex numerical solving methods and a significant volume of input data. Without empirical data to validate these techniques, there is a risk of introducing substantial uncertainty into our models, reducing their reliability and effectiveness.
+**Physically Based Models ** These models offer deep insights into the processes governing runoff generation by relying on fundamental physical equations like mass conservation. However, they come with drawbacks. Their implementation often demands complex numerical solving methods and a significant volume of input data. For example, if we want to understand how DOC transport changes in a watershed after a wildfire, we would want to understand many physical system properties pre- and post-fire like soil infiltration rates, quantification of forest canopy, stream flow data, carbon export, etc.. Without empirical data to validate these techniques, there is a risk of introducing substantial uncertainty into our models, reducing their reliability and effectiveness.
 
 An example of a spatial distributed and physically based watershed model(Huning and Marguilis, 2015):
 ```{r, echo=FALSE, out.width='80%', fig.align='center'}
@@ -62,4 +64,4 @@ While we aim to give some hands on experience across multiple model types, there
 
 Many modelers have observed that the number of parameters required to describe a key behavior in a watershed is often quite low, meaning increasing the number of parameter does not result in a significantly improved model. This idea that simple models are often sufficient fo representing a system have led to the investigation of **parsimonious** model structures (less complex).Consider though, that the model must sufficiently represent processes or it will be too unreliable outside of the range of conditions on which it was calibrated. 
 
-Now that we have reviewed some concepts, let's move forward into a time series simulation with snowmelt models.  
+Now that we have reviewed some concepts, our next step will be to develop a term project question. As you brainstorm and gather data, be sure to consider and use the modeling concepts and terminology we've covered to frame and structure your project design.

@@ -4,7 +4,7 @@
 
 The repo for this module can be found [here](https://github.com/tpcovino/02_return_intervals.git){target="_blank"}
 
-### Learning Module
+### Learning Module 2
 #### Background information
 
 Lecture from colleague Joel Sholtes on precipitation frequency analysis. 

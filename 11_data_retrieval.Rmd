@@ -4,7 +4,7 @@
 
 The repo for this module can be found [here](https://github.com/tpcovino/07_gridded_data_retrieval){target="_blank"}
 
-### Learning Module
+### Learning Module 
 #### Objectives
  In this module you will:<br><br>
  -Retrieve flow data using the dataretrieval package<br>

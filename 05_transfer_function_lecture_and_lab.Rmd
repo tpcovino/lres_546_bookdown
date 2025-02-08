@@ -108,11 +108,11 @@ The data for the model is from the Tenderfoot Creek Experimental Forest in centr
 
 Load packages with a function that checks and installs packages if needed:
 
-```{r}
+```{r, include = FALSE}
 #knitr::opts_chunk$set(echo = FALSE)
 ```
 
-```{r}
+```{r, include = FALSE}
 # 
 # # Write your package testing function
 # pkgTest <- function(x)
@@ -133,7 +133,7 @@ Load packages with a function that checks and installs packages if needed:
 # # patchwork is used for side-by-side plots
 ```
 
-```{r}
+```{r, include = FALSE}
 # # Let's assume that you know you put your data file in the working directory, but cannot recall its name. Let's do some working directory exploration with script:
 # 
 # # Check your working directory:
@@ -161,7 +161,7 @@ Load packages with a function that checks and installs packages if needed:
 Define input year
 We could use every year in the time series, but for starters, we'll use 2006. Use filter() to extract the 2006 water year.
 
-```{r}
+```{r, include = FALSE}
 # PQ <- indata %>%
 #   filter(wtr_yr == 2006) # extract the 2006 water year with filter()
 # 
@@ -186,7 +186,7 @@ ANSWER:
 Define the initial inputs <br><br>
 This chunk defines the initial inputs for measured precip and measured runoff.
 
-```{r}
+```{r, include = FALSE}
 # tau <- 1:nrow(PQ) # simple timestep counter the same length as PQ
 # Pobs <- PQ$RainMelt_mm # observed precipitation from PQ df
 # Qobs <- PQ$Discharge_mm # observed streamflow from PQ df
@@ -195,7 +195,7 @@ This chunk defines the initial inputs for measured precip and measured runoff.
 Parameterization <br><br>
 We will use these parameters. You can change them if you want, but I'd suggest leaving them like this at least until you get the model to work. Even tiny changes can have a huge effect on the simulated runoff.
 
-```{r}
+```{r, include = FALSE}
 # # Loss function parameters
 # b1 <- 0.0018 # volume control parameter (b1 in eq 4a)
 # b2 <- 50 # backwards weighting parameter (b2 in eq 4a) 
@@ -219,7 +219,7 @@ s(t) is the antecedent precipitation index that is calculated by
 exponentially weighting the precipitation backward in time according to the 
 parameter b2 is a 'dial' that places weight on past precipitation events. 
 
-```{r}
+```{r, include = FALSE}
 # # preallocate the p_eff vector
 # p_eff <- vector(mode = "double", length(tau))
 # 
@@ -282,7 +282,7 @@ This short chunk sets up the TF used for the water routing. This part contains o
 
 tau(0) is the mean residence time 
 
-```{r}
+```{r, include = FALSE}
 # #gTF <- tau
 # 
 # # this is the "raw" transfer function. This is eq 13 from Weiler 2003. Use the time step for tau. The Gamma function in R is gamma(). NOTE THAT THIS EQ IN WEILER ET AL IS WRONG! It's exp(-tau / b) and not divided by alpha.
@@ -313,7 +313,7 @@ We will go with option 1). The code for option 2 is shown at the end for referen
 Convolution summarized (recall dollars and cookies): Each loop iteration results in a row of the matrix representing the convolution at a specific time step. each time step of p_eff is an iteration, and for each timestep, it multiplies the effective precipitation at that timestep by the entire transfer function. Then each row is summed and stored in the vector q_all. q_all_loop is an intermediate step in the convolution process and can help visualize how the convolution evolves over time. 
 As an example, if we have precip at time step 1, we are interested in how this contributes to runoff at time steps 1,2,3 etc, all the way to 365 (or the end of our period). so the first row of the matrix q_all_loop  represents the contribution of precipitation at timestep 1 to runoff at each timestep. the second row represents the contribution of precipitation at time step 2 to runoff at each timestep.  Then when we sum up the rows, we get q_all, where each element represents the total runoff at a specific time step. 
 
-```{r}
+```{r, include = FALSE}
 # tic()
 # # preallocate qsim matrix with the correct dimensions. Remember that p_eff and gTF are the same length.
 # q_all_loop <- matrix(0, length(p_eff) * 2, length(p_eff)) # set number of rows and columns
@@ -339,7 +339,7 @@ As an example, if we have precip at time step 1, we are interested in how this c
 
 ANSWER:
 
-```{r}
+```{r, include = FALSE}
 # ## THIS PART SAVES ALL HOURLY Q RESPONSES IN A NEW DF AND PLOTS THEM
 # Qall <- as_tibble(q_all_loop, .name_repair = NULL)
 # Qall <- Qall[ -as.numeric(which(apply(Qall, 2, var) == 0))]
@@ -364,7 +364,7 @@ ANSWER:
 Plots <br><br>
 Plot the observed and simulated runoff. Include a legend and label the y-axis.
 
-```{r}
+```{r, include = FALSE}
 # # make long form
 # PQ_long <- PQ %>%
 #   select(-wtr_yr, -RainMelt_mm) %>%
@@ -383,7 +383,7 @@ ANSWER:
 **7) QUESTION (2 pt): Compare the effective precipitation total with the simulated runoff total and the observed runoff total. What is p_eff and how is it related to q_all? Discuss why there is a (small) mismatch between the sums of p_eff and q_all.**    
 ANSWER:  
 
-```{r}
+```{r, include = FALSE}
 # sum(Pobs) # observed P
 # 
 # sum(p_eff) # effective (modeled) P
@@ -396,7 +396,7 @@ ANSWER:
 THIS IS THE CODE FOR CONVOLUTION METHOD 2  
 This method saves storage requirements since only a vector is generated and not a full matrix that contains all response pulses. The workflow here is to generate a a response vector for the first pulse. This will take up 365 time steps. On the second time step, we generate another response pulse with 364 steps that starts at t=2. We then add that vector to the first one. On the third time step, we generate a response pulse of length 363 that starts at t=3 and then add it to the existing one. And so on and so forth.
 
-```{r}
+```{r, include = FALSE}
 # # METHOD 2, Option 1
 # tic()
 # # preallocate qsim vector
