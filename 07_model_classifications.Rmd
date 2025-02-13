@@ -12,14 +12,13 @@ There are general terms that classify the spatial complexity of hydrological mod
 
 A **lumped** system is one in which the dependent variables of interest are a function of time alone, and the study basin is spatially 'lumped' or assumed to be spatially homogeneous across the basin. So far in this course, we have focused mainly on lumped models. You may remember the figure below from the transfer functions module. It represents the lumped watershed as a bucket with a single input, outlet output, and storage volume for each timestep.
 
-```{r, echo=FALSE, out.width='35%', fig.align='center'}
-knitr::include_graphics("images/linear_diag.png")
-```
+![](images/linear_diag.png)
 
 A **distributed** system is one in which all dependent variables are functions of time and one or more spatial variables. Modeling a distributed system means partitioning our basins into raster cells (grids) and assigning inputs, outputs, and the spatial variables that affect inputs and outputs across these cells. We then calculate the processes at the cell level and route them downstream. These models allow us to represent the spatial complexity of physically based processes. They can simulate or forecast parameters other than streamflow, such as soil moisture, evapotranspiration, and groundwater recharge. 
 
 A **semi-distributed** system is an intermediate approach that combines elements of both lumped and distributed systems. Certain variables may be spatially distributed, while others are treated as lumped. Alternatively, we can divide the watershed into sub-basins and treat each sub-basin as a lumped basin. Outputs from each sub-basin are then linked together and routed downstream. Semi-distribution allows for a more nuanced representation of the basin's characteristics, acknowledging spatial variability where needed while maintaining some simplifications for computation efficiency.  
 
+![](images/lumpd_dist_ws.png)
 ```{r, echo=FALSE, out.width='80%', fig.align='center'}
 knitr::include_graphics("images/lumpd_dist_ws.png")
 ```
