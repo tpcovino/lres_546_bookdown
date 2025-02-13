@@ -26,7 +26,9 @@ ANSWER:
 
 ### Data exploration and selection
 
-Now that you have an idea of what kind of data your question requires, the next step is to locate actual datasets that support your inquiry. There are numerous datasets available to public use, including public repositories, government agencies, academic institutions, even data uploaded to repositories like Zendodo and Figshare making data for specific studies discoverable and citable by other researchers. It is up to you to explore a variety of sources and identify datasets that you can retrieve and work with, but here are some suggestions to get you started. Many of these platforms allow R access to their datasets with packages that facilitate downloading, managing, and analyzing the data directly within R. <br>
+Now that you have an idea of what kind of data your question requires, the next step is to locate actual datasets that support your inquiry. There are numerous datasets available to public use, including public repositories, government agencies, academic institutions, even data uploaded to repositories like Zendodo and Figshare making data for specific studies discoverable and citable by other researchers. It is up to you to explore a variety of sources and identify datasets that you can retrieve and work with, but here are some suggestions to get you started. 
+
+Many of these platforms allow R access to their datasets with packages that facilitate downloading, managing, and analyzing the data directly within R. However if you can not find an appropriate package, see below for a webscraping example. <br>
 
 Climate or weather data:<br>
 [NOAA](https://www.ncei.noaa.gov/cdo-web/),<br> [SNOTEL](https://www.nrcs.usda.gov/resources/data-and-reports/snow-and-water-interactive-map], NASA POWER[https://power.larc.nasa.gov/data-access-viewer/), <br> and [Google's climate engine](https://www.climateengine.org/) are all potential sources of earth data. <br>
@@ -45,14 +47,41 @@ Fire: [Monitoring Trends in Burn Severity](https://www.mtbs.gov/) <br>
 Remotely sensed spatial data: You may have already some experience with Google Earth Engine. This is a fast way to access [an incredible library](https://developers.google.com/earth-engine/datasets/) of resources. If you have used this in other courses but feel rusty, we can help!  Also check out [this e-book](https://www.eefabook.org/go-to-the-book.html). However, if your interest is in a few images, USGS' Earth Explorer [GloVis](https://glovis.usgs.gov/) is also a good resource. 
 
 #### Expand your search
-This is not an exhaustive list of possibilities. Consider searching MSU's library databases. For example, the Web of Science database contains organized searchable datasets built by published researchers. Google searches using advanced search operators to include specific file types with your search terms can be helpful (e.g., .csc, .xlsx, .geojson). Engage with AI tools to explore potential datasets or repositories based your specific topic. An active approach to searching and learning will help you discover datasets that will support your research question. <br>
+This is not an exhaustive list of possibilities. Consider searching MSU's library databases. For example, the Web of Science database contains organized searchable datasets built by published researchers. Google searches using advanced search operators to include specific file types with your search terms can be helpful (e.g., .csc, .xlsx, .geojson). Engage with AI tools to explore potential datasets or repositories based your specific topic. An active approach to searching and learning will help you discover datasets that will support your research question. <br> You can download and import data if the dataset is small, or for large datasets, you might try webscraping. 
+
+Webscraping in R is a method of extracting data from web pages when the data isn't available through an API or a direct download. There are many ways to do this, but this video will specifically help you locate NOAA weather data and show you how to estimate the distance of the available weather station from your area of interest using latitude and longitude [noaa webscraping example](https://www.youtube.com/watch?v=V5Df6vw4-e8). Even if your dataset isn't temperature related, you may still use this structure to extract the data you need. 
+
+Pat Schloss has a lot more videos on data science tools in R that may be of interest to you as well.
+
+Here is a condensed version of the linked video script up until ~18 min. You'll want to watch the video to understand how station to AOI distance is calculated. Once you find a site that works for you, you'll want to continue your own script where he starts working with glue().
+
+```{r}
+# Here we are sending a request to a webpage to retrievev its html content.
+inventory_url <- 'https://www.ncei.noaa.gov/pub/data/ghcn/daily/ghcnd-inventory.txt'
+
+inventory <- read_table(inventory_url, col_names = c("station", "lat", "lon", "variable", "start", "end"))
+
+# we'll parse the data according to our desired location. Here we need to convert lat and lon of the Fool Creek watershed to radians so we can calculate distances between two latitude and longitudes so we can be sure we are selecting a site near our watershed.
+
+my_lat <- 39.885 * 2 * pi / 360
+my_lon <- -105.871* 2 * pi / 360
+
+
+inventory %>%
+  mutate(lat_r = lat* 2 * pi / 360,
+         lon_r = lon* 2 * pi / 360,
+         d = 1.609344 * 3963 * acos((sin(lat_r) * sin(my_lat)) + cos(lat_r) * cos(my_lat) * cos(my_lon-lon_r))) %>% # calculate distance bewteen our site and station in miles
+  filter(start >= 2018 & end  > 2022) %>% # look for data after 2018
+  filter(variable %in% c("TMAX", "TMIN")) %>%
+  arrange(d) #find the station closest to us
+```
 
 #### Adapt your research question
 Once you spend a solid hour or two searching databases, you may find that you need to adapt your research question based on data availability. You will likely spend some time refining your initial question to fit the datasets you find and that is encouraged! Then resume the dataset search, and continue refining your question and searching until you can develop an executable methodology. <br>
 
 **PART 3. Explore your data (3 pnts)**
 
-You are encouraged to explore many packages and write many more code chunks for your personal use. However, for the assignment submission, retrieve at least one dataset relevant to your question using an R package like dataRetrieval.
+You are encouraged to explore many packages and write many more code chunks for your personal use. However, for the assignment submission, retrieve at least one dataset relevant to your question using an R package like dataRetrieval or by webscraping in R.
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -65,7 +94,7 @@ Install needed packages
 #library()
 ```
 
-Explore the available data using vignettes or Cran documentation for your specific dataset and package like [dataRetrieval's documentation](https://cran.r-project.org/web/packages/dataRetrieval/vignettes/dataRetrieval.html). Create a dataframe containing 4-6 columns and print the head of the dataframe.
+Explore the available data using vignettes or Cran documentation for your specific dataset and package like [dataRetrieval's documentation](https://cran.r-project.org/web/packages/dataRetrieval/vignettes/dataRetrieval.html). Create a dataframe containing 3-6 columns and print the head of the dataframe.
 
 ```{r}
 #head(dfname)
