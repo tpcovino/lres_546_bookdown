@@ -53,6 +53,70 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -193,8 +257,6 @@
 <p><img src="images/linear_diag.png" /></p>
 <p>A <strong>distributed</strong> system is one in which all dependent variables are functions of time and one or more spatial variables. Modeling a distributed system means partitioning our basins into raster cells (grids) and assigning inputs, outputs, and the spatial variables that affect inputs and outputs across these cells. We then calculate the processes at the cell level and route them downstream. These models allow us to represent the spatial complexity of physically based processes. They can simulate or forecast parameters other than streamflow, such as soil moisture, evapotranspiration, and groundwater recharge.</p>
 <p>A <strong>semi-distributed</strong> system is an intermediate approach that combines elements of both lumped and distributed systems. Certain variables may be spatially distributed, while others are treated as lumped. Alternatively, we can divide the watershed into sub-basins and treat each sub-basin as a lumped basin. Outputs from each sub-basin are then linked together and routed downstream. Semi-distribution allows for a more nuanced representation of the basin’s characteristics, acknowledging spatial variability where needed while maintaining some simplifications for computation efficiency.</p>
-<p><img src="images/lumpd_dist_ws.png" />
-<img src="images/lumpd_dist_ws.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>In small-scale studies, we can design a model structure that fits the specific situation well. However, when we are dealing with larger areas, model design may be challenging. Our data might differ across regions with variable climate and landscape features. Sometimes, it is best to use a complex model to capture all the different processes happening over a big area. However, it could be better to stick with a simpler model because we might have limited data or the number of calculations is very computationally expensive. It is up to the modeler to determine the simplest model that meets the desired application.</p>
 <p>For this determination, it is important to understand the advantages of different modeling approaches.</p>
 </div>
@@ -203,8 +265,7 @@
 <p><strong>Empirical Models</strong> are based on empirical analysis of observed inputs (e.g., rainfall) or outputs (ET, discharge). These are most useful if you have extensive historical data so models can capture trends effectively. For example, if your goal is to predict the amount of dissolved organic carbon (DOC) transported out of a certain watershed, an empirical model will likely suffice. However, simple models may not be transferable to other watersheds. Also, they may not reveal much about the physical processes influencing runoff. Therefore, these types of models may not be valid after the study area experiences land use or climate change.</p>
 <p><strong>Conceptual Models</strong> describe processes with simple mathematical equations. For example, we might use a simple linear equation to interpolate precipitation inputs over a watershed with a high elevation gradient using precipitation measurements from two points (high and low). This represents the basic relationship between precipitation and elevation, but does not capture all features that affect precipitation patterns (e.g. aspect, prevailing winds). The combined impact of these factors is probably negligible compared to the substantial amount of data required to accurately model them, so a conceptual model is sufficient. These can models can be especially useful when we have limited data, but theoretical knowledge to help ‘fill in the blanks’.</p>
 <p><strong>Physically Based Models </strong> These models offer deep insights into the processes governing runoff generation by relying on fundamental physical equations like mass conservation. However, they come with drawbacks. Their implementation often demands complex numerical solving methods and a significant volume of input data. For example, if we want to understand how DOC transport changes in a watershed after a wildfire, we would want to understand many physical system properties pre- and post-fire like soil infiltration rates, quantification of forest canopy, stream flow data, carbon export, etc.. Without empirical data to validate these techniques, there is a risk of introducing substantial uncertainty into our models, reducing their reliability and effectiveness.</p>
-<p>An example of a spatial distributed and physically based watershed model from <a href="https://www.sciencedirect.com/science/article/abs/pii/S1364815215000572">Huning and Marguilis, 2015</a>:
-<img src="images/distrib_physical_model.jpg" width="80%" style="display: block; margin: auto;" /></p>
+<p>An example of a spatial distributed and physically based watershed model from <a href="https://www.sciencedirect.com/science/article/abs/pii/S1364815215000572">Huning and Marguilis, 2015</a>:</p>
 <p>When modeling watersheds, we often use a mix of empirical, conceptual, and physically based models. The choice of model type depends on factors like the data we have, the time or computing resources we can allocate, and how we plan to use the model.</p>
 <p>These categorizations provide a philosophical foundation of how we understand and simulate systems. However we can also consider classifications that focus on the quantitative tools and techniques we use to implement these approaches. Consider that we have already applied each of these tools:</p>
 <p><strong>Probability Models </strong> Many environmental processes can be thought of or modeled as stochastic, meaning a variable may take on any value within a specified range or set of values with a certain probability. Probability can be thought of in terms of the relative frequency of an event. We utilized probability models in the return intervals module where we observed precipitation data, and used that data to develop probability distributions to estimate likely outcomes for runoff. Probability models allow us to quantify risk and variability in systems.</p>
@@ -215,9 +276,8 @@
 <h4><span class="header-section-number">4.1.1.3</span> A priori model selection:<a href="model-classification-and-application.html#a-priori-model-selection" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>By understanding the different frameworks of environmental modeling, we can choose the right tools for the right context, depending on our data, goals and resources. In reality, the final model selection is a fluid process requiring multiple iterations at each step.
 In Keith Beven’s Rainfall-Runoff Modelling Primer, they illustrate the process as:</p>
-<p><img src="images/Beven_modeling_workflow.png" width="80%" style="display: block; margin: auto;" /></p>
 <p>While we aim to give some hands on experience across multiple model types, there is a wide range of possible models! Why would the most complex model, or one that represents the most elements in a system be best? Why even consider a simple bucket model?</p>
-<p>Many modelers have observed that the number of parameters required to describe a key behavior in a watershed is often quite low, meaning increasing the number of parameter does not result in a significantly improved model. This idea that simple models are often sufficient fo representing a system have led to the investigation of <strong>parsimonious</strong> model structures (less complex).Consider though, that the model must sufficiently represent processes or it will be too unreliable outside of the range of conditions on which it was calibrated.</p>
+<p>Many modelers have observed that the number of parameters required to describe a key behavior in a watershed is often quite low, meaning increasing the number of parameters does not result in a significantly improved model. This idea that simple models are often sufficient for representing a system have led to the investigation of <strong>parsimonious</strong> model structures (less complex). Consider though, that the model must sufficiently represent processes or it will be too unreliable outside of the range of conditions on which it was calibrated.</p>
 <p>Now that we have reviewed some concepts, our next step will be to develop a term project question. As you brainstorm and gather data, be sure to consider and use the modeling concepts and terminology we’ve covered to frame and structure your project design.</p>
 
 </div>
@@ -225,16 +285,122 @@ In Keith Beven’s Rainfall-Runoff Modelling Primer, they illustrate the process
 </div>
 <div id="term-project-assignment-1---10-pnts" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Term Project Assignment 1 - 10 pnts<a href="model-classification-and-application.html#term-project-assignment-1---10-pnts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As part of the Professional Masters’ Program, you are required to develop a professional paper. It is intended to give you an in-depth experience in the design, implementation, and completion of an original project. The paper will also be a way to showcase your research interests and accomplishments to potential employers or admissions committees. (See LRES 575 for more).</p>
+<p>In this assignment, you will develop the main goal and objectives of your term project and explore, evaluate and select data sources. The workflow for this assignment will help you develop your research question and identify the datasets you will use to address that question.</p>
 <div id="brainstorming" class="section level3 hasAnchor" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> Brainstorming<a href="model-classification-and-application.html#brainstorming" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Q1. What is the primary research question for your term project? (1-2 sentences)(1 pt)</strong> <br>
+Think of this as your first approach to developing a research question. It should reflect a clear purpose and be specific enough to guide your initial search for data, but it likely will evolve throughout this assignment. That is okay, even expected. You will be asked for a refined response at the end of the assignment.<br>
+Consider: <br>
+- The problem or issue you want to address <br>
+- What specific phenomenon within that issue are you interested in understanding <br>
+- What measurable or observable outcomes do you want to analyze. <br>
+For example, instead of ‘how does climate change affect forests?’, you might consider ‘How has seasonal precipitation variability impacted the timing of peak NDVI in the Pacific Northwest from 2000 to 2020.’ Note that this question is specific enough to guide your search for the necessary data, such as precipitation records and NDVI time series. <br>
+ANSWER:</p>
+<p><strong>Q2. What are 2-3 types of data your research question requires? Address each sub-question (2 pts)</strong>
+Be as specific as you can, what types of variables or indicators are you looking for? <br>
+What format should the data be in (e.g., spatial datasets, time-series data, species counts)? <br>
+What might be the origin of this data? (e.g., satellite imagery, weather station records, survey data?) <br>
+What temporal length and resolution would be ideal to answer this question?<br>
+ANSWER:</p>
 </div>
 <div id="data-exploration-and-selection" class="section level3 hasAnchor" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> Data exploration and selection<a href="model-classification-and-application.html#data-exploration-and-selection" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now that you have an idea of what kind of data your question requires, the next step is to locate actual datasets that support your inquiry. There are numerous datasets available to public use, including public repositories, government agencies, academic institutions, even data uploaded to repositories like Zendodo and Figshare making data for specific studies discoverable and citable by other researchers. It is up to you to explore a variety of sources and identify datasets that you can retrieve and work with, but here are some suggestions to get you started.</p>
+<p>Many of these platforms allow R access to their datasets with packages that facilitate downloading, managing, and analyzing the data directly within R. However if you can not find an appropriate package, see below for a webscraping example. <br></p>
+<p>Climate or weather data:<br>
+<a href="https://www.ncei.noaa.gov/cdo-web/">NOAA</a>,<br> <a href="https://www.nrcs.usda.gov/resources/data-and-reports/snow-and-water-interactive-map%5D,%20NASA%20POWER%5Bhttps://power.larc.nasa.gov/data-access-viewer/">SNOTEL</a>, <br> and <a href="https://www.climateengine.org/">Google’s climate engine</a> are all potential sources of earth data. <br></p>
+<p>Hydrological data: <a href="https://waterdata.usgs.gov/nwis/rt">USGS</a> <br></p>
+<p>Soil data: <a href="https://websoilsurvey.nrcs.usda.gov/app/">Web Soil Survey</a>, try R package soilDB <br></p>
+<p>Water quality and air pollution: <a href="https://enviro.epa.gov/">EPA Envirofacts</a><br></p>
+<p>Global biodiversity: <a href="https://www.gbif.org">Global Biodiversity Information Facility</a> with the R processing package rgbif <br>
+<a href="https://ebird.org">eBird</a> and R package auk <br></p>
+<p>Fire: <a href="https://www.mtbs.gov/">Monitoring Trends in Burn Severity</a> <br></p>
+<p>Remotely sensed spatial data: You may have already some experience with Google Earth Engine. This is a fast way to access <a href="https://developers.google.com/earth-engine/datasets/">an incredible library</a> of resources. If you have used this in other courses but feel rusty, we can help! Also check out <a href="https://www.eefabook.org/go-to-the-book.html">this e-book</a>. However, if your interest is in a few images, USGS’ Earth Explorer <a href="https://glovis.usgs.gov/">GloVis</a> is also a good resource.</p>
 <div id="expand-your-search" class="section level4 hasAnchor" number="4.2.2.1">
 <h4><span class="header-section-number">4.2.2.1</span> Expand your search<a href="model-classification-and-application.html#expand-your-search" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This is not an exhaustive list of possibilities. Consider searching MSU’s library databases. For example, the Web of Science database contains organized searchable datasets built by published researchers. Google searches using advanced search operators to include specific file types with your search terms can be helpful (e.g., .csc, .xlsx, .geojson). Engage with AI tools to explore potential datasets or repositories based your specific topic. An active approach to searching and learning will help you discover datasets that will support your research question. <br> You can download and import data if the dataset is small, or for large datasets, you might try webscraping.</p>
+<p>Webscraping in R is a method of extracting data from web pages when the data isn’t available through an API or a direct download. There are many ways to do this, but this video will specifically help you locate NOAA weather data and show you how to estimate the distance of the available weather station from your area of interest using latitude and longitude <a href="https://www.youtube.com/watch?v=V5Df6vw4-e8">noaa webscraping example</a>. Even if your dataset isn’t temperature related, you may still use this structure to extract the data you need.</p>
+<p>Pat Schloss has a lot more videos on data science tools in R that may be of interest to you as well.</p>
+<p>Here is a condensed version of the linked video script up until ~18 min. You’ll want to watch the video to understand how station to AOI distance is calculated. Once you find a site that works for you, you’ll want to continue your own script where he starts working with glue().</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="model-classification-and-application.html#cb4-1" tabindex="-1"></a><span class="co"># Here we are sending a request to a webpage to retrievev its html content.</span></span>
+<span id="cb4-2"><a href="model-classification-and-application.html#cb4-2" tabindex="-1"></a>inventory_url <span class="ot">&lt;-</span> <span class="st">&#39;https://www.ncei.noaa.gov/pub/data/ghcn/daily/ghcnd-inventory.txt&#39;</span></span>
+<span id="cb4-3"><a href="model-classification-and-application.html#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="model-classification-and-application.html#cb4-4" tabindex="-1"></a>inventory <span class="ot">&lt;-</span> <span class="fu">read_table</span>(inventory_url, <span class="at">col_names =</span> <span class="fu">c</span>(<span class="st">&quot;station&quot;</span>, <span class="st">&quot;lat&quot;</span>, <span class="st">&quot;lon&quot;</span>, <span class="st">&quot;variable&quot;</span>, <span class="st">&quot;start&quot;</span>, <span class="st">&quot;end&quot;</span>))</span>
+<span id="cb4-5"><a href="model-classification-and-application.html#cb4-5" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="model-classification-and-application.html#cb4-6" tabindex="-1"></a><span class="co"># we&#39;ll parse the data according to our desired location. Here we need to convert lat and lon of the Fool Creek watershed to radians so we can calculate distances between two latitude and longitudes so we can be sure we are selecting a site near our watershed.</span></span>
+<span id="cb4-7"><a href="model-classification-and-application.html#cb4-7" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="model-classification-and-application.html#cb4-8" tabindex="-1"></a>my_lat <span class="ot">&lt;-</span> <span class="fl">39.885</span> <span class="sc">*</span> <span class="dv">2</span> <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">360</span></span>
+<span id="cb4-9"><a href="model-classification-and-application.html#cb4-9" tabindex="-1"></a>my_lon <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">105.871</span><span class="sc">*</span> <span class="dv">2</span> <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">360</span></span>
+<span id="cb4-10"><a href="model-classification-and-application.html#cb4-10" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="model-classification-and-application.html#cb4-11" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="model-classification-and-application.html#cb4-12" tabindex="-1"></a>inventory <span class="sc">%&gt;%</span></span>
+<span id="cb4-13"><a href="model-classification-and-application.html#cb4-13" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lat_r =</span> lat<span class="sc">*</span> <span class="dv">2</span> <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">360</span>,</span>
+<span id="cb4-14"><a href="model-classification-and-application.html#cb4-14" tabindex="-1"></a>         <span class="at">lon_r =</span> lon<span class="sc">*</span> <span class="dv">2</span> <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">360</span>,</span>
+<span id="cb4-15"><a href="model-classification-and-application.html#cb4-15" tabindex="-1"></a>         <span class="at">d =</span> <span class="fl">1.609344</span> <span class="sc">*</span> <span class="dv">3963</span> <span class="sc">*</span> <span class="fu">acos</span>((<span class="fu">sin</span>(lat_r) <span class="sc">*</span> <span class="fu">sin</span>(my_lat)) <span class="sc">+</span> <span class="fu">cos</span>(lat_r) <span class="sc">*</span> <span class="fu">cos</span>(my_lat) <span class="sc">*</span> <span class="fu">cos</span>(my_lon<span class="sc">-</span>lon_r))) <span class="sc">%&gt;%</span> <span class="co"># calculate distance bewteen our site and station in miles</span></span>
+<span id="cb4-16"><a href="model-classification-and-application.html#cb4-16" tabindex="-1"></a>  <span class="fu">filter</span>(start <span class="sc">&gt;=</span> <span class="dv">2018</span> <span class="sc">&amp;</span> end  <span class="sc">&gt;</span> <span class="dv">2022</span>) <span class="sc">%&gt;%</span> <span class="co"># look for data after 2018</span></span>
+<span id="cb4-17"><a href="model-classification-and-application.html#cb4-17" tabindex="-1"></a>  <span class="fu">filter</span>(variable <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;TMAX&quot;</span>, <span class="st">&quot;TMIN&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-18"><a href="model-classification-and-application.html#cb4-18" tabindex="-1"></a>  <span class="fu">arrange</span>(d) <span class="co">#find the station closest to us</span></span></code></pre></div>
 </div>
 <div id="adapt-your-research-question" class="section level4 hasAnchor" number="4.2.2.2">
 <h4><span class="header-section-number">4.2.2.2</span> Adapt your research question<a href="model-classification-and-application.html#adapt-your-research-question" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Once you spend a solid hour or two searching databases, you may find that you need to adapt your research question based on data availability. You will likely spend some time refining your initial question to fit the datasets you find and that is encouraged! Then resume the dataset search, and continue refining your question and searching until you can develop an executable methodology. <br></p>
+<p><strong>PART 3. Explore your data (3 pnts)</strong></p>
+<p>You are encouraged to explore many packages and write many more code chunks for your personal use. However, for the assignment submission, retrieve at least one dataset relevant to your question using an R package like dataRetrieval or by webscraping in R.</p>
+<p>Install needed packages</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="model-classification-and-application.html#cb5-1" tabindex="-1"></a><span class="co">#install.packages(&#39;&#39;)</span></span>
+<span id="cb5-2"><a href="model-classification-and-application.html#cb5-2" tabindex="-1"></a><span class="co">#library()</span></span></code></pre></div>
+<p>Explore the available data using vignettes or Cran documentation for your specific dataset and package like <a href="https://cran.r-project.org/web/packages/dataRetrieval/vignettes/dataRetrieval.html">dataRetrieval’s documentation</a>. Create a dataframe containing 3-6 columns and print the head of the dataframe.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="model-classification-and-application.html#cb6-1" tabindex="-1"></a><span class="co">#head(dfname)</span></span></code></pre></div>
+<p><strong>Write a brief summary (3-4 sentences) of what your dataframe describes.</strong></p>
+<p>Generate plots:
+Create at least one plot that summarizes the data and describe it’s use to you. Are there gaps in the data? Does the data cover the time or space you are interested in? Are there significant outliers that need consideration?</p>
+<p>Generate a histogram or density plot of at least one variable in your dataset. The script here will help start a density plot showing multiple variables. You may adapt or change this as needed.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="model-classification-and-application.html#cb7-1" tabindex="-1"></a><span class="co">#plottable_vars &lt;- dfname %&gt;%</span></span>
+<span id="cb7-2"><a href="model-classification-and-application.html#cb7-2" tabindex="-1"></a><span class="co">#  dplyr::select(variable1, variable2,...)</span></span>
+<span id="cb7-3"><a href="model-classification-and-application.html#cb7-3" tabindex="-1"></a>                </span>
+<span id="cb7-4"><a href="model-classification-and-application.html#cb7-4" tabindex="-1"></a><span class="co">#long &lt;- plottable_vars %&gt;%</span></span>
+<span id="cb7-5"><a href="model-classification-and-application.html#cb7-5" tabindex="-1"></a><span class="co">#  pivot_longer(cols = everything(), names_to = &quot;Variable&quot;, values_to = &quot;Value&quot;)</span></span>
+<span id="cb7-6"><a href="model-classification-and-application.html#cb7-6" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="model-classification-and-application.html#cb7-7" tabindex="-1"></a><span class="co"># Plot density plots for each variable</span></span>
+<span id="cb7-8"><a href="model-classification-and-application.html#cb7-8" tabindex="-1"></a><span class="co">#ggplot(long, aes(x = Value, fill = Variable)) +</span></span>
+<span id="cb7-9"><a href="model-classification-and-application.html#cb7-9" tabindex="-1"></a><span class="co">#  geom_density(alpha = 0.5) +  # Add transparency for overlapping densities</span></span>
+<span id="cb7-10"><a href="model-classification-and-application.html#cb7-10" tabindex="-1"></a><span class="co"># facet_wrap(~ Variable, scales = &quot;free&quot;, ncol = 2) +  # Create separate panels per variable</span></span>
+<span id="cb7-11"><a href="model-classification-and-application.html#cb7-11" tabindex="-1"></a><span class="co">#  theme_minimal() +</span></span>
+<span id="cb7-12"><a href="model-classification-and-application.html#cb7-12" tabindex="-1"></a><span class="co">#  labs(title = &quot;Density Plots for Variables&quot;,</span></span>
+<span id="cb7-13"><a href="model-classification-and-application.html#cb7-13" tabindex="-1"></a> <span class="co">#      x = &quot;Value&quot;, y = &quot;Density&quot;)</span></span></code></pre></div>
+<p><strong>What does the above plot tell you about the distribution of your data? Is it as expected? Why do we need to consider the distribution of data when deciding on analysis methods?</strong></p>
+<p><strong>Q4. Putting it all together (3 pts)</strong>
+Create a table in R and export it as a .csv file to submit with this assignment .rmd.</p>
+<p>In this table, include all datasets (at least two; one explanatory variable and one response variable though you can have more of either) that you will use for your term project. The script below specifies all of the sections required in this table, though you will need to change names and information accordingly in c().</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="model-classification-and-application.html#cb8-1" tabindex="-1"></a><span class="co"># Load necessary library</span></span>
+<span id="cb8-2"><a href="model-classification-and-application.html#cb8-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb8-3"><a href="model-classification-and-application.html#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="model-classification-and-application.html#cb8-4" tabindex="-1"></a><span class="co"># Create a data frame</span></span>
+<span id="cb8-5"><a href="model-classification-and-application.html#cb8-5" tabindex="-1"></a>data_table <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb8-6"><a href="model-classification-and-application.html#cb8-6" tabindex="-1"></a>  <span class="at">Dataset_Name =</span> <span class="fu">c</span>(<span class="st">&quot;Dataset1&quot;</span>, <span class="st">&#39;Dataset2&#39;</span>),</span>
+<span id="cb8-7"><a href="model-classification-and-application.html#cb8-7" tabindex="-1"></a>  <span class="at">Data_Source =</span> <span class="fu">c</span>(<span class="st">&#39;NOAA&#39;</span>, <span class="st">&#39;NRCS&#39;</span>), <span class="co">#Agency or institution name</span></span>
+<span id="cb8-8"><a href="model-classification-and-application.html#cb8-8" tabindex="-1"></a>  <span class="at">Data_Type =</span> <span class="fu">c</span>(<span class="st">&quot;Climate&quot;</span>, <span class="st">&quot;Hydrology&quot;</span>), <span class="co"># what kind of data is it?</span></span>
+<span id="cb8-9"><a href="model-classification-and-application.html#cb8-9" tabindex="-1"></a>  <span class="at">Source_Link =</span> <span class="fu">c</span>(<span class="st">&quot;https://www.link1/&quot;</span>, </span>
+<span id="cb8-10"><a href="model-classification-and-application.html#cb8-10" tabindex="-1"></a>                  <span class="st">&quot;https://link2/&quot;</span>), <span class="co"># We will used these to access the sources</span></span>
+<span id="cb8-11"><a href="model-classification-and-application.html#cb8-11" tabindex="-1"></a>  <span class="at">Key_variables =</span> <span class="fu">c</span>(<span class="st">&#39;precipitation&#39;</span>, <span class="st">&#39;soil_conductivity&#39;</span>), </span>
+<span id="cb8-12"><a href="model-classification-and-application.html#cb8-12" tabindex="-1"></a>  <span class="at">Temporal_range =</span> <span class="fu">c</span>(<span class="st">&#39;2020-2021&#39;</span>, <span class="st">&#39;1979-today&#39;</span>),</span>
+<span id="cb8-13"><a href="model-classification-and-application.html#cb8-13" tabindex="-1"></a>  <span class="at">Spatial_Coverage =</span> <span class="fu">c</span>(<span class="st">&#39;Montana&#39;</span>, <span class="st">&#39;Juneau_AK&#39;</span>),</span>
+<span id="cb8-14"><a href="model-classification-and-application.html#cb8-14" tabindex="-1"></a>  <span class="at">Data_Quality =</span> <span class="fu">c</span>(<span class="st">&quot;High&quot;</span>, <span class="st">&quot;Moderate&quot;</span>), <span class="co"># An example of high quality might be a dataset that has already been cleaned by an agency is not missing data in the period or space of interest. </span></span>
+<span id="cb8-15"><a href="model-classification-and-application.html#cb8-15" tabindex="-1"></a>  <span class="at">Data_Quality_notes =</span> <span class="fu">c</span>(<span class="st">&#39;QCd with no missing data&#39;</span>, <span class="st">&#39;some unexpected values&#39;</span>),</span>
+<span id="cb8-16"><a href="model-classification-and-application.html#cb8-16" tabindex="-1"></a>  <span class="at">Feasibility =</span> <span class="fu">c</span>(<span class="st">&quot;High&quot;</span>, <span class="st">&quot;Medium&quot;</span>), <span class="co"># How useable is this to you? Do you need help figuring out how to download it? Is there an R package that you need to learn to access the data?</span></span>
+<span id="cb8-17"><a href="model-classification-and-application.html#cb8-17" tabindex="-1"></a>  <span class="at">Feasibility_notes =</span> <span class="fu">c</span>(<span class="st">&#39;note1&#39;</span>, <span class="st">&#39;note2&#39;</span>),</span>
+<span id="cb8-18"><a href="model-classification-and-application.html#cb8-18" tabindex="-1"></a>  <span class="at">variable_type =</span> <span class="fu">c</span>(<span class="st">&#39;explanatory&#39;</span>, <span class="st">&#39;response&#39;</span>)</span>
+<span id="cb8-19"><a href="model-classification-and-application.html#cb8-19" tabindex="-1"></a>)</span>
+<span id="cb8-20"><a href="model-classification-and-application.html#cb8-20" tabindex="-1"></a></span>
+<span id="cb8-21"><a href="model-classification-and-application.html#cb8-21" tabindex="-1"></a><span class="co"># Display the table</span></span>
+<span id="cb8-22"><a href="model-classification-and-application.html#cb8-22" tabindex="-1"></a><span class="fu">print</span>(data_table)</span>
+<span id="cb8-23"><a href="model-classification-and-application.html#cb8-23" tabindex="-1"></a></span>
+<span id="cb8-24"><a href="model-classification-and-application.html#cb8-24" tabindex="-1"></a><span class="co"># Export the data table as a .csv to a file path of your choice:</span></span>
+<span id="cb8-25"><a href="model-classification-and-application.html#cb8-25" tabindex="-1"></a><span class="co">#exportpath &lt;- file.path(getwd(), somefolder, term_assign_table.csv) #replace somefolde with an actual folder name that exists in your local environment</span></span>
+<span id="cb8-26"><a href="model-classification-and-application.html#cb8-26" tabindex="-1"></a><span class="co">#write.csv(data_able, exportpath, row.names=FALSE)</span></span></code></pre></div>
+<p>Once this is exported, you can format if desired for readibility and submit the .csv with a completed .rmd.</p>
+<p><strong>Q5. What is your updated research question? How, specifically, will the data sources listed above help you to answer that question? (1 pt)</strong></p>
 
 </div>
 </div>
@@ -300,6 +466,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

@@ -76,8 +76,8 @@ When importing packages and setting parameters, think about how the local workin
 ```
 
 #### Selecting a watershed: 
-Here, we are using USGS' dataRetrieval package to search and filter hydrologic datasets. There are many ways data can be searched; more can be found in this [dataRetrieval vingette](https://cran.r-project.org/web/packages/dataRetrieval/vignettes/dataRetrieval.html). In this example, we will fetch USGS site numbers for Colorado watersheds with streamflow (discharge) data for a specified time period. 
 
+Here, we are using USGS' dataRetrieval package to search and filter hydrologic datasets. There are many ways data can be searched; more can be found in this [dataRetrieval vingette](https://cran.r-project.org/web/packages/dataRetrieval/vignettes/dataRetrieval.html). In this example, we will fetch USGS site numbers for Colorado watersheds with streamflow (discharge) data for a specified time period. 
 
 ```{r, include=FALSE, warning=FALSE}
 # Start by defining and storing your search parameters as variables at the beginning of the script. This practice enables you and other users to easily modify the search parameters from a single location within the script.
@@ -369,7 +369,7 @@ You are welcome to save this to your own GEE files and try changing the area of 
 
 Colorado State University also has a [great tutorial here](https://ecology.colostate.edu/google-earth-engine/) that will start you from scratch. 
 
-Note that JavaScript is the default language for the code editor interface in your web browser. If you are familiar with Python, GEE provides a Python API that can allow you to use Python syntax. If neither of these languages are familiar, don't give up yet! You can still use this tool with your R coding background and trial and error. We recommend finding other scripts that suit your need (there are a lot of shared resources online) and adapting them to your area of interest. Once you understand coding concepts, like those in R, other languages can be picked up easily. You will find that you are learning JavaScript before you realize it. 
+Note that JavaScript is the default language for the code editor interface in your web browser. If you are familiar with Python, GEE provides a Python API that can allow you to use Python syntax. If neither of these languages are familiar, don't give up yet! You can still use this tool with your R coding background and trial and error. We recommend finding other scripts that suit your need (there are a lot of shared resources online as well as in our data collection assignment) and adapting them to your area of interest. Once you understand coding concepts, like those in R, other languages can be picked up easily. You will find that you are learning JavaScript before you realize it. 
 
 
 

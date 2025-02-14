@@ -387,7 +387,7 @@ This will allow you to view changes in vegetation indices over a specified time 
 <p>We have provided a <a href="https://code.earthengine.google.com/332cc9055781b21d8506620f0a4cb582">basic script for retrieving and viewing NDVI data</a>. This is a code snapshot, so you can manually copy the code from the snapshot and paste it into you own Google Earth Engine Code editor.
 You are welcome to save this to your own GEE files and try changing the area of interest, vegetation indices, time periods or exploring other data.</p>
 <p>Colorado State University also has a <a href="https://ecology.colostate.edu/google-earth-engine/">great tutorial here</a> that will start you from scratch.</p>
-<p>Note that JavaScript is the default language for the code editor interface in your web browser. If you are familiar with Python, GEE provides a Python API that can allow you to use Python syntax. If neither of these languages are familiar, don’t give up yet! You can still use this tool with your R coding background and trial and error. We recommend finding other scripts that suit your need (there are a lot of shared resources online) and adapting them to your area of interest. Once you understand coding concepts, like those in R, other languages can be picked up easily. You will find that you are learning JavaScript before you realize it.</p>
+<p>Note that JavaScript is the default language for the code editor interface in your web browser. If you are familiar with Python, GEE provides a Python API that can allow you to use Python syntax. If neither of these languages are familiar, don’t give up yet! You can still use this tool with your R coding background and trial and error. We recommend finding other scripts that suit your need (there are a lot of shared resources online as well as in our data collection assignment) and adapting them to your area of interest. Once you understand coding concepts, like those in R, other languages can be picked up easily. You will find that you are learning JavaScript before you realize it.</p>
 
 </div>
 </div>
@@ -396,7 +396,6 @@ You are welcome to save this to your own GEE files and try changing the area of 
 </div>
 <div id="dem-processing" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> DEM processing<a href="spatial-models-and-gis-integration.html#dem-processing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>15pnts</p>
 <div id="learning-module-10" class="section level3 hasAnchor" number="6.2.1">
 <h3><span class="header-section-number">6.2.1</span> Learning Module 10<a href="spatial-models-and-gis-integration.html#learning-module-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="objective" class="section level4 hasAnchor" number="6.2.1.1">
@@ -425,8 +424,8 @@ Essentially, we will be using input rasters via filepath and output filepaths as
 2. Generate functions useful throughout the script <br>
 3. Establish working directories or paths to other directories if needed <br>
 4. Import data <br>
-5. Data Cleaning and Preprocessing - this may involve handling missing values, removing outlines, converting to preferred units. etc. <br>
-6. Exploratory Data Analysis - it is beneficial to explore data visually to help uunderstand the characteristics of the data. <br>
+5. Data Cleaning and Preprocessing - this may involve handling missing values, removing outliers, converting to preferred units. etc. <br>
+6. Exploratory Data Analysis - it is beneficial to explore data visually to help understand the characteristics of the data. <br>
 7. Apply functions, or models or other analytical techniques <br>
 8. Evaluate results - If modeling, this may involve comparing model predictions with observed data or conducting sensitivity analysis <br>
 9. Visualize and report - plots, maps and tables can be effective ways to communicate findings. <br><br></p>
@@ -484,7 +483,15 @@ ANSWER:</p>
 1. <a href="https://saga-gis.sourceforge.io/saga_tool_doc/4.1.0/ta_hydrology.html">SAGA</a>
 SAGA tools offer a versatile suite of geospatial processing capabilities accessible through both QGIS and ArcGIS plugins as well their standalone GUI interface. Often I find the GUI easiest for preprocessing, then I will import SAGA’s output rasters to QGIS for formatting or map making, or into model scripts. SAGA has a robust online support community, so it can be a valuable resource for hydrological work.<br><br>
 2. Similarly, Whitebox GAT tools can be used as plugin to QGIS and ArcGIS, providing Whitebox functionality directly with in a GIS environment. <br>
-When using these tools, the order of operations is similar to our work above: fill the DEM, generate a flow direction and flow accumulation raster, identify channels, delineate watersheds, then you can move forward according to the specificity of your project. Ultimately, the choice of workflow is yours, but I suggest documenting your process as you proceed, including links or file paths to projects and scripts within the written workflow. It’s also important to carefully consider the organization and storage of your projects and files. For instance, files generated by a GIS project should be readily accessible to any associated scripts. Returning to a preprocessing step can be challenging if there’s no clear way to trace back your workflow and regenerate a crucial layer.</p>
+When using these tools, the order of operations is similar to our work above: fill the DEM, generate a flow direction and flow accumulation raster, identify channels, delineate watersheds, then you can move forward according to the specificity of your project.
+Ultimately, the choice of workflow is yours, but I suggest documenting your process as you proceed, including links or file paths to projects and scripts within a written or diagrammed workflow (or workflow software). It’s also important to carefully consider the organization and storage of your projects and files. For instance, files generated by a GIS project should be readily accessible to any associated scripts. Returning to a preprocessing step can be (sometimes painfully) challenging if there’s no clear way to trace back your workflow and regenerate a crucial layer.</p>
+<p>Take another look at the model selection process from Bevin (above), and think about how you can make your workflow easier to recall and repeat. A little planning upfront can save so much time later. (Seriously, so. much. time.)<br />
+To document and track iterations efficiently, consider using a tool that fits your workflow: <br>
+- Bookdown in R - this is useful if your work involves R scripts or Markdown. This is the tool we used to develop the tutorial ‘book’ for this course and I frequently use it to develop and share my own research scripts, figures and workflows. <br>
+- Obsidian or Notion - Better options if R scripts aren’t a major part of your work, allowing for flexible organization and easy cross-referencing.
+- You can even make a slide in Power Point with a work flow chart, inserting links, file paths and written steps into the chart as you go. <br></p>
+<p>As you work on your term projects over the next couple of weeks, keep these tips in mind. If you haven’t started the thesis course yet (LRES 575), you’ll likely want to revisit the workflow you develop now and continue refining it for your thesis. Set yourself up for success by making it easy to track, recall and build on your work. Think about how you can make this process smoother for your future self. Your future self will thank you.</p>
+<p>Good Luck!</p>
 
 </div>
 </div>

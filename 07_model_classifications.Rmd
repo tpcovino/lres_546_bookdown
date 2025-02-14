@@ -18,7 +18,7 @@ A **distributed** system is one in which all dependent variables are functions o
 
 A **semi-distributed** system is an intermediate approach that combines elements of both lumped and distributed systems. Certain variables may be spatially distributed, while others are treated as lumped. Alternatively, we can divide the watershed into sub-basins and treat each sub-basin as a lumped basin. Outputs from each sub-basin are then linked together and routed downstream. Semi-distribution allows for a more nuanced representation of the basin's characteristics, acknowledging spatial variability where needed while maintaining some simplifications for computation efficiency.  
 
-![](images/lumpd_dist_ws.png)
+
 ```{r, echo=FALSE, out.width='80%', fig.align='center'}
 knitr::include_graphics("images/lumpd_dist_ws.png")
 ```
@@ -60,6 +60,6 @@ knitr::include_graphics("images/Beven_modeling_workflow.png")
 
 While we aim to give some hands on experience across multiple model types, there is a wide range of possible models! Why would the most complex model, or one that represents the most elements in a system be best? Why even consider a simple bucket model?
 
-Many modelers have observed that the number of parameters required to describe a key behavior in a watershed is often quite low, meaning increasing the number of parameter does not result in a significantly improved model. This idea that simple models are often sufficient fo representing a system have led to the investigation of **parsimonious** model structures (less complex).Consider though, that the model must sufficiently represent processes or it will be too unreliable outside of the range of conditions on which it was calibrated. 
+Many modelers have observed that the number of parameters required to describe a key behavior in a watershed is often quite low, meaning increasing the number of parameters does not result in a significantly improved model. This idea that simple models are often sufficient for representing a system have led to the investigation of **parsimonious** model structures (less complex). Consider though, that the model must sufficiently represent processes or it will be too unreliable outside of the range of conditions on which it was calibrated. 
 
 Now that we have reviewed some concepts, our next step will be to develop a term project question. As you brainstorm and gather data, be sure to consider and use the modeling concepts and terminology we've covered to frame and structure your project design.

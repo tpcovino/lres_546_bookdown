@@ -9,6 +9,8 @@
 
 #### Background
 
+Suggested reading: [Forest Evapotranspiration: Measurement and Modeling at Multiple Scales](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.srs.fs.usda.gov/pubs/ja/2016/ja_2016_amatya_008.pdf)
+
 Evapotranspiration (ET) encompasses all processes through which water moves from the Earth's surface to the atmosphere, comprising both evaporation and transpiration. This includes water vaporizing into the air from soil surfaces, the capillary fringe of groundwater, and water bodies on land. 
 Much like snowmelt modeling, ET modeling and measurements are critical to many fields and could be a full course on its own. We will be focused on the basics of ET, modeling and data retrieval methods for water balance in hydrological modeling. Evapotranspiration is an important variable in hydrological models, as it accounts for much of the water loss in a system, outside of discharge. 
 Transpiration, a significant component of ET, involves the movement of water from soil to atmosphere through plants. This occurs as plants absorb liquid water from the soil and release water vapor through their leaves. To gain a deeper understanding of ET, let's review transpiration.
@@ -20,9 +22,7 @@ Vegetation type: Plants transpire water at different rates. Some plants in arid 
 
 Humidity: As the relative humidity of the air surrounding the plant rises the transpiration rate falls. It is easier for water to evaporate into dryer air than into more saturated air.  
 
-Soil type and saturation: Clay particles, being small, have a high capacity to retain water, while sand particles, being larger, readily release water. When there is a shortage of moisture, plants may enter a state of senescence and reduce their rate of transpiration.
-
-Precipitation: During dry periods, transpiration can contribute to the loss of moisture in the upper soil zone.
+Soil type and saturation: Clay particles, being small, have a high capacity to retain water, while sand particles, being larger, readily release water. During dry periods, transpiration can contribute to the loss of moisture in the upper soil zone.When there is a shortage of moisture in the soil, plants may enter a state of senescence and reduce their rate of transpiration.
 
 Temperature: Transpiration rates go up as the temperature goes up, especially during the growing season, when the air is warmer due to stronger sunlight and warmer air masses. Higher temperatures cause the plant cells to open stomata, allowing for the exchange of CO2 and water with the atmosphere, whereas colder temperatures cause the openings to close. 
 
