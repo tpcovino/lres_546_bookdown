@@ -62,7 +62,7 @@ background
 reading
 how-does-this-apply-to-hydrological-modeling
 example
-reading-1
+optional-reading
 generate-a-simulation-with-code
 repo-link-2
 labwork-20-pnts
