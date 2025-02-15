@@ -1,10 +1,10 @@
-### Term Project Assignment 1 - 10 pnts
+## Term Project Assignment 1 - 10 pnts
 
 As part of the Professional Masters’ Program, you are required to develop a professional paper. It is intended to give you an in-depth experience in the design, implementation, and completion of an original project. The paper will also be a way to showcase your research interests and accomplishments to potential employers or admissions committees. (See LRES 575 for more). 
 
 In this assignment, you will develop the main goal and objectives of your term project and explore, evaluate and select data sources. The workflow for this assignment will help you develop your research question and identify the datasets you will use to address that question.
 
-#### Brainstorming
+### Brainstorming
 
 **Q1. What is the primary research question for your term project? (1-2 sentences)(1 pt)** <br>
 Think of this as your first approach to developing a research question. It should reflect a clear purpose and be specific enough to guide your initial search for data, but it likely will evolve throughout this assignment. That is okay, even expected. You will be asked for a refined response at the end of the assignment.<br>
@@ -24,7 +24,7 @@ What temporal length and resolution would be ideal to answer this question?<br>
 ANSWER:
 
 
-#### Data exploration and selection
+### Data exploration and selection
 
 Now that you have an idea of what kind of data your question requires, the next step is to locate actual datasets that support your inquiry. There are numerous datasets available to public use, including public repositories, government agencies, academic institutions, even data uploaded to repositories like Zendodo and Figshare making data for specific studies discoverable and citable by other researchers. It is up to you to explore a variety of sources and identify datasets that you can retrieve and work with, but here are some suggestions to get you started. 
 
@@ -46,42 +46,18 @@ Fire: [Monitoring Trends in Burn Severity](https://www.mtbs.gov/) <br>
 
 Remotely sensed spatial data: You may have already some experience with Google Earth Engine. This is a fast way to access [an incredible library](https://developers.google.com/earth-engine/datasets/) of resources. If you have used this in other courses but feel rusty, we can help!  Also check out [this e-book](https://www.eefabook.org/go-to-the-book.html). However, if your interest is in a few images, USGS' Earth Explorer [GloVis](https://glovis.usgs.gov/) is also a good resource. 
 
-##### Expand your search
+#### Expand your search
 This is not an exhaustive list of possibilities. Consider searching MSU's library databases. For example, the Web of Science database contains organized searchable datasets built by published researchers. Google searches using advanced search operators to include specific file types with your search terms can be helpful (e.g., .csc, .xlsx, .geojson). Engage with AI tools to explore potential datasets or repositories based your specific topic. An active approach to searching and learning will help you discover datasets that will support your research question. <br> You can download and import data if the dataset is small, or for large datasets, you might try webscraping. 
 
-Webscraping in R is a method of extracting data from web pages when the data isn't available through an API or a direct download. There are many ways to do this, but this video will specifically help you locate NOAA weather data and show you how to estimate the distance of the available weather station from your area of interest using latitude and longitude [noaa webscraping example](https://www.youtube.com/watch?v=V5Df6vw4-e8). Even if your dataset isn't temperature related, you may still use this structure to extract the data you need. 
+Webscraping in R is a method of extracting data from web pages when the data isn't available through an API or a direct download. Check out some of the methods in this 15 min video: [webscraping example for R with ChatGPT](https://youtu.be/MHdMFxUyGdk). There are many similar tutorials, some tailored to specific data types. Take some time to explore the available resources.
 
-Pat Schloss has a lot more videos on data science tools in R that may be of interest to you as well.
-
-Here is a condensed version of the linked video script up until ~18 min. You'll want to watch the video to understand how station to AOI distance is calculated. Once you find a site that works for you, you'll want to continue your own script where he starts working with glue().
-
-```{r}
-# Here we are sending a request to a webpage to retrievev its html content.
-inventory_url <- 'https://www.ncei.noaa.gov/pub/data/ghcn/daily/ghcnd-inventory.txt'
-
-inventory <- read_table(inventory_url, col_names = c("station", "lat", "lon", "variable", "start", "end"))
-
-# we'll parse the data according to our desired location. Here we need to convert lat and lon of the Fool Creek watershed to radians so we can calculate distances between two latitude and longitudes so we can be sure we are selecting a site near our watershed.
-
-my_lat <- 39.885 * 2 * pi / 360
-my_lon <- -105.871* 2 * pi / 360
-
-
-inventory %>%
-  mutate(lat_r = lat* 2 * pi / 360,
-         lon_r = lon* 2 * pi / 360,
-         d = 1.609344 * 3963 * acos((sin(lat_r) * sin(my_lat)) + cos(lat_r) * cos(my_lat) * cos(my_lon-lon_r))) %>% # calculate distance bewteen our site and station in miles
-  filter(start >= 2018 & end  > 2022) %>% # look for data after 2018
-  filter(variable %in% c("TMAX", "TMIN")) %>%
-  arrange(d) #find the station closest to us
-```
-
-##### Adapt your research question
+#### Adapt your research question
 Once you spend a solid hour or two searching databases, you may find that you need to adapt your research question based on data availability. You will likely spend some time refining your initial question to fit the datasets you find and that is encouraged! Then resume the dataset search, and continue refining your question and searching until you can develop an executable methodology. <br>
 
 **PART 3. Explore your data (3 pnts)**
 
-You are encouraged to explore many packages and write many more code chunks for your personal use. However, for the assignment submission, retrieve at least one dataset relevant to your question using an R package like dataRetrieval or by webscraping in R.
+You are encouraged to explore many packages and write many more code chunks for your personal use. However, for the assignment submission, retrieve at least one dataset relevant to your question using an R package like dataRetrieval or by webscraping in R. 
+Be sure that your methods are [reproducible](https://guides.lib.uw.edu/research/reproducibility), meaning I should be able to run your code from my computer and see the same figures and plots that you do without needing a .txt or .csv in my working directory. Similarly, try writing required packages using a the function script below. This ensures that if another user does not have a package installed, it will be installed before it is loaded.  
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -90,8 +66,19 @@ knitr::opts_chunk$set(echo = TRUE)
 Install needed packages
 
 ```{r}
-#install.packages('')
-#library()
+# #Load packages
+# 
+# # pkgTest is a helper function to load packages and install packages only when they are not installed yet.
+# pkgTest <- function(x)
+# {
+#   if (x %in% rownames(installed.packages()) == FALSE) {
+#     install.packages(x, dependencies= TRUE)
+#   }
+#   library(x, character.only = TRUE)
+# }
+# neededPackages <- c("tidyverse", "lubridate", "Evapotranspiration") 
+
+# for (package in neededPackages){pkgTest(package)}
 ```
 
 Explore the available data using vignettes or Cran documentation for your specific dataset and package like [dataRetrieval's documentation](https://cran.r-project.org/web/packages/dataRetrieval/vignettes/dataRetrieval.html). Create a dataframe containing 3-6 columns and print the head of the dataframe.
