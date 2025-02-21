@@ -2,7 +2,9 @@
 
 As part of the Professional Masters’ Program, you are required to develop a professional paper. It is intended to give you an in-depth experience in the design, implementation, and completion of an original project. The paper will also be a way to showcase your research interests and accomplishments to potential employers or admissions committees. (See LRES 575 for more). 
 
-In this assignment, you will develop the main goal and objectives of your term project and explore, evaluate and select data sources. The workflow for this assignment will help you develop your research question and identify the datasets you will use to address that question.
+Your term project for this class is not meant to encompass your entire thesis or dissertation. Instead, it should focus on a single, well-defined component that contributes to your broader research. This could be an in-depth exploration of a specific feature of your research question or a clear demonstration of a cause-effect relationship within your work. Next week, you will design a repeatable workflow that is executable within the scope of this semester, and at the end of the term, you will present a concise (~8-minute) synopsis of your question and workflow.
+
+This assignment is focused on data retrieval; you will develop the main goal and objectives of your term project and explore, evaluate, and select data sources. A key component of this process is formulating a research question that clearly defines both an explanatory variable and a response variable; one is not sufficient without the other. The workflow for this assignment will help you refine your question and identify the datasets needed to address it. Your assignment is considered complete when you have identified at least one explanatory variable and one response variable, along with the corresponding data sources.
 
 ### Brainstorming
 
@@ -13,7 +15,7 @@ Consider: <br>
 - What specific phenomenon within that issue are you interested in understanding  <br>
 - What measurable or observable outcomes do you want to analyze.  <br>
 For example, instead of 'how does climate change affect forests?', you might consider 'How has seasonal precipitation variability impacted the timing of peak NDVI in the Pacific Northwest from 2000 to 2020.' Note that this question is specific enough to guide your search for the necessary data, such as precipitation records and NDVI time series. <br>
-ANSWER: 
+ANSWER:
 
 
 **Q2. What are 2-3 types of data your research question requires? Address each sub-question (2 pts)**
@@ -26,7 +28,8 @@ ANSWER:
 
 ### Data exploration and selection
 
-Now that you have an idea of what kind of data your question requires, the next step is to locate actual datasets that support your inquiry. There are numerous datasets available to public use, including public repositories, government agencies, academic institutions, even data uploaded to repositories like Zendodo and Figshare making data for specific studies discoverable and citable by other researchers. It is up to you to explore a variety of sources and identify datasets that you can retrieve and work with, but here are some suggestions to get you started. 
+Now that you have an idea of what kind of data your question requires, the next step is to locate actual datasets that support your inquiry. There are numerous datasets available to public use, including public repositories, government agencies, academic institutions, even data uploaded to repositories like Zendodo and Figshare making data for specific studies discoverable and citable by other researchers. You may even have datasets from your organization that you can use. (Note: If you plan to use a dataset from your organization, you must have direct access to it now, not just a promise that you can obtain it later. Do not commit to a dataset unless you already have it and can work with it this semester). 
+It is up to you to explore a variety of sources and identify datasets that you can retrieve and work with, but here are some ideas and suggestions to get you started. 
 
 Many of these platforms allow R access to their datasets with packages that facilitate downloading, managing, and analyzing the data directly within R. However if you can not find an appropriate package, see below for a webscraping example. <br>
 
@@ -47,16 +50,17 @@ Fire: [Monitoring Trends in Burn Severity](https://www.mtbs.gov/) <br>
 Remotely sensed spatial data: You may have already some experience with Google Earth Engine. This is a fast way to access [an incredible library](https://developers.google.com/earth-engine/datasets/) of resources. If you have used this in other courses but feel rusty, we can help!  Also check out [this e-book](https://www.eefabook.org/go-to-the-book.html). However, if your interest is in a few images, USGS' Earth Explorer [GloVis](https://glovis.usgs.gov/) is also a good resource. 
 
 #### Expand your search
-This is not an exhaustive list of possibilities. Consider searching MSU's library databases. For example, the Web of Science database contains organized searchable datasets built by published researchers. Google searches using advanced search operators to include specific file types with your search terms can be helpful (e.g., .csc, .xlsx, .geojson). Engage with AI tools to explore potential datasets or repositories based your specific topic. An active approach to searching and learning will help you discover datasets that will support your research question. <br> You can download and import data if the dataset is small, or for large datasets, you might try webscraping. 
+This is not an exhaustive list of possibilities. Consider searching MSU's library databases. For example, the Web of Science database contains organized searchable datasets built by published researchers. Google searches using advanced search operators to include specific file types with your search terms can be helpful (e.g., .csv, .xlsx, .geojson). Engage with AI tools to explore potential datasets or repositories based your specific topic. An active approach to searching and learning will help you discover datasets that will support your research question. <br> You can download and import data if the dataset is small, or for large datasets, you might try webscraping. 
 
 Webscraping in R is a method of extracting data from web pages when the data isn't available through an API or a direct download. Check out some of the methods in this 15 min video: [webscraping example for R with ChatGPT](https://youtu.be/MHdMFxUyGdk). There are many similar tutorials, some tailored to specific data types. Take some time to explore the available resources.
 
 #### Adapt your research question
 Once you spend a solid hour or two searching databases, you may find that you need to adapt your research question based on data availability. You will likely spend some time refining your initial question to fit the datasets you find and that is encouraged! Then resume the dataset search, and continue refining your question and searching until you can develop an executable methodology. <br>
 
-**PART 3. Explore your data (3 pnts)**
+**Q3. Explore your data, this part requires 2 answers (3 pnts total)**
 
 You are encouraged to explore many packages and write many more code chunks for your personal use. However, for the assignment submission, retrieve at least one dataset relevant to your question using an R package like dataRetrieval or by webscraping in R. 
+
 Be sure that your methods are [reproducible](https://guides.lib.uw.edu/research/reproducibility), meaning I should be able to run your code from my computer and see the same figures and plots that you do without needing a .txt or .csv in my working directory. Similarly, try writing required packages using a the function script below. This ensures that if another user does not have a package installed, it will be installed before it is loaded.  
 
 ```{r, include=FALSE}
@@ -115,6 +119,7 @@ Generate a histogram or density plot of at least one variable in your dataset. T
 ```
 
 **What does the above plot tell you about the distribution of your data? Is it as expected? Why do we need to consider the distribution of data when deciding on analysis methods?**
+
 
 **Q4. Putting it all together (3 pts)**
 Create a table in R and export it as a .csv file to submit with this assignment .rmd.
