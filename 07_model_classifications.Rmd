@@ -33,9 +33,8 @@ For this determination, it is important to understand the advantages of differen
 **Physically Based Models ** These models offer deep insights into the processes governing runoff generation by relying on fundamental physical equations like mass conservation. However, they come with drawbacks. Their implementation often demands complex numerical solving methods and a significant volume of input data. For example, if we want to understand how DOC transport changes in a watershed after a wildfire, we would want to understand many physical system properties pre- and post-fire like soil infiltration rates, quantification of forest canopy, stream flow data, carbon export, etc.. Without empirical data to validate these techniques, there is a risk of introducing substantial uncertainty into our models, reducing their reliability and effectiveness.
 
 An example of a spatial distributed and physically based watershed model from [Huning and Marguilis, 2015](https://www.sciencedirect.com/science/article/abs/pii/S1364815215000572):
-```{r, echo=FALSE, out.width='80%', fig.align='center'}
-knitr::include_graphics("images/distrib_physical_model.jpg")
-```
+
+![](images/distrib_physical_model.jpg)
 
 When modeling watersheds, we often use a mix of empirical, conceptual, and physically based models. The choice of model type depends on factors like the data we have, the time or computing resources we can allocate, and how we plan to use the model.
 
@@ -51,9 +50,7 @@ These categorizations provide a philosophical foundation of how we understand an
 By understanding the different frameworks of environmental modeling, we can choose the right tools for the right context, depending on our data, goals and resources. In reality, the final model selection is a fluid process requiring multiple iterations at each step. 
 In Keith Beven's Rainfall-Runoff Modelling Primer, they illustrate the process as: 
 
-```{r, echo=FALSE, out.width='80%', fig.align='center'}
-knitr::include_graphics("images/Beven_modeling_workflow.png")
-```
+![](images/Beven_modeling_workflow.png)
 
 While we aim to give some hands on experience across multiple model types, there is a wide range of possible models! Why would the most complex model, or one that represents the most elements in a system be best? Why even consider a simple bucket model?
 
