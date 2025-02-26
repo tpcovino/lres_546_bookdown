@@ -1,4 +1,5 @@
 ## Term Project Assignment 1 - 10 pnts
+[Repo Link](https://github.com/tpcovino/Term_project_assign1.git)
 
 As part of the Professional Masters’ Program, you are required to develop a professional paper. It is intended to give you an in-depth experience in the design, implementation, and completion of an original project. The paper will also be a way to showcase your research interests and accomplishments to potential employers or admissions committees. (See LRES 575 for more). 
 
