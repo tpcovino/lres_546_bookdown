@@ -3,7 +3,7 @@
 
 ### Repo [here](https://github.com/tpcovino/09_evapotranspiration){target="blank"}
 
-### Learning Module 7
+### Learning Module 8
 
 20pnts<br>
 
@@ -36,7 +36,7 @@ In the realm of evapotranspiration (ET) modeling and data analysis, you'll frequ
 
 Potential Evapotranspiration (PET): Potential ET refers to the maximum possible rate at which water could evaporate and transpire under ideal conditions. These conditions typically assume an ample supply of water, unrestricted soil moisture availability, and sufficient energy to drive the evaporative processes. PET is often estimated based on meteorological variables such as temperature, humidity, wind speed, and solar radiation using empirical equations like the Penman-Monteith equation.
 
-Actual Evapotranspiration (AET): Actual ET, on the other hand, represents the observed or estimated rate at which water is actually evaporating and transpiring from the land surface under existing environmental conditions. Unlike PET, AET accounts for factors such as soil moisture availability, vegetation cover, stomatal conductance, and atmospheric demand. It reflects the true water loss from the ecosystem and is of greater interest in hydrological modeling, as it provides a more realistic depiction of water balance dynamics.
+Actual Evapotranspiration (AET): Actual ET, on the other hand, represents the observed or estimated rate at which water is actually evaporating and transpiring from the land surface under existing environmental conditions. Unlike PET, AET accounts for factors such as soil moisture availability, vegetation cover, stomatal conductance, and atmospheric demand. It reflects the true water loss from the ecosystem and is often of greater interest in hydrological modeling, as it provides a more realistic depiction of water balance dynamics.
 
 The formula for converting PET to AET is:
 
@@ -49,16 +49,15 @@ PET is the potential evapotranspiration, and
 Kc is the crop coefficient.
 The crop coefficient accounts for factors such as crop type, soil moisture levels, climate conditions, and management practices. It can vary throughout the growing season as well.
 
-
 ##### Direct measurements: 
 
-There are several methods to measure ET directly like lysimeters and gravimetric analysis, but this data rarely available to the public. There has been a concerted effort to enhance the accessibility of Eddy Covariance data, so this dataset may expand in the years to come. 
+There are several methods to measure ET directly like lysimeters and gravimetric analysis, but this data rarely available to the public. There has been a concerted effort to enhance the accessibility of Eddy Covariance data, so the dataset mentioned in the video below may expand in the years to come. 
+
+This video focuses on CO2 as an output of eddy covariance data, but among the 'other gases' mentioned, water vapor is included, offering means to estimate actual ET. The video also provides a resource where you might find eddy covariance data for your region of interest.
 
 ```{r}
 knitr::include_url("https://www.youtube.com/embed/CR4Anc8Mkas")
 ```
-
-This video focuses on CO2 as an output of eddy covariance data, but among the 'other gases' mentioned, water vapor is included, offering measurements of actual ET. The video also provides a resource where you might find eddy covariance data for your region of interest.  
 
 ##### Remote sensing: 
 
@@ -103,9 +102,9 @@ We will test a couple of simple methods that require few data inputs. However, i
 #### Import data
 ##### Meteorological data
 
-We'll import three datasets in this workflow, one containing actual data from the eddy covariance tower for the years 2017-2018. <br> 
+We'll import three datasets in this workflow, one containing actual data from the eddy covariance tower that has been converted to AET. This dataset ranges from 2018 to 2023 <br>
 Also imported is the discharge (Q) data from our watershed. Note that data is not collected during periods of deep snow. We will use this data to estimate the total discharge for 2022. <br>
-Additionally, we'll import the meteorological data from our watershed for the years of interest. We are going to estimate ET for our watershed during the 2022 water year, though met data is provided in calendar years, so we will need to extract the desired data from the met dataframe.
+Additionally, we'll import the meteorological data from our watershed. We are going to estimate ET for our watershed during the 2022 water year, though met data is provided in calendar years, so we will need to extract the desired data from the meteorological dataframe.
 
 ```{r, include=FALSE, warning=FALSE}
 # # We have two meteorological (met) files in the working directory, 
@@ -176,7 +175,7 @@ Now we have the RHmax and RHmin values that we will need for our ET models
 
 ##### Precipitation 
 
-To add a layer of checks we will also check precipitation totals for the watershed from our met data. This dataframe also provides cumulative precipitation, though the accumulation begins on January 1. Therefore we will need to calculate daily precipitation for each day of the water year and generate a new cumulative value.
+To add a layer of checks we will also check precipitation totals from the watershed from meteorological stations. This dataframe provides cumulative precipitation, though the accumulation begins on January 1. Therefore we will need to calculate daily precipitation for each day of the water year and generate a new cumulative value that accumulates from October 1 - Sept 30 (water year cumulative total).
 
 ```{r, include=FALSE, warning=FALSE}
 # # Calculate daily precipitation by subtracting consecutive values
@@ -197,9 +196,10 @@ This was a lot of work to save one value.
 
 #### Pseudocode
 
-Often when writing code, it is necessary to first write 'pseudocode'. This allows us to think about workflow before writing scripts involves planning and structuring the logic of a script. Psuedocode is usually mixture of natural language and code-like constructs (e.g., 'I'll use 'merge' or 'ggplot' to...') that serves as a blueprint for our script before we dive into specific programming language syntax. Then we can develop our code by filling in the programming language as needed. 
+Often when writing code, it is necessary to start with pseudocode. Pseudocode allows us to plan and structure the logic of the script before implementing it in a specific programming language. It is typically a mix of natural language and code that serves as a blueprint for the script(e.g., "I'll used 'merge' to combine my data frames by a shared date column"). Once the workflow is outlined, then we can translate it into actual code using appropriate syntax.  
 
 **Q1. (2 pnts)  In you own words, what did we do at each step in the above chunk and what is cumulative_ppt_2022. Why do we want to know this?**
+Hint: if the third step in the above chunk is confusing, look at the new daily_ppt_mm column after running the first two steps to see what happens without it.
 
 ANSWER:
 
@@ -264,7 +264,7 @@ For our specific tower data, we've estimated the mean flux area, or footprint ar
 # # Import ET data
 # usfs_et <- read.csv("US_FEF_ET.csv")
 # 
-# # The ET data contains negative values. ET is not negative, we are going to convert these to NA. This may not always be an ideal solution. It is a good idea to talk to the tower maintainer or consult metadata to check the source of negative values:
+# # The ET data contains negative values. It is a good idea to talk to the tower maintainer or consult metadata to check the source of negative values:
 # 
 # # Replace negative values in 'ET' column with 0 (this is the recommended course of action by our USFS maintainer)
 # usfs_et$ET_mmol.m2.s[usfs_et$ET_mmol.m2.s < 0] <- 0.0
@@ -307,9 +307,10 @@ For our specific tower data, we've estimated the mean flux area, or footprint ar
 # print(Hbalance)
 ```
 
-This appears to be a fairly well balanced water budget, especially consdering that we have made some estimates along the way. Let's see how this ET data compares to modeled data. 
+This appears to be a fairly well balanced water budget, especially considering that we have made some estimates along the way. Let's see how this ET data compares to modeled data. 
 
-#### [The Priestly Taylor method](https://search.r-project.org/CRAN/refmans/Evapotranspiration/html/ET.PriestleyTaylor.html) (actual evapotranspiration)
+#### [The Priestly Taylor method](https://search.r-project.org/CRAN/refmans/Evapotranspiration/html/ET.PriestleyTaylor.html)
+
 The Priestley-Taylor method is a semi-empirical model that estimates potential evapotranspiration as a function of net radiation. This method requires a list which contains:<br> (climate variables) required by Priestley-Taylor formulation:
 Tmax, Tmin (degree Celcius), RHmax, RHmin (percent), Rs (Megajoules per sqm) or n (hour). <br>
 We have measurements of relative humidity (RH) data from within our watershed meteorological station. However, RH data can be found through many sources providing local weather data. <br>
@@ -349,6 +350,8 @@ Evapotranspiration comes with a list physical 'constants', but we want to replac
 # # Lets plot the modeled output: 
 # plot(outputPT$ET.Daily, main = "ET Daily Data", xlab = "Date", ylab = "ET")
 ```
+
+We can change the function name to specify the desired model. Now we'll try the[the Hamon method](http://data.snap.uaf.edu/data/Base/AK_2km/PET/Hamon_PET_equations.pdf).
 
 ```{r, include = FALSE}
 # outputH <- ET.Hamon(data_list, constants, ts="daily",
@@ -402,19 +405,20 @@ Let's plot the two modeled ET timeseries with the eddy covaraince tower data.
 
 ```
 
-**Q3 (4 pnts) Considering that models are often developed for specific ecosystems, discuss why these two methods might yield such different results when applied to the current system. What ecosystem-specific factors could influence the accuracy of these models in this context?**
+**Q3. (4 pnts) Consider the two evapotranspiration (ET) models we have generated, one consistently underestimates ET, while the other consistently overestimates summer values and underestimates winter values. Consider ecosystem specificity in modeling. Why do you think these two methods generate such different estimates? What ecosystem-specific factors might contribute to the discrepancies between models?**
 
 ANSWER:
 
-**Q4. (3pnts) In the context of evapotranspiration modeling, discuss how vegetation type and soil properties might interact to influence AET in the Fraser Experimental Forest. Provide a hypothetical example of how these factors could vary between two sub-watersheds in the area.**
+**Q4 (3 pnts) Let's assume we do not have eddy covariance tower data for this time period, but you have the provided discharge and precipitation measurements. Which model would you choose to estimate an annual ET sum and why?** 
 
 ANSWER:
 
-**Q5 (5 pnts) Review the map watershed figure and consider changes in vegetation type and soil properties in high elevation watersheds. How might these variables interact to influence AET in the Fraser Experimental Forest. Provide a hypothetical example of how these factors could vary between two sub-watersheds in the area.**
-
-**Q6 (3 pnts) Let's assume we do not have eddy covariance tower data for this time period, but you have the provided discharge and precipitation measurements. Which model would you choose to estimate an annual ET sum and why?** 
+**Q5 (3 pnts) In our modeling script, while our main objective was to estimate evapotranspiration (ET), which specific aspect required the most labor and attention to detail? Reflect on the tasks involved in data preparation, cleaning, and formatting. How did these preliminary steps impact the overall modeling process? **
 
 ANSWER:
 
-**Q6 (4 pnts) In our modeling script, while our main objective was to estimate evapotranspiration (ET), which specific aspect required the most labor and attention to detail? Reflect on the tasks involved in data preparation, cleaning, and formatting. How did these preliminary steps impact the overall modeling process? **
+**Q6 (5 pnts) Review the sub-watershed figure and analyze how vegetation characteristics (e.g., height, age), slope, and aspect vary across high-elevation watersheds in the Fraser Experimental Forest. Utilize Google Maps' high-resolution imagery as an additional resource to observe these landscape features. How might these factors interact to influence actual evapotranspiration (AET) in this region? Provide a hypothetical comparison of two sub-watersheds, describing how differences in these variables could lead to variations in AET.**
 
+ANSWER:
+
+![Fool Creek delineated watershed](fool_studyarea.png)
