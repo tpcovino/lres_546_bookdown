@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Physical Process Models | Test Book</title>
-  <meta name="description" content="Chapter 5 Physical Process Models | Test Book" />
+  <title>Chapter 5 Physical Process Models | Quantitative Environmental Methods: LRES 546</title>
+  <meta name="description" content="Chapter 5 Physical Process Models | Quantitative Environmental Methods: LRES 546" />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Physical Process Models | Test Book" />
+  <meta property="og:title" content="Chapter 5 Physical Process Models | Quantitative Environmental Methods: LRES 546" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Physical Process Models | Test Book" />
+  <meta name="twitter:title" content="Chapter 5 Physical Process Models | Quantitative Environmental Methods: LRES 546" />
   
   
   
@@ -211,9 +211,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3" data-path="physical-process-models.html"><a href="physical-process-models.html#hbv-hydrology-model"><i class="fa fa-check"></i><b>5.3</b> HBV Hydrology Model</a>
 <ul>
 <li class="chapter" data-level="5.3.1" data-path="physical-process-models.html"><a href="physical-process-models.html#learning-module-9"><i class="fa fa-check"></i><b>5.3.1</b> Learning Module 9</a></li>
-<li class="chapter" data-level="5.3.2" data-path="physical-process-models.html"><a href="physical-process-models.html#import-data-2"><i class="fa fa-check"></i><b>5.3.2</b> Import data:</a></li>
-<li class="chapter" data-level="5.3.3" data-path="physical-process-models.html"><a href="physical-process-models.html#repo-link-3"><i class="fa fa-check"></i><b>5.3.3</b> Repo link</a></li>
-<li class="chapter" data-level="5.3.4" data-path="physical-process-models.html"><a href="physical-process-models.html#labwork-20-pnts-2"><i class="fa fa-check"></i><b>5.3.4</b> Labwork (20 pnts)</a></li>
+<li class="chapter" data-level="5.3.2" data-path="physical-process-models.html"><a href="physical-process-models.html#repo-link-3"><i class="fa fa-check"></i><b>5.3.2</b> Repo link</a></li>
+<li class="chapter" data-level="5.3.3" data-path="physical-process-models.html"><a href="physical-process-models.html#labwork-20-pnts-2"><i class="fa fa-check"></i><b>5.3.3</b> Labwork (20 pnts)</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="spatial-models-and-gis-integration.html"><a href="spatial-models-and-gis-integration.html"><i class="fa fa-check"></i><b>6</b> Spatial Models and GIS Integration</a>
@@ -231,7 +230,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2.3" data-path="spatial-models-and-gis-integration.html"><a href="spatial-models-and-gis-integration.html#labwork-20-pts-5"><i class="fa fa-check"></i><b>6.2.3</b> Labwork (20 pts)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i><b>7</b> Introduction</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -243,7 +241,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Test Book</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quantitative Environmental Methods: LRES 546</a>
           </h1>
         </div>
 
@@ -516,9 +514,8 @@ In the previous labs, we have worked with single-process models. HBV is more com
 <p>Type ‘?TUWmodel’ in your console. Note that the package comes with an example dataset, and you can run examples either by copying and pasting the data(), TUWmodel() and plots into your console, or you can find and click ‘Run examples’ under the <strong>Examples</strong> header and view the script and plot outputs in the Help window. The first example shows how the ‘TUWmodel’ can be run given specifications for a long set of parameters (param). You can provide the model with precip, air temperature, area and ET along with the parameter set and it will simulate SWE, snow melt and discharge. We can obtain measurements for each of these variables, so we will import all of this data and test the fit of the simulated data.</p>
 <p><a href="https://cran.r-project.org/web/packages/TUWmodel/TUWmodel.pdf" class="uri">https://cran.r-project.org/web/packages/TUWmodel/TUWmodel.pdf</a></p>
 </div>
-</div>
-<div id="import-data-2" class="section level3 hasAnchor" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> Import data:<a href="physical-process-models.html#import-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="import-data-2" class="section level4 hasAnchor" number="5.3.1.2">
+<h4><span class="header-section-number">5.3.1.2</span> Import data:<a href="physical-process-models.html#import-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We will generate a conceptual runoff model starting with: <br></p>
 <ul>
 <li><p>RainMeltWeighted_mm –&gt; liquid input to the ground, combination of rain and melt <br></p></li>
@@ -529,12 +526,13 @@ In the previous labs, we have worked with single-process models. HBV is more com
 <li><p>ET –&gt; Potential Evapotranspiration calculated using relative humidity and temperature. <br></p></li>
 </ul>
 </div>
-<div id="repo-link-3" class="section level3 hasAnchor" number="5.3.3">
-<h3><span class="header-section-number">5.3.3</span> Repo link<a href="physical-process-models.html#repo-link-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="repo-link-3" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Repo link<a href="physical-process-models.html#repo-link-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><a href="https://github.com/tpcovino/08_hbv_models-.git" target="_blank">Download the repo for this lab HERE</a></p>
 </div>
-<div id="labwork-20-pnts-2" class="section level3 hasAnchor" number="5.3.4">
-<h3><span class="header-section-number">5.3.4</span> Labwork (20 pnts)<a href="physical-process-models.html#labwork-20-pnts-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="labwork-20-pnts-2" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Labwork (20 pnts)<a href="physical-process-models.html#labwork-20-pnts-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Our first steps will be to import and format the data. As you might recall from the previous modules, this step can require the most script and ‘work’, but is critical to a valid model output. In this assignment, we have simplified much of the data collection for you, as the steps are ones you have already completed in previous modules.</p>
 <p>In the .csv imported below, we started by collecting the same SNOTEL data that you used in the snow melt module, but downloaded for a greater date range (water years 2018-2022) (date, SWE depth in mm, and daily precipitation (mm)) However, you will notice that the column names of the provided table contain ‘weighted_’.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="physical-process-models.html#cb9-1" tabindex="-1"></a><span class="co"># Import model data </span></span>
@@ -739,12 +737,12 @@ Not all packages are equally maintained, as they are often developed by research
 <span id="cb20-12"><a href="physical-process-models.html#cb20-12" tabindex="-1"></a><span class="co"># ggplot(dat_weekly, aes(x = Week, y = value, color = key)) +</span></span>
 <span id="cb20-13"><a href="physical-process-models.html#cb20-13" tabindex="-1"></a><span class="co">#   geom_line() + # create line plot</span></span>
 <span id="cb20-14"><a href="physical-process-models.html#cb20-14" tabindex="-1"></a><span class="co">#   labs(x = &quot;Week of Year&quot;, y = &quot;mm/year&quot;, color = {})</span></span></code></pre></div>
-<div id="single-model-run" class="section level4 hasAnchor" number="5.3.4.1">
-<h4><span class="header-section-number">5.3.4.1</span> Single model run<a href="physical-process-models.html#single-model-run" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="single-model-run" class="section level4 hasAnchor" number="5.3.3.1">
+<h4><span class="header-section-number">5.3.3.1</span> Single model run<a href="physical-process-models.html#single-model-run" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Look at the parameters to make sure you know what each parameter does. The way the model is set up, is that everything is hidden inside a function. The user (–&gt; you) only formats the input data and passes the parameters to the function. All model output is contained in “modelRun”. If you look at the Environment, you will notice that modelRun is a list. A list is even more flexible in terms of data storage than a dataframe (a dataframe is actually a special type of list…). While lists are super flexible, they can also be more cumbersome to deal with. I included some code that takes the output from the model run and saves all the important bits and pieces in a convenient dataframe called HBVRun. For this part (single model runs), you will really only need the data contained in the HBVRun dataframe.</p>
 </div>
-<div id="single-model-execution" class="section level4 hasAnchor" number="5.3.4.2">
-<h4><span class="header-section-number">5.3.4.2</span> single model execution<a href="physical-process-models.html#single-model-execution" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="single-model-execution" class="section level4 hasAnchor" number="5.3.3.2">
+<h4><span class="header-section-number">5.3.3.2</span> single model execution<a href="physical-process-models.html#single-model-execution" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="physical-process-models.html#cb21-1" tabindex="-1"></a><span class="co"># # set up the parameter vector</span></span>
 <span id="cb21-2"><a href="physical-process-models.html#cb21-2" tabindex="-1"></a><span class="co"># model_params &lt;- c(</span></span>
 <span id="cb21-3"><a href="physical-process-models.html#cb21-3" tabindex="-1"></a><span class="co">#   1.05, # SCF snow correction factor [-] (e.g., 0.9-1.5);</span></span>
@@ -802,10 +800,10 @@ Not all packages are equally maintained, as they are often developed by research
 <span id="cb21-55"><a href="physical-process-models.html#cb21-55" tabindex="-1"></a><span class="co">#   StorageLower = modelRun$slz[1, ] # lower storage value</span></span>
 <span id="cb21-56"><a href="physical-process-models.html#cb21-56" tabindex="-1"></a><span class="co"># )</span></span></code></pre></div>
 </div>
-<div id="objective-functions" class="section level4 hasAnchor" number="5.3.4.3">
-<h4><span class="header-section-number">5.3.4.3</span> Objective functions<a href="physical-process-models.html#objective-functions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div id="kge" class="section level5 hasAnchor" number="5.3.4.3.1">
-<h5><span class="header-section-number">5.3.4.3.1</span> KGE<a href="physical-process-models.html#kge" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="objective-functions" class="section level4 hasAnchor" number="5.3.3.3">
+<h4><span class="header-section-number">5.3.3.3</span> Objective functions<a href="physical-process-models.html#objective-functions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="kge" class="section level5 hasAnchor" number="5.3.3.3.1">
+<h5><span class="header-section-number">5.3.3.3.1</span> KGE<a href="physical-process-models.html#kge" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Before we can start trying to tune our model to look more like the
 observed discharge record, it would be helpful to have some sort of
 quantified metric for how well our modeled data fits the measured data.</p>
@@ -833,8 +831,8 @@ quantified metric for how well our modeled data fits the measured data.</p>
 <span id="cb23-9"><a href="physical-process-models.html#cb23-9" tabindex="-1"></a><span class="co"># kge_swe &lt;- 1 - sqrt((kge_r_swe - 1)^2 + (kge_beta_swe - 1)^2 + (kge_gamma_swe - 1)^2)</span></span>
 <span id="cb23-10"><a href="physical-process-models.html#cb23-10" tabindex="-1"></a><span class="co"># kge_swe</span></span></code></pre></div>
 </div>
-<div id="nash-sutcliffe-efficiency-nse." class="section level5 hasAnchor" number="5.3.4.3.2">
-<h5><span class="header-section-number">5.3.4.3.2</span> Nash-Sutcliffe Efficiency (NSE).<a href="physical-process-models.html#nash-sutcliffe-efficiency-nse." class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="nash-sutcliffe-efficiency-nse." class="section level5 hasAnchor" number="5.3.3.3.2">
+<h5><span class="header-section-number">5.3.3.3.2</span> Nash-Sutcliffe Efficiency (NSE).<a href="physical-process-models.html#nash-sutcliffe-efficiency-nse." class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Basically, the NSE looks at how much better your model run did that if you had just used the mean discharge for the data record as your “modelled results”. It does this by comparing how far off the observed values where from the mean discharge to how far off the modeled values were from the observed discharge. –&gt;
 Mathematically, NSE is the sum of the squared differences between the modeled and observed discharge divided by the sum of the squared differences between the observed and mean discharge, subtracted by 1.</p>
 <p><span class="math display">\[ NSE = 1 - \frac{\sum_{t = 1}^{T}{(Q_m^t - Q_o^t)^2}}{\sum_{t = 1}^{T}{(Q_o^t - \bar{Q_o})^2}}
@@ -853,8 +851,8 @@ Where <span class="math inline">\(Q_m^t\)</span> is modeled discharge at time t,
 <span id="cb25-5"><a href="physical-process-models.html#cb25-5" tabindex="-1"></a><span class="co"># NSEsno</span></span></code></pre></div>
 </div>
 </div>
-<div id="calibrate-hbv-manually" class="section level4 hasAnchor" number="5.3.4.4">
-<h4><span class="header-section-number">5.3.4.4</span> Calibrate HBV manually<a href="physical-process-models.html#calibrate-hbv-manually" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="calibrate-hbv-manually" class="section level4 hasAnchor" number="5.3.3.4">
+<h4><span class="header-section-number">5.3.3.4</span> Calibrate HBV manually<a href="physical-process-models.html#calibrate-hbv-manually" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Woohoo! We can now run our model and assess how well it is working!</p>
 <p>Now, let’s see how well we can get it to work. The code below runs the model, produces a plot, and calculates the NSE based on discharge.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="physical-process-models.html#cb26-1" tabindex="-1"></a><span class="co"># #when this term = 1, then triangular routing is invoked, or for no routing, routing = 0</span></span>
@@ -895,8 +893,8 @@ Where <span class="math inline">\(Q_m^t\)</span> is modeled discharge at time t,
 <span id="cb26-36"><a href="physical-process-models.html#cb26-36" tabindex="-1"></a><span class="co">#         add_trace(y = ~WS_3, name = &#39;Measured&#39;, type = &#39;scatter&#39;, mode = &#39;lines&#39;) %&gt;% </span></span>
 <span id="cb26-37"><a href="physical-process-models.html#cb26-37" tabindex="-1"></a><span class="co">#         layout(title=paste(&quot;NSE: &quot;, round(NSE,2)))</span></span></code></pre></div>
 </div>
-<div id="plot-observed-and-model-simulations" class="section level4 hasAnchor" number="5.3.4.5">
-<h4><span class="header-section-number">5.3.4.5</span> Plot observed and model simulations<a href="physical-process-models.html#plot-observed-and-model-simulations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="plot-observed-and-model-simulations" class="section level4 hasAnchor" number="5.3.3.5">
+<h4><span class="header-section-number">5.3.3.5</span> Plot observed and model simulations<a href="physical-process-models.html#plot-observed-and-model-simulations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Generate plots that include and compare the different modeled fluxes from your best NSE. Some of those fluxes can be immediately compared to observed data (e.g., runoff or SWE), while others only exist in simulated form (e.g., storages or outflows of the various runoff components) and need to be assessed with the perceptual model in mind.<br />
 Make sure that the axes are properly labeled when you create plots. The script below will get you started.</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="physical-process-models.html#cb27-1" tabindex="-1"></a><span class="co"># # Add date to the HBVRun result tibble</span></span>
