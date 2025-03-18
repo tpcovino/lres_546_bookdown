@@ -1,4 +1,4 @@
-# Physical Process Models
+
 ## Evapotranspiration
 
 ### Repo [here](https://github.com/tpcovino/09_evapotranspiration){target="blank"}
@@ -421,4 +421,4 @@ ANSWER:
 
 ANSWER:
 
-![Fool Creek delineated watershed](fool_studyarea.png)
+![Fool Creek delineated watershed](images/fool_studyarea.png)

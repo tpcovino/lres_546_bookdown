@@ -1,4 +1,4 @@
-
+# Physical Process Models
 ## Snowmelt Models
 ### Learning Module 7
 
@@ -52,7 +52,6 @@ This type of modeling may work well if the snowpack is isothermal, if we are int
 
 **Vertical layered modeling:** Depending on the desired application of the model, snowmelt may be modeled in multiple layers in the snow column (air-snow surface to ground). Climate models, for example, may estimate phase changes or heat flux and consider the snowpack in 5 or more layers. Avalanche forecasters may need to consider grain evolution, density, water content, and more over hundreds of layers! Hydrologists may also choose variable layers, but many will choose single- or two-layer models for basin-wide studies, as simple models can be effective when estimating basin runoff. [Here](https://journals.ametsoc.org/view/journals/hydr/13/2/jhm-d-11-072_1.xml) is a study by Dutra et al. (2012) that looked at the effect of the number of snow layers, liquid water representation, snow density, and snow albedo parameterizations within their tested models. Table 1 and figures 1-3 will be sufficient to understand the effects of changes to these parameters on modeled runoff and SWE. In this case, the three-layer model performed best when predicting the timing of the SWE and runoff, but density improved more by changing other parameters rather than layers (Figure 1). 
 
-
 **Lateral spatial heterogeneity:** 
 The spatial extent of the snow cover determines the area contributing to runoff at any given time during the melt period. The more snow there is, the more water there will be when it melts. Therefore, snow cover tells us which areas will contribute water to rivers and streams as the snow melts. 
 In areas with a lot of accumulated snow, the amount of snow covering the ground gradually decreases as the weather warms up. This melting process can take several months. How quickly the snow disappears depends on the landscape. For example, in mountainous ecosystems, factors like elevation, slope aspect, slope gradient, and [forest structure](https://repository.library.noaa.gov/view/noaa/45144){target="_blank"} affect how the snow can accumulate, evaporate or sublimate and how quickly the snow melts. 
@@ -82,14 +81,9 @@ When determining the architecture of your snow model, your model choices will re
 
 In this module, we will simulate snowmelt in a montane watershed in central Colorado with a simple temperature model. The Fool Creek watershed is located in the Fraser Experimental Forest (FEF), 137 km west of Denver, Colorado. The FEF contains several headwater streams (Strahler order 1-3) within the Colorado Headwaters watershed which supplies much of the water to the populated Colorado Front Range. This Forest has been the site of many studies to evaluate the effects of land cover change on watershed hydrology. The Fool Creek is a small, forested headwater stream, with an approximate watershed area of 2.75 km^2. The watershed elevation ranges from approximately 2,930m (9,600ft) at the USFS monitoring station to 3,475m (11,400ft) at the highest point. There is a SNOTEL station located at 3,400m. 
 
+We will refer to data from the SNOTEL station as 'high elevation' or 'upper watershed' data. Data collected from the outlet may be referred to as 'low elevation', 'lower watershed' or 'outlet' data.
 
 ![Fool Creek delineated watershed](images/fool_studyarea.png)
-
-
-
-**Q1: Using this map, what differences can you see between these two sites or what variation do you see in the watershed that may affect snow accumulation and melt? (2 points)?**
-
-ANSWER: 
 
 Let's look at some data for Fool Creek:
 
@@ -123,7 +117,7 @@ This script collects [SNOTEL](https://www.nrcs.usda.gov/wps/portal/wcc/home/abou
 ```
 
 #### Import data: 
-We will generate a conceptual runoff model using the date, daily mean temperature, SWE depth in mm, and daily precipitation (mm). We will use select() to keep the desired columns only. Then we will use mutate() to add a water year, and group_by() to add a cumulative precipitation column for each water year. 
+First, we will generate a conceptual runoff model using the date, daily mean temperature, SWE depth in mm, and daily precipitation (mm) data from the SNOTEL station. We will use select() to keep the desired columns only. Then we will use mutate() to add a water year, and group_by() to add a cumulative precipitation column for each water year. 
 
 ```{r, include=FALSE, warning=FALSE}
 # # Let's download data for the water years 2021 to 2022:
@@ -141,7 +135,7 @@ We will generate a conceptual runoff model using the date, daily mean temperatur
 #     ungroup()
 ```
 
-We will also download flow data collected by USFS at the Fool Creek outlet at 2,930m. 
+We will also download flow data collected by USFS at the Fool Creek outlet at 2,930m to compare to simulated runoff. 
 
 ```{r, include=FALSE, warning=FALSE}
 # fool_q <- read.csv("LFC_weir WY21-WY22.csv") %>%
@@ -192,11 +186,6 @@ to the ground by analyzing the daily changes in Snow Water Equivalent (SWE) and 
 #   mutate(date = lubridate::ymd(date))
 ```
 
-**Q2: In plain language, explain each step of the 5 if-else statements above (~5 brief sentences) (3pts).**
-
-ANSWER:
-
-
 ```{r, include=FALSE, warning=FALSE}
 # # Create a cumulative input column for visualization and calculations
 # sntl <- sntl %>%
@@ -234,13 +223,10 @@ Let's visualize the timing disparities between precipitation and melt input in r
 #print(max(sntl$pcumul.mm, na.rm = TRUE ))
 ```
 
-**Q3. What processes could account for the differences between cumulative input, calculated from SWE data, and cumulative precipitation, both measured at the same SNOTEL station? (1 or 2 processes) What could explain the discrepancy if the cumulative input, is found to be less than the cumulative precipitation measured at the same SNOTEL station? (at least 2 possible processes) (4 points) (2-3 sentences)**
-
-ANSWER: 
-
-
 #### Modeling SWE 
-Let's assume that we have a precipitation gage at 3400m in Fool Creek, but without SWE data, how could we model SWE using temperature? 
+Now we are going to shift focus. Instead of modeling runoff, let’s assume we have precipitation data from 3400m (SNOTEL, upper watershed) in the Fool Creek watershed, but no SWE data. How could we model SWE using temperature data?
+
+Next, we will create a model to estimate SWE and then compare the results to the actual SWE data from the SNOTEL station in the upper Fool watershed.
 
 ```{r, include=FALSE, warning=FALSE}
 # # Filter to a single water year for the snowmelt model
@@ -253,7 +239,14 @@ Let's assume that we have a precipitation gage at 3400m in Fool Creek, but witho
 # print(sum(sntl_SINGLE_YEAR$input.mm))
 ```
 
-The model below is a variation of the [degree-day method](https://www.researchgate.net/publication/229698275_Revisiting_the_Degree-day_Method_for_Snowmelt_Computations){target="_blank"}. Here we are running a similar script to the input calculations above, using temperature as the primary determinant. When the temperature falls below a certain threshold and precipitation occurs, an equivalent amount is added to our SWE accumulation. We'll conduct a simulation with 100 Monte Carlo runs and analyze the optimal outcome. The parameters we are testing are pack threshold, a degree-day factor, and the threshold temperature for determining rain from snow. 
+The model below is a variation of the [degree-day method](https://www.researchgate.net/publication/229698275_Revisiting_the_Degree-day_Method_for_Snowmelt_Computations){target="_blank"}.
+In this simulation, temperature determines whether precipitation contributes to snowpack or becomes rain. When temperatures fall below a certain threshold and precipitation occurs, that amount is added to the snow water equivalent (SWE) accumulation.
+
+To find the optimal parameters for the upper watershed, we will run 100 Monte Carlo simulations and analyze the results. The key parameters we are testing include: <br>
+Pack threshold – The SWE level at which melting begins. <br>
+Degree-day factor – The rate at which snow melts per degree above freezing. <br>
+Threshold temperature – The temperature that separates snow from rain.<br>
+By adjusting these parameters, we aim to refine our model and improve its accuracy in simulating snowpack dynamics. 
 
 ```{r, include=FALSE, warning=FALSE}
 # ########################################
@@ -366,7 +359,9 @@ The model below is a variation of the [degree-day method](https://www.researchga
 # ggplotly(swe_plot)
 ```
 
-This simple model seems to simulate SWE well if assessed with the NSE. Let's model SWE at the Fool Creek outlet, where we do not have daily SWE data. First we'll bring in precipitation data, measured at a USFS maintained meteorological station located near the Fool outlet:
+This simple model seems to simulate SWE well if assessed with the NSE. 
+
+Let's go through the procedure again, but this time we'll model SWE at the Fool Creek outlet (lower elevation), where we (really) don't have daily SWE data. First, we’ll import the precipitation data collected from a USFS meteorological station near the Fool Creek outlet.
 
 ```{r, include=FALSE, warning=FALSE}
 # fc_precip <- read.csv("LFCmet_WY21_WY22.csv") %>%
@@ -402,7 +397,7 @@ We also need temperature data. This is also collected at the USFS Lower Fool met
 #   summarise(across(.cols = everything(), .fns = mean, na.rm = TRUE))
 ```
 
-Even though this meteorological station is very close to the SNOTEL station, lets compare the values between the upper watershed and the lower
+Even though this meteorological station is fairly close to the SNOTEL station, the sites differ in elevation. Lets compare the observed cumulative precipitation between the upper watershed and the lower.
 
 ```{r, include=FALSE, warning=FALSE}
 # # Convert date column in sntl to Date format that matches lfc_data
@@ -538,7 +533,7 @@ Run another set of simulations and compare the values of the best performing par
 
 ```
 
-Since we don't have SWE measurement for Lower Fool Creek, let's see how the simulated values compare to acutal Upper Fool SNOTEL SWE measurements.
+Since we don't have SWE measurement for Lower Fool Creek, let's see how the simulated values for the lower watershed compare to the observed SWE from the high elevation SNOTEL station.
 
 ```{r, include=FALSE, warning=FALSE}
 # SWE.Model$date <- as.Date(SWE.Model$date)
@@ -560,23 +555,4 @@ Since we don't have SWE measurement for Lower Fool Creek, let's see how the simu
 # # You can change the indexing and wording in this statement if you want to explore all parameters. 
 # print(paste('The estimated threshold temperature distinguishing rain from snow in Lower Fool is ', round(param_lfc[1, 2], 2), 'degrees and in Upper Fool Creek is', round(param[1, 2],2), 'degrees'))
 ```
-
-**Q4: Based on the differences in precipitation and temperature totals between the two sites, are SWE simulation results as you expected? (1 sentence)(2 pts)**
-
-ANSWER: 
-
-**Q5: How does the estimated threshold temperature distinguishing rain from snow change with elevation? Is the relationship between your parameter estimations as expected? How does this influence your confidence in the model? (2 pts)** 
-
-ANSWER
-
-
-**Q6: Compare the precipitation and snow accumulation patterns between two sites. Discuss at least 3 potential natural and/or anthropogenic mechanisms driving the observed variations in precipitation and snow accumulation. Consider the factors you observed in question 1 (3 points)(2-3 sentences).**
-
-ANSWER:
-
-**Q7: Let's say you want to model runoff for the Fool Creek catchment identified above. To do that, you want to estimate the timing and volume of snowmelt for this watershed. Refer to at least 2 model types reviewed in the 06_model_classifications lecture or terms in the lecture above and qualitatively describe a model that you could use to capture the spatial heterogeneity of snow accumulation in this watershed (4 points) (2-4 sentences).**
-
-ANSWER:
-
-
 
