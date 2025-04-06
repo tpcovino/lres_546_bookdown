@@ -58,7 +58,7 @@ We will generate a conceptual runoff model starting with: <br>
 - ET --> Potential Evapotranspiration calculated using relative humidity and temperature. <br>
 
 ### Repo link
-[Download the repo for this lab HERE](https://github.com/tpcovino/08_hbv_models-.git){target="_blank"}
+[Download the repo for this lab HERE](https://github.com/lekokremer/lres546_HBV_repo){target="_blank"}
 
 ### Labwork (20 pnts)
 
