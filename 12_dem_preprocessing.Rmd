@@ -11,7 +11,7 @@
 
 **Whitebox Tools** is an advanced geospatial data analysis platform that can be used to perform common geographical information systems (GIS) analysis operations. This platform was developed with the Center for Hydrogeomatics in Guelph University so it is focused on hydrological analysis. With just a DEM, it allows us to produce a multitude of outputs that can be used for future analysis (Lindsay, 2016) <doi:10.1016/j.cageo.2016.07.003>). While we are demonstrating its use in R, these tools are also available in QGIS and Python platforms.
 
-### THE [LINK TO THE REPO IS HERE](https://github.com/tpcovino/08_dem_processing.git){target="_blank"}
+### THE [LINK TO THE REPO IS HERE](https://github.com/lekokremer/10_dem_processing){target="_blank"}
 
 ### Labwork (20 pts)
 
