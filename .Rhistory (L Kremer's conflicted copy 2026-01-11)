@@ -1,0 +1,512 @@
+#options = providerTileOptions(noWrap = TRUE)) %>%
+leaflet::addPolygons(stroke = TRUE,
+color="white",
+weight=2,
+smoothFactor = 0.3,
+fillOpacity = 0.5,
+fillColor = "green") %>%
+leaflet::addPolylines(data = rivers,
+color="blue",
+weight = 1)
+library(leaflet)
+map <- leaflet(basins) %>%
+#addProviderTiles(providers$Stamen.TonerLite,
+#options = providerTileOptions(noWrap = TRUE)) %>%
+leaflet::addPolygons(stroke = TRUE,
+color="white",
+weight=2,
+smoothFactor = 0.3,
+fillOpacity = 0.5,
+fillColor = "green") %>%
+leaflet::addPolylines(data = rivers,
+color="blue",
+weight = 1)
+map
+shiny::runApp('examples/step4')
+setwd("/Users/laurenkremer/Dropbox/Watershed_lab_CSU/Lauren/Shiny/eurofriend2023")
+shinyServer(function(input, output, session) {
+basins <- sf::st_read(dsn = "data/stationbasins.geojson")
+output$mymap <- renderLeaflet({
+leaflet(basins) %>%
+addProviderTiles(providers$Stamen.TonerLite,
+options = providerTileOptions(noWrap = TRUE)
+) %>% leaflet::addPolygons(stroke = TRUE,
+color="white",
+weight=2,
+smoothFactor = 0.3,
+fillOpacity = 0.5,
+fillColor = "green") %>%
+leaflet::addPolylines(data = rivers,
+color="blue",
+weight = 1)
+})
+})
+runApp('examples/step4')
+getwd()
+basins <- sf::st_read(dsn = "data/stationbasins.geojson")
+runApp('examples/step4')
+library(shiny)
+library(leaflet)
+ui <- fluidPage(
+leafletOutput("mymap")
+)
+server <- function(input, output, session) {
+output$mymap <- renderLeaflet({
+leaflet() %>%
+addTiles() %>%
+setView(lng = 0, lat = 0, zoom = 2)
+})
+}
+shinyApp(ui, server)
+runApp('examples/step4')
+runApp('examples/step4')
+shinyServer(function(input, output, session) {
+# Read and simplify the GeoJSON file
+basins <- sf::st_read(dsn = "data/stationbasins.geojson") %>%
+sf::st_transform(crs = 4326) %>%
+sf::st_simplify(dTolerance = 0.01)
+print(basins)  # Debugging: Check if data is loaded correctly
+# Render Leaflet map
+output$mymap <- renderLeaflet({
+leaflet() %>%
+addProviderTiles(providers$Stamen.TonerLite,
+options = providerTileOptions(noWrap = TRUE)) %>%
+addPolygons(data = basins,
+stroke = TRUE,
+color = "white",
+weight = 2,
+smoothFactor = 0.3,
+fillOpacity = 0.5,
+fillColor = "green")
+# Uncomment or modify this when rivers data is available
+# addPolylines(data = rivers,
+#              color = "blue",
+#              weight = 1)
+})
+})
+runApp('examples/step4')
+runApp('examples/step4')
+library(sf)
+# Read the GeoJSON file
+basins <- sf::st_read(dsn = "/Users/laurenkremer/Dropbox/Watershed_lab_CSU/Lauren/Shiny/eurofriend2023/data/stationbasins.geojson")
+# Fix invalid geometries
+basins <- sf::st_make_valid(basins)
+# Simplify the geometries (optional, for faster rendering)
+basins <- sf::st_simplify(basins, dTolerance = 0.01)
+# Transform to WGS84 if needed
+basins <- sf::st_transform(basins, crs = 4326)
+tryCatch({
+basins <- sf::st_read(dsn = "/Users/laurenkremer/Dropbox/Watershed_lab_CSU/Lauren/Shiny/eurofriend2023/data/stationbasins.geojson")
+basins <- sf::st_make_valid(basins)
+basins <- sf::st_transform(basins, crs = 4326)
+}, error = function(e) {
+print(paste("Error reading or fixing GeoJSON:", e$message))
+})
+library(shiny)
+library(leaflet)
+library(sf)
+shinyServer(function(input, output, session) {
+basins <- tryCatch({
+sf::st_read(dsn = "/Users/laurenkremer/Dropbox/Watershed_lab_CSU/Lauren/Shiny/eurofriend2023/data/stationbasins.geojson") %>%
+sf::st_make_valid() %>%
+sf::st_transform(crs = 4326) %>%
+sf::st_simplify(dTolerance = 0.01)
+}, error = function(e) {
+print(paste("Error processing GeoJSON:", e$message))
+NULL  # Return NULL if an error occurs
+})
+output$mymap <- renderLeaflet({
+if (is.null(basins)) {
+leaflet() %>%
+addTiles() %>%
+addControl("Error loading GeoJSON data", position = "topright")
+} else {
+leaflet(basins) %>%
+addProviderTiles(providers$Stamen.TonerLite,
+options = providerTileOptions(noWrap = TRUE)) %>%
+addPolygons(stroke = TRUE,
+color = "white",
+weight = 2,
+smoothFactor = 0.3,
+fillOpacity = 0.5,
+fillColor = "green")
+}
+})
+})
+runApp('examples/step4')
+sf::st_write(basins, "/Users/laurenkremer/Dropbox/Watershed_lab_CSU/Lauren/Shiny/eurofriend2023/data/processed_stationbasins.geojson", delete_dsn = TRUE)
+shinyServer(function(input, output, session) {
+basins <- tryCatch({
+sf::st_read(dsn = "/Users/laurenkremer/Dropbox/Watershed_lab_CSU/Lauren/Shiny/eurofriend2023/data/processed_stationbasins.geojson")
+}, error = function(e) {
+print(paste("Error loading processed GeoJSON:", e$message))
+NULL
+})
+output$mymap <- renderLeaflet({
+if (is.null(basins)) {
+leaflet() %>%
+addTiles() %>%
+addControl("Error loading GeoJSON data", position = "topright")
+} else {
+leaflet(basins) %>%
+addProviderTiles(providers$Stamen.TonerLite,
+options = providerTileOptions(noWrap = TRUE)) %>%
+addPolygons(stroke = TRUE,
+color = "white",
+weight = 2,
+smoothFactor = 0.3,
+fillOpacity = 0.5,
+fillColor = "green")
+}
+})
+})
+runApp('examples/step4')
+runApp('examples/step4')
+runApp('examples/step4')
+runoff <- RNetCDF::open.nc(con = "/data/GRDC-Daily.nc")
+runoff <- RNetCDF::open.nc(con = "/Users/laurenkremer/Dropbox/Watershed_lab_CSU/Lauren/Shiny/eurofriend2023/data/GRDC-Daily.nc")
+runoff <- RNetCDF::open.nc(con = "/Users/laurenkremer/Dropbox/Watershed_lab_CSU/Lauren/Shiny/eurofriend2023/data/GRDC-Daily.nc")
+values <- var.get.nc(runoff,
+"runoff_mean",
+start=c(4,1),
+count=c(1,NA))
+timestamps <- var.get.nc(runoff,
+"time",
+start=1,
+count=NA)
+timestamps <- as.Date("1700-01-01") + timestamps
+ts <- zoo::as.zooreg(zoo::zoo(values,timestamps))
+dygraphs::dygraph(ts,
+xlab = "time",
+ylab = "runoff [m³/s]")
+runApp('examples/step6')
+runApp('examples/step7')
+runApp('examples/step8')
+library(shiny)
+library(RNetCDF)
+getTs <- function(grdc_num, nc) {
+stations_ts <- RNetCDF::var.get.nc(nc, "id")
+index <- match(grdc_num,stations_ts)
+if (!is.na(index)) {
+x <- var.get.nc(nc,
+"runoff_mean",
+start=c(index,1),
+count=c(1,NA))
+timestamps <- var.get.nc(runoff,
+"time",
+start=1,
+count=NA)
+timestamps <- as.Date("1700-01-01") + timestamps
+ts <- zoo::as.zooreg(zoo::zoo(x,timestamps))
+} else {
+ts <- NA
+}
+return(ts)
+}
+shinyServer(function(input, output, session) {
+basins <- sf::st_read(dsn = "/Users/laurenkremer/Dropbox/Watershed_lab_CSU/Lauren/Shiny/eurofriend2023/data/processed_stationbasins.geojson")
+output$mymap <- renderLeaflet({
+leaflet(basins) %>%
+addProviderTiles(providers$Stamen.TonerLite,
+options = providerTileOptions(noWrap = TRUE)
+) %>% leaflet::addPolygons(stroke = TRUE,
+color="white",
+weight=2,
+smoothFactor = 0.3,
+fillOpacity = 0.5,
+fillColor = "green",
+layerId = ~GRDC_NO) %>%
+leaflet::addPolylines(data = rivers,
+color="blue",
+weight = 1)
+})
+runoff <- RNetCDF::open.nc(con = "/Users/laurenkremer/Dropbox/Watershed_lab_CSU/Lauren/Shiny/eurofriend2023/data/GRDC-Daily.nc")
+observeEvent(input$mymap_shape_click, {
+p <- input$mymap_shape_click
+print(p$id)
+ts <- getTs(grdc_num = p$id,
+nc = runoff) # this event is here so that if a shape is clicked then the reactive variable is triggered
+# so when the user clidks on the shape, the function is carried out
+output$myplot <- renderDygraph(
+dygraph(ts, xlab="time",
+ylab = "runoff [m³/s]",
+main = paste0(basins[basins$GRDC_NO == p$id,]$RIVER,
+": gauge ",
+basins[basins$GRDC_NO == p$id,]$STATION)
+)
+})
+runApp('examples/step8')
+runApp('examples/step8')
+library(shiny)
+library(RNetCDF)
+getTs <- function(grdc_num, nc) {
+stations_ts <- RNetCDF::var.get.nc(nc, "id")
+index <- match(grdc_num,stations_ts)
+if (!is.na(index)) {
+x <- var.get.nc(nc,
+"runoff_mean",
+start=c(index,1),
+count=c(1,NA))
+timestamps <- var.get.nc(runoff,
+"time",
+start=1,
+count=NA)
+timestamps <- as.Date("1700-01-01") + timestamps
+ts <- zoo::as.zooreg(zoo::zoo(x,timestamps))
+} else {
+ts <- NA
+}
+return(ts)
+}
+shinyServer(function(input, output, session) {
+basins <- sf::st_read(dsn = "/Users/laurenkremer/Dropbox/Watershed_lab_CSU/Lauren/Shiny/eurofriend2023/data/processed_stationbasins.geojson")
+output$mymap <- renderLeaflet({
+leaflet(basins) %>%
+#addProviderTiles(providers$Stamen.TonerLite,
+#options = providerTileOptions(noWrap = TRUE)
+) %>% leaflet::addPolygons(stroke = TRUE,
+library(shiny)
+library(RNetCDF)
+getTs <- function(grdc_num, nc) {
+stations_ts <- RNetCDF::var.get.nc(nc, "id")
+index <- match(grdc_num,stations_ts)
+if (!is.na(index)) {
+x <- var.get.nc(nc,
+"runoff_mean",
+start=c(index,1),
+count=c(1,NA))
+timestamps <- var.get.nc(runoff,
+"time",
+start=1,
+count=NA)
+timestamps <- as.Date("1700-01-01") + timestamps
+ts <- zoo::as.zooreg(zoo::zoo(x,timestamps))
+} else {
+ts <- NA
+}
+return(ts)
+}
+shinyServer(function(input, output, session) {
+basins <- sf::st_read(dsn = "/Users/laurenkremer/Dropbox/Watershed_lab_CSU/Lauren/Shiny/eurofriend2023/data/processed_stationbasins.geojson")
+output$mymap <- renderLeaflet({
+leaflet(basins) %>%
+#addProviderTiles(providers$Stamen.TonerLite,
+#options = providerTileOptions(noWrap = TRUE)
+) %>% leaflet::addPolygons(stroke = TRUE,
+library(shiny)
+library(RNetCDF)
+getTs <- function(grdc_num, nc) {
+stations_ts <- RNetCDF::var.get.nc(nc, "id")
+index <- match(grdc_num,stations_ts)
+if (!is.na(index)) {
+x <- var.get.nc(nc,
+"runoff_mean",
+start=c(index,1),
+count=c(1,NA))
+timestamps <- var.get.nc(runoff,
+"time",
+start=1,
+count=NA)
+timestamps <- as.Date("1700-01-01") + timestamps
+ts <- zoo::as.zooreg(zoo::zoo(x,timestamps))
+} else {
+ts <- NA
+}
+return(ts)
+}
+shinyServer(function(input, output, session) {
+basins <- sf::st_read(dsn = "/Users/laurenkremer/Dropbox/Watershed_lab_CSU/Lauren/Shiny/eurofriend2023/data/processed_stationbasins.geojson")
+output$mymap <- renderLeaflet({
+leaflet(basins) %>%
+#addProviderTiles(providers$Stamen.TonerLite,
+#options = providerTileOptions(noWrap = TRUE)
+) %>% leaflet::addPolygons(stroke = TRUE,
+getTs <- function(grdc_num, nc) {
+stations_ts <- RNetCDF::var.get.nc(nc, "id")
+index <- match(grdc_num,stations_ts)
+if (!is.na(index)) {
+x <- var.get.nc(nc,
+"runoff_mean",
+start=c(index,1),
+count=c(1,NA))
+timestamps <- var.get.nc(runoff,
+"time",
+start=1,
+count=NA)
+timestamps <- as.Date("1700-01-01") + timestamps
+ts <- zoo::as.zooreg(zoo::zoo(x,timestamps))
+} else {
+ts <- NA
+}
+return(ts)
+}
+runApp('examples/step8')
+shinyServer(function(input, output, session) {
+basins <- sf::st_read(dsn = "/Users/laurenkremer/Dropbox/Watershed_lab_CSU/Lauren/Shiny/eurofriend2023/data/processed_stationbasins.geojson")
+output$mymap <- renderLeaflet({
+leaflet(basins) %>%
+#addProviderTiles(providers$Stamen.TonerLite,
+#options = providerTileOptions(noWrap = TRUE)) %>%
+leaflet::addPolygons(stroke = TRUE,
+color="white",
+weight=2,
+smoothFactor = 0.3,
+fillOpacity = 0.5,
+fillColor = "green",
+layerId = ~GRDC_NO) %>%
+leaflet::addPolylines(data = rivers,
+color="blue",
+weight = 1)
+})
+runoff <- RNetCDF::open.nc(con = "/Users/laurenkremer/Dropbox/Watershed_lab_CSU/Lauren/Shiny/eurofriend2023/data/GRDC-Daily.nc")
+observeEvent(input$mymap_shape_click, {
+p <- input$mymap_shape_click
+print(p$id)
+ts <- getTs(grdc_num = p$id,
+nc = runoff) # this event is here so that if a shape is clicked then the reactive variable is triggered
+# so when the user clidks on the shape, the function is carried out
+output$myplot <- renderDygraph(
+dygraph(ts, xlab="time",
+ylab = "runoff [m³/s]",
+main = paste0(basins[basins$GRDC_NO == p$id,]$RIVER,
+": gauge ",
+basins[basins$GRDC_NO == p$id,]$STATION)
+))
+})
+})
+runApp('examples/step8')
+runApp('examples/step8')
+runApp('examples/step8')
+runApp('examples/step8')
+bookdown::render_book("index.Rmd")
+render_book()
+library(bookdown)
+render_book()
+library(bookdown)
+render_book()
+render_book()
+render_book()
+render_book()
+render_book()
+render_book()
+render_book()
+render_book()
+render_book()
+render_book()
+render_book()
+render_book()
+knitr::include_graphics("images/linear_diag.png")
+knitr::include_graphics("images/lumpd_dist_ws.png")
+render_book()
+library(bookdown)
+render_book()
+knitr::include_graphics("images/distrib_physical_model.jpg")
+render_book()
+render_book()
+render_book()
+![Beven_modeling_workflow.png]
+![] (images/linear_diag.png)
+![](images/linear_diag.png)
+render_book()
+knitr::include_graphics(here::here("images", "linear_diag.png"))
+getwd()
+knitr::include_graphics(here::here("images", "linear_diag.png"))
+install.packages('here')
+library(herr)
+library(here)
+knitr::include_graphics(here::here("images", "linear_diag.png"))
+render_book()
+render_book()
+render_book()
+library(bookdown)
+render_book()
+render_book()
+render_book()
+inventory_url <- 'https://www.ncei.noaa.gov/pub/data/ghcn/daily/ghcnd-inventory.txt'
+inventory <- read_table(inventory_url, col_names = c("station", "lat", "lon", "variable", "start", "end"))
+render_book()
+library(bookdown)
+render_book()
+library(bookdown)
+render_book()
+render_book()
+library(bookdown)
+render_book()
+render_book()
+render_book()
+library(bookdown)
+render_book()
+render_book()
+ggplot(data = indata) +
+geom_point(aes(x = date, y = runoff_input.mm, color = "runoff_input.mm"), size = 0.5) +  # Assign a label for legend
+geom_point(aes(x = date, y = Q_mm_day, color = "mm/day"), size = 0.5) +  # Assign a different label
+geom_point(aes(x = date, y = weighted_precip.mm, color = "weighted_precip.mm"), size = 0.5) +  # Assign a different label
+geom_point(aes(x = date, y = Pdiff.mm, color = "Pdiff.mm"), size = 0.5) +
+scale_color_manual(values = c("runoff_input.mm" = "blue", "mm/day" = "red", "weighted_precip.mm" = "green", "Pdiff.mm" = 'purple')) +  # Customize colors
+labs(color = "Discharge Units") +  # Legend title
+theme_minimal()
+render_book()
+render_book()
+render_book()
+render_book()
+render_book()
+render_book()
+library(bookdonw)
+library(bookdown)
+render_book()
+library(bookdown)
+render_book()
+unlink("_book", recursive = TRUE)
+unlink("_bookdown_files", recursive = TRUE)
+render_book()
+ls -l
+install.packages("bookdown")
+render_book()
+library(bookdown)
+render_book()
+unlink("_book", recursive = TRUE)
+unlink("_bookdown_files", recursive = TRUE)
+render_book()
+render_book()
+render_book()
+render_book()
+render_book()
+render_book()
+unlink("_book", recursive = TRUE)
+unlink("_bookdown_files", recursive = TRUE)
+render_book()
+library(bookdown)
+render_book()
+render_book()
+render_book()
+unlink("_book", recursive = TRUE)
+unlink("_bookdown_files", recursive = TRUE)
+render_book()
+unlink("_book", recursive = TRUE)
+unlink("_bookdown_files", recursive = TRUE)
+render_book()
+render_book()
+render_book()
+render_book()
+render_book
+render_book()
+render_book()
+render_book()
+library(bookdown)
+render_book()
+library(bookdown)
+render_book()
+install.packages('bookdown')
+library(bookdown)
+bookdown::render_book("index.Rmd")
+no
+bookdown::render_book("index.Rmd")
+bookdown::render_book("index.Rmd")
+bookdown::render_book("index.Rmd")
+bookdown::render_book("index.Rmd")
+bookdown::render_book("index.Rmd")
+render_book("index.Rmd")
+# Load necessary library
+library(bookdown)
+# Render the book
+render_book("index.Rmd")
