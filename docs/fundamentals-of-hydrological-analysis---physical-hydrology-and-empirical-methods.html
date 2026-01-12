@@ -520,13 +520,13 @@ an overview of projects and why you should use them from Jenny Bryan.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="fundamentals-of-hydrological-analysis---physical-hydrology-and-empirical-methods.html#cb1-1" tabindex="-1"></a><span class="co">#knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, results = FALSE, cache = FALSE)</span></span></code></pre></div>
 <div id="packages" class="section level4 hasAnchor" number="2.2.2.1">
 <h4><span class="header-section-number">2.2.2.1</span> Packages<a href="fundamentals-of-hydrological-analysis---physical-hydrology-and-empirical-methods.html#packages" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>We have a few new packages today. Those include rnoaa and leaflet. rnooa is a package used to download NOAA climate data. leaflet is a package for interactive mapping.</p>
+<p>We have a few new packages today. Those include noaa and leaflet. nooa is a package used to download NOAA climate data. leaflet is a package for interactive mapping.</p>
 <p>Recall that if you have not installed these packages on your computer you will need to run:</p>
-<p>install.packages(“rnoaa”) and so on for the others.</p>
+<p>install.packages(“noaa”) and so on for the others.</p>
 </div>
 <div id="precipitation-return-intervals" class="section level4 hasAnchor" number="2.2.2.2">
 <h4><span class="header-section-number">2.2.2.2</span> Precipitation return intervals<a href="fundamentals-of-hydrological-analysis---physical-hydrology-and-empirical-methods.html#precipitation-return-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>First, let’s start by getting some precipitation (P) data. rnoaa has a function called ghcnd_stations(). This function will download the site information for all stations in the GHCND network.</p>
+<p>First, let’s start by getting some precipitation (P) data. noaa has a function called ghcnd_stations(). This function will download the site information for all stations in the GHCND network.</p>
 <p>GHCND network
 - <a href="https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily" target="_blank">Link</a></p>
 <p>Ok, so we want station USC00241044, which runs from 1892 to now. We use the meteo_pull_monitors() function to do that.</p>

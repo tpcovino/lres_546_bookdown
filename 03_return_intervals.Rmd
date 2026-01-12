@@ -35,15 +35,15 @@ This is knitr settings. Knitr is a package that will turn this Rmd to an html.
 
 #### Packages
 
-We have a few new packages today. Those include rnoaa and leaflet. rnooa is a package used to download NOAA climate data. leaflet is a package for interactive mapping.
+We have a few new packages today. Those include noaa and leaflet. nooa is a package used to download NOAA climate data. leaflet is a package for interactive mapping.
 
 Recall that if you have not installed these packages on your computer you will need to run:
 
-install.packages("rnoaa") and so on for the others. 
+install.packages("noaa") and so on for the others. 
 
 ```{r, include=FALSE, warning=FALSE}
 # library(tidyverse)
-# library(rnoaa) #this package is being deprecated, unfortunately. But should work for now. 
+# library(noaa) 
 # library(plotly)
 # library(leaflet)
 # library(lubridate)
@@ -51,7 +51,7 @@ install.packages("rnoaa") and so on for the others.
 
 #### Precipitation return intervals 
 
-First, let's start by getting some precipitation (P) data. rnoaa has a function called ghcnd_stations(). This function will download the site information for all stations in the GHCND network. 
+First, let's start by getting some precipitation (P) data. noaa has a function called ghcnd_stations(). This function will download the site information for all stations in the GHCND network. 
 
 GHCND network
 - [Link](https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily){target="_blank"}
