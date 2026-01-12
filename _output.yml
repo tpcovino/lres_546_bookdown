@@ -1,5 +1,6 @@
 bookdown::gitbook:
   css: style.css
+   self_contained: false
   config:
     toc:
       before: |
