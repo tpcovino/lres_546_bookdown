@@ -1,0 +1,59 @@
+## Monte Carlo Simulation 
+
+### Learning Module 5
+#### Background:
+
+Monte Carlo Simulation is a method to estimate the probability of the outcomes of an uncertain event. It is based on a law of probability theory that says if we repeat an experiment many times, the average of the results will get closer to the true probability of those outcomes. 
+
+First check out this video:
+```{r, echo=FALSE}
+knitr::include_url("https://www.youtube.com/embed/7TqhmX92P6U")
+```
+
+#### Reading
+Then read this: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2924739/ for a understanding of the fundamentals.
+
+#### How does this apply to hydrological modeling?
+
+When modeling watershed hydrological processes, we often attempting to quantify<br><br>
+
+  * watershed inputs <br>
+      + e.g., precipitation <br>
+  - watershed outputs <br>
+      - e.g., [evapotranspiration](https://www.usgs.gov/special-topics/water-science-school/science/evapotranspiration-and-water-cycle#:~:text=Evapotranspiration%20includes%20water%20evaporation%20into,to%20the%20atmosphere%20via%20plants), [sublimation](https://www.usgs.gov/media/images/sublimation-occurs-snow-covered-mountains), runoff/discharge <br>
+  - watershed storage <br>
+      - precipitation that is not immediately converted to runoff or ET rather stored as snow or subsurface water. <br>
+
+Imagine we are trying to predict the percentage of precipitation stored in a watershed after a storm event. We have learned that there are may factors that affect this prediction, like antecedent conditions, that may be difficult to measure directly. Monte Carlo Simulation can offer a valuable approach to estimate the probability of obtaining certain measurements when those factors can not be directly observed or measured. We can approximate the likelihood of specific measurement by simulating a range of possible scenarios. <br>
+
+Monte Carlo Simulation is not only useful for estimating probabilities, but for conducting sensitivity analysis. In any model, there are usually several input parameters. Sensitivity analysis helps us understand how changes in these parameters affect the predicted values. To perform a sensitivity analysis using a Monte Carlo Simulation we can:
+
+  - Define the realistic ranges for each parameter we want to analyze
+  - Using Monte Carlo Simulation, randomly sample values from the defined ranges for each parameter
+  - Analyze output to understand how different input sample values affect the predicted output
+
+#### Example
+
+Let's consider all of this in an example model called [WECOH - Watershed ECOHydrology](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2014WR016719). In this study, researchers (Nippgen et al.) were interested in the change in subsurface water storage through time and space on a daily and seasonal basis.
+
+![Evolution of watershed connectivity](./images/wrcr21497-fig-0009-m.jpg){width=50%}
+
+<br/><br/>
+The authors directly measured runoff/discharge, collected precipitation data at several points within the watershed, used remote sensing to estimate how much water was lost to evapotranspiration, and used digital elevation models to characterize the watershed topography. As we learned in the hydrograph separation module, topographic characteristics can have a significant impact on storage. <br>
+Though resources like [USDA's Web Soil Survey](https://websoilsurvey.sc.egov.usda.gov/app/) can provide a basic understanding underlying geology across a large region, characterizing the heterogeneous nature of soils within a watershed can be logistically unfeasible. To estimate the soil characteristics like storage capacity (how much water the soil can hold) and hydraulic conductivity (how easily water can move through soil) in the study watershed, the authors used available resources to determine the possible range of values for each of their unknown parameters. They then tested thousands of model simulations using randomly selected values with the predetermined range for each of the soil characteristics. They compared the simulated discharge from these simulations to the actual discharge measurements. The simulations that predicted discharge patterns that closely matched reality helped them to estimate the unknown soil properties. Additionally, from the results of these simulations, they could identify which model inputs had the most significant impact on the discharge predictions, and how sensitive the output was to changes in each parameter. In this case, they determined that the model and system were most sensitive to precipitation. This type of sensitivity analysis can help us interpret the relative importance of different parameters and understand the overall sensitivity of the model or system. The study is linked for your reference but a thorough reading is not required. 
+
+#### Optional Reading
+[This methods paper](https://www.researchgate.net/publication/262765548_Development_of_probability_distributions_for_urban_hydrologic_model_parameters_and_a_Monte_Carlo_analysis_of_model_sensitivity) by Knighton et al. is an example of how Monte Carlo Simulation was used to estimate hydraulic conductivity in an urban system with varied land-cover..
+
+#### Generate a simulation with code 
+
+For a 12-minute example in RStudio, check this out. If you are still learning the basics of R functionality, it may be helpful to code along with this video, pausing as needed. Note that this instruction is coding in an Rscript (after opening RStudio > File > New File > R Script), rather than an Rmarkdown that we use in this class. 
+
+```{r, echo=FALSE}
+knitr::include_url("https://www.youtube.com/embed/inJsu-ygBfM")
+```
+
+### Repo link
+[Download the repo for this lab HERE](https://github.com/tpcovino/05_monte_carlo.git){target="_blank"}
+
+

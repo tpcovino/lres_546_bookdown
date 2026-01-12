@@ -1,0 +1,30 @@
+
+
+# R Tutorial 
+
+This week we will be doing a hands-on R tutorial. This should be useful whether you are new to R or if you have a large amount of experience. Everyone works differently in R, so if you have experience you will likely learn other ways to do things. I find that is true, and I enjoy learning from others that go about coding differently than I do.
+
+This book is your friend [RDS](https://r4ds.hadley.nz/){target="_blank"}
+
+Here is a link to another class of mine that also has lots of code and tutorials that you can utilize[Watershed Analysis]({target="_blank"}){target="_blank"}
+
+Some topics we will cover in this tutorial:
+- installing and R and RStudio on your computer <br>
+- basics of GitHub <br>
+- projects and why you should use them <br>
+- layout of RStudio <br>
+- RMarkdown <br>
+- the tidyverse <br>
+- packages in the tidyverse <br>
+- loading, visualizing, and wrangling data <br>
+- functions and for loops
+
+This tutorial is accompanied by a video (posted on Canvas) where I walk through all of the coding and describe what is happening. You should start the video and we will open the link below together and walk through the tutorial. You can pause the tutorial at any point you need to and work through it at your own pace. 
+
+Last, please reach out to me if you have any questions (now and throughout the semester) and we will hop on a Zoom and get you on track!
+
+**Link coming soon!**
+[See here for tutorial repo]()
+
+
+

@@ -52,43 +52,41 @@ Books/resources, we may not use all of these, but they are good references:<br>
  
 ## Tentative schedule, subject to change
 **Part 1: Foundations of Environmental Modeling**
-**Week 1** *1/12 - 1/16* <br> 
+**Week 1** *1/13 - 1/16* <br> 
 - Introduction, overview, and technical skills.\
 - If you need a refresher for R please see [Chapters 1, 2, & 3](https://r4ds.hadley.nz/data-visualize){target="_blank"} 1-Welcome, 2-Introduction, & 3-Data visualization in R for Data Science (RDS).
 
-**Part 2: Tabular Models and Time-Series Analysis**<br>
 **Week 2** *1/19 - 1/23* <br>
+-R tutorial and refresher
+
+**Part 2: Tabular Models and Time-Series Analysis**<br>
+**Week 3** *1/26 - 1/30* <br>
 - Hydrograph separation. <br>
 
-**Week 3** *1/26 - 1/30* <br>
+**Week 4** *2/2 - 2/6* <br>
 - Frequency analysis <br>
   
-**Week 4** *2/2 - 2/6* <br>
+**Week 5** *2/9 - 2/13* <br>
 - Rational and curve number (CN) methods <br>
 
-**Week 5** *2/9 - 2/13* <br>
+**Week 6** *2/16 - 2/20* <br>
 - Monte Carlo and sensitivity analysis<br>
  
 **Part 3: Bucket Models (Process-Based Models)**<br>
-**Week 6** *2/16 - 2/20* <br>
+**Week 7** *2/23 - 2/27* <br>
 - Classifying Model Structure<br>
 - Snowmelt models <br>
 
-**Week 7** *2/23 - 2/27* <br>
+**Week 8** *3/2 - 3/6* <br>
 - Evapotranspiration<br>
 
-**Week 8** *3/2 - 3/6* <br>
+**Week 9** *3/2 - 3/6* <br>
 - Term assignment 1 <br>
-
-**Week 9** *3/9 - 3/13* <br>
-- Term assignment 2 <br>
 
 **Week 10 Spring Break**  *3/16 - 3/20* <br>
 
-**Week 11**  *3/23 - 3/27* <br>
-lumped to semi-distributed modeling<br>
-- HBV Model  <br>
-- OR Precipitation interpolation <br>
+**Week 11** *3/23 - 3/27* <br>
+- Term assignment 2 <br>
 
 **Part 4: Spatial Models and GIS Integration**<br>
 **Week 12** *3/30 - 4/3* <br>

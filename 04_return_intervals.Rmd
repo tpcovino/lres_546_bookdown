@@ -1,0 +1,26 @@
+## Return Intervals 
+
+- In this learning module we will focus on return intervals. We first need to understand return intervals before we can move onto the rational method and curve numbers.
+
+### Learning Module 2
+#### Background information
+
+Lecture from colleague Joel Sholtes on precipitation frequency analysis. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3_EnTJaFCKg?si=1BYvBzA1fDjZK4Zv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+Short lecture on Intensity-Duration-Frequency (IDF) curves
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JXSwKmfMZJo?si=nlHa4Th3ZCSzi2Ks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+Reading on frequency analysis of flow (e.g., floods). You should notice that the frequency analysis is the same whether we apply it to Q (flow) or P (precipitation). So as long as you understand the fundamental principles you will be able to do frequency analysis on either Q or P. 
+
+[USGS reading on flow frequency analysis](https://www.usgs.gov/centers/new-jersey-water-science-center/floods-recurrence-intervals-and-100-year-floods){target="_blank"}
+
+There are also probability lecture slides on D2L. Titled "probability.pptx". 
+ 
+### Repo link
+
+The repo for this module can be found [here](https://github.com/tpcovino/02_return_intervals.git){target="_blank"}
+
