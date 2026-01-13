@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Model Classification and Application | Quantitative Environmental Methods: LRES 546</title>
   <meta name="description" content="Chapter 5 Model Classification and Application | Quantitative Environmental Methods: LRES 546" />
-  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Model Classification and Application | Quantitative Environmental Methods: LRES 546" />
   <meta property="og:type" content="book" />
@@ -54,7 +54,6 @@
 
 
 <style type="text/css">
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -404,18 +403,15 @@ Create a table in R and export it as a .csv file to submit with this assignment 
 ##          Source_Link     Key_variables
 ## 1 https://www.link1/     precipitation
 ## 2     https://link2/ soil_conductivity
-##   Temporal_range Spatial_Coverage
-## 1      2020-2021          Montana
-## 2     1979-today        Juneau_AK
-##   Data_Quality       Data_Quality_notes
-## 1         High QCd with no missing data
-## 2     Moderate   some unexpected values
-##   Feasibility Feasibility_notes
-## 1        High             note1
-## 2      Medium             note2
-##   variable_type
-## 1   explanatory
-## 2      response</code></pre>
+##   Temporal_range Spatial_Coverage Data_Quality
+## 1      2020-2021          Montana         High
+## 2     1979-today        Juneau_AK     Moderate
+##         Data_Quality_notes Feasibility
+## 1 QCd with no missing data        High
+## 2   some unexpected values      Medium
+##   Feasibility_notes variable_type
+## 1             note1   explanatory
+## 2             note2      response</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="model-classification-and-application.html#cb7-1" tabindex="-1"></a><span class="co"># Export the data table as a .csv to a file path of your choice:</span></span>
 <span id="cb7-2"><a href="model-classification-and-application.html#cb7-2" tabindex="-1"></a><span class="co">#exportpath &lt;- file.path(getwd(), somefolder, term_assign_table.csv) #replace somefolde with an actual folder name that exists in your local environment</span></span>
 <span id="cb7-3"><a href="model-classification-and-application.html#cb7-3" tabindex="-1"></a><span class="co">#write.csv(data_able, exportpath, row.names=FALSE)</span></span></code></pre></div>

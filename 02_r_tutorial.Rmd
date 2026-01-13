@@ -6,7 +6,7 @@ This week we will be doing a hands-on R tutorial. This should be useful whether 
 
 This book is your friend [RDS](https://r4ds.hadley.nz/){target="_blank"}
 
-Here is a link to another class of mine that also has lots of code and tutorials that you can utilize[Watershed Analysis]({target="_blank"}){target="_blank"}
+Here is a link to another class of mine that also has lots of code and tutorials that you can utilize [Watershed Analysis]({target="_blank"}){target="_blank"}
 
 Some topics we will cover in this tutorial:<br>
 - installing R and RStudio on your computer <br>
