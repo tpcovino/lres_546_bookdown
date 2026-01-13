@@ -69,26 +69,32 @@ Books/resources, we may not use all of these, but they are good references:<br>
 **Week 5** *2/9 - 2/13* <br>
 - Rational and curve number (CN) methods <br>
 
+**Part 3: Bucket Models**<br>
 **Week 6** *2/16 - 2/20* <br>
-- Monte Carlo and sensitivity analysis<br>
+- Transfer function & rainfall-runoff models<br>
  
-**Part 3: Bucket Models (Process-Based Models)**<br>
 **Week 7** *2/23 - 2/27* <br>
-- Classifying Model Structure<br>
-- Snowmelt models <br>
+- Monte Carlo (estimating model parameters) and sensitivity analysis<br>
 
+**Part 4: Model Classification and Application**<br>
 **Week 8** *3/2 - 3/6* <br>
-- Evapotranspiration<br>
+- Classifying Model Structure (reading only)<br>
+- Term assignment 1 
 
-**Week 9** *3/2 - 3/6* <br>
-- Term assignment 1 <br>
-
-**Week 10 Spring Break**  *3/16 - 3/20* <br>
-
-**Week 11** *3/23 - 3/27* <br>
+**Week 9** *3/9 - 3/13* <br>
 - Term assignment 2 <br>
 
-**Part 4: Spatial Models and GIS Integration**<br>
+**Week 10** *3/16 - 3/20* <br>
+SPRING BREAK<br>
+
+**Part 5: Physical Process models**<br>
+**Week 11** *3/23 – 3/27* <br>
+TBD - choose from<br>
+- Snowmelt models <br>
+- Evapotranspiration<br>
+- Precipitation<br>
+
+**Part 6: Spatial Models and GIS Integration**<br>
 **Week 12** *3/30 - 4/3* <br>
 - Gridded and tabular data retrieval using API integration packages<br>
 
@@ -96,18 +102,14 @@ Books/resources, we may not use all of these, but they are good references:<br>
 - DEM processing and analysis in Whitebox <br>
 
 **Week 14** *4/13 - 4/17* <br>
-- Transfer Functions <br>
-
-**Part 5: Application** <br>
+- Term project work<br>
 
 **Week 15** *4/20 - 4/24* <br>
 - Term project work <br>
+- Final presentations due April 25 <br>
 
 **Week 16** *4/27 - 5/1* <br>
-- Final presentations due May 1 <br>
-
-**Week 17** *5/4 - 5/7* <br>
-- Finals week - Share final presentations 
+- Last week of classes – Peer review final presentations<br>
 
 
 

@@ -8,8 +8,8 @@ This book is your friend [RDS](https://r4ds.hadley.nz/){target="_blank"}
 
 Here is a link to another class of mine that also has lots of code and tutorials that you can utilize[Watershed Analysis]({target="_blank"}){target="_blank"}
 
-Some topics we will cover in this tutorial:
-- installing and R and RStudio on your computer <br>
+Some topics we will cover in this tutorial:<br>
+- installing R and RStudio on your computer <br>
 - basics of GitHub <br>
 - projects and why you should use them <br>
 - layout of RStudio <br>
