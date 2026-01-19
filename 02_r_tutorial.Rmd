@@ -17,14 +17,20 @@ Some topics we will cover in this tutorial:<br>
 - the tidyverse <br>
 - packages in the tidyverse <br>
 - loading, visualizing, and wrangling data <br>
-- functions and for loops
+- functions and for loops <br>
 
-This tutorial is accompanied by a video (posted on Canvas) where I walk through all of the coding and describe what is happening. You should start the video and we will open the link below together and walk through the tutorial. You can pause the tutorial at any point you need to and work through it at your own pace. 
+Read this short article from Jenny Bryan on why you should always us packages. [Link](https://tidyverse.org/blog/2017/12/workflow-vs-script/){target="_blank"}
+
+This tutorial is accompanied by a video where I walk through all of the coding and describe what is happening. You should start the video and we will open the link below together and walk through the tutorial. You can pause the tutorial at any point you need to and work through it at your own pace. 
 
 Last, please reach out to me if you have any questions (now and throughout the semester) and we will hop on a Zoom and get you on track!
 
-**Link coming soon!**
-[See here for tutorial repo]()
+
+[See here for part 1 tutorial repo](https://tpcovino.github.io/ensc_445_545_bookdown/intro-to-data-visualization.html){target="_blank"}
+
+[Tutorial part 2](https://tpcovino.github.io/ensc_445_545_bookdown/data-wrangling-using-tidyverse.html){target="_blank"}
 
 
+[Chapter on functions](https://tpcovino.github.io/ensc_445_545_bookdown/functions.html){target="_blank"}
 
+[Chapter on for loops](https://tpcovino.github.io/ensc_445_545_bookdown/for-loops.html){target="_blank"}
