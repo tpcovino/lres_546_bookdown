@@ -7,6 +7,10 @@
 
 ### Learning Module 1
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BDoX3dMnPA8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>
+
 #### Summary
 
 Streamflow can come from a range of water sources. When it is not
@@ -256,3 +260,7 @@ make everything generally work. The use of projects is highly
 recommended and is the practice we will follow in this class. See
 [here](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/) for
 an overview of projects and why you should use them from Jenny Bryan.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/AJe9bz6fuIA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>

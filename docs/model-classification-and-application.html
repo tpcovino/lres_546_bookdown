@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Model Classification and Application | Quantitative Environmental Methods: LRES 546</title>
   <meta name="description" content="Chapter 5 Model Classification and Application | Quantitative Environmental Methods: LRES 546" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Model Classification and Application | Quantitative Environmental Methods: LRES 546" />
   <meta property="og:type" content="book" />
@@ -54,6 +54,7 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -118,6 +119,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -393,18 +398,15 @@ Create a table in R and export it as a .csv file to submit with this assignment 
 <span id="cb5-20"><a href="model-classification-and-application.html#cb5-20" tabindex="-1"></a></span>
 <span id="cb5-21"><a href="model-classification-and-application.html#cb5-21" tabindex="-1"></a><span class="co"># Display the table</span></span>
 <span id="cb5-22"><a href="model-classification-and-application.html#cb5-22" tabindex="-1"></a><span class="fu">print</span>(data_table)</span></code></pre></div>
-<pre><code>##   Dataset_Name Data_Source Data_Type
-## 1     Dataset1        NOAA   Climate
-## 2     Dataset2        NRCS Hydrology
-##          Source_Link     Key_variables
-## 1 https://www.link1/     precipitation
-## 2     https://link2/ soil_conductivity
-##   Temporal_range Spatial_Coverage Data_Quality
-## 1      2020-2021          Montana         High
-## 2     1979-today        Juneau_AK     Moderate
-##         Data_Quality_notes Feasibility
-## 1 QCd with no missing data        High
-## 2   some unexpected values      Medium
+<pre><code>##   Dataset_Name Data_Source Data_Type        Source_Link
+## 1     Dataset1        NOAA   Climate https://www.link1/
+## 2     Dataset2        NRCS Hydrology     https://link2/
+##       Key_variables Temporal_range Spatial_Coverage
+## 1     precipitation      2020-2021          Montana
+## 2 soil_conductivity     1979-today        Juneau_AK
+##   Data_Quality       Data_Quality_notes Feasibility
+## 1         High QCd with no missing data        High
+## 2     Moderate   some unexpected values      Medium
 ##   Feasibility_notes variable_type
 ## 1             note1   explanatory
 ## 2             note2      response</code></pre>
@@ -438,42 +440,42 @@ Create a table in R and export it as a .csv file to submit with this assignment 
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/tpcovino/lres_546_bookdown/edit/main/08_model_classifications.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": "https://github.com/tpcovino/lres_546_bookdown/blob/main/08_model_classifications.Rmd",
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/tpcovino/lres_546_bookdown/edit/main/08_model_classifications.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": "https://github.com/tpcovino/lres_546_bookdown/blob/main/08_model_classifications.Rmd",
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>
