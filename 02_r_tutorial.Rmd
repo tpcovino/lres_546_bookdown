@@ -26,11 +26,12 @@ This tutorial is accompanied by a video where I walk through all of the coding a
 Last, please reach out to me if you have any questions (now and throughout the semester) and we will hop on a Zoom and get you on track!
 
 
-[See here for part 1 tutorial repo](https://tpcovino.github.io/ensc_445_545_bookdown/intro-to-data-visualization.html){target="_blank"}
+ - [See here for part 1 tutorial repo](https://tpcovino.github.io/ensc_445_545_bookdown/intro-to-data-visualization.html){target="_blank"}
+
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GjEfj24Oxeo?si=NHwTdU542tV2v-IK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-[Tutorial part 2](https://tpcovino.github.io/ensc_445_545_bookdown/data-wrangling-using-tidyverse.html){target="_blank"}
+ - [See here for tutorial part 2](https://tpcovino.github.io/ensc_445_545_bookdown/data-wrangling-using-tidyverse.html){target="_blank"}
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BsWicn6k4rs?si=BVEgUvfvI9rhPDQK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

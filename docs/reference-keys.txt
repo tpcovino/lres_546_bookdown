@@ -23,6 +23,7 @@ repo-link
 return-intervals
 learning-module-2
 background-information
+connecting-to-our-r-workflow
 repo-link-1
 rational-method-and-nrcs-curve-number-20-pts
 learning-module-3

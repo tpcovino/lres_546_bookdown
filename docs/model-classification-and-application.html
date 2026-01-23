@@ -401,15 +401,15 @@ Create a table in R and export it as a .csv file to submit with this assignment 
 <pre><code>##   Dataset_Name Data_Source Data_Type        Source_Link
 ## 1     Dataset1        NOAA   Climate https://www.link1/
 ## 2     Dataset2        NRCS Hydrology     https://link2/
-##       Key_variables Temporal_range Spatial_Coverage
-## 1     precipitation      2020-2021          Montana
-## 2 soil_conductivity     1979-today        Juneau_AK
-##   Data_Quality       Data_Quality_notes Feasibility
-## 1         High QCd with no missing data        High
-## 2     Moderate   some unexpected values      Medium
-##   Feasibility_notes variable_type
-## 1             note1   explanatory
-## 2             note2      response</code></pre>
+##       Key_variables Temporal_range Spatial_Coverage Data_Quality
+## 1     precipitation      2020-2021          Montana         High
+## 2 soil_conductivity     1979-today        Juneau_AK     Moderate
+##         Data_Quality_notes Feasibility Feasibility_notes
+## 1 QCd with no missing data        High             note1
+## 2   some unexpected values      Medium             note2
+##   variable_type
+## 1   explanatory
+## 2      response</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="model-classification-and-application.html#cb7-1" tabindex="-1"></a><span class="co"># Export the data table as a .csv to a file path of your choice:</span></span>
 <span id="cb7-2"><a href="model-classification-and-application.html#cb7-2" tabindex="-1"></a><span class="co">#exportpath &lt;- file.path(getwd(), somefolder, term_assign_table.csv) #replace somefolde with an actual folder name that exists in your local environment</span></span>
 <span id="cb7-3"><a href="model-classification-and-application.html#cb7-3" tabindex="-1"></a><span class="co">#write.csv(data_able, exportpath, row.names=FALSE)</span></span></code></pre></div>

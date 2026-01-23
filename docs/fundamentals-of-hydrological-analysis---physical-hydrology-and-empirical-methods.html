@@ -495,13 +495,29 @@ an overview of projects and why you should use them from Jenny Bryan.</p>
 <div id="return-intervals" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Return Intervals<a href="fundamentals-of-hydrological-analysis---physical-hydrology-and-empirical-methods.html#return-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li>In this learning module we will focus on return intervals. We first need to understand return intervals before we can move onto the rational method and curve numbers.</li>
+<li>In this learning module we will quantify the magnitude and frequency of the precipitation ‘forcing’ to move from observation to prediction. This week introduces statistical frequency analysis and return intervals to evaluate the rarity of the events driving our process-based models.</li>
 </ul>
 <div id="learning-module-2" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Learning Module 2<a href="fundamentals-of-hydrological-analysis---physical-hydrology-and-empirical-methods.html#learning-module-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="background-information" class="section level4 hasAnchor" number="3.2.1.1">
 <h4><span class="header-section-number">3.2.1.1</span> Background information<a href="fundamentals-of-hydrological-analysis---physical-hydrology-and-empirical-methods.html#background-information" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Lecture from colleague Joel Sholtes on precipitation frequency analysis.</p>
+<p>Bridging the Gap between Response and Forcing</p>
+<p>In the previous module, we performed hydrograph separation across three watersheds and we looked at the final output of complex system (the streamflow). By comparing patterns across the three watersheds, we looked at the response (the outcome) and worked backward to identify the processes influencing baseflow and quickflow. Your process-based explanations likely touched on:</p>
+<p>Storage: Soil depth and groundwater capacity.</p>
+<p>Surface Characteristics: Land cover and urbanization.</p>
+<p>Losses: Evapotranspiration and infiltration rates.</p>
+<p>However, a watershed’s behavior is only half of the story. A high runoff ratio is interesting because it reflects watershed behavior, but it doesn’t tell us how frequently the system produces extreme flows or floods. Now that you can separate baseflow from quickflow, you have the tools to link storm inputs to peak discharge. That’s what allows us to move from explaining past hydrographs to predicting future extremes. To move beyond speculation and toward prediction, we’ll evaluate the forcing, which is the input to the system, (precipitation) with the same quantitative approach we used to understand the hydrograph.</p>
+<p>In other words, we’ve asked: “What did the watershed do with the water it received?” Now we’ll ask: “How rare or extreme was the water it received in the first place?”</p>
+<p>Evaluating the Input: The Probability of Extremes</p>
+<p>This brings us to the concept of Return Intervals (or Recurrence Intervals). In professional practice, we rarely design for “average” days, we design for the extremes.</p>
+<p>In last week’s analysis, we assumed that the forcing was the same for all 3 watersheds. Now let’s imagine we are evaluating a single watershed and see a massive spike in a hydrograph. We need to know:</p>
+<p>Was that a once-in-ten-years storm hitting a low-storage watershed?</p>
+<p>Or was it a once-in-one hundred-years storm hitting a watershed that usually buffers flow?</p>
+<p>By calculating return intervals using Precipitation Duration, Frequency, and Intensity (IDF) curve, we begin to quantify the risk.</p>
+<div id="connecting-to-our-r-workflow" class="section level5 hasAnchor" number="3.2.1.1.1">
+<h5><span class="header-section-number">3.2.1.1.1</span> Connecting to our R Workflow<a href="fundamentals-of-hydrological-analysis---physical-hydrology-and-empirical-methods.html#connecting-to-our-r-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Before we can build a process model that predicts future runoff, we must understand the statistical characteristics of rainfall like magnitude, timing, and variability. Just as we used R to automate the separation of baseflow, we will now use it to fit statistical distributions to historical rainfall and calculating exceedance probabilities.</p>
+<p>Check out this lecture from colleague Joel Sholtes on precipitation frequency analysis. You can ignore his references to ‘assignments’ and end the lecture around the 26 minute mark.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3_EnTJaFCKg?si=1BYvBzA1fDjZK4Zv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
 </iframe>
 <p>Short lecture on Intensity-Duration-Frequency (IDF) curves</p>
@@ -509,7 +525,8 @@ an overview of projects and why you should use them from Jenny Bryan.</p>
 </iframe>
 <p>Reading on frequency analysis of flow (e.g., floods). You should notice that the frequency analysis is the same whether we apply it to Q (flow) or P (precipitation). So as long as you understand the fundamental principles you will be able to do frequency analysis on either Q or P.</p>
 <p><a href="https://www.usgs.gov/centers/new-jersey-water-science-center/floods-recurrence-intervals-and-100-year-floods" target="_blank">USGS reading on flow frequency analysis</a></p>
-<p>There are also probability lecture slides on D2L. Titled “probability.pptx”.</p>
+<p>If you would like a refresher, there are also probability lecture slides on Canvas titled “probability.pptx”.</p>
+</div>
 </div>
 </div>
 <div id="repo-link-1" class="section level3 hasAnchor" number="3.2.2">
