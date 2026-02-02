@@ -32,6 +32,7 @@ reading---rational-method.
 background-information---curve-number
 reading---curve-numbers
 reading---supporting-material
+repo-link-2
 process-based-modeling---probabilistic-and-process-simulation
 transfer-function-rainfall-runoff-models
 learning-module-4
@@ -43,7 +44,7 @@ the-instantaneous-unit-hydrograph
 the-loss-function
 how-do-we-code-this
 final-thoughts
-repo-link-2
+repo-link-3
 monte-carlo-simulation
 learning-module-5
 background
@@ -52,7 +53,7 @@ how-does-this-apply-to-hydrological-modeling
 example
 optional-reading
 generate-a-simulation-with-code
-repo-link-3
+repo-link-4
 model-classification-and-application
 classifying-model-structure
 learning-module-6
@@ -103,7 +104,7 @@ objectives
 background-3
 a-refresher-in-remote-sensing
 ethical-conduct
-repo-link-4
+repo-link-5
 labwork-20-pnts-1
 setup
 selecting-a-watershed
@@ -135,7 +136,7 @@ hbv-hydrology-model
 learning-module-9-1
 background-4
 import-data-2
-repo-link-5
+repo-link-6
 labwork-20-pnts-2
 single-model-run
 single-model-execution

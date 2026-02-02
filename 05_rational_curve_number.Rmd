@@ -1,7 +1,5 @@
 ## Rational method and NRCS curve number (20 pts)
 
-The repo for this module can be found [here](https://github.com/tpcovino/03_rational_and_CN_methods.git){target="_blank"}
-
 ### Learning Module 3
 
 #### Background information - Rational Method
@@ -73,3 +71,5 @@ We will use the Kirpich method to calculate the time of concentration. Here is t
 
 Kirpich, Z.P. (1940). "Time of concentration of small agricultural watersheds". Civil Engineering. 10 (6): 362.
 
+### Repo link
+The repo for this module can be found [here](https://github.com/tpcovino/03_rational_and_CN_methods.git){target="_blank"}
