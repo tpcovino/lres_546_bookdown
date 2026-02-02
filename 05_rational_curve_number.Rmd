@@ -6,6 +6,14 @@ The repo for this module can be found [here](https://github.com/tpcovino/03_rati
 
 #### Background information - Rational Method
 
+In the previous module, we worked with our first probability-based model: return intervals. A model is simply an equation, or set of equations, that represents environmental processes and their interactions to estimate an outcome. Models act as maps of environmental systems: they are useful for understanding and prediction, but they are not exact representations of reality. As the statistician George Box famously noted, “All models are wrong, but some are useful.”
+
+Return intervals are a model because they summarize past observations into a probabilistic description of extreme events. They do not predict when a storm will occur, nor do they describe the physical processes that generate rainfall. Instead, they provide a simplified, probability-based way of representing risk that can be used in hydrologic analysis and design.
+
+In this module, we build on that foundation by introducing parameters. Parameters are numerical values within a model that summarize key characteristics or processes of a system and strongly influence model outputs. In hydrology, parameters often represent watershed properties such as land cover, soil type, or infiltration capacity.
+
+The Rational Method and the Curve Number method are examples of very simple rainfall–runoff models that rely on one or a small number of parameters to represent complex watershed behavior. While these methods are somewhat antiquated given today's computational efficiency, they provide a clear and accessible way to see how model structure and parameter choices affect runoff estimates. Through these models, we will focus less on precise prediction and more on understanding how assumptions and parameterization shape our representation of hydrologic systems.
+
 The **Rational Method** is a type of simple hydrological analysis used to estimate the *peak runoff rate* from a small watershed during a rainfall event. It is particularly useful for estimating the amount of water that will flow through a particular area during a storm, like a drainage system or culvert. Despite the existence of more advanced methods, this approach remains widely used in practice for its simplicity and ability to provide quick approximations, making it invaluable for preliminary assessments and as a foundation for understanding more complex hydrological and environmental modeling techniques.
 
 Here is a 5-minute video to get started: 
@@ -26,8 +34,7 @@ Some helpful terminology:
 
 #### Background information - Curve Number
 
-The NRCS (Natural Resources Conservation Science) **curve number** (CN) is a tool used to estimate the *total runoff volume* of water that will run off an ungaged watershed during a storm event. The curve number is based on soil type, land use and antecedent moisture conditions. You may also see SCS CN in texts. NRCS was previously known as Soil Conservation Science, they are the same.
-It was designed as a simple tool to describe typical watershed response from infrequent rainfall anywhere in the US for watersheds with the same soil type, land use, and surface runoff conditions. The CN method is a single event model to estimate of runoff volume from rainfall events (not peak discharge or a hydrograph). 
+The NRCS (Natural Resources Conservation Science) **curve number** (CN) is a parameter used to estimate the *total runoff volume* of water that will run off an ungaged watershed during a storm event. You may also see 'SCS CN' in texts. NRCS was previously known as Soil Conservation Science, they are the same. The curve number is based on soil type, land use and antecedent moisture conditions. So it is a parameter that summarizes multiple characteristics into one value. It was designed as a simple tool to describe typical watershed response from infrequent rainfall anywhere in the US for watersheds with the same soil type, land use, and surface runoff conditions. The CN method is a single event model to estimate of runoff volume from rainfall events (not peak discharge or a hydrograph). 
 
 To understand the function and derivation of the CN number, let's start with the <br>
 the NRCS runoff equation:
