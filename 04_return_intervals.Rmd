@@ -6,8 +6,6 @@
 
 #### Background information
 
-Bridging the Gap between Response and Forcing 
-
 In the previous module, we performed hydrograph separation across three watersheds and we looked at the final output of complex system (the streamflow). By comparing patterns across the three watersheds, we looked at the response (the outcome) and worked backward to identify the processes influencing baseflow and quickflow. Your process-based explanations likely touched on:
 
   Storage: Soil depth and groundwater capacity.
@@ -16,21 +14,19 @@ In the previous module, we performed hydrograph separation across three watershe
 
   Losses: Evapotranspiration and infiltration rates.
 
-However, a watershed’s behavior is only half of the story. A high runoff ratio is interesting because it reflects watershed behavior, but it doesn't tell us how frequently the system produces extreme flows or floods. Now that you can separate baseflow from quickflow, you have the tools to link storm inputs to peak discharge. That’s what allows us to move from explaining past hydrographs to predicting future extremes. To move beyond speculation and toward prediction, we’ll evaluate the forcing, which is the input to the system, (precipitation) with the same quantitative approach we used to understand the hydrograph.
+However, a watershed’s behavior is only half of the story. A high runoff ratio is interesting because it reflects watershed behavior, but it doesn't tell us how frequently the system produces extreme flows or floods. Now that you can separate baseflow from quickflow, you have the tools to link storm inputs to peak discharge. The next step is to evaluate precipitation using the same quantitative mindset. This shift marks our first step from qualitative process reasoning toward predictive modeling.
 
 In other words, we’ve asked: "What did the watershed do with the water it received?" Now we'll ask: "How rare or extreme was the water it received in the first place?"
 
-Evaluating the Input: The Probability of Extremes
+To answer this question, we'll explore return intervals (or recurrence intervals). Return intervals are a probabilistic model that summarize historical precipitation records to estimate the likelihood of extreme events. They do not predict when a storm will occur; instead, they describe the probability that a given magnitude will be exceeded in any year. In professional practice, we rarely design for "average" days, we design for the extremes.
 
-This brings us to the concept of Return Intervals (or Recurrence Intervals). In professional practice, we rarely design for "average" days, we design for the extremes.
+In last week's analysis, we assumed that the forcing was the same for all 3 watersheds. Now let's imagine we are evaluating a single watershed and see a massive spike in a hydrograph. To interpret the event, we need to know:
 
-In last week's analysis, we assumed that the forcing was the same for all 3 watersheds. Now let's imagine we are evaluating a single watershed and see a massive spike in a hydrograph. We need to know:
-
-Was that a once-in-ten-years storm hitting a low-storage watershed?
+Was this a relatively common storm impacting a low-storage watershed?
 
 Or was it a once-in-one hundred-years storm hitting a watershed that usually buffers flow?
 
-By calculating return intervals using Precipitation Duration, Frequency, and Intensity (IDF) curve, we begin to quantify the risk.
+By calculating return intervals using Precipitation Duration, Frequency, and Intensity (IDF) curve, we begin to quantify the hydrologic risk.
 
 ##### Connecting to our R Workflow
 
