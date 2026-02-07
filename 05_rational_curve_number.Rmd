@@ -73,3 +73,6 @@ Kirpich, Z.P. (1940). "Time of concentration of small agricultural watersheds". 
 
 ### Repo link
 The repo for this module can be found [here](https://github.com/tpcovino/03_rational_and_CN_methods.git){target="_blank"}
+
+You will also need this link to select a parameter value 'C' or the runoff coefficient for the script (~line 117):
+Look at this [table](https://www.dropbox.com/scl/fi/tkofgmpnroug8wwe8x16z/Rational.Method.C.png?rlkey=qgcyayk10j94is3hwjfxuzwz5&dl=0) to select C.
