@@ -33,7 +33,7 @@ By the end of this module, you should be able to:
 ##### Key Terms
 In modeling a flow system, note that consideration of time may vary depending on the questions being asked. **Transit time** is the average time required for water to travel through the entire flow system, from input (e.g., rainfall on soil surface) to output (e.g., discharge). **Residence time** is a portion of transit time, describing the amount of time water spends within a specific component of the flow system, like storage (e.g., in soil, groundwater, a puddle or a lake). 
 
-First, please read: <br/>
+First, familiarize yourself with the transfer function we will code (TRANSEP) by reading this paper. If the terminology feels dense, you may use AI tools to help extract the key concepts and focus on the big-picture ideas: <br/>
 [TRANSEP - a combined tracer and runoff transfer function hydrograph separation model](docs/Weiler_etal_WRR2003.pdf)
 <br/>
 
@@ -60,7 +60,7 @@ Under these assumptions, we can represent the watershed as a **linear reservoir*
 
 1. Water is stored temporarily
 2. the rate of outflow is porportional to how much water is stored
-3. there is no threshold behavior or [hysteresis. externallink](https://lewis-thehydrologist.medium.com/understanding-river-hysteresis-3a6bb454add4)
+3. there is no threshold behavior or [hysteresis. external link](https://lewis-thehydrologist.medium.com/understanding-river-hysteresis-3a6bb454add4)
 
 Recall this isn't how all watersheds work, these are useful approximations. 
 
