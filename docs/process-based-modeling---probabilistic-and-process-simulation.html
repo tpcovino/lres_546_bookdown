@@ -250,7 +250,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="process-based-modeling---probabilistic-and-process-simulation" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Process-Based Modeling - Probabilistic and Process Simulation<a href="process-based-modeling---probabilistic-and-process-simulation.html#process-based-modeling---probabilistic-and-process-simulation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>* Modules 3.1 and 3.2 are adapted from Fabian Nipggen (REWM.4500.500)<br />
+<p>* Modules 4.1 and 4.2 are adapted from Fabian Nipggen (REWM.4500.500)<br />
 </p>
 <div id="transfer-function-rainfall-runoff-models" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Transfer function rainfall-runoff models<a href="process-based-modeling---probabilistic-and-process-simulation.html#transfer-function-rainfall-runoff-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -258,59 +258,107 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">4.1.1</span> Learning Module 4<a href="process-based-modeling---probabilistic-and-process-simulation.html#learning-module-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="summary-1" class="section level4 hasAnchor" number="4.1.1.1">
 <h4><span class="header-section-number">4.1.1.1</span> Summary<a href="process-based-modeling---probabilistic-and-process-simulation.html#summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>In previous modules, we explored how watershed characteristics influence the flow of input water through or over hillslopes to quickly contribute to stormflow or to be stored for later contribution to baseflow. Therefore, the partitioning of flow into baseflow or stormflow can be determined by the time it spends in the watershed. Furthermore, the residence time of water in various pathways may affect weathering and solute transport within watersheds. To improve our understanding of water movement within a watershed, it can be crucial to incorporate water transit time into hydrological models. This consideration allows for a more realistic representation of how water moves through various storage compartments, such as soil, groundwater, and surface water, accounting for the time it takes for water to traverse these pathways.</p>
-<p>In this module, we will model the temporal aspects of runoff response to input using a transfer function. First, please read: <br/></p>
-<p><a href="docs/Weiler_etal_WRR2003.pdf">TRANSEP - a combined tracer and runoff transfer function hydrograph separation model</a>
+<p>In previous modules, we focused on <em>where</em> water goes in a watershed and whether it runs off quickly as stormflow or moves slowly through storage and contributes to baseflow. In this module, we shift focus to <em>when</em> water arrives at the stream.</p>
+<p>Why does timing matter?</p>
+<ul>
+<li><p>Water that moves quickly tends to look chemically different than water that moves slowly</p></li>
+<li><p>Longer travel times allow for more uptake by vegetation or interaction with soils, minerals, and microbes</p></li>
+<li><p>The timing of runoff shapes the hydrograph and affects solute transport</p></li>
+</ul>
+<p>In this module, we will model the temporal aspects of runoff response to input using a transfer function. A transfer function is a tool that describes how rainfall input is translated into runoff output over time.</p>
+<div id="overall-learning-objectives-1" class="section level5 hasAnchor" number="4.1.1.1.1">
+<h5><span class="header-section-number">4.1.1.1.1</span> Overall Learning Objectives<a href="process-based-modeling---probabilistic-and-process-simulation.html#overall-learning-objectives-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>By the end of this module, you should be able to:</p>
+<ul>
+<li><p>Explain what a transfer function is in plain language</p></li>
+<li><p>Describe how water transit time influences runoff timing and composition</p></li>
+<li><p>Recognize different ways transit time can be represented in hydrological models</p></li>
+<li><p>Interpret (not derive) the basic equations used in transfer-function rainfall–runoff models</p></li>
+</ul>
+</div>
+<div id="key-terms" class="section level5 hasAnchor" number="4.1.1.1.2">
+<h5><span class="header-section-number">4.1.1.1.2</span> Key Terms<a href="process-based-modeling---probabilistic-and-process-simulation.html#key-terms" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>In modeling a flow system, note that consideration of time may vary depending on the questions being asked. <strong>Transit time</strong> is the average time required for water to travel through the entire flow system, from input (e.g., rainfall on soil surface) to output (e.g., discharge). <strong>Residence time</strong> is a portion of transit time, describing the amount of time water spends within a specific component of the flow system, like storage (e.g., in soil, groundwater, a puddle or a lake).</p>
+<p>First, please read: <br/>
+<a href="docs/Weiler_etal_WRR2003.pdf">TRANSEP - a combined tracer and runoff transfer function hydrograph separation model</a>
 <br/></p>
-<p>Then this chapter will step through key concepts in the paper to facilitate hands-on exploration of the rainfall-runoff portion of the TRANSEP model in the assessment. Then, we will introduce examples of other transfer functions to demonstrate alternative ways of representing time-induced patterns in hydrological modeling, prompting you to consider response patterns in your study systems.</p>
-</div>
-<div id="overall-learning-objectives-1" class="section level4 hasAnchor" number="4.1.1.2">
-<h4><span class="header-section-number">4.1.1.2</span> Overall Learning Objectives<a href="process-based-modeling---probabilistic-and-process-simulation.html#overall-learning-objectives-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>At the end of this module, students should be able to describe several ways to model and identify transit time within hydrological models. They should have a general understanding of how water transit time may influence the timing and composition of runoff.</p>
-</div>
-<div id="terminology" class="section level4 hasAnchor" number="4.1.1.3">
-<h4><span class="header-section-number">4.1.1.3</span> Terminology<a href="process-based-modeling---probabilistic-and-process-simulation.html#terminology" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>In modeling a flow system, note that consideration of time may vary depending on the questions being asked. <strong>Transit time</strong> is the average time required for water to travel through the entire flow system, from input (e.g., rainfall on soil surface) to output (e.g., discharge). <strong>Residence time</strong> is a portion of transit time, describing the amount of time water spends within a specific component of the flow system, like storage (e.g., in soil, groundwater, or a lake).</p>
+<p>Then this text will step through key concepts in the paper to facilitate hands-on exploration of the rainfall-runoff portion of the TRANSEP model in the assessment.</p>
 <div class="float">
 <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0022169406002150-gr1.jpg" alt="Figure 6.3. Conceptual diagram of the lumped parameter transit time modeling approach (McGuire &amp; McDonnell, 2006)" />
 <div class="figcaption">Figure 6.3. Conceptual diagram of the lumped parameter transit time modeling approach (McGuire &amp; McDonnell, 2006)</div>
 </div>
 <p><br/><br/></p>
-<p>A <strong>transfer function</strong> (TF) is a mathematical representation of how a system responds to input signals. In a hydrological context, it describes the transformation of inputs (e.g. precipitation) to outputs (e.g. runoff). These models can be valuable tools for understanding the time-varying dynamics of a hydrological system.</p>
+<p>A <strong>transfer function</strong> (TF) is a mathematical representation of how a system responds to input signals. In a hydrological context, it describes the transformation of inputs (e.g. precipitation) to outputs (e.g. runoff). In other words, it is a mathematical way of answering the question:
+If water enters the watershed at time t, how much of it shows up at the stream later and when?</p>
 </div>
-<div id="the-linear-time-invariant-tf" class="section level4 hasAnchor" number="4.1.1.4">
-<h4><span class="header-section-number">4.1.1.4</span> The Linear Time-Invariant TF<a href="process-based-modeling---probabilistic-and-process-simulation.html#the-linear-time-invariant-tf" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>We’ll begin the discussion in the context of a <strong>linear reservoir</strong>. Linear reservoirs are simple models designed to simulate the storage and discharge of water in a catchment. These models assume that the catchment can be represented as single storage compartments or as a series of interconnected storage compartments and that the change the amount of water stored in the reservoir (or reservoirs) is directly proportional to the inflows and outflows. In other words, the linear relationship between inflows and outflows means that the rate of water release is proportional to the amount of water stored in the reservoir.</p>
+<div id="the-linear-time-invariant-tf" class="section level5 hasAnchor" number="4.1.1.1.3">
+<h5><span class="header-section-number">4.1.1.1.3</span> The Linear Time-Invariant TF<a href="process-based-modeling---probabilistic-and-process-simulation.html#the-linear-time-invariant-tf" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>We start with a linear, time-invariant (LTI) system. The name sounds extravagant, but the assumptions are simple:</p>
+<ol style="list-style-type: decimal">
+<li><p>Linear: Double the rainfall → double the runoff response</p></li>
+<li><p>Time-invariant: The watershed responds the same way today as it did yesterday</p></li>
+<li><p>Additive: Responses from multiple rainfall pulses add together</p></li>
+</ol>
+<p>Under these assumptions, we can represent the watershed as a <strong>linear reservoir</strong>. Linear reservoirs are simple models designed to simulate the storage and discharge of water in a catchment. These models assume that the catchment can be represented as single storage compartments and that</p>
+<ol style="list-style-type: decimal">
+<li>Water is stored temporarily</li>
+<li>the rate of outflow is porportional to how much water is stored</li>
+<li>there is no threshold behavior or <a href="https://lewis-thehydrologist.medium.com/understanding-river-hysteresis-3a6bb454add4">hysteresis. externallink</a></li>
+</ol>
+<p>Recall this isn’t how all watersheds work, these are useful approximations.</p>
 <p><img src="images/linear_storage_04.png" /></p>
 <p><br/><br/></p>
-<div id="the-instantaneous-unit-hydrograph" class="section level5 hasAnchor" number="4.1.1.4.1">
-<h5><span class="header-section-number">4.1.1.4.1</span> The Instantaneous Unit Hydrograph:<a href="process-based-modeling---probabilistic-and-process-simulation.html#the-instantaneous-unit-hydrograph" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>The Instantaneous Unit Hydrograph (IUH) represents the linear rainfall-runoff model used in the TRANSEP model. It is an approach to hydrograph separation that is useful for analyzing the temporal distribution of runoff in response to a ‘unit’ pulse of rainfall (e.g. uniform one-inch depth over a unit area represented by a unit hydrograph). In other words, it is a hydrograph that results from one unit (e.g. 1 mm) of effective rainfall uniformly distributed over the watershed and occurring in a short duration. Therefore, the following assumptions are made when the IUH is used as a transfer function: <br/>
-1. the IUH reflects the ensemble of watershed characteristics <br/>
-2. the shape characteristics of the unit hydrograph are independent of time <br/>
-3. the output response is linearly proportional to the input</p>
+</div>
+<div id="the-instantaneous-unit-hydrograph" class="section level5 hasAnchor" number="4.1.1.1.4">
+<h5><span class="header-section-number">4.1.1.1.4</span> The Instantaneous Unit Hydrograph:<a href="process-based-modeling---probabilistic-and-process-simulation.html#the-instantaneous-unit-hydrograph" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>The Instantaneous Unit Hydrograph (IUH) is the transfer function used in the TRANSEP model. It is an approach to hydrograph separation that is useful for analyzing the temporal distribution of runoff in response to a ‘unit’ pulse of rainfall (e.g. uniform one-mm depth over a unit area represented by a unit hydrograph). In other words, it answers the question: If one unit of effective rainfall fell instantly over the watershed, how would that water be released to the stream over time?
+Therefore, the following assumptions are made when the IUH is used as a transfer function: <br/></p>
+<ol style="list-style-type: decimal">
+<li>the watershed response reflects the ensemble of watershed characteristics <br/></li>
+<li>the response shape does not change through time <br/></li>
+<li>the output response is linearly proportional to the input (i.e. runoff of scales linearly with rainfall) <br/></li>
+</ol>
+<p>The IUH is not a specific storm, rather it is a response kernel that we reuse for all storms.</p>
 <p><br/><br/></p>
 <p><img src="images/linear_vs_IUH.png" alt="Chow, V.T., Maidment, D.R. and Mays, L.W. (1988) Applied Hydrology. International Edition, McGraw-Hill Book Company, New York." />
 <br/><br/></p>
-<p>By interpreting the IUH as a transfer function, we can model how the watershed translates rainfall into runoff. In the TRANSEP model, this transfer function is represented as <span class="math inline">\(g(\tau)\)</span> and thus the rainfall-induced response to runoff.</p>
+</div>
+</div>
+<div id="from-concept-to-math" class="section level4 hasAnchor" number="4.1.1.2">
+<h4><span class="header-section-number">4.1.1.2</span> From Concept to Math<a href="process-based-modeling---probabilistic-and-process-simulation.html#from-concept-to-math" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Don’t worry about deriving or memorizing the following equations; they are included only to help you understand the relationships among variables and reinforce the underlying concepts.</p>
+<div id="iuh" class="section level5 hasAnchor" number="4.1.1.2.1">
+<h5><span class="header-section-number">4.1.1.2.1</span> IUH<a href="process-based-modeling---probabilistic-and-process-simulation.html#iuh" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>In TRANSEP, the IUH is written as a function <span class="math inline">\(g(\tau)\)</span>. This function describes how runoff is distributed through time after rainfall occurs.</p>
 <p><span class="math display">\[
 g(\tau) = \frac{\tau^{\alpha-1}}{\mathrm{B}^{\alpha}\Gamma(\alpha)}exp(-\frac{\tau}{\alpha})
 \]</span>
-<br/><br/></p>
-<p>The linear portion of the TRANSEP model describes a convolution of the effective precipitation and a runoff transfer function.</p>
+<br/><br/>
+What matters here is that:</p>
+<ul>
+<li><p>The shape of <span class="math inline">\(g(\tau)\)</span> controls how fast or slow water moves</p></li>
+<li><p>Parameters change whether runoff is flashy or delayed</p></li>
+<li><p>The function integrates to 1 (mass is conserved)</p></li>
+</ul>
+</div>
+<div id="convolution-turning-rainfall-into-runoff" class="section level5 hasAnchor" number="4.1.1.2.2">
+<h5><span class="header-section-number">4.1.1.2.2</span> Convolution: Turning Rainfall into Runoff<a href="process-based-modeling---probabilistic-and-process-simulation.html#convolution-turning-rainfall-into-runoff" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Runoff is calculated by combining rainfall with the transfer function:</p>
 <p><span class="math display">\[
 Q(t)= \int_{0}^{t} g(\tau)p_{\text{eff}}(t-\tau)d\tau
 \]</span>
-<br/><br/>
-Whoa, wait…what? Tau, integrals, and convolution? Don’t worry about the details of the equations. Check out this video to have convolution described using dollars and cookies, then imagine each dollar as a rainfall unit and each cookie as a runoff unit. Review the equations again after the video.</p>
+<br/><br/></p>
+<p>Runoff at time t is the sum of past rainfall inputs, each delayed and weighted by the transfer function.</p>
+<p>OK, I realize your eyes probably glazed over somewhere around ‘convolution’… don’t worry about the details of the equations. Check out this video to have convolution described using dollars and cookies, then imagine each dollar as a rainfall unit and each cookie as a runoff unit. Review the equations again after the video.</p>
 <p><br/><br/></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="process-based-modeling---probabilistic-and-process-simulation.html#cb1-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_url</span>(<span class="st">&quot;https://www.youtube.com/embed/aEGboJxmq-w&quot;</span>)</span></code></pre></div>
 <iframe src="https://www.youtube.com/embed/aEGboJxmq-w" width="672" height="400px" data-external="1">
 </iframe>
 </div>
-<div id="the-loss-function" class="section level5 hasAnchor" number="4.1.1.4.2">
-<h5><span class="header-section-number">4.1.1.4.2</span> The Loss Function:<a href="process-based-modeling---probabilistic-and-process-simulation.html#the-loss-function" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>The loss function represents the linear rainfall-runoff model used in the TRANSEP model.</p>
+<div id="the-loss-function" class="section level5 hasAnchor" number="4.1.1.2.3">
+<h5><span class="header-section-number">4.1.1.2.3</span> The Loss Function:<a href="process-based-modeling---probabilistic-and-process-simulation.html#the-loss-function" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Not all rainfall contributes to runoff. Some is lost to infiltration, evaporation, or temporary storage.</p>
+<p>The loss function represents the linear rainfall-runoff model used in the TRANSEP model. In other words, it converts total preciptiation <span class="math inline">\(p(t)\)</span> into effective precipitation <span class="math inline">\(p_{\text{eff}}(t)\)</span>.</p>
 <p><span class="math display">\[
 s(t) = b_{1} p(t + 1 - b_{2}^{-1}) s(t - \triangle t)
 \]</span>
@@ -321,19 +369,32 @@ s(t = 0) = b_{3}
 p_{\text{eff}}(t) = p(t) s(t)
 \]</span>
 where <span class="math inline">\(p_{\text{eff}}(t)\)</span> is the effective precipitation.<br/>
-<span class="math inline">\(s(t)\)</span> is the antecedent precipitation index which is determined by giving more importance to recent precipitation and gradually reducing that importance as we go back in time. <br/>
+<span class="math inline">\(s(t)\)</span> is the antecedent precipitation index which is determined by giving more importance to recent precipitation and gradually reducing that importance as we go back in time (i.e. recent rainfall matters more than old rainfall). <br/>
 The rate at which this importance decreases is controlled by the parameter <span class="math inline">\(b_{2}\)</span>. <br/>
 The parameter <span class="math inline">\(b_{3}\)</span> sets the initial antecedent precipitation index at the beginning of the simulated time series.</p>
-<p>In other words, these equations are used to simulate the flow of water in a hydrological system over time. The first equation represents the change in stored water at each time step, taking into account precipitation, loss to runoff, and the system’s past state. The second equation sets the initial condition for the storage at the beginning of the simulation. The third equation calculates the effective precipitation, considering both precipitation and the current storage state.</p>
+<p>Again: the goal is behavior, not physical realism.</p>
+<p>Transfer-function models are powerful because they:</p>
+<ul>
+<li><p>Explicitly represent timing, not just volume</p></li>
+<li><p>Allow separation of rainfall input and watershed response</p></li>
+<li><p>Provide a bridge between hydrology and tracer studies</p></li>
+</ul>
+<p>They are also limited:</p>
+<ul>
+<li><p>They assume linearity</p></li>
+<li><p>They hide spatial heterogeneity</p></li>
+<li><p>They trade physical detail for interpretability</p></li>
+</ul>
+<p>Understanding these tradeoffs is more important than memorizing equations.</p>
 </div>
-<div id="how-do-we-code-this" class="section level5 hasAnchor" number="4.1.1.4.3">
-<h5><span class="header-section-number">4.1.1.4.3</span> How do we code this?<a href="process-based-modeling---probabilistic-and-process-simulation.html#how-do-we-code-this" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<div id="how-do-we-code-this" class="section level5 hasAnchor" number="4.1.1.2.4">
+<h5><span class="header-section-number">4.1.1.2.4</span> How do we code this?<a href="process-based-modeling---probabilistic-and-process-simulation.html#how-do-we-code-this" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>We will use a skeletal version of TRANSEP, focusing only on the rainfall-runoff piece which includes the loss-function and the gamma transfer function.</p>
-<p>We will use rainfall and runoff data from TCEF to model annual streamflow at a daily time step. Then we can use this model as a jump-off point to start talking about model calibration and validation in future modules.</p>
+<p>We will use rainfall and runoff data from the Tenderfoot Creek Experimental Forest to model annual streamflow at a daily time step. Then we can use this model as a jump-off point to start talking about model calibration and validation in future modules.</p>
 </div>
-<div id="final-thoughts" class="section level5 hasAnchor" number="4.1.1.4.4">
-<h5><span class="header-section-number">4.1.1.4.4</span> Final thoughts:<a href="process-based-modeling---probabilistic-and-process-simulation.html#final-thoughts" class="anchor-section" aria-label="Anchor link to header"></a></h5>
-<p>If during your modeling experience, you find yourself wading through a bog of complex physics and multiple layers of transfer functions to account for every drop of input into a system, it is time to revisit your objectives. Remember that a model is always ‘wrong’. Like a map, it provides a simplified representation of reality. It may not be entirely accurate, but it serves a valuable purpose. Models help us understand complex systems, make predictions, and gain insights even if they are not an exact replica of the real world. Check out this paper for more:</p>
+<div id="final-thoughts" class="section level5 hasAnchor" number="4.1.1.2.5">
+<h5><span class="header-section-number">4.1.1.2.5</span> Final thoughts:<a href="process-based-modeling---probabilistic-and-process-simulation.html#final-thoughts" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>If during your modeling experience, you find yourself wading through a bog of complex physics and multiple layers of transfer functions to account for every drop of input into a system, it is time to revisit your objectives. Remember that a model is always ‘wrong’, but it can help us understand complex systems, make predictions, and gain insights even if they are not an exact replica of the real world. Check out this paper for more:</p>
 <p><a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/93WR00877" class="uri">https://agupubs.onlinelibrary.wiley.com/doi/10.1029/93WR00877</a></p>
 </div>
 </div>

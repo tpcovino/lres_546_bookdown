@@ -38,9 +38,12 @@ transfer-function-rainfall-runoff-models
 learning-module-4
 summary-1
 overall-learning-objectives-1
-terminology
+key-terms
 the-linear-time-invariant-tf
 the-instantaneous-unit-hydrograph
+from-concept-to-math
+iuh
+convolution-turning-rainfall-into-runoff
 the-loss-function
 how-do-we-code-this
 final-thoughts
