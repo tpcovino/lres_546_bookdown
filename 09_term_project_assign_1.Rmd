@@ -11,10 +11,11 @@ This assignment is focused on data retrieval; you will develop the main goal and
 
 **Q1. What is the primary research question for your term project? (1-2 sentences)(1 pt)** <br>
 Think of this as your first approach to developing a research question. It should reflect a clear purpose and be specific enough to guide your initial search for data, but it likely will evolve throughout this assignment. That is okay, even expected. You will be asked for a refined response at the end of the assignment.<br>
+
 Consider: <br>
 - The problem or issue you want to address  <br>
 - What specific phenomenon within that issue are you interested in understanding  <br>
-- What measurable or observable outcomes do you want to analyze.  <br>
+- What measurable or observable outcomes do you want to analyze?  <br>
 For example, instead of 'how does climate change affect forests?', you might consider 'How has seasonal precipitation variability impacted the timing of peak NDVI in the Pacific Northwest from 2000 to 2020.' Note that this question is specific enough to guide your search for the necessary data, such as precipitation records and NDVI time series. <br>
 ANSWER:
 
@@ -29,8 +30,8 @@ ANSWER:
 
 ### Data exploration and selection
 
-Now that you have an idea of what kind of data your question requires, the next step is to locate actual datasets that support your inquiry. There are numerous datasets available to public use, including public repositories, government agencies, academic institutions, even data uploaded to repositories like Zendodo and Figshare making data for specific studies discoverable and citable by other researchers. You may even have datasets from your organization that you can use. (Note: If you plan to use a dataset from your organization, you must have direct access to it now, not just a promise that you can obtain it later. Do not commit to a dataset unless you already have it and can work with it this semester). 
-It is up to you to explore a variety of sources and identify datasets that you can retrieve and work with, but here are some ideas and suggestions to get you started. 
+Now that you have an idea of what kind of data your question requires, the next step is to locate actual datasets that support your inquiry. There are numerous datasets available to public use, including public repositories, government agencies, academic institutions, even data uploaded to repositories like Zendodo and Figshare making data for specific studies discoverable and citable by other researchers. You may even have datasets from your organization that you can use. (Note: If you plan to use a dataset from your organization, you must have direct access to it now, not just a promise that you can obtain it later. Do not commit to a dataset unless you can have it in-hand today and can work with it this semester). 
+It is up to you to explore a variety of sources and identify datasets that you can retrieve and work with, but below are some ideas and suggestions to get you started. 
 
 Many of these platforms allow R access to their datasets with packages that facilitate downloading, managing, and analyzing the data directly within R. However if you can not find an appropriate package, see below for a webscraping example. <br>
 
@@ -62,7 +63,7 @@ Once you spend a solid hour or two searching databases, you may find that you ne
 
 You are encouraged to explore many packages and write many more code chunks for your personal use. However, for the assignment submission, retrieve at least one dataset relevant to your question using an R package like dataRetrieval or by webscraping in R. 
 
-Be sure that your methods are [reproducible](https://guides.lib.uw.edu/research/reproducibility), meaning I should be able to run your code from my computer and see the same figures and plots that you do without needing a .txt or .csv in my working directory. Similarly, try writing required packages using a the function script below. This ensures that if another user does not have a package installed, it will be installed before it is loaded.  
+Be sure that your methods are [reproducible](https://guides.lib.uw.edu/research/reproducibility), meaning I should be able to run your code from my computer and see the same figures and plots that you do without needing a .txt or .csv in my working directory. Students in previous semesters have shared their own field data with Drive and other tools (see googledrive package as an example). Similarly, try writing required packages using a the function script below (the packages in the list are only examples). This ensures that if another user does not have a package installed, it will be installed before it is loaded.  
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -128,7 +129,7 @@ Create a table in R and export it as a .csv file to submit with this assignment 
 In this table, include all datasets (at least two; one explanatory variable and one response variable though you can have more of either) that you will use for your term project. The script below specifies all of the sections required in this table, though you will need to change names and information accordingly in c(). 
 
 ```{r, message=FALSE}
-# Load necessary library
+# Load necessary library, this should go in the package list in setup chunk above
 library(dplyr)
 
 # Create a data frame
@@ -137,7 +138,7 @@ data_table <- data.frame(
   Data_Source = c('NOAA', 'NRCS'), #Agency or institution name
   Data_Type = c("Climate", "Hydrology"), # what kind of data is it?
   Source_Link = c("https://www.link1/", 
-                  "https://link2/"), # We will used these to access the sources
+                  "https://link2/"), # We will use these to access the sources
   Key_variables = c('precipitation', 'soil_conductivity'), 
   Temporal_range = c('2020-2021', '1979-today'),
   Spatial_Coverage = c('Montana', 'Juneau_AK'),

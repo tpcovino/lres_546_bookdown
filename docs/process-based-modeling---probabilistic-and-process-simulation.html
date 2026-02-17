@@ -411,7 +411,14 @@ The parameter <span class="math inline">\(b_{3}\)</span> sets the initial antece
 <h3><span class="header-section-number">4.2.1</span> Learning Module 5<a href="process-based-modeling---probabilistic-and-process-simulation.html#learning-module-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="background" class="section level4 hasAnchor" number="4.2.1.1">
 <h4><span class="header-section-number">4.2.1.1</span> Background:<a href="process-based-modeling---probabilistic-and-process-simulation.html#background" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Monte Carlo Simulation is a method to estimate the probability of the outcomes of an uncertain event. It is based on a law of probability theory that says if we repeat an experiment many times, the average of the results will get closer to the true probability of those outcomes.</p>
+<p>In the previous unit, we used transfer functions to simulate watershed behavior. We saw that model parameters (e.g., recession constants, storage coefficients, routing terms) strongly control the shape and magnitude of simulated discharge.</p>
+<p>But here is the critical question:
+How certain are we about the parameter values we used?</p>
+<p>In most hydrological systems, parameters are not directly measurable. Instead, they are estimated, calibrated, or inferred. Different parameter combinations can often produce similar hydrographs. This means that model output is not determined by a single “correct” parameter set but by a range of plausible parameter values.</p>
+<p>So rather than asking: What is the model output?</p>
+<p>We begin asking: What range of outputs is possible given parameter uncertainty? Which parameters most strongly influence the results? How sensitive is the model to our assumptions?</p>
+<p>So, this shift from single deterministic simulations to probabilistic exploration leads us to Monte Carlo simulation.
+Monte Carlo Simulation is a method to estimate the probability of the outcomes of an uncertain event. It is based on a law of probability theory that says if we repeat an experiment many times, the average of the results will get closer to the true probability of those outcomes.</p>
 <p>First check out this video:
 <iframe src="https://www.youtube.com/embed/7TqhmX92P6U" width="672" height="400px" data-external="1"></iframe></p>
 </div>

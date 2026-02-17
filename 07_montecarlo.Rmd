@@ -3,6 +3,18 @@
 ### Learning Module 5
 #### Background:
 
+In the previous unit, we used transfer functions to simulate watershed behavior. We saw that model parameters (e.g., recession constants, storage coefficients, routing terms) strongly control the shape and magnitude of simulated discharge.
+
+But here is the critical question:
+How certain are we about the parameter values we used?
+
+In most hydrological systems, parameters are not directly measurable. Instead, they are estimated, calibrated, or inferred. Different parameter combinations can often produce similar hydrographs. This means that model output is not determined by a single “correct” parameter set but by a range of plausible parameter values.
+
+So rather than asking: What is the model output?
+
+We begin asking: What range of outputs is possible given parameter uncertainty? Which parameters most strongly influence the results? How sensitive is the model to our assumptions?
+
+So, this shift from single deterministic simulations to probabilistic exploration leads us to Monte Carlo simulation.
 Monte Carlo Simulation is a method to estimate the probability of the outcomes of an uncertain event. It is based on a law of probability theory that says if we repeat an experiment many times, the average of the results will get closer to the true probability of those outcomes. 
 
 First check out this video:
