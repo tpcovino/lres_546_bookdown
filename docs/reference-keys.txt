@@ -73,7 +73,7 @@ repo-link-5
 term-project-assignment-1---10-pnts
 physical-process-models
 snowmelt-models
-learning-module-7-1
+learning-module-9
 background-2
 model-approaches
 spatial-complexity-1
@@ -85,7 +85,7 @@ calculate-liquid-input
 modeling-swe
 evapotranspiration
 repo-here
-learning-module-8
+learning-module-10
 background-3
 transpiration
 measurements
