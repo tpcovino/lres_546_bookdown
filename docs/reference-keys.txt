@@ -92,12 +92,3 @@ dem-processing
 learning-module-11
 objective
 the-link-to-the-repo-is-here
-labwork-20-pts
-installing-libraries
-generate-functions
-establish-new-directoriesfolders
-resample-dems
-filling-and-breaching
-flow-direction-and-accumulation-rasters
-streams
-final-thoughts-1
