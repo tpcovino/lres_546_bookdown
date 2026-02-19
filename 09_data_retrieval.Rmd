@@ -1,6 +1,4 @@
 ## Gridded and tabular data retrieval
-**15 pnts**
-
 ### Learning Module 7 
 #### Objectives
 
