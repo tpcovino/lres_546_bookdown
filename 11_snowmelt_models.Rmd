@@ -75,5 +75,5 @@ When determining the architecture of your snow model, your model choices will re
 
 **Applicability and simplicity:** A good model should provide valuable insights or aid in decision-making processes relevant to the problem it addresses. It strikes a balance between complexity and simplicity, avoiding unnecessary intricacies that can lead to overfitting or computational inefficiency while sufficiently capturing the system's complexities. 
 
-#### [Download the repo for this lab HERE](https://github.com/tpcovino/06_snowmelt_models.git){target="_blank"}
+### [Repo link](https://github.com/tpcovino/06_snowmelt_models.git){target="_blank"}
 

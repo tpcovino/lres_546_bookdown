@@ -6,4 +6,4 @@ Your term project for this class is not meant to encompass your entire thesis or
 
 This assignment is focused on data retrieval; you will develop the main goal and objectives of your term project and explore, evaluate, and select data sources. A key component of this process is formulating a research question that clearly defines both an explanatory variable and a response variable; one is not sufficient without the other. The workflow for this assignment will help you refine your question and identify the datasets needed to address it. Your assignment is considered complete when you have identified at least one explanatory variable and one response variable, along with the corresponding data sources.
 
-[Repo Link](https://github.com/tpcovino/Term_project_assign1.git)
+## [Repo Link](https://github.com/tpcovino/Term_project_assign1.git)

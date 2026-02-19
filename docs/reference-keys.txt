@@ -114,3 +114,6 @@ kge
 nash-sutcliffe-efficiency-nse.
 calibrate-hbv-manually
 plot-observed-and-model-simulations
+repo-link-7
+repo-link-8
+repo-link-9

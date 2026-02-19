@@ -44,7 +44,7 @@ Where:
 AET is the actual evapotranspiration,
 PET is the potential evapotranspiration, and
 Kc is the crop coefficient.
-The crop coefficient accounts for factors such as crop type, soil moisture levels, climate conditions, and management practices. It can vary throughout the growing season as well. However, note that Kc generally is used in agricultural systems, for a uniform, well-managed crop and varies by growth stage. In natural or heterogeneous systems, we may still multiply PET by a coefficient, but this value represents the integrated response of multiple vegetation types and soil conditions. It is therefore better interpreted as an effective surface coefficient rather than a true crop coefficient.
+The crop coefficient accounts for factors such as crop type, soil moisture levels, climate conditions, and management practices. It can vary throughout the growing season as well. However, note that Kc generally is used in agricultural systems, for a uniform, well-managed crop that varies by growth stage. In natural or heterogeneous systems, we may still multiply PET by a coefficient ot estimate AET, but this value represents the integrated response of multiple vegetation types and soil conditions. It is therefore better interpreted as an effective surface coefficient rather than a true crop coefficient.
 
 ##### Direct measurements: 
 
@@ -68,4 +68,4 @@ Some resources for finding ET modeled from remote sensing data:
 
 [OpenET](https://etdata.org/) - you need a Google account for this one. This site is great if you need timeseries data. You can select 'gridded data' and draw a polygon in your area of interest. You can select the year of interest at the top of the map, and once the timeseries generates, you can view and compare the output of seven different models.
 
-### Repo [here](https://github.com/tpcovino/09_evapotranspiration){target="blank"}
+### Repo [link](https://github.com/tpcovino/09_evapotranspiration){target="blank"}
