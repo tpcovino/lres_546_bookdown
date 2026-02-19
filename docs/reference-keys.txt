@@ -101,16 +101,3 @@ filling-and-breaching
 flow-direction-and-accumulation-rasters
 streams
 final-thoughts-1
-hbv-hydrology-model
-learning-module-12
-background-4
-import-data
-repo-link-9
-labwork-20-pnts
-single-model-run
-single-model-execution
-objective-functions
-kge
-nash-sutcliffe-efficiency-nse.
-calibrate-hbv-manually
-plot-observed-and-model-simulations
