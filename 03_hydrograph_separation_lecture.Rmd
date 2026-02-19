@@ -217,15 +217,6 @@ But if the soils in this watershed have an impermeable clay layer near
 the soil surface, a lot more water may end up as stormflow than one
 would expect.
 
-### Labwork (20 pts)
-
-In this lab we will analyze stream flow (Q) and precipitation (P) data
-from Tenderfoot Creek Experimental Forest (TCEF). TCEF is located in
-central Montana, north of White Sulphur Springs. [See
-here](https://www.fs.usda.gov/research/rmrs/forestsandranges/locations/tcef){target="_blank"}
-for information about TCEF. You will do some data analysis on flows,
-calculate annual runoff ratios, and perform a hydrograph separation.
-
 ### Repo link
 
 Watch this video on the workflow for starting these projects. 
