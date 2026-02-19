@@ -4,7 +4,7 @@
 ### Learning Module 7 
 #### Objectives
 
-This module prepares you for your term project by introducing the spatial datasets that support watershed-scale modeling. Before you design your own modeling question, we'll explore what types of data are available, how they are structured, and how to retrieve them reproducibly in R.
+This module introduces the spatial datasets that support watershed-scale modeling. Before you design your own modeling question, we'll explore what types of data are available, how they are structured, and how to retrieve them reproducibly in R.
 
 In this module you will:<br>
 --Retrieve streamflow data using the dataRetrieval package <br>
