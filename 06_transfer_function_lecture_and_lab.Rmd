@@ -1,4 +1,4 @@
-# Process-Based Modeling - Probabilistic and Process Simulation
+# Probabilistic and Process Simulation
 \* Modules 4.1 and 4.2 are adapted from Fabian Nipggen (REWM.4500.500)\
 
 ## Transfer function rainfall-runoff models 

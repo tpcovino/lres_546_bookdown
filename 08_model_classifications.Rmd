@@ -1,8 +1,10 @@
-# Model Classification and Application
+# Data Retrieval and Application
 ## Classifying model structure
 ### Learning Module 6
 
-Throughout the rest of the course, we will gather data and create models to explore how measurable environmental factors, such as snow melt, land cover, and topography, impact runoff. To discuss these methods, we should review some modeling terminology describing model complexity and type.
+The next assignment marks the beginning of your term project. This will be a brainstorming and data retrieval exercise designed to guide you through identifying a research question and locating the data needed to answer it using a model written in R. The goal is to move you from structured labs toward independent inquiry.
+Based on your collective interests, we will gather datasets and build models to explore how measurable environmental factors—such as snowmelt, land cover, and topography—influence runoff. This is your opportunity to design a question that is specific, testable, and feasible within the scope of this semester.
+To prepare for that transition, we will begin with a review of modeling terminology, particularly concepts related to model type and complexity.
 
 Environmental models, including hydrological models, are built around simplifying assumptions of natural systems. The complexity of the model may depend on its application. Effective hydrological models share key traits: they are simple, parsimonious, and robust across various watersheds. In other words, they are easy to understand and streamlined and consistently perform well across different basins or even geographical areas. Therefore, more complex is only sometimes better. 
 

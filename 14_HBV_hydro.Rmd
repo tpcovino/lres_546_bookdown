@@ -1,7 +1,7 @@
 
 ## HBV Hydrology Model
 
-### Learning Module 9
+### Learning Module 12
 Adapted from Fabian Nippgen (REWM 4500 5500)
 
 #### Background:

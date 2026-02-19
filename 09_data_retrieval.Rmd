@@ -1,0 +1,50 @@
+## Gridded and tabular data retrieval
+**15 pnts**
+
+### Learning Module 7 
+#### Objectives
+
+This module prepares you for your term project by introducing the spatial datasets that support watershed-scale modeling. Before you design your own modeling question, we'll explore what types of data are available, how they are structured, and how to retrieve them reproducibly in R.
+
+In this module you will:
+--Retrieve streamflow data using the dataRetrieval package
+--Download and manage Digital Elevation Models (DEMs)
+--Retrieve and import remotely sensed raster data for a defined watershed extent
+Integrate tabular, vector, and raster datasets within a single workflow
+
+#### Background
+
+So far, we have focused on conceptual models and parameter behavior. We now shift toward spatially distributed modeling, where environmental processes vary across space. Spatial modeling requires us to integrate hydrological concepts with geospatial data structures. Before doing that, we need a shared understanding of how spatial data are represented.
+
+A refresher in GIS concepts:
+  This module assumes familiarity with basic Geographic Information System (GIS) such as coordinate systems (latitude and lognitude, UTM). Let's review some of the data structures we will use: 
+  
+  **Gridded data** refers to spatial data in raster format. If you have performed any GIS work, you are likely using gridded data. Rasters organize geographical areas into a grid where each regularly spaced cell represents a specific location and contains some attribute representing that location. For example, digital elevation models (DEM) are a form of gridded data. Imagine that we are working in a watershed and we can drop a grid or square celled net over the entire catchment. We can then model the elevation data of that catchment by assigning each cell in the net a mean elevation value for the area represented by the cell. Similarly, we can assign any value we wish to model to the cells. If we were to drop another net and assign a maximum tree height to every cell, we would be adding another 'layer' to our model. The **spatial resolution** of gridded data refers to the length and width of each cell represents. If we want to observe gridded data over time, we can generate a raster stack, where each raster layer represents a point in time. With a raster stack, we can increase the **temporal resolution** of our gridded data. 
+
+  **Vector data** describe spatial features using points, lines, and polygons. These spatial features are represented a geometrical objects with associated attributes, like lines to represent linear features such as rivers, or points to represent single locations. We will work with a .shp file in this module that is a collection of points representing the boundary of a watershed. 
+
+  **Tabular data** refers to data organized in a row-column format. In this class, each of our .csv datasets are a form of tabular data. 
+
+#### A refresher in remote sensing:
+
+Remote sensing is the science of obtaining information about objects or areas from a distance, typically from aircraft or satellites. It involves the collection and interpretation of data gathered by sensors that detect electromagnetic radiation reflected or emitted from the Earth's surface and atmosphere. As ecologists, many of us utilize remote sensing to observe and analyze the Earth's surface and its dynamics, providing valuable insights into environmental processes, land use and land cover changes, natural disasters, and more. 
+Some helpful terms to recall:
+
+**spatial resolution:** Remotely sensed data can vary in its spatial resolution, which refers to the scale of the smallest unit, or level of visual detail. 
+
+**temporal resolution:** When used to describe remotely sensed data, we are often talking about how frequently a remote sensing system revisits the same area on the Earth surface. Systems with high temporal resolution revisit the same location frequently, allowing for monitoring rapid changes in phenomena, where a lower resolution may limit a system's ability to capture short-term events. 
+
+We often find that data collection requires a balance of spatial and temporal resolution to select the most appropriate data for the coverage and detail that ecological work requires. 
+
+#### Ethical conduct
+
+When utilizing publicly available datasets, it is important for us as users to:<br><br>
+  -Be aware of any copyright or licensing agreements. There may be restrictions or usage terms imposed by data providers. Read provided agreements or terms to be sure we are in compliance with these when using datasets in our research. This may also include requirements for registration or subscription established by providers or agencies like USGS or NASA.<br><br>
+  -Cite and acknowledge the contributions of data providers and researchers whose datasets we utilize. This also facilitates transparency and reproducibility in our research.<br><br>
+  - Assess the quality and accuracy of geospatial data before using it for decision making purposes. It is important that we consider spatial resolution, temporal resolution and metadata documentation to critically evaluate the reliability of the datasets we use.<br><br> 
+  -Promote Open Data Principles: Try to explore and use publicly available datasets that support transparency and collaboration within our scientific and academic communities.<br><br>
+
+### Repo link
+
+The repo for this module can be found [here](https://github.com/tpcovino/07_gridded_data_retrieval){target="_blank"}
+
