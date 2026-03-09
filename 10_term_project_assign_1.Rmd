@@ -1,6 +1,6 @@
 ## Term Project Assignment 1 - 10 pnts
 
-Whether you are part of the Professional Masters’ Program or a graduate research program, you will be required to develop a professional paper. It is intended to give you an in-depth experience in the design, implementation, and completion of an original project. The paper will also be a way to showcase your research interests and accomplishments to potential employers or admissions committees. (See LRES 575 for more). 
+As part of your graduate program, whether you are a GA or part of the Professional Masters’ Program, you are required to develop a professional paper. It is intended to give you an in-depth experience in the design, implementation, and completion of an original project. The paper will also be a way to showcase your research interests and accomplishments to potential employers or admissions committees. (See LRES 575 for more). 
 
 The term project for this course is designed to help you make progress toward that larger goal. However, it is not intended to encompass your entire thesis or dissertation. Instead, the project should focus on a single, clearly defined component of your broader research. This might include investigating a specific aspect of your research question, testing a relationship between variables, or demonstrating a small but meaningful analytical workflow that contributes to your larger project. Over the course of the semester, you will develop and present a small research workflow. This process will include:
 

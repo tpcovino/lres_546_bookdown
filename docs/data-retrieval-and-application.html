@@ -190,7 +190,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="data-retrieval-and-application.html"><a href="data-retrieval-and-application.html#gridded-and-tabular-data-retrieval"><i class="fa fa-check"></i><b>5.2</b> Gridded and tabular data retrieval</a>
 <ul>
 <li class="chapter" data-level="5.2.1" data-path="data-retrieval-and-application.html"><a href="data-retrieval-and-application.html#learning-module-7"><i class="fa fa-check"></i><b>5.2.1</b> Learning Module 7</a></li>
-<li class="chapter" data-level="5.2.2" data-path="data-retrieval-and-application.html"><a href="data-retrieval-and-application.html#repo-link-5"><i class="fa fa-check"></i><b>5.2.2</b> Repo link</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data-retrieval-and-application.html"><a href="data-retrieval-and-application.html#why-r-or-any-open-source-programming-language"><i class="fa fa-check"></i><b>5.2.2</b> Why R? (or any open-source programming language)</a></li>
+<li class="chapter" data-level="5.2.3" data-path="data-retrieval-and-application.html"><a href="data-retrieval-and-application.html#repo-link-5"><i class="fa fa-check"></i><b>5.2.3</b> Repo link</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="data-retrieval-and-application.html"><a href="data-retrieval-and-application.html#term-project-assignment-1---10-pnts"><i class="fa fa-check"></i><b>5.3</b> Term Project Assignment 1 - 10 pnts</a>
 <ul>
@@ -289,7 +290,7 @@ In Keith Beven’s Rainfall-Runoff Modelling Primer, they illustrate the process
 <h3><span class="header-section-number">5.2.1</span> Learning Module 7<a href="data-retrieval-and-application.html#learning-module-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="objectives" class="section level4 hasAnchor" number="5.2.1.1">
 <h4><span class="header-section-number">5.2.1.1</span> Objectives<a href="data-retrieval-and-application.html#objectives" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>This module introduces the spatial datasets that support watershed-scale modeling. Before you design your own modeling question, we’ll explore what types of data are available, how they are structured, and how to retrieve them reproducibly in R.</p>
+<p>This module introduces reproducibility in modeling by exposing you to? public datasets that support watershed-scale modeling. Before you design your own modeling question, we’ll explore what types of data are available, how they are structured, and how to retrieve them reproducibly in R.</p>
 <p>In this module you will:<br>
 –Retrieve streamflow data using the dataRetrieval package <br>
 –Download and manage Digital Elevation Models (DEMs) <br>
@@ -298,23 +299,40 @@ Integrate tabular, vector, and raster datasets within a single workflow <br></p>
 </div>
 <div id="background-1" class="section level4 hasAnchor" number="5.2.1.2">
 <h4><span class="header-section-number">5.2.1.2</span> Background<a href="data-retrieval-and-application.html#background-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>So far, we have focused on conceptual models and parameter behavior. We now shift toward spatially distributed modeling, where environmental processes vary across space. Spatial modeling requires us to integrate hydrological concepts with geospatial data structures. Before doing that, we need a shared understanding of how spatial data are represented.</p>
+</div>
+</div>
+<div id="why-r-or-any-open-source-programming-language" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Why R? (or any open-source programming language)<a href="data-retrieval-and-application.html#why-r-or-any-open-source-programming-language" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It’s not about R specifically. It’s about reproducibilitiy and repeatability in your scientific work.<br></p>
+<p>When you:<br>
+–Download a CSV manually<br>
+–Open it in Excel<br>
+–Filter, copy, paste<br>
+–Export a figure<br></p>
+<p>You’ve created something that:<br>
+–Cannot be reproduced easily<br>
+–Cannot be updated efficiently<br>
+–Cannot be audited/peer-reviewed<br>
+–Cannot scale<br></p>
+<p>That workflow depends on memory and mouse clicks. That’s not research-grade analysis. Your future self is your most important collaborator. If you can’t reproduce your own work a year from now, that’s a problem.</p>
+<p>Instead, when you use scripted workflows as with R (or Python, or JavaScript in GEE), you document every decision in code. You can re-run your entire analysis on updated data, scale up from one site to many, share your scripts so that someone else can reproduce your results and reduce human error. What’s more, when it comes time to disseminate your work, your script becomes your methods section.</p>
+<p>Pairing scripted analysis with publicly available data strengthens this even further. When you use open data sources like USGS Water Data, Landsat archives, or other public monitoring networks, your entire project becomes transparent from start to finish: the data are accessible, the methods are documented, and the results are reproducible. This is the foundation of open science. It lowers barriers to collaboration, allows others to verify or extend your findings, and ensures that your work does not depend on proprietary software, inaccessible datasets, or undocumented processing steps. In short, open data + open tools + scripted workflows create research that is durable, defensible, and adaptable.</p>
+<p>So far, we have focused on conceptual models and parameter behavior. However, environmental systems do not operate at a single point. They vary across landscapes, watersheds, and regions. To analyze and model those spatial patterns in a reproducible way, we need to understand how spatial data are structured and stored.</p>
 <p>A refresher in GIS concepts:
 This module assumes familiarity with basic Geographic Information System (GIS) such as coordinate systems (latitude and lognitude, UTM). Let’s review some of the data structures we will use:</p>
 <p><strong>Gridded data</strong> refers to spatial data in raster format. If you have performed any GIS work, you are likely using gridded data. Rasters organize geographical areas into a grid where each regularly spaced cell represents a specific location and contains some attribute representing that location. For example, digital elevation models (DEM) are a form of gridded data. Imagine that we are working in a watershed and we can drop a grid or square celled net over the entire catchment. We can then model the elevation data of that catchment by assigning each cell in the net a mean elevation value for the area represented by the cell. Similarly, we can assign any value we wish to model to the cells. If we were to drop another net and assign a maximum tree height to every cell, we would be adding another ‘layer’ to our model. The <strong>spatial resolution</strong> of gridded data refers to the length and width of each cell represents. If we want to observe gridded data over time, we can generate a raster stack, where each raster layer represents a point in time. With a raster stack, we can increase the <strong>temporal resolution</strong> of our gridded data.</p>
 <p><strong>Vector data</strong> describe spatial features using points, lines, and polygons. These spatial features are represented a geometrical objects with associated attributes, like lines to represent linear features such as rivers, or points to represent single locations. We will work with a .shp file in this module that is a collection of points representing the boundary of a watershed.</p>
 <p><strong>Tabular data</strong> refers to data organized in a row-column format. In this class, each of our .csv datasets are a form of tabular data.</p>
-</div>
-<div id="a-refresher-in-remote-sensing" class="section level4 hasAnchor" number="5.2.1.3">
-<h4><span class="header-section-number">5.2.1.3</span> A refresher in remote sensing:<a href="data-retrieval-and-application.html#a-refresher-in-remote-sensing" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="a-refresher-in-remote-sensing" class="section level4 hasAnchor" number="5.2.2.1">
+<h4><span class="header-section-number">5.2.2.1</span> A refresher in remote sensing:<a href="data-retrieval-and-application.html#a-refresher-in-remote-sensing" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Remote sensing is the science of obtaining information about objects or areas from a distance, typically from aircraft or satellites. It involves the collection and interpretation of data gathered by sensors that detect electromagnetic radiation reflected or emitted from the Earth’s surface and atmosphere. As ecologists, many of us utilize remote sensing to observe and analyze the Earth’s surface and its dynamics, providing valuable insights into environmental processes, land use and land cover changes, natural disasters, and more.
 Some helpful terms to recall:</p>
 <p><strong>spatial resolution:</strong> Remotely sensed data can vary in its spatial resolution, which refers to the scale of the smallest unit, or level of visual detail.</p>
 <p><strong>temporal resolution:</strong> When used to describe remotely sensed data, we are often talking about how frequently a remote sensing system revisits the same area on the Earth surface. Systems with high temporal resolution revisit the same location frequently, allowing for monitoring rapid changes in phenomena, where a lower resolution may limit a system’s ability to capture short-term events.</p>
 <p>We often find that data collection requires a balance of spatial and temporal resolution to select the most appropriate data for the coverage and detail that ecological work requires.</p>
 </div>
-<div id="ethical-conduct" class="section level4 hasAnchor" number="5.2.1.4">
-<h4><span class="header-section-number">5.2.1.4</span> Ethical conduct<a href="data-retrieval-and-application.html#ethical-conduct" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="ethical-conduct" class="section level4 hasAnchor" number="5.2.2.2">
+<h4><span class="header-section-number">5.2.2.2</span> Ethical conduct<a href="data-retrieval-and-application.html#ethical-conduct" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When utilizing publicly available datasets, it is important for us as users to:<br><br>
 -Be aware of any copyright or licensing agreements. There may be restrictions or usage terms imposed by data providers. Read provided agreements or terms to be sure we are in compliance with these when using datasets in our research. This may also include requirements for registration or subscription established by providers or agencies like USGS or NASA.<br><br>
 -Cite and acknowledge the contributions of data providers and researchers whose datasets we utilize. This also facilitates transparency and reproducibility in our research.<br><br>
@@ -322,8 +340,8 @@ Some helpful terms to recall:</p>
 -Promote Open Data Principles: Try to explore and use publicly available datasets that support transparency and collaboration within our scientific and academic communities.<br><br></p>
 </div>
 </div>
-<div id="repo-link-5" class="section level3 hasAnchor" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> Repo link<a href="data-retrieval-and-application.html#repo-link-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="repo-link-5" class="section level3 hasAnchor" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Repo link<a href="data-retrieval-and-application.html#repo-link-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The repo for this module can be found <a href="https://github.com/tpcovino/07_gridded_data_retrieval" target="_blank">here</a></p>
 
 </div>
@@ -331,8 +349,22 @@ Some helpful terms to recall:</p>
 <div id="term-project-assignment-1---10-pnts" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">5.3</span> Term Project Assignment 1 - 10 pnts<a href="data-retrieval-and-application.html#term-project-assignment-1---10-pnts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As part of your graduate program, whether you are a GA or part of the Professional Masters’ Program, you are required to develop a professional paper. It is intended to give you an in-depth experience in the design, implementation, and completion of an original project. The paper will also be a way to showcase your research interests and accomplishments to potential employers or admissions committees. (See LRES 575 for more).</p>
-<p>Your term project for this class is not meant to encompass your entire thesis or dissertation. Instead, it should focus on a single, well-defined component that contributes to your broader research. This could be an in-depth exploration of a specific feature of your research question, a feasibility study, or a clear demonstration of a cause-effect relationship within your work. In the upcoming weeks, you will design a repeatable workflow that is executable within the scope of this semester, and at the end of the term, you will present a concise (~8-minute) synopsis of your question and workflow.</p>
-<p>This assignment is focused on data retrieval; you will develop the main goal and objectives of your term project and explore, evaluate, and select data sources. A key component of this process is formulating a research question that clearly defines both an explanatory variable and a response variable; one is not sufficient without the other. The workflow for this assignment will help you refine your question and identify the datasets needed to address it. Your assignment is considered complete when you have identified at least one explanatory variable and one response variable, along with the corresponding data sources.</p>
+<p>The term project for this course is designed to help you make progress toward that larger goal. However, it is not intended to encompass your entire thesis or dissertation. Instead, the project should focus on a single, clearly defined component of your broader research. This might include investigating a specific aspect of your research question, testing a relationship between variables, or demonstrating a small but meaningful analytical workflow that contributes to your larger project. Over the course of the semester, you will develop and present a small research workflow. This process will include:</p>
+<ol style="list-style-type: decimal">
+<li>Develop a research question that can be explored using currently available data</li>
+<li>Collect two or more datasets and organize them in a reproducible script-based workflow</li>
+<li>Identify predictor and response variables and explore the data for gaps, inconsistencies, and patterns</li>
+<li>Conduct a basic analysis using an R-based script that addresses your research question</li>
+<li>At the end of the semester, present your workflow and findings in a short (~8-minute) presentation that summarizes the problem, research question, datasets, workflow, and results</li>
+</ol>
+<p>The emphasis of this project is on developing a clear, reproducible workflow that others could follow and apply on their own computers.</p>
+<p>This first assignment focuses on data discovery and research question development, which are critical early steps in any research project. Your goal is to develop the main objective of your term project and identify datasets that allow you to investigate that objective. An effective research question requires both an explanatory (predictor) variable and a response variable. A question that only describes a single variable is not sufficient; your project should explore how one variable influences, predicts, or explains another. For example, “How does annual precipitation influence stream discharge?” contains both a predictor (precipitation) and a response variable (discharge).</p>
+<p>To complete this assignment, you will search for, evaluate, and select datasets that can support your research question. The goal is to ensure that your question is grounded in available and accessible data. An important part of this assignment is recognizing that research questions must be compatible with available data. In practice, researchers often begin with an idea, only to discover that the necessary data are incomplete, inaccessible, or do not exist at the appropriate scale. When this happens, the question must be adjusted. You should expect this to occur during this assignment. If the data you need are unavailable, you should revise your question or explore a related question that can be addressed with existing datasets. Developing this flexibility is an essential research skill.</p>
+<p>By the end of this assignment, you should have:
+1. A clearly defined research question
+2. At least one explanatory (predictor) variable
+3. At least one response variable
+4. Identified data sources for each variable</p>
 <div id="repo-link-6" class="section level3 hasAnchor" number="5.3.1">
 <h3><span class="header-section-number">5.3.1</span> <a href="https://github.com/tpcovino/Term_project_assign1.git">Repo Link</a><a href="data-retrieval-and-application.html#repo-link-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 

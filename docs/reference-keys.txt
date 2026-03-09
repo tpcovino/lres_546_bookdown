@@ -66,6 +66,7 @@ gridded-and-tabular-data-retrieval
 learning-module-7
 objectives
 background-1
+why-r-or-any-open-source-programming-language
 a-refresher-in-remote-sensing
 ethical-conduct
 repo-link-5
