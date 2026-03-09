@@ -2,7 +2,7 @@
 ### Learning Module 7 
 #### Objectives
 
-This module introduces the spatial datasets that support watershed-scale modeling. Before you design your own modeling question, we'll explore what types of data are available, how they are structured, and how to retrieve them reproducibly in R.
+This module introduces reproducibility in modeling by exposing you to?  public datasets that support watershed-scale modeling. Before you design your own modeling question, we'll explore what types of data are available, how they are structured, and how to retrieve them reproducibly in R.
 
 In this module you will:<br>
 --Retrieve streamflow data using the dataRetrieval package <br>
@@ -11,8 +11,28 @@ In this module you will:<br>
 Integrate tabular, vector, and raster datasets within a single workflow <br>
 
 #### Background
+### Why R? (or any open-source programming language)
+It’s not about R specifically. It’s about reproducibilitiy and repeatability in your scientific work.<br>
 
-So far, we have focused on conceptual models and parameter behavior. We now shift toward spatially distributed modeling, where environmental processes vary across space. Spatial modeling requires us to integrate hydrological concepts with geospatial data structures. Before doing that, we need a shared understanding of how spatial data are represented.
+When you:<br>
+--Download a CSV manually<br>
+--Open it in Excel<br>
+--Filter, copy, paste<br>
+--Export a figure<br>
+
+You’ve created something that:<br>
+--Cannot be reproduced easily<br>
+--Cannot be updated efficiently<br>
+--Cannot be audited/peer-reviewed<br>
+--Cannot scale<br>
+
+That workflow depends on memory and mouse clicks. That’s not research-grade analysis. Your future self is your most important collaborator. If you can’t reproduce your own work a year from now, that’s a problem.
+
+Instead, when you use scripted workflows as with R (or Python, or JavaScript in GEE), you document every decision in code. You can re-run your entire analysis on updated data, scale up from one site to many, share your scripts so that someone else can reproduce your results and reduce human error. What's more, when it comes time to disseminate your work, your script becomes your methods section.
+
+Pairing scripted analysis with publicly available data strengthens this even further. When you use open data sources like USGS Water Data, Landsat archives, or other public monitoring networks, your entire project becomes transparent from start to finish: the data are accessible, the methods are documented, and the results are reproducible. This is the foundation of open science. It lowers barriers to collaboration, allows others to verify or extend your findings, and ensures that your work does not depend on proprietary software, inaccessible datasets, or undocumented processing steps. In short, open data + open tools + scripted workflows create research that is durable, defensible, and adaptable.
+
+So far, we have focused on conceptual models and parameter behavior. However, environmental systems do not operate at a single point. They vary across landscapes, watersheds, and regions. To analyze and model those spatial patterns in a reproducible way, we need to understand how spatial data are structured and stored.
 
 A refresher in GIS concepts:
   This module assumes familiarity with basic Geographic Information System (GIS) such as coordinate systems (latitude and lognitude, UTM). Let's review some of the data structures we will use: 

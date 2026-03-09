@@ -1,9 +1,26 @@
 ## Term Project Assignment 1 - 10 pnts
 
-As part of your graduate program, whether you are a GA or part of the Professional Masters’ Program, you are required to develop a professional paper. It is intended to give you an in-depth experience in the design, implementation, and completion of an original project. The paper will also be a way to showcase your research interests and accomplishments to potential employers or admissions committees. (See LRES 575 for more). 
+Whether you are part of the Professional Masters’ Program or a graduate research program, you will be required to develop a professional paper. It is intended to give you an in-depth experience in the design, implementation, and completion of an original project. The paper will also be a way to showcase your research interests and accomplishments to potential employers or admissions committees. (See LRES 575 for more). 
 
-Your term project for this class is not meant to encompass your entire thesis or dissertation. Instead, it should focus on a single, well-defined component that contributes to your broader research. This could be an in-depth exploration of a specific feature of your research question, a feasibility study, or a clear demonstration of a cause-effect relationship within your work. In the upcoming weeks, you will design a repeatable workflow that is executable within the scope of this semester, and at the end of the term, you will present a concise (~8-minute) synopsis of your question and workflow.
+The term project for this course is designed to help you make progress toward that larger goal. However, it is not intended to encompass your entire thesis or dissertation. Instead, the project should focus on a single, clearly defined component of your broader research. This might include investigating a specific aspect of your research question, testing a relationship between variables, or demonstrating a small but meaningful analytical workflow that contributes to your larger project. Over the course of the semester, you will develop and present a small research workflow. This process will include:
 
-This assignment is focused on data retrieval; you will develop the main goal and objectives of your term project and explore, evaluate, and select data sources. A key component of this process is formulating a research question that clearly defines both an explanatory variable and a response variable; one is not sufficient without the other. The workflow for this assignment will help you refine your question and identify the datasets needed to address it. Your assignment is considered complete when you have identified at least one explanatory variable and one response variable, along with the corresponding data sources.
+1. Develop a research question that can be explored using currently available data
+2. Collect two or more datasets and organize them in a reproducible script-based workflow
+3. Identify predictor and response variables and explore the data for gaps, inconsistencies, and patterns
+4. Conduct a basic analysis using an R-based script that addresses your research question
+5. At the end of the semester, present your workflow and findings in a short (~8-minute) presentation that summarizes the problem, research question, datasets, workflow, and results
+
+The emphasis of this project is on developing a clear, reproducible workflow that others could follow and apply on their own computers.
+
+This first assignment focuses on data discovery and research question development, which are critical early steps in any research project. Your goal is to develop the main objective of your term project and identify datasets that allow you to investigate that objective. An effective research question requires both an explanatory (predictor) variable and a response variable. A question that only describes a single variable is not sufficient; your project should explore how one variable influences, predicts, or explains another. For example, “How does annual precipitation influence stream discharge?” contains both a predictor (precipitation) and a response variable (discharge).
+
+To complete this assignment, you will search for, evaluate, and select datasets that can support your research question. The goal is to ensure that your question is grounded in available and accessible data. An important part of this assignment is recognizing that research questions must be compatible with available data. In practice, researchers often begin with an idea, only to discover that the necessary data are incomplete, inaccessible, or do not exist at the appropriate scale. When this happens, the question must be adjusted. You should expect this to occur during this assignment. If the data you need are unavailable, you should revise your question or explore a related question that can be addressed with existing datasets. Developing this flexibility is an essential research skill.
+
+By the end of this assignment, you should have:
+1. A clearly defined research question
+2. At least one explanatory (predictor) variable
+3. At least one response variable
+4. Identified data sources for each variable
+
 
 ### [Repo Link](https://github.com/tpcovino/Term_project_assign1.git)
