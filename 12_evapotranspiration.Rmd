@@ -8,18 +8,21 @@
 
 Suggested reading: [Forest Evapotranspiration: Measurement and Modeling at Multiple Scales](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.srs.fs.usda.gov/pubs/ja/2016/ja_2016_amatya_008.pdf)
 
-Evapotranspiration (ET) encompasses all processes through which water moves from the Earth's surface to the atmosphere, comprising both evaporation and transpiration. This includes water vaporizing into the air from soil surfaces, the capillary fringe of groundwater, and water bodies on land. 
-Much like snowmelt modeling, ET modeling and measurements are critical to many fields and could be a full course on its own. We will be focused on the basics of ET, modeling and data retrieval methods for water balance in hydrological modeling. Evapotranspiration is an important variable in hydrological models, as it accounts for much of the water loss in a system, outside of discharge. 
-Transpiration, a significant component of ET, involves the movement of water from soil to atmosphere through plants. This occurs as plants absorb liquid water from the soil and release water vapor through their leaves. To gain a deeper understanding of ET, let's review transpiration.
+## Background
 
-##### Transpiration
+Evapotranspiration (ET) encompasses all processes through which water moves from the Earth's surface to the atmosphere, comprising both evaporation and transpiration. This includes water vaporizing into the air from soil surfaces, the capillary fringe of groundwater, and water bodies on land. 
+Much like snowmelt modeling, ET modeling and measurements are critical to many fields and could be a full course on its own. We will be focused on the basics of ET, modeling and data retrieval methods for water balance in hydrological modeling. Evapotranspiration is an important variable in hydrological models, as it accounts for much of the water loss in a system, outside of discharge. However, the level of detail required to estimate ET for flow modeling is intentionally limited compared to process-level ecohydrology.
+At the watershed scale, ET is not directly measurable without assumptions, and most approaches rely on indirect estimation. Potential evapotranspiration (PET) 'calculations' represent model-dependent approximations of atmospheric demand, while actual evapotranspiration (AET) is further influenced by water availability and is therefore inherently uncertain. As a result, different methods for estimating ET can produce substantially different values for the same location and time period. In this lab, we'll accept this uncertainty and focus on using ET estimates critically within a hydrologic modeling framework, rather than treating any single estimate as a definitive value. Let's jump in to some concepts.
+
+### Transpiration
+Transpiration, a significant component of ET, involves the movement of water from soil to atmosphere through plants. This occurs as plants absorb liquid water from the soil and release water vapor through their leaves. 
 Plant root systems to absorb water and nutrients from the soil, which they then distribute to their stems and leaves. As part of this process, plants regulate the loss of water vapor into the atmosphere through stomatal apertures, or transpiration. However, the volume of water transpired can vary widely due to factors like weather conditions and plant traits.
 
 Vegetation type: Plants transpire water at different rates. Some plants in arid regions have evolved mechanisms to conserve water by reducing transpiration. One mechanism involves regulating stomatal opening and closure. These plants can minimize water loss, especially during periods of high heat and low humidity. This closure of stomata can lead to diel and seasonal patterns in transpiration rates. Throughout the day, when environmental conditions are favorable for photosynthesis, stomata open to allow gas exchange, leading to increased transpiration. Conversely, during the night or under stressful conditions, stomata may close to conserve water, resulting in reduced transpiration rates. 
 
-Humidity: As the relative humidity of the air surrounding the plant rises the transpiration rate falls. It is easier for water to evaporate into dryer air than into more saturated air.  
+Humidity: As the relative humidity of the air surrounding the plant rises the transpiration rate falls. It is easier for water to evaporate into dryer air than into more saturated air.
 
-Soil type and saturation: Clay particles, being small, have a high capacity to retain water, while sand particles, being larger, readily release water. During dry periods, transpiration can contribute to the loss of moisture in the upper soil zone.When there is a shortage of moisture in the soil, plants may enter a state of senescence and reduce their rate of transpiration.
+Soil type and saturation: Clay particles, being small, have a high capacity to retain water, while sand particles, being larger, readily release water. During dry periods, transpiration can contribute to the loss of moisture in the upper soil zone. When there is a shortage of moisture in the soil, plants may enter a state of senescence and reduce their rate of transpiration.
 
 Temperature: Transpiration rates go up as the temperature goes up, especially during the growing season, when the air is warmer due to stronger sunlight and warmer air masses. Higher temperatures cause the plant cells to open stomata, allowing for the exchange of CO2 and water with the atmosphere, whereas colder temperatures cause the openings to close. 
 
@@ -44,7 +47,7 @@ Where:
 AET is the actual evapotranspiration,
 PET is the potential evapotranspiration, and
 Kc is the crop coefficient.
-The crop coefficient accounts for factors such as crop type, soil moisture levels, climate conditions, and management practices. It can vary throughout the growing season as well. However, note that Kc generally is used in agricultural systems, for a uniform, well-managed crop that varies by growth stage. In natural or heterogeneous systems, we may still multiply PET by a coefficient ot estimate AET, but this value represents the integrated response of multiple vegetation types and soil conditions. It is therefore better interpreted as an effective surface coefficient rather than a true crop coefficient.
+The crop coefficient accounts for factors such as crop type, soil moisture levels, climate conditions, and management practices. It can vary throughout the growing season as well. However, note that Kc generally is used in agricultural systems, for a uniform, well-managed crop that varies by growth stage. In natural or heterogeneous systems, we may still multiply PET by a coefficient to estimate AET, but this value represents the integrated response of multiple vegetation types and soil conditions. It is therefore better interpreted as an effective surface coefficient rather than a true crop coefficient.
 
 ##### Direct measurements: 
 
@@ -67,5 +70,14 @@ Some resources for finding ET modeled from remote sensing data:
 [ClimateEngine.org](https://app.climateengine.org/climateEngine) - This is a fun resource for all kinds of data. Actual evapotranspiration can be found in the TerraClimate dataset.
 
 [OpenET](https://etdata.org/) - you need a Google account for this one. This site is great if you need timeseries data. You can select 'gridded data' and draw a polygon in your area of interest. You can select the year of interest at the top of the map, and once the timeseries generates, you can view and compare the output of seven different models.
+
+##### Modeling:
+
+It is important to note that there are numerous pre-built functions available in various R packages designed for ET estimation. For instance, the 'Evapotranspiration' package provides ET estimates derived from approximately 20 distinct equations or variations. These functions require precise data formatting to ensure compatibility with the function arguments. To help you structure your function inputs similarly, many packages come with example datasets in their documentation. SPEI is another package that offers ET functions. The github repository for this package has been updated fairly recently, which can be important to verify. 
+
+Not all packages are equally maintained, as they are often developed by researchers or modelers to improve the repeatably of their work, and contribute to the broader scientific community. Unfortunately, once funding ceases, or if the original developer moves on to new projects, a custom package may no longer receive updates or support. As R, RStudio and other supporting packages are updated, a neglected package may become obsolete. If longevity is important to your project, it a good idea to check the development and maintenance history of custom or specialized packages.
+
+In this module, we will utilize the [Evapotranspiration package](https://cran.r-project.org/web/packages/Evapotranspiration/index.html)
+We will test a couple of simple methods that require few data inputs. However, it may be helpful to know that this package will allow calculations of PET, AET and Reference Crop Evapotranspiration from many different equations. Your selection of models may depend on the study region and the data available. 
 
 ### Repo [link](https://github.com/tpcovino/09_evapotranspiration){target="blank"}
